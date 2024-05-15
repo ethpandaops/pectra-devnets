@@ -1,9 +1,9 @@
 # role: ethpandaops.general.bootstrap
-bootstrap_default_user_authorized_keys_github_team_el: []
-  # - g11tech
-  # - acolytec3
-  # - holgerd77
-  # - jochem-brouwer
+bootstrap_default_user_authorized_keys_github_team_el:
+   - g11tech
+   - acolytec3
+   - holgerd77
+   - jochem-brouwer
 
 # role: ethpandaops.general.ethereum_node
 ethereum_node_el: ethereumjs

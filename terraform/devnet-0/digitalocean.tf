@@ -3,7 +3,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////
 variable "digitalocean_project_name" {
   type    = string
-  default = "Template"
+  default = "Pectra-devnets"
 }
 
 variable "digitalocean_ssh_key_name" {
@@ -13,16 +13,7 @@ variable "digitalocean_ssh_key_name" {
 
 variable "digitalocean_regions" {
   default = [
-    "nyc1",
-    "sgp1",
-    "lon1",
-    "nyc3",
-    "ams3",
     "fra1",
-    "tor1",
-    "blr1",
-    "sfo3",
-    "syd1"
   ]
 }
 
@@ -62,7 +53,7 @@ locals {
 
 locals {
   digitalocean_default_region = "ams3"
-  digitalocean_default_size   = "c-2"
+  digitalocean_default_size   = "s-4vcpu-16gb-amd"
   digitalocean_default_image  = "debian-12-x64"
   digitalocean_global_tags = [
     "Owner:Devops",

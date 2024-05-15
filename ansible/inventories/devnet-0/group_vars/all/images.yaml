@@ -1,19 +1,19 @@
 default_ethereum_client_images:
 ### Consensus layer clients
-  lighthouse: sigp/lighthouse:latest
-  lodestar: chainsafe/lodestar:latest
+  lighthouse: ethpandaops/lighthouse:ef-tests-electra
+  lodestar: ethpandaops/lodestar:electra-fork
   nimbus: statusim/nimbus-eth2:multiarch-latest
-  prysm: gcr.io/prysmaticlabs/prysm/beacon-chain:latest
-  prysm_validator: gcr.io/prysmaticlabs/prysm/validator:latest
-  teku: consensys/teku:latest
-  grandine: ethpandaops/grandine:develop
+  prysm: ethpandaops/prysm-beacon-chain:electra-devnet0
+  prysm_validator: ethpandaops/prysm-validator:electra-devnet0
+  teku: ethpandaops/teku:master
+  grandine: ethpandaops/grandine:electra
 ### Execution layer clients
-  besu: hyperledger/besu:latest
-  geth: ethereum/client-go:stable
+  besu: ethpandaops/besu:pectra-interop
+  geth: ethpandaops/geth:lightclient-prague-devnet-0
   erigon: thorax/erigon:devel
   ethereumjs: ethpandaops/ethereumjs:master
-  nethermind: nethermindeth/nethermind:master
-  reth: ethpandaops/reth:main
+  nethermind: nethermindeth/nethermind:pectra
+  reth: ethpandaops/reth:devnet-0
 
 
 default_tooling_images:
@@ -32,6 +32,6 @@ default_tooling_images:
   eth_fauceth: chainflag/eth-faucet:latest
   blobscan: blossomlabs/blobscan:latest
   blobscan_indexer: blossomlabs/blobscan-indexer:latest
-  dora: ethpandaops/dora:master
+  dora: ethpandaops/dora:electra-support
   dugtrio: ethpandaops/dugtrio:latest
   ethereum_genesis_generator: ethpandaops/ethereum-genesis-generator:3.1.5
