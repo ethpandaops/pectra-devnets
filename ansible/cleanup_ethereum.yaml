@@ -46,6 +46,7 @@
             - "teku"
             - "beacon"
             - "validator"
+            - "grandine"
             # Others
             - "ethereum-metrics-exporter"
             - "snooper-engine"
@@ -74,6 +75,7 @@
             - /data/prysm-validator
             - /data/teku
             - /data/teku-validator
+            - /data/grandine
             # Config files
             - /data/ethereum-network-config
             - /data/execution-auth.secret
