@@ -1,0 +1,235 @@
+# Ansible managed. Don't change this file manually. Template info: /vendor/collections/ansible_collections/ethpandaops/general/roles/generate_kubernetes_config/templates/ethereum-node.yaml.j2
+
+teku-geth-001:
+  global:
+    main:
+      network: pectra-devnet-0
+      engineEndpoint: http://geth-teku-001:8551
+      rpcEndpoint: http://geth-teku-001:8545
+      beaconEndpoint: http://teku-geth-001:5052
+    checkpointSync:
+      enabled: false
+      addresses:
+        pectra-devnet-0: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.dencun-devnets.node_ingress.combined}>@bn.bootnode-1.srv.pectra-devnet-0.ethpandaops.io
+    clientArgs:
+      networks:
+        pectra-devnet-0:
+          execution:
+            besu:
+              - --genesis-file=/data/network-config/besu.json
+              - --bootnodes=enode://af13e7a90354f9a47fa656c24b4480f9d0b73ab4fddb5a9d46603a723611449fb14701b1680c8ef02f26979f71ecfd067dbdd734fb2c7eb7ffaa86acc99bb7a7@104.248.129.151:30303?discport=30303
+              - --rpc-http-api=ADMIN,DEBUG,ETH,MINER,NET,TRACE,TXPOOL,WEB3
+              - --sync-mode=FULL
+              - --data-storage-format=BONSAI
+              - --ethstats=k8s-teku-geth-001:<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.template-devnets.ethstats_secret}>@ethstats.pectra-devnet-0.ethpandaops.io:443
+            nethermind:
+              - --Init.ChainSpecPath=/data/network-config/chainspec.json
+              - --JsonRpc.EnabledModules=Eth,Subscribe,Trace,TxPool,Web3,Personal,Proof,Net,Parity,Health,Rpc,Debug,Admin
+              - --Discovery.Bootnodes=enode://af13e7a90354f9a47fa656c24b4480f9d0b73ab4fddb5a9d46603a723611449fb14701b1680c8ef02f26979f71ecfd067dbdd734fb2c7eb7ffaa86acc99bb7a7@104.248.129.151:30303?discport=30303
+              - --Init.IsMining=false
+              - --Pruning.Mode=None
+              - --config=none.cfg
+              - --EthStats.Enabled=true
+              - --EthStats.Name=k8s-teku-geth-001
+              - --EthStats.Secret=<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.template-devnets.ethstats_secret}>
+              - --EthStats.Server=wss://ethstats.pectra-devnet-0.ethpandaops.io/api/
+              - --log=INFO
+            geth:
+              - --http.api=eth,net,web3,debug,admin
+              - --http.vhosts=*
+              - --state.scheme=path
+              - --networkid=7011893080
+              - --syncmode=full
+              - --bootnodes=enode://af13e7a90354f9a47fa656c24b4480f9d0b73ab4fddb5a9d46603a723611449fb14701b1680c8ef02f26979f71ecfd067dbdd734fb2c7eb7ffaa86acc99bb7a7@104.248.129.151:30303?discport=30303
+              - --ethstats=k8s-teku-geth-001:<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.template-devnets.ethstats_secret}>@ethstats.pectra-devnet-0.ethpandaops.io
+              - --rpc.allow-unprotected-txs
+            erigon:
+            ethereumjs:
+              - --gethGenesis=/data/network-config/genesis.json
+              - --bootnodes=enode://af13e7a90354f9a47fa656c24b4480f9d0b73ab4fddb5a9d46603a723611449fb14701b1680c8ef02f26979f71ecfd067dbdd734fb2c7eb7ffaa86acc99bb7a7@104.248.129.151:30303?discport=30303
+              - --maxPeers=75
+              - --isSingleNode=true
+          consensus:
+            lodestar:
+              - --paramsFile=/data/network-config/config.yaml
+              - --genesisStateFile=/data/network-config/genesis.ssz
+              - --bootnodes=enr:-Iq4QKK8s4gMKy_OpDxvO6EMrmjPxp_-jeGQu2mgCgSpC7YmZNIlW3OxkThf1zzCRAeFnFr-Iionm8jZQX5F6UzQatOGAY981BhhgmlkgnY0gmlwhGj4gZeJc2VjcDI1NmsxoQJJ3h8aUO3GJHv-bdvHtsQZ2OEisutelYfGjXO4lSg8BYN1ZHCCIyk,enr:-LK4QKYG5kZZ8US6ln6Hz0CUasyw53ZMLxO9mh5PUzyRkrJdWxTM2PvaonTcsuoyxIen9aa9IquoNB8RyYbiGzcvXCIEh2F0dG5ldHOIAACAAQAAAACEZXRoMpDFfIaFYFKIEQIAAAAAAAAAgmlkgnY0gmlwhGj4gZeJc2VjcDI1NmsxoQObYwQO0bfs4IkCzeEEXtUoKZa9m2jF4f1zdpkQq9ZTxIN0Y3CCIyiDdWRwgiMo
+              - --rest.namespace="*"
+              - --network.connectToDiscv5Bootnodes
+              - --nat=true
+            teku:
+              - --data-storage-mode=ARCHIVE
+              - --Xepochs-store-blobs=max # Keep the blobs forever
+            prysm:
+              - --grpc-gateway-corsdomain=*
+              - --chain-config-file=/data/network-config/config.yaml
+              - --genesis-state=/data/network-config/genesis.ssz
+              - --contract-deployment-block=0
+              - --min-sync-peers=1
+              - --pprof
+              - --enable-debug-rpc-endpoints
+              - --verbosity=debug
+              - --subscribe-all-subnets
+              - --bootstrap-node=enr:-Iq4QKK8s4gMKy_OpDxvO6EMrmjPxp_-jeGQu2mgCgSpC7YmZNIlW3OxkThf1zzCRAeFnFr-Iionm8jZQX5F6UzQatOGAY981BhhgmlkgnY0gmlwhGj4gZeJc2VjcDI1NmsxoQJJ3h8aUO3GJHv-bdvHtsQZ2OEisutelYfGjXO4lSg8BYN1ZHCCIyk
+              - --bootstrap-node=enr:-LK4QKYG5kZZ8US6ln6Hz0CUasyw53ZMLxO9mh5PUzyRkrJdWxTM2PvaonTcsuoyxIen9aa9IquoNB8RyYbiGzcvXCIEh2F0dG5ldHOIAACAAQAAAACEZXRoMpDFfIaFYFKIEQIAAAAAAAAAgmlkgnY0gmlwhGj4gZeJc2VjcDI1NmsxoQObYwQO0bfs4IkCzeEEXtUoKZa9m2jF4f1zdpkQq9ZTxIN0Y3CCIyiDdWRwgiMo
+            lighthouse:
+              - --testnet-dir=/data/network-config
+              - --boot-nodes=enr:-Iq4QKK8s4gMKy_OpDxvO6EMrmjPxp_-jeGQu2mgCgSpC7YmZNIlW3OxkThf1zzCRAeFnFr-Iionm8jZQX5F6UzQatOGAY981BhhgmlkgnY0gmlwhGj4gZeJc2VjcDI1NmsxoQJJ3h8aUO3GJHv-bdvHtsQZ2OEisutelYfGjXO4lSg8BYN1ZHCCIyk,enr:-LK4QKYG5kZZ8US6ln6Hz0CUasyw53ZMLxO9mh5PUzyRkrJdWxTM2PvaonTcsuoyxIen9aa9IquoNB8RyYbiGzcvXCIEh2F0dG5ldHOIAACAAQAAAACEZXRoMpDFfIaFYFKIEQIAAAAAAAAAgmlkgnY0gmlwhGj4gZeJc2VjcDI1NmsxoQObYwQO0bfs4IkCzeEEXtUoKZa9m2jF4f1zdpkQq9ZTxIN0Y3CCIyiDdWRwgiMo
+              - --allow-insecure-genesis-sync
+            nimbus:
+              - --network=/data/network-config
+              - --validator-monitor-auto=false
+              - --doppelganger-detection=off
+              - --log-level=INFO
+              - --light-client-data-serve=false
+              - --graffiti=parithoshs-MacBook-Pro
+              - --bootstrap-node=enr:-Iq4QKK8s4gMKy_OpDxvO6EMrmjPxp_-jeGQu2mgCgSpC7YmZNIlW3OxkThf1zzCRAeFnFr-Iionm8jZQX5F6UzQatOGAY981BhhgmlkgnY0gmlwhGj4gZeJc2VjcDI1NmsxoQJJ3h8aUO3GJHv-bdvHtsQZ2OEisutelYfGjXO4lSg8BYN1ZHCCIyk
+              - --bootstrap-node=enr:-LK4QKYG5kZZ8US6ln6Hz0CUasyw53ZMLxO9mh5PUzyRkrJdWxTM2PvaonTcsuoyxIen9aa9IquoNB8RyYbiGzcvXCIEh2F0dG5ldHOIAACAAQAAAACEZXRoMpDFfIaFYFKIEQIAAAAAAAAAgmlkgnY0gmlwhGj4gZeJc2VjcDI1NmsxoQObYwQO0bfs4IkCzeEEXtUoKZa9m2jF4f1zdpkQq9ZTxIN0Y3CCIyiDdWRwgiMo
+
+
+  geth:
+    enabled: true
+    fullnameOverride: geth-teku-001
+    image:
+      repository: ethpandaops/geth
+      tag: lightclient-prague-devnet-0
+      pullPolicy: Always
+    p2pNodePort:
+      enabled: false
+    persistence:
+      enabled: true
+      size: 100Gi
+    podLabels:
+      network: pectra-devnet-0
+      testnet: pectra-devnet-0
+      ethereum_network: pectra-devnet-0
+      ethereum_role: execution
+      consensus_client: teku
+      execution_client: geth
+      ethereum_instance: geth-teku-001
+    resources:
+      requests:
+        cpu: 2000m
+        memory: 5Gi
+      limits:
+        cpu: 3000m
+        memory: 7Gi
+    initContainers:
+      - name: init-config
+        image: alpine:latest
+        imagePullPolicy: IfNotPresent
+        securityContext:
+          runAsNonRoot: false
+          runAsUser: 0
+        command:
+          - sh
+          - -ace
+          - >
+            CHAINSPEC_URI=https://config.pectra-devnet-0.ethpandaops.io/el/chainspec.json;
+            GENESIS_URI=https://config.pectra-devnet-0.ethpandaops.io/el/genesis.json;
+            BESU_GENESIS_URI=https://config.pectra-devnet-0.ethpandaops.io/el/besu.json;
+            BOOTNODES_URI=https://config.pectra-devnet-0.ethpandaops.io/el/bootnodes.txt;
+            mkdir -p /data/network-config;
+            if ! [ -f /data/network_config_init_done ];
+            then
+              apk update && apk add curl jq;
+              wget -O /data/network-config/chainspec.json $CHAINSPEC_URI;
+              wget -O /data/network-config/genesis.json $GENESIS_URI;
+              wget -O /data/network-config/besu.json $BESU_GENESIS_URI;
+              wget -O /data/network-config/bootnodes.txt $BOOTNODES_URI;
+              cat /data/network-config/genesis.json | jq -r '.config.chainId' > /data/network-config/chainid.txt;
+              touch /data/network_config_init_done;
+              echo "network config init done";
+            else
+              echo "network config already present";
+            fi;
+            echo "bootnode init done: $(cat /data/network-config/bootnodes.txt)";
+        volumeMounts:
+          - name: storage
+            mountPath: "/data"
+      - name: init-genesis
+        image: ethpandaops/geth:lightclient-prague-devnet-0
+        imagePullPolicy: Always
+        securityContext:
+          runAsNonRoot: false
+          runAsUser: 0
+        command:
+          - sh
+          - -ace
+          - >
+            if ! [ -f /data/genesis_init_done ];
+            then
+              geth init --state.scheme=path --datadir /data /data/network-config/genesis.json;
+              touch /data/genesis_init_done;
+              echo "genesis init done";
+            else
+              echo "genesis is already initialized";
+            fi;
+        volumeMounts:
+          - name: storage
+            mountPath: "/data"
+
+  teku:
+    enabled: true
+    fullnameOverride: teku-geth-001
+    image:
+      repository: ethpandaops/teku
+      tag: master
+      pullPolicy: Always
+    mode: "beacon"
+    p2pNodePort:
+      enabled: false
+    podLabels:
+      network: pectra-devnet-0
+      testnet: pectra-devnet-0
+      ethereum_network: pectra-devnet-0
+      ethereum_role: consensus
+      consensus_client: teku
+      execution_client: geth
+      ethereum_instance: teku-geth-001
+    resources:
+      requests:
+        cpu: 2000m
+        memory: 5Gi
+      limits:
+        cpu: 3000m
+        memory: 7Gi
+    persistence:
+      enabled: true
+      size: 200Gi
+    initContainers:
+    - name: init-genesis
+      image: alpine:latest
+      imagePullPolicy: IfNotPresent
+      securityContext:
+        runAsNonRoot: false
+        runAsUser: 0
+      command:
+        - sh
+        - -ace
+        - >
+          apk add jq curl sed;
+          DEPOSIT_CONTRACT_URI=https://config.pectra-devnet-0.ethpandaops.io/deposit_contract.txt;
+          DEPOSIT_CONTRACT_BLOCK_URI=https://config.pectra-devnet-0.ethpandaops.io/cl/deposit_contract_block.txt;
+          DEPLOY_BLOCK_URI=https://config.pectra-devnet-0.ethpandaops.io/cl/deploy_block.txt;
+          GENESIS_CONFIG_URI=https://config.pectra-devnet-0.ethpandaops.io/cl/config.yaml;
+          GENESIS_SSZ_URI=https://config.pectra-devnet-0.ethpandaops.io/cl/genesis.ssz;
+          mkdir -p /data/network-config;
+          curl -s https://config.pectra-devnet-0.ethpandaops.io/api/v1/nodes/inventory | jq -r '.ethereum_pairs[] | .consensus.enr' > /data/network-config/bootnodes.txt;
+          if ! [ -f /data/network-config/genesis.ssz ];
+          then
+            wget -O /data/network-config/deposit_contract.txt $DEPOSIT_CONTRACT_URI;
+            wget -O /data/network-config/deposit_contract_block.txt $DEPOSIT_CONTRACT_BLOCK_URI;
+            wget -O /data/network-config/deploy_block.txt $DEPLOY_BLOCK_URI;
+            wget -O /data/network-config/config.yaml $GENESIS_CONFIG_URI;
+            wget -O /data/network-config/genesis.ssz $GENESIS_SSZ_URI;
+            echo "genesis init done";
+          else
+            echo "genesis exists. skipping...";
+          fi;
+          (tr '\n' ',' < /data/network-config/bootnodes.txt | sed 's/[^,]*/"&"/g') > /data/network-config/bootnodes2.txt;
+          mv /data/network-config/bootnodes2.txt /data/network-config/bootnodes.txt;
+          echo "bootnode init done: $(cat /data/network-config/bootnodes.txt)";
+      volumeMounts:
+        - name: storage
+          mountPath: "/data"

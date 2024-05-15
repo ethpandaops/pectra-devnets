@@ -3,8 +3,8 @@ default_ethereum_client_images:
   lighthouse: ethpandaops/lighthouse:ef-tests-electra
   lodestar: ethpandaops/lodestar:electra-fork
   nimbus: statusim/nimbus-eth2:multiarch-latest
-  prysm: ethpandaops/prysm-beacon-chain:electra-devnet0
-  prysm_validator: ethpandaops/prysm-validator:electra-devnet0
+  prysm: ethpandaops/prysm-beacon-chain:electra-devnet0-d2d9aef
+  prysm_validator: ethpandaops/prysm-validator:electra-devnet0-d2d9aef
   teku: ethpandaops/teku:master
   grandine: ethpandaops/grandine:electra
 ### Execution layer clients
