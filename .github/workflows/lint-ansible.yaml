@@ -1,0 +1,38 @@
+name: Ansible lint
+on:
+  pull_request:
+    paths:
+      - 'ansible/**'
+      - '.tool-versions'
+      - '.github/actions/**'
+      - '.github/workflows/lint-ansible.yaml'
+  push:
+    branches:
+      - master
+    paths:
+      - 'ansible/**'
+      - '.tool-versions'
+      - '.github/actions/**'
+      - '.github/workflows/lint-ansible.yaml'
+
+jobs:
+  ansible-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/setup
+      - name: Install ansible role/collection dependencies
+        working-directory: ./ansible
+        run: ./install_dependencies.sh
+      - name: Lint
+        working-directory: ./ansible
+        run: >
+          ansible-lint playbook.yaml
+          --nocolor
+          --exclude vendor
+          --exclude '*.sops.yaml'
+          --profile production
+          --skip-list 'name[play]'
+          --skip-list 'meta-no-info'
+          --skip-list 'yaml[line-length]'
+          --skip-list 'command-instead-of-shell'

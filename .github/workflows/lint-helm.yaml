@@ -1,0 +1,42 @@
+name: Helm lint
+
+on:
+  pull_request:
+    paths:
+      - 'kubernetes/**'
+      - '.tool-versions'
+      - '.github/actions/**'
+      - '.github/workflows/lint-helm.yaml'
+  push:
+    branches:
+      - master
+    paths:
+      - 'kubernetes/**'
+      - '.tool-versions'
+      - '.github/actions/**'
+      - '.github/workflows/lint-helm.yaml'
+
+jobs:
+  helm-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/setup
+      - name: Check if kubernetes/*/* is not empty
+        id: check-kubernetes-directory
+        run: |
+          if [ "$(ls -A kubernetes/*/* 2>/dev/null)" ]; then
+            echo "Kubernetes directory is not empty."
+            echo "::set-output name=not_empty::true"
+          else
+            echo "Kubernetes directory is empty."
+            echo "::set-output name=not_empty::false"
+          fi
+
+      - name: Lint
+        run: |
+          if ${{ steps.check-kubernetes-directory.outputs.not_empty }}; then
+            helm lint kubernetes/*/*
+          else
+            echo "Skipping Helm lint because kubernetes/*/* is empty."
+          fi

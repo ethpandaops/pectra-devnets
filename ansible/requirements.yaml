@@ -1,0 +1,20 @@
+roles:
+  - name: gantsign.oh-my-zsh
+    version: "2.4.0"
+  - name: geerlingguy.docker
+    version: "6.0.3"
+  - name: geerlingguy.firewall
+    version: "2.5.0"
+  - src: geerlingguy.pip
+    version: "2.2.0"
+  - name: robertdebock.fail2ban
+    version: "4.2.3"
+
+collections:
+  - name: ansible.posix
+  - name: community.sops
+    version: 1.6.0
+  - name: ethpandaops.general
+    source: https://github.com/ethpandaops/ansible-collection-general.git,master
+    type: git
+  - name: kubernetes.core
