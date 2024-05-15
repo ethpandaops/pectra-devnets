@@ -16,7 +16,7 @@
     "shanghaiTime": 0,
     "cancunTime": 0,
     "depositContractAddress": "0x6f22fFbC56eFF051aECF839396DD1eD9aD6BBA9D",
-    "pragueTime": 1715787840,
+    "pragueTime": 1715791428,
     "ethash": {}
   },
   "alloc": {
@@ -915,5 +915,5 @@
   "nonce": "0x1234",
   "mixhash": "0x0000000000000000000000000000000000000000000000000000000000000000",
   "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
-  "timestamp": "1715787012"
+  "timestamp": "1715790600"
 }
