@@ -167,9 +167,9 @@ variable "lodestar_erigon" {
 variable "lodestar_reth" {
   default = {
     name            = "lodestar-reth"
-    count           = 1
-    validator_start = 1400
-    validator_end   = 1500
+    count           = 0
+    validator_start = 0
+    validator_end   = 0
   }
 }
 
@@ -177,9 +177,9 @@ variable "lodestar_reth" {
 variable "nimbus_geth" {
   default = {
     name            = "nimbus-geth"
-    count           = 0
-    validator_start = 0
-    validator_end   = 0
+    count           = 1
+    validator_start = 1400
+    validator_end   = 1500
   }
 }
 
@@ -332,7 +332,7 @@ variable "grandine_reth" {
   default = {
     name            = "grandine-reth"
     count           = 1
-    validator_start = 2300
-    validator_end   = 2400
+    validator_start = 2400
+    validator_end   = 2500
   }
 }
