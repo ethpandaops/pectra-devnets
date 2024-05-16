@@ -1,19 +1,19 @@
 default_ethereum_client_images:
 ### Consensus layer clients
-  lighthouse: sigp/lighthouse:latest
-  lodestar: chainsafe/lodestar:latest
-  nimbus: statusim/nimbus-eth2:multiarch-latest
-  prysm: gcr.io/prysmaticlabs/prysm/beacon-chain:latest
-  prysm_validator: gcr.io/prysmaticlabs/prysm/validator:latest
-  teku: consensys/teku:latest
-  grandine: ethpandaops/grandine:develop
+  lighthouse: ethpandaops/lighthouse:ef-tests-electra-b5333b4
+  lodestar: ethpandaops/lodestar:pectra-devnet-0-764bcc8
+  nimbus: ethpandaops/nimbus-eth2:unstable
+  prysm: ethpandaops/prysm-beacon-chain:electra-devnet0-daad61b
+  prysm_validator: ethpandaops/prysm-validator:electra-devnet0-daad61b
+  teku: ethpandaops/teku:master-8f4e64a
+  grandine: ethpandaops/grandine:electra-431fbe3
 ### Execution layer clients
-  besu: hyperledger/besu:latest
-  geth: ethereum/client-go:stable
+  besu: ethpandaops/besu:pectra-interop-ac137c2
+  geth: ethpandaops/geth:lightclient-prague-devnet-0-5d19976
   erigon: thorax/erigon:devel
-  ethereumjs: ethpandaops/ethereumjs:master
-  nethermind: nethermindeth/nethermind:master
-  reth: ethpandaops/reth:main
+  ethereumjs: ethpandaops/ethereumjs:master-cfe942e
+  nethermind: nethermindeth/nethermind:pectra
+  reth: ethpandaops/reth:devnet-0-3af3a60
 
 
 default_tooling_images:
@@ -32,6 +32,6 @@ default_tooling_images:
   eth_fauceth: chainflag/eth-faucet:latest
   blobscan: blossomlabs/blobscan:latest
   blobscan_indexer: blossomlabs/blobscan-indexer:latest
-  dora: ethpandaops/dora:master
+  dora: ethpandaops/dora:electra-support
   dugtrio: ethpandaops/dugtrio:latest
   ethereum_genesis_generator: ethpandaops/ethereum-genesis-generator:3.1.5

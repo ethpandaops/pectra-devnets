@@ -1,6 +1,6 @@
 ansible_user: devops
 ansible_python_interpreter: /usr/bin/python3
-devnet_name: template
+devnet_name: pectra
 
 # IPv6 Specific configuration
 global_ipv6_enabled: true
