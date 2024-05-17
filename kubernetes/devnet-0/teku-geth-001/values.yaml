@@ -59,8 +59,8 @@ teku-geth-001:
               - --nat=true
               - --chain.persistInvalidSszObjects=true
             teku:
-              - --network=/network-config/config.yaml
-              - --genesis-state=/network-config/genesis.ssz
+              - --network=/data/network-config/config.yaml
+              - --genesis-state=/data/network-config/genesis.ssz
               - --p2p-discovery-bootnodes=enr:-Iq4QKK8s4gMKy_OpDxvO6EMrmjPxp_-jeGQu2mgCgSpC7YmZNIlW3OxkThf1zzCRAeFnFr-Iionm8jZQX5F6UzQatOGAY981BhhgmlkgnY0gmlwhGj4gZeJc2VjcDI1NmsxoQJJ3h8aUO3GJHv-bdvHtsQZ2OEisutelYfGjXO4lSg8BYN1ZHCCIyk,enr:-LK4QKOlHAef5n0UzsGH7sZRIaEYs59y_givEbMtz_Qs5L12YI8x-EJKMkUJbAHk07d-zSsBGSpH1c5KD55xpuT65NoEh2F0dG5ldHOIAAAAAAAADACEZXRoMpAAOoTkYFKIEQIAAAAAAAAAgmlkgnY0gmlwhGj4gZeJc2VjcDI1NmsxoQOP66O5XQ6sHdfMLl6ALWwHot6Upbxc7wTDisGWw8OTlYN0Y3CCIyiDdWRwgiMo
               - --data-storage-mode=ARCHIVE
               - --Xepochs-store-blobs=max # Keep the blobs forever
