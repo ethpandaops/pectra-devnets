@@ -8,6 +8,16 @@ variable "bootnode" {
   }
 }
 
+# mev-relay
+variable "mev_relay" {
+  default = {
+    name            = "mev-relay"
+    count           = 2
+    validator_start = 0
+    validator_end   = 0
+    size            = "s-4vcpu-16gb-320gb-intel"
+  }
+}
 # Lighthouse
 variable "lighthouse_geth" {
   default = {

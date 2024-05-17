@@ -2,10 +2,10 @@ default_ethereum_client_images:
 ### Consensus layer clients
   lighthouse: ethpandaops/lighthouse:ef-tests-electra-b5333b4
   lodestar: ethpandaops/lodestar:pectra-devnet-0-764bcc8
-  nimbus: ethpandaops/nimbus-eth2:pectra-99a42e8
+  nimbus: ethpandaops/nimbus-eth2:pectra-57c1fc7
   prysm: ethpandaops/prysm-beacon-chain:electra-devnet0-daad61b
   prysm_validator: ethpandaops/prysm-validator:electra-devnet0-daad61b
-  teku: ethpandaops/teku:master-5de0e53
+  teku: ethpandaops/teku:master-212b33f
   grandine: ethpandaops/grandine:electra-431fbe3
 ### Execution layer clients
   besu: ethpandaops/besu:pectra-interop-ac137c2
