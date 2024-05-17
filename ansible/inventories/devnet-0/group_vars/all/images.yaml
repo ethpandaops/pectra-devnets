@@ -5,7 +5,7 @@ default_ethereum_client_images:
   nimbus: ethpandaops/nimbus-eth2:pectra-99a42e8
   prysm: ethpandaops/prysm-beacon-chain:electra-devnet0-daad61b
   prysm_validator: ethpandaops/prysm-validator:electra-devnet0-daad61b
-  teku: ethpandaops/teku:master-8f4e64a
+  teku: ethpandaops/teku:master-5de0e53
   grandine: ethpandaops/grandine:electra-431fbe3
 ### Execution layer clients
   besu: ethpandaops/besu:pectra-interop-ac137c2
