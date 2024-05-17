@@ -76,6 +76,7 @@
             - /data/teku
             - /data/teku-validator
             - /data/grandine
+            - /data/grandine-validator
             # Config files
             - /data/ethereum-network-config
             - /data/execution-auth.secret
