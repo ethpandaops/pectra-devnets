@@ -112,9 +112,9 @@ variable "prysm_erigon" {
 variable "prysm_reth" {
   default = {
     name            = "prysm-reth"
-    count           = 0
-    validator_start = 0
-    validator_end   = 0
+    count           = 1
+    validator_start = 1600
+    validator_end   = 1700
   }
 }
 
