@@ -5,6 +5,11 @@ bootstrap_default_user_authorized_keys_github_team_cl:
    - g11tech
    - philknows
    - nazarhussain
+   - matthewkeil
+   - twoeths
+   - nflaig
+   - ensi321
+   - jeluard
 
 # role: validator_keys
 validator_keys_sync_files:
