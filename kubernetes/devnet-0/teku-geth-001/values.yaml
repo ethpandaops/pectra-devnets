@@ -60,6 +60,7 @@ teku-geth-001:
             teku:
               - --data-storage-mode=ARCHIVE
               - --Xepochs-store-blobs=max # Keep the blobs forever
+              - --ignore-weak-subjectivity-period-enabled
             prysm:
               - --grpc-gateway-corsdomain=*
               - --chain-config-file=/data/network-config/config.yaml
