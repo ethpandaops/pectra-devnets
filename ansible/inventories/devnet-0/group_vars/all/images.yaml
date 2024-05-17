@@ -9,11 +9,11 @@ default_ethereum_client_images:
   grandine: ethpandaops/grandine:electra-431fbe3
 ### Execution layer clients
   besu: ethpandaops/besu:pectra-interop-ac137c2
-  geth: ethpandaops/geth:lightclient-prague-devnet-0-5d19976
+  geth: ethpandaops/geth:bad-block-nil-check
   erigon: thorax/erigon:devel
   ethereumjs: ethpandaops/ethereumjs:master-cfe942e
-  nethermind: nethermindeth/nethermind:pectra
-  reth: ethpandaops/reth:devnet-0-3af3a60
+  nethermind: ethpandaops/nethermind:pectra-283f63b
+  reth: ethpandaops/reth:devnet-0-3736d8f
 
 
 default_tooling_images:

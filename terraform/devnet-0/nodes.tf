@@ -94,9 +94,9 @@ variable "prysm_nethermind" {
 variable "prysm_ethereumjs" {
   default = {
     name            = "prysm-ethereumjs"
-    count           = 1
-    validator_start = 800
-    validator_end   = 900
+    count           = 0
+    validator_start = 0
+    validator_end   = 0
   }
 }
 
@@ -112,9 +112,9 @@ variable "prysm_erigon" {
 variable "prysm_reth" {
   default = {
     name            = "prysm-reth"
-    count           = 1
-    validator_start = 900
-    validator_end   = 1000
+    count           = 0
+    validator_start = 0
+    validator_end   = 0
   }
 }
 
@@ -123,35 +123,35 @@ variable "lodestar_geth" {
   default = {
     name            = "lodestar-geth"
     count           = 1
-    validator_start = 1000
-    validator_end   = 1100
+    validator_start = 800
+    validator_end   = 900
   }
 }
 
 variable "lodestar_nethermind" {
   default = {
     name            = "lodestar-nethermind"
-    count           = 1
-    validator_start = 1100
-    validator_end   = 1200
+    count           = 0
+    validator_start = 0
+    validator_end   = 0
   }
 }
 
 variable "lodestar_besu" {
   default = {
     name            = "lodestar-besu"
-    count           = 1
-    validator_start = 1200
-    validator_end   = 1300
+    count           = 0
+    validator_start = 0
+    validator_end   = 0
   }
 }
 
 variable "lodestar_ethereumjs" {
   default = {
     name            = "lodestar-ethereumjs"
-    count           = 1
-    validator_start = 1300
-    validator_end   = 1400
+    count           = 0
+    validator_start = 0
+    validator_end   = 0
   }
 }
 
@@ -178,8 +178,8 @@ variable "nimbus_geth" {
   default = {
     name            = "nimbus-geth"
     count           = 1
-    validator_start = 1400
-    validator_end   = 1500
+    validator_start = 900
+    validator_end   = 1000
   }
 }
 
@@ -233,8 +233,8 @@ variable "teku_geth" {
   default = {
     name            = "teku-geth"
     count           = 1
-    validator_start = 1500
-    validator_end   = 1600
+    validator_start = 1000
+    validator_end   = 1100
   }
 }
 
@@ -242,8 +242,8 @@ variable "teku_besu" {
   default = {
     name            = "teku-besu"
     count           = 1
-    validator_start = 1600
-    validator_end   = 1700
+    validator_start = 1100
+    validator_end   = 1200
   }
 }
 
@@ -251,17 +251,17 @@ variable "teku_nethermind" {
   default = {
     name            = "teku-nethermind"
     count           = 1
-    validator_start = 1700
-    validator_end   = 1800
+    validator_start = 1200
+    validator_end   = 1300
   }
 }
 
 variable "teku_ethereumjs" {
   default = {
     name            = "teku-ethereumjs"
-    count           = 1
-    validator_start = 1800
-    validator_end   = 1900
+    count           = 0
+    validator_start = 0
+    validator_end   = 0
   }
 }
 
@@ -277,9 +277,9 @@ variable "teku_erigon" {
 variable "teku_reth" {
   default = {
     name            = "teku-reth"
-    count           = 1
-    validator_start = 1900
-    validator_end   = 2000
+    count           = 0
+    validator_start = 0
+    validator_end   = 0
   }
 }
 
@@ -287,8 +287,8 @@ variable "grandine_geth" {
   default = {
     name            = "grandine-geth"
     count           = 1
-    validator_start = 2000
-    validator_end   = 2100
+    validator_start = 1300
+    validator_end   = 1400
   }
 }
 
@@ -296,8 +296,8 @@ variable "grandine_besu" {
   default = {
     name            = "grandine-besu"
     count           = 1
-    validator_start = 2100
-    validator_end   = 2200
+    validator_start = 1400
+    validator_end   = 1500
   }
 }
 
@@ -305,17 +305,17 @@ variable "grandine_nethermind" {
   default = {
     name            = "grandine-nethermind"
     count           = 1
-    validator_start = 2200
-    validator_end   = 2300
+    validator_start = 1500
+    validator_end   = 1600
   }
 }
 
 variable "grandine_ethereumjs" {
   default = {
     name            = "grandine-ethereumjs"
-    count           = 1
-    validator_start = 2300
-    validator_end   = 2400
+    count           = 0
+    validator_start = 0
+    validator_end   = 0
   }
 }
 
@@ -331,8 +331,8 @@ variable "grandine_erigon" {
 variable "grandine_reth" {
   default = {
     name            = "grandine-reth"
-    count           = 1
-    validator_start = 2400
-    validator_end   = 2500
+    count           = 0
+    validator_start = 0
+    validator_end   = 0
   }
 }
