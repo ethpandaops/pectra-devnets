@@ -1,9 +1,9 @@
 # role: ethpandaops.general.bootstrap
-bootstrap_default_user_authorized_keys_github_team_cl: []
-  # - zah
-  # - tersec
-  # - etan-status
-  # - arnetheduck
+bootstrap_default_user_authorized_keys_github_team_cl:
+  - zah
+  - tersec
+  - etan-status
+  - arnetheduck
 
 # role: validator_keys
 validator_keys_sync_files:
