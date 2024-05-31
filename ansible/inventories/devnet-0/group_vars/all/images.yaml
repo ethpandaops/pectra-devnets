@@ -3,9 +3,9 @@ default_ethereum_client_images:
   lighthouse: ethpandaops/lighthouse:ef-tests-electra-b5333b4
   lodestar: ethpandaops/lodestar:pectra-devnet-0-764bcc8
   nimbus: ethpandaops/nimbus-eth2:pectra-5f3e61c
-  prysm: ethpandaops/prysm-beacon-chain:electra-devnet0-daad61b
-  prysm_validator: ethpandaops/prysm-validator:electra-devnet0-daad61b
-  teku: ethpandaops/teku:master-212b33f
+  prysm: ethpandaops/prysm-beacon-chain:electra-devnet0-linux-amd64-20aa10b
+  prysm_validator: ethpandaops/prysm-validator:electra-devnet0-linux-amd64-20aa10b
+  teku: ethpandaops/teku:master-f24e663
   grandine: ethpandaops/grandine:electra-431fbe3
 ### Execution layer clients
   besu: ethpandaops/besu:pectra-interop-ac137c2
@@ -13,7 +13,7 @@ default_ethereum_client_images:
   erigon: thorax/erigon:devel
   ethereumjs: ethpandaops/ethereumjs:master-cfe942e
   nethermind: ethpandaops/nethermind:pectra-283f63b
-  reth: ethpandaops/reth:devnet-0-3736d8f
+  reth: ethpandaops/reth:devnet-0-732661b
 
 
 default_tooling_images:
