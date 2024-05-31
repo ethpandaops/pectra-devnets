@@ -14,7 +14,7 @@ This repository contains the infrastructure code used to setup ~all~ dev/testnet
 
 Status   | Network                                                    | Links                                                                                                                                                                                                                                            | Ansible                                                      | Terraform | Kubernetes
 ------   |------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  -----                                                       | -------   | ------
- 🟢pectra-devnet-0🔴 | [pectra-devnet-0](https://pectra-devnet-0.ethpandaops.io/) | [Network config](network-configs/devnet-0) / [Inventory](https://bootnode-1.pectra-devnet-0.ethpandaops.io/meta/api/v1/inventory.json) / [Validator ranges](https://bootnode-1.pectra-devnet-0.ethpandaops.io/meta/api/v1/validator-ranges.json) | [🔗](ansible/inventories/devnet-0) | [🔗](terraform/devnet-0) | [🔗](kubernetes/devnet-0)
+ Off🔴 | [pectra-devnet-0](https://pectra-devnet-0.ethpandaops.io/) | [Network config](network-configs/devnet-0) / [Inventory](https://bootnode-1.pectra-devnet-0.ethpandaops.io/meta/api/v1/inventory.json) / [Validator ranges](https://bootnode-1.pectra-devnet-0.ethpandaops.io/meta/api/v1/validator-ranges.json) | [🔗](ansible/inventories/devnet-0) | [🔗](terraform/devnet-0) | [🔗](kubernetes/devnet-0)
 
 # Development
 ## Version management for tools
