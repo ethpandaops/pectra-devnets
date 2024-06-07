@@ -28,5 +28,6 @@ besu_container_command_extra_args:
   - --rpc-http-api=ADMIN,DEBUG,ETH,MINER,NET,TRACE,TXPOOL,WEB3
   - --sync-mode=FULL
   - --data-storage-format=BONSAI
+  - --bonsai-limit-trie-logs-enabled=false
   - --ethstats={{ inventory_hostname }}:{{ ethstats_secret }}@{{ ethstats_url }}:443
 besu_container_pull: true
