@@ -34,4 +34,4 @@ default_tooling_images:
   blobscan_indexer: blossomlabs/blobscan-indexer:latest
   dora: ethpandaops/dora:electra-support
   dugtrio: ethpandaops/dugtrio:latest
-  ethereum_genesis_generator: ethpandaops/ethereum-genesis-generator:3.1.5
+  ethereum_genesis_generator: ethpandaops/ethereum-genesis-generator:3.3.3
