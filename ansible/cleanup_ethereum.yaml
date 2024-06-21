@@ -33,6 +33,7 @@
             - "geth"
             - "nethermind"
             - "execution"
+            - "execution-init"
             - "reth"
             # Consensus layer clients
             - "lighthouse-validator"
@@ -44,9 +45,9 @@
             - "prysm"
             - "teku-validator"
             - "teku"
+            - "grandine"
             - "beacon"
             - "validator"
-            - "grandine"
             # Others
             - "ethereum-metrics-exporter"
             - "snooper-engine"
