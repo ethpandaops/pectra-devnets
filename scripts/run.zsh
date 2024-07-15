@@ -1,6 +1,6 @@
 #!/bin/zsh
 node="bootnode-1"
-network="devnet-0"
+network="devnet-1"
 domain="ethpandaops.io"
 prefix="devnet"
 sops_name=$(sops --decrypt ../ansible/inventories/$network/group_vars/all/all.sops.yaml | yq -r '.secret_nginx_shared_basic_auth.name')
