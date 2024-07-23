@@ -4,8 +4,8 @@ dora:
   fullnameOverride: dora
   image:
     repository: ethpandaops/dora
-    tag: electra-support
-    pullPolicy: IfNotPresent
+    tag: electra-support-latest
+    pullPolicy: Always
   resources:
     requests:
       cpu: 500m
