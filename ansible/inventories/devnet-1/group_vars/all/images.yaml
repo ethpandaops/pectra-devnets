@@ -1,19 +1,19 @@
 default_ethereum_client_images:
 ### Consensus layer clients
-  #lighthouse: 
-  lodestar: ethpandaops/lodestar:electra-fork
-  nimbus: ethpandaops/nimbus-eth2:unstable
-  #prysm: 
-  #prysm_validator: 
-  teku: ethpandaops/teku:master
-  grandine: ethpandaops/grandine:electra
+  lighthouse: ethpandaops/lighthouse:electra-devnet-1-ba28217
+  lodestar: ethpandaops/lodestar:electra-fork-68cefff
+  nimbus: ethpandaops/nimbus-eth2:unstable-ae0a148
+  prysm: ethpandaops/prysm-beacon-chain:develop-4d823ac
+  prysm_validator: ethpandaops/prysm-validator:develop-4d823ac
+  teku: ethpandaops/teku:master-2d2d17b
+  grandine: ethpandaops/grandine:electra-a00d47d
 ### Execution layer clients
-  #besu: 
-  geth: ethpandaops/geth:lightclient-prague-devnet-1
-  #erigon: 
-  ethereumjs: ethpandaops/ethereumjs:master
+  besu: ethpandaops/besu:main-bcbfec0
+  geth: ethpandaops/geth:lightclient-prague-devnet-1-247a930
+  erigon: ethpandaops/erigon:main-6231a93
+  ethereumjs: ethpandaops/ethereumjs:master-b543d2f
   nethermind: nethermindeth/nethermind:pectra
-  #reth: 
+  reth: ethpandaops/reth:main-ed16643
 
 
 default_tooling_images:
