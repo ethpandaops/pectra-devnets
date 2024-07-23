@@ -15,7 +15,7 @@ variable "mev_relay" {
     count           = 1
     validator_start = 0
     validator_end   = 0
-    size            = "s-4vcpu-16gb-320gb-intel"
+    #size            = "s-4vcpu-8gb-240gb-intel"
   }
 }
 # Lighthouse

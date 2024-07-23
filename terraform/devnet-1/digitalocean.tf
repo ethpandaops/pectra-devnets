@@ -14,6 +14,11 @@ variable "digitalocean_ssh_key_name" {
 variable "digitalocean_regions" {
   default = [
     "fra1",
+    "ams3",
+    "lon1",
+    "blr1",
+    "sfo3",
+    "syd1"
   ]
 }
 
@@ -53,7 +58,7 @@ locals {
 
 locals {
   digitalocean_default_region = "ams3"
-  digitalocean_default_size   = "s-4vcpu-16gb-amd"
+  digitalocean_default_size   = "s-4vcpu-8gb-240gb-intel"
   digitalocean_default_image  = "debian-12-x64"
   digitalocean_global_tags = [
     "Owner:Devops",
