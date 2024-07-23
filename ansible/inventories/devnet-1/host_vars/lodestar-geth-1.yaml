@@ -1,0 +1,39 @@
+lodestar_container_entrypoint:
+  - node
+
+lodestar_inspect_port: 9229
+
+
+lodestar_container_ports:
+  - "127.0.0.1:{{ lodestar_ports_http_beacon }}:{{ lodestar_ports_http_beacon }}"
+  - "{{ lodestar_ports_p2p_tcp }}:{{ lodestar_ports_p2p_tcp }}"
+  - "{{ lodestar_ports_p2p_udp }}:{{ lodestar_ports_p2p_udp }}/udp"
+  - "127.0.0.1:{{ lodestar_inspect_port }}:{{ lodestar_inspect_port }}"
+
+lodestar_container_command:
+  - --inspect=0.0.0.0:{{ lodestar_inspect_port }}
+  - ./packages/cli/bin/lodestar
+  - beacon
+  - --dataDir=/data
+  - --discv5
+  - --listenAddress=0.0.0.0
+  - --port={{ lodestar_ports_p2p_tcp }}
+  - --enr.ip={{ lodestar_announced_ip }}
+  - --enr.tcp={{ lodestar_ports_p2p_tcp }}
+  - --enr.udp={{ lodestar_ports_p2p_udp }}
+  - --rest
+  - --rest.address=0.0.0.0
+  - --rest.port={{ lodestar_ports_http_beacon }}
+  - --jwt-secret=/execution-auth.jwt
+  - --execution.urls={{ lodestar_execution_engine_endpoint }}
+  - --metrics
+  - --metrics.address=0.0.0.0
+  - --metrics.port={{ lodestar_ports_metrics }}
+
+lodestar_container_command_extra_args:
+  - --paramsFile=/network-config/config.yaml
+  - --genesisStateFile=/network-config/genesis.ssz
+  - --bootnodes={{ ethereum_cl_bootnodes | join(',') }}
+  - --rest.namespace="*"
+  - --network.connectToDiscv5Bootnodes
+  - --nat=true
