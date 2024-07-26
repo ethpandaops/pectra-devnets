@@ -1,0 +1,6 @@
+dependencies:
+- name: tracoor-server
+  repository: https://ethpandaops.github.io/ethereum-helm-charts
+  version: 0.0.2
+digest: sha256:0319ec1aefa0217719454958bc6381587ffca029ce94c032bcfea00c316280ef
+generated: "2024-07-26T13:28:35.395429+02:00"
