@@ -12,7 +12,7 @@ default_ethereum_client_images:
   geth: ethpandaops/geth:lightclient-prague-devnet-1-37c4b03
   erigon: ethpandaops/erigon:main-6231a93
   ethereumjs: ethpandaops/ethereumjs:master-b543d2f
-  nethermind: nethermindeth/nethermind:pectra
+  nethermind: nethermindeth/nethermind:pectra-fix
   reth: ethpandaops/reth:main-ed16643
 
 
@@ -35,3 +35,4 @@ default_tooling_images:
   dora: ethpandaops/dora:electra-support-latest
   dugtrio: ethpandaops/dugtrio:latest
   ethereum_genesis_generator: ethpandaops/ethereum-genesis-generator:3.3.5
+  tracoor: ethpandaops/tracoor:latest
