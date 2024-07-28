@@ -12,7 +12,7 @@ default_ethereum_client_images:
   geth: ethpandaops/geth:lightclient-prague-devnet-1-37c4b03
   erigon: ethpandaops/erigon:main-6231a93
   ethereumjs: ethpandaops/ethereumjs:master-b543d2f
-  nethermind: nethermindeth/nethermind:pectra
+  nethermind: nethermindeth/nethermind:pectra-fix
   reth: ethpandaops/reth:main-ed16643
 
 

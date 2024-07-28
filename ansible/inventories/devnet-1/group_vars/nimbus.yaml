@@ -22,7 +22,7 @@ validator_bls_sync_files:
 ethereum_node_cl: nimbus
 
 # Checkpointsync 
-nimbus_checkpoint_autoremove_enabled: true
+nimbus_checkpoint_autoremove_enabled: false
 
 # role: ethpandaops.general.nimbus
 nimbus_container_name: beacon
