@@ -8,25 +8,99 @@ teku-geth-001:
       rpcEndpoint: http://geth-teku-001:8545
       beaconEndpoint: http://teku-geth-001:5052
     checkpointSync:
-      enabled: false
+      enabled: true
       addresses:
-        pectra-devnet-1: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.dencun-devnets.node_ingress.combined}>@bn.bootnode-1.srv.pectra-devnet-1.ethpandaops.io
+        pectra-devnet-1: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.dencun-devnets.node_ingress.combined}>@bn.lighthouse-geth-1.pectra-devnet-1.ethpandaops.io
     clientArgs:
       networks:
         pectra-devnet-1:
           execution:
             besu:
+              - --genesis-file=/data/network-config/besu.json
+              - --bootnodes=enode://0ae72044843b52ebd130cd848b627c83f5506e406f9419f3439276e4580fb03158d6c3868772ad487a798c1bd24692cfa751e50589c6bc8935cbc0342b1d8e81@68.183.223.12:30303?discport=30303
+              - --rpc-http-api=ADMIN,DEBUG,ETH,MINER,NET,TRACE,TXPOOL,WEB3
+              - --sync-mode=FULL
+              - --data-storage-format=BONSAI
+              - --bonsai-limit-trie-logs-enabled=false
+              - --ethstats=k8s-teku-geth-001:<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.ethstats_secret}>@ethstats.pectra-devnet-1.ethpandaops.io:443
             nethermind:
+              - --Init.ChainSpecPath=/data/network-config/chainspec.json
+              - --JsonRpc.EnabledModules=Eth,Subscribe,Trace,TxPool,Web3,Personal,Proof,Net,Parity,Health,Rpc,Debug,Admin
+              - --Discovery.Bootnodes=enode://0ae72044843b52ebd130cd848b627c83f5506e406f9419f3439276e4580fb03158d6c3868772ad487a798c1bd24692cfa751e50589c6bc8935cbc0342b1d8e81@68.183.223.12:30303?discport=30303
+              - --Init.IsMining=false
+              - --Pruning.Mode=None
+              - --config=none.cfg
+              - --EthStats.Enabled=true
+              - --EthStats.Name=k8s-teku-geth-001
+              - --EthStats.Secret=<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.ethstats_secret}>
+              - --EthStats.Server=wss://ethstats.pectra-devnet-1.ethpandaops.io/api/
+              - --log=INFO
             geth:
+              - --http.api=eth,net,web3,debug,admin
+              - --http.vhosts=*
+              - --state.scheme=path
+              - --networkid=7011893081
+              - --syncmode=full
+              - --bootnodes=enode://0ae72044843b52ebd130cd848b627c83f5506e406f9419f3439276e4580fb03158d6c3868772ad487a798c1bd24692cfa751e50589c6bc8935cbc0342b1d8e81@68.183.223.12:30303?discport=30303
+              - --ethstats=k8s-teku-geth-001:<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.ethstats_secret}>@ethstats.pectra-devnet-1.ethpandaops.io
               - --rpc.allow-unprotected-txs
             erigon:
+              - --networkid=7011893081
+              - --bootnodes=enode://0ae72044843b52ebd130cd848b627c83f5506e406f9419f3439276e4580fb03158d6c3868772ad487a798c1bd24692cfa751e50589c6bc8935cbc0342b1d8e81@68.183.223.12:30303?discport=30303
+              - --http.api=eth,erigon,engine,web3,net,debug,trace,txpool,admin
+              - --http.vhosts=*
+              - --ws
+              - --prune=htc
+              - --db.size.limit=8TB
             ethereumjs:
+              - --gethGenesis=/data/network-config/genesis.json
+              - --bootnodes=enode://0ae72044843b52ebd130cd848b627c83f5506e406f9419f3439276e4580fb03158d6c3868772ad487a798c1bd24692cfa751e50589c6bc8935cbc0342b1d8e81@68.183.223.12:30303?discport=30303
+              - --maxPeers=75
+              - --isSingleNode=true
           consensus:
             lodestar:
+              - --paramsFile=/data/network-config/config.yaml
+              - --genesisStateFile=/data/network-config/genesis.ssz
+              - --bootnodes=enr:-Iq4QFPkzIAS0wU0AUWyT_KXoiOQQb4wt88pWfPmK6BaOhqqerZ9jZcJCxxzkgyv9WMYjdhi6iS-NC3ZWUNT5wxSKJOGAZDfBdvzgmlkgnY0gmlwhES33wyJc2VjcDI1NmsxoQJJ3h8aUO3GJHv-bdvHtsQZ2OEisutelYfGjXO4lSg8BYN1ZHCCIzI,enr:-LK4QHHXm8bAIAo0xQmRMrtI9zAoX80VcKWLa3F40EZiGx73D0bPFwPi2t92BYSlN-DSufN_hFry5VkUUQX5gEG_h05Ah2F0dG5ldHOIYAAAAAAAAACEZXRoMpDjaVByYHEQZf__________gmlkgnY0gmlwhES33wyJc2VjcDI1NmsxoQMuzDtQAjqJes0flqDlk-myP2PtI-_ikfak94iwJkNBe4N0Y3CCIyiDdWRwgiMo
+              - --rest.namespace="*"
+              - --network.connectToDiscv5Bootnodes
+              - --nat=true
+              - --chain.persistInvalidSszObjects=true
+              - --forceCheckpointSync=true
             teku:
+              - --network=/data/network-config/config.yaml
+              - --genesis-state=/data/network-config/genesis.ssz
+              - --p2p-discovery-bootnodes=enr:-Iq4QFPkzIAS0wU0AUWyT_KXoiOQQb4wt88pWfPmK6BaOhqqerZ9jZcJCxxzkgyv9WMYjdhi6iS-NC3ZWUNT5wxSKJOGAZDfBdvzgmlkgnY0gmlwhES33wyJc2VjcDI1NmsxoQJJ3h8aUO3GJHv-bdvHtsQZ2OEisutelYfGjXO4lSg8BYN1ZHCCIzI,enr:-LK4QHHXm8bAIAo0xQmRMrtI9zAoX80VcKWLa3F40EZiGx73D0bPFwPi2t92BYSlN-DSufN_hFry5VkUUQX5gEG_h05Ah2F0dG5ldHOIYAAAAAAAAACEZXRoMpDjaVByYHEQZf__________gmlkgnY0gmlwhES33wyJc2VjcDI1NmsxoQMuzDtQAjqJes0flqDlk-myP2PtI-_ikfak94iwJkNBe4N0Y3CCIyiDdWRwgiMo
+              - --p2p-peer-upper-bound=100
+              - --data-storage-non-canonical-blocks-enabled=true
+              - --data-storage-mode=PRUNE
+              - --logging=info
+              - --Xlog-include-p2p-warnings-enabled
+              - --metrics-block-timing-tracking-enabled
+              - --ignore-weak-subjectivity-period-enabled
             prysm:
+              - --grpc-gateway-corsdomain=*
+              - --chain-config-file=/data/network-config/config.yaml
+              - --contract-deployment-block=0
+              - --min-sync-peers=1
+              - --pprof
+              - --enable-debug-rpc-endpoints
+              - --verbosity=debug
+              - --subscribe-all-subnets
+              - --save-full-execution-payloads
+              - --bootstrap-node=enr:-Iq4QFPkzIAS0wU0AUWyT_KXoiOQQb4wt88pWfPmK6BaOhqqerZ9jZcJCxxzkgyv9WMYjdhi6iS-NC3ZWUNT5wxSKJOGAZDfBdvzgmlkgnY0gmlwhES33wyJc2VjcDI1NmsxoQJJ3h8aUO3GJHv-bdvHtsQZ2OEisutelYfGjXO4lSg8BYN1ZHCCIzI
+              - --bootstrap-node=enr:-LK4QHHXm8bAIAo0xQmRMrtI9zAoX80VcKWLa3F40EZiGx73D0bPFwPi2t92BYSlN-DSufN_hFry5VkUUQX5gEG_h05Ah2F0dG5ldHOIYAAAAAAAAACEZXRoMpDjaVByYHEQZf__________gmlkgnY0gmlwhES33wyJc2VjcDI1NmsxoQMuzDtQAjqJes0flqDlk-myP2PtI-_ikfak94iwJkNBe4N0Y3CCIyiDdWRwgiMo
             lighthouse:
+              - --testnet-dir=/data/network-config
+              - --boot-nodes=enr:-Iq4QFPkzIAS0wU0AUWyT_KXoiOQQb4wt88pWfPmK6BaOhqqerZ9jZcJCxxzkgyv9WMYjdhi6iS-NC3ZWUNT5wxSKJOGAZDfBdvzgmlkgnY0gmlwhES33wyJc2VjcDI1NmsxoQJJ3h8aUO3GJHv-bdvHtsQZ2OEisutelYfGjXO4lSg8BYN1ZHCCIzI,enr:-LK4QHHXm8bAIAo0xQmRMrtI9zAoX80VcKWLa3F40EZiGx73D0bPFwPi2t92BYSlN-DSufN_hFry5VkUUQX5gEG_h05Ah2F0dG5ldHOIYAAAAAAAAACEZXRoMpDjaVByYHEQZf__________gmlkgnY0gmlwhES33wyJc2VjcDI1NmsxoQMuzDtQAjqJes0flqDlk-myP2PtI-_ikfak94iwJkNBe4N0Y3CCIyiDdWRwgiMo
             nimbus:
+              - --network=/data/network-config
+              - --validator-monitor-auto=false
+              - --doppelganger-detection=off
+              - --log-level=DEBUG;INFO:gossip_eth2,attpool,libp2p,gossipsub,pubsubpeer,pubsub,switch,networking,sync,dialer,identify,syncman,connmanager,beacnde,lightcl,requman,gossip_lc,clearance,lpstream,mplexchannel,nodes-verification,tcptransport,chaindag,noise,eth,p2p,discv5,muxedupgrade,multistream,connection,secure,fee_recipient,mplex,syncpool,multiaddress,peer_proto;WARN:message_router
+              - --light-client-data-serve=false
+              - --bootstrap-node=enr:-Iq4QFPkzIAS0wU0AUWyT_KXoiOQQb4wt88pWfPmK6BaOhqqerZ9jZcJCxxzkgyv9WMYjdhi6iS-NC3ZWUNT5wxSKJOGAZDfBdvzgmlkgnY0gmlwhES33wyJc2VjcDI1NmsxoQJJ3h8aUO3GJHv-bdvHtsQZ2OEisutelYfGjXO4lSg8BYN1ZHCCIzI
+              - --bootstrap-node=enr:-LK4QHHXm8bAIAo0xQmRMrtI9zAoX80VcKWLa3F40EZiGx73D0bPFwPi2t92BYSlN-DSufN_hFry5VkUUQX5gEG_h05Ah2F0dG5ldHOIYAAAAAAAAACEZXRoMpDjaVByYHEQZf__________gmlkgnY0gmlwhES33wyJc2VjcDI1NmsxoQMuzDtQAjqJes0flqDlk-myP2PtI-_ikfak94iwJkNBe4N0Y3CCIyiDdWRwgiMo
 
 
   geth:
