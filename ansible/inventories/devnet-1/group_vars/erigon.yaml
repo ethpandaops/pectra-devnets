@@ -23,8 +23,7 @@ erigon_container_command_extra_args:
   - --prune=htc
   - --db.size.limit=8TB
 
-# CHANGE FOR SHADOWFORK
-erigon_init_custom_network: false
+erigon_init_custom_network: true
 erigon_init_custom_network_genesis_file: "{{ eth_testnet_config_dir }}/genesis.json"
 
 prometheus_config: |
