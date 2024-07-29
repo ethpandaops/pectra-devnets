@@ -27,7 +27,7 @@ teku_container_volumes:
   - "{{ eth_testnet_config_dir }}:/network-config:ro"
 teku_container_command_extra_args:
   - --network=/network-config/config.yaml
-  - --initial-state=/network-config/genesis.ssz
+#  - --initial-state=/network-config/genesis.ssz
   - --p2p-peer-upper-bound=100
   - --data-storage-non-canonical-blocks-enabled=true
   - --data-storage-mode=PRUNE
@@ -35,7 +35,7 @@ teku_container_command_extra_args:
   - --Xlog-include-p2p-warnings-enabled
   - --metrics-block-timing-tracking-enabled
   # - --initial-state={{ checkpoint_sync_url }} # Need to remove genesis.ssz if using this
-
+  - --ignore-weak-subjectivity-period-enabled
 # role: ethpandaops.general.geth
 geth_container_name: execution
 geth_container_image: "{{ default_ethereum_client_images.geth }}"
