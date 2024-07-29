@@ -14,13 +14,14 @@ tracoor-single:
       cpu: 1000m
       memory: 2Gi
   ingress:
-    enabled: true
-    className: ingress-nginx-public
-    hosts:
-      - host: tracoor.pectra-devnet-1.ethpandaops.io
-        paths:
-          - path: /
-            pathType: Prefix
+    http:
+      enabled: true
+      className: ingress-nginx-public
+      hosts:
+        - host: tracoor.pectra-devnet-1.ethpandaops.io
+          paths:
+            - path: /
+              pathType: Prefix
 
   config:
     shared:
