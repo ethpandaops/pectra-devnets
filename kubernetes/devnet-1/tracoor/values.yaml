@@ -4,7 +4,7 @@ tracoor-single:
   fullnameOverride: "tracoor"
   image:
     repository: ethpandaops/tracoor
-    tag: latest
+    tag: 0.0.1-pectra-fix
     pullPolicy: Always
   resources:
     requests:
