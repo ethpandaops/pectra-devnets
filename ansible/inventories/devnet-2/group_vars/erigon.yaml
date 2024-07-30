@@ -20,11 +20,11 @@ erigon_container_command_extra_args:
   - --http.api=eth,erigon,engine,web3,net,debug,trace,txpool,admin
   - --http.vhosts=*
   - --ws
-  - --prune=htc
-  - --db.size.limit=8TB
+  - --db.size.limit=200GB
 
 erigon_init_custom_network: true
 erigon_init_custom_network_genesis_file: "{{ eth_testnet_config_dir }}/genesis.json"
+erigon_init_autoremove_enabled: false
 
 prometheus_config: |
   global:
