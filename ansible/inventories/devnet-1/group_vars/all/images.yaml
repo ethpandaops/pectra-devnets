@@ -35,4 +35,4 @@ default_tooling_images:
   dora: ethpandaops/dora:electra-support-latest
   dugtrio: ethpandaops/dugtrio:latest
   ethereum_genesis_generator: ethpandaops/ethereum-genesis-generator:3.3.5
-  tracoor: ethpandaops/tracoor:0.0.1-pectra-fix
+  tracoor: ethpandaops/tracoor:0.0.2-pectra-fix
