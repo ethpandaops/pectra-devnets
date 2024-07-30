@@ -4,7 +4,7 @@ tracoor-single:
   fullnameOverride: "tracoor"
   image:
     repository: ethpandaops/tracoor
-    tag: 0.0.2-pectra-fix
+    tag: 0.0.2-pectra-fix-debian
     pullPolicy: IfNotPresent
   resources:
     requests:
@@ -13,6 +13,9 @@ tracoor-single:
     limits:
       cpu: 1000m
       memory: 2Gi
+  persistence:
+    enabled: true
+    size: 100Gi
   ingress:
     http:
       enabled: true
@@ -48,9 +51,9 @@ tracoor-single:
       services:
         indexer:
           retention:
-            beaconStates: 30m
-            executionBlockTraces: 30m
-            beaconBlocks: 30m
+            beaconStates: 24h
+            executionBlockTraces: 24h
+            beaconBlocks: 24h
 
     agents:
       - name: bootnode-1
