@@ -18,6 +18,12 @@ ethereumjs_container_env:
   VIRTUAL_HOST: "{{ ethereum_node_rcp_hostname }}"
   VIRTUAL_PORT: "{{ ethereum_node_el_ports_http_rpc | string }}"
   LETSENCRYPT_HOST: "{{ ethereum_node_rcp_hostname }}"
+ethereumjs_container_ports_ipv4:
+  - "127.0.0.1:{{ ethereumjs_ports_http_rpc }}:{{ ethereumjs_ports_http_rpc }}"
+  - "127.0.0.1:{{ ethereumjs_ports_engine }}:{{ ethereumjs_ports_engine }}"
+  - "0.0.0.0:{{ ethereumjs_ports_p2p }}:{{ ethereumjs_ports_p2p }}"
+  - "0.0.0.0:{{ ethereumjs_ports_p2p }}:{{ ethereumjs_ports_p2p }}/udp"
+  - "127.0.0.1:{{ethereum_node_el_ports_metrics}}:{{ethereum_node_el_ports_metrics}}"
 ethereumjs_container_volumes:
   - "{{ ethereumjs_datadir }}:/data"
   - "{{ ethereumjs_auth_jwt_path }}:/execution-auth.jwt:ro"
@@ -27,6 +33,8 @@ ethereumjs_container_command_extra_args:
   - --bootnodes={{ ethereum_el_bootnodes | join(',') }}
   - --maxPeers=75
   - --isSingleNode=true
+  - --prometheusPort={{ethereum_node_el_ports_metrics}}
+  - --prometheus
 prometheus_config: |
   global:
     scrape_interval: 30s
