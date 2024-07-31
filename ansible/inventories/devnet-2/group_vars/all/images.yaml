@@ -13,7 +13,7 @@ default_ethereum_client_images:
   erigon: parithoshj/erigon:fix-init-datadir
   ethereumjs: ethpandaops/ethereumjs:master-b543d2f
   nethermind: nethermindeth/nethermind:pectra-fix
-  reth: ethpandaops/reth:main-ed16643
+  reth: ethpandaops/reth:onbjerg-devnet-2-dedf2ab
 
 
 default_tooling_images:
