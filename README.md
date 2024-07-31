@@ -126,20 +126,20 @@ from the [ansible/](ansible/) directory to clean up the network-configs and vali
 * To get the IP addresses of the nodes, run `terraform output` from the [terraform/devnet-2/](terraform/devnet-2/) directory.
 * To get the validator ranges run
 ```shell
-curl -s https://bootnode-1.devnet-2.ethpandaops.io/meta/api/v1/validator-ranges.json
+curl -s https://bootnode-1.pectra-devnet-2.ethpandaops.io/meta/api/v1/validator-ranges.json
 ```
 * To get which validator proposed a specific block run
 ```shell
-ethdo --connection=https://user:password@bn.lighthouse-nethermind-1.devnet-2.ethpandaops.io block info --blockid 100 --json | jq -r .message.proposer_index | ./whose_validator.zsh
+ethdo --connection=https://user:password@bn.lighthouse-nethermind-1.pectra-devnet-2.ethpandaops.io block info --blockid 100 --json | jq -r .message.proposer_index | ./whose_validator.zsh
 ```
 from the [ansible/](ansible/) directory.
 * Getting execution layer client enodes
 ```shell
-curl -s https://config.devnet-2.ethpandaops.io/api/v1/nodes/inventory | jq -r '.ethereum_pairs[] | .execution.enode'
+curl -s https://config.pectra-devnet-2.ethpandaops.io/api/v1/nodes/inventory | jq -r '.ethereum_pairs[] | .execution.enode'
 ```
 * Getting conseus layer client ENRs
 ```shell
-curl -s https://config.devnet-2.ethpandaops.io/api/v1/nodes/inventory | jq -r '.ethereum_pairs[] | .consensus.enr'
+curl -s https://config.pectra-devnet-2.ethpandaops.io/api/v1/nodes/inventory | jq -r '.ethereum_pairs[] | .consensus.enr'
 ```
 * Update all sops files
 ```shell
