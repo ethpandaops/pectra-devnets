@@ -30,6 +30,7 @@ tracoor-single:
       indexer:
         address: localhost:8081
       store:
+        type: s3
         config:
           region: us-east-1
           bucket_name: pectra-devnet-1
