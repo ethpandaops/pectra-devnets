@@ -1,10 +1,9 @@
 # Ansible managed. Don't change this file manually. Template info: /vendor/collections/ansible_collections/ethpandaops/general/roles/generate_kubernetes_config/templates/tracoor.yaml.j2
-
 tracoor-single:
   fullnameOverride: "tracoor"
   image:
     repository: ethpandaops/tracoor
-    tag: 0.0.2-pectra-fix-debian
+    tag: 0.0.21-debian
     pullPolicy: IfNotPresent
   resources:
     requests:
@@ -13,9 +12,6 @@ tracoor-single:
     limits:
       cpu: 1000m
       memory: 2Gi
-  persistence:
-    enabled: true
-    size: 100Gi
   ingress:
     http:
       enabled: true
@@ -25,6 +21,10 @@ tracoor-single:
           paths:
             - path: /
               pathType: Prefix
+
+  persistence:
+    enabled: true
+    size: 20Gi
 
   config:
     shared:
