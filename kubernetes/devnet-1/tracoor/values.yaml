@@ -34,7 +34,7 @@ tracoor-single:
         config:
           region: us-east-1
           bucket_name: pectra-devnet-1
-          endpoint: https://<path:/secrets/cloudflare/cloudflare.enc.yaml#account_ids | jsonPath {.ethdevops}>.r2.cloudflarestorage.com/ethpandaops-devnet-dumpster
+          endpoint: https://<path:/secrets/services/services.enc.yaml#cloudflare | jsonPath {.account_ids.ethdevops}>.r2.cloudflarestorage.com/ethpandaops-devnet-dumpster
           prefer_urls: true
           access_key: <path:/secrets/services/services.enc.yaml#tracoor | jsonPath {.r2.devnets.access_key_id}>
           access_secret: <path:/secrets/services/services.enc.yaml#tracoor | jsonPath {.r2.devnets.secret_access_key}>
