@@ -1,10 +1,9 @@
 # Ansible managed. Don't change this file manually. Template info: /vendor/collections/ansible_collections/ethpandaops/general/roles/generate_kubernetes_config/templates/tracoor.yaml.j2
-
 tracoor-single:
   fullnameOverride: "tracoor"
   image:
     repository: ethpandaops/tracoor
-    tag: 0.0.2-pectra-fix-debian
+    tag: 0.0.21-debian
     pullPolicy: IfNotPresent
   resources:
     requests:
@@ -13,9 +12,6 @@ tracoor-single:
     limits:
       cpu: 1000m
       memory: 2Gi
-  persistence:
-    enabled: true
-    size: 100Gi
   ingress:
     http:
       enabled: true
@@ -25,6 +21,10 @@ tracoor-single:
           paths:
             - path: /
               pathType: Prefix
+
+  persistence:
+    enabled: true
+    size: 20Gi
 
   config:
     shared:
@@ -36,7 +36,7 @@ tracoor-single:
         type: s3
         config:
           region: us-east-1
-          bucket_name: pectra-devnet-2
+          bucket_name: pectra
           endpoint: https://<path:/secrets/services/services.enc.yaml#cloudflare | jsonPath {.account_ids.ethdevops}>.r2.cloudflarestorage.com/ethpandaops-devnet-dumpster
           prefer_urls: true
           access_key: <path:/secrets/services/services.enc.yaml#tracoor | jsonPath {.r2.devnets.access_key_id}>
