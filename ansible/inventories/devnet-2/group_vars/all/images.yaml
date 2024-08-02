@@ -1,7 +1,7 @@
 default_ethereum_client_images:
 ### Consensus layer clients
   lighthouse: ethpandaops/lighthouse:electra-devnet-1-ba28217
-  lodestar: ethpandaops/lodestar:electra-fork-68cefff
+  lodestar: ethpandaops/lodestar:electra-fork-rebasejul30
   nimbus: ethpandaops/nimbus-eth2:unstable-ae0a148
   prysm: ethpandaops/prysm-beacon-chain:develop-4d823ac
   prysm_validator: ethpandaops/prysm-validator:develop-4d823ac
@@ -13,7 +13,7 @@ default_ethereum_client_images:
   erigon: parithoshj/erigon:fix-init-datadir
   ethereumjs: ethpandaops/ethereumjs:master-b543d2f
   nethermind: nethermindeth/nethermind:pectra-fix
-  reth: ethpandaops/reth:onbjerg-devnet-2-2ad0de1
+  reth: ethpandaops/reth:onbjerg-devnet-2-36bc13d
 
 
 default_tooling_images:
