@@ -56,9 +56,9 @@ tracoor-single:
       services:
         indexer:
           retention:
-            beaconStates: 168h
-            executionBlockTraces: 168h
-            beaconBlocks: 168h
+            beaconStates: 72h
+            executionBlockTraces: 72h
+            beaconBlocks: 72h
 
     agents:
       - name: bootnode-1
