@@ -35,4 +35,7 @@ default_tooling_images:
   dora: ethpandaops/dora:electra-support-latest
   dugtrio: ethpandaops/dugtrio:latest
   ethereum_genesis_generator: ethpandaops/ethereum-genesis-generator:3.3.5
-  tracoor: ethpandaops/tracoor:0.0.21-debian
+  tracoor: ethpandaops/tracoor:0.0.22-debian
+  ncli: status-im/nimbus-eth2:unstable
+  lcli: sigp/lighthouse:electra-devnet-1
+  zcli: electra

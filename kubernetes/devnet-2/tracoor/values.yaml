@@ -56,10 +56,9 @@ tracoor-single:
       services:
         indexer:
           retention:
-            beaconStates: 72h
-            executionBlockTraces: 72h
-            beaconBlocks: 72h
-
+            beaconStates: 100h
+            executionBlockTraces: 100h
+            beaconBlocks: 100h
       ethereum:
         config:
           repository: ethpandaops/pectra-devnets
