@@ -3,7 +3,7 @@ tracoor-single:
   fullnameOverride: "tracoor"
   image:
     repository: ethpandaops/tracoor
-    tag: 0.0.21-debian
+    tag: 0.0.22-debian
     pullPolicy: IfNotPresent
   resources:
     requests:
@@ -56,9 +56,24 @@ tracoor-single:
       services:
         indexer:
           retention:
-            beaconStates: 168h
-            executionBlockTraces: 168h
-            beaconBlocks: 168h
+            beaconStates: 72h
+            executionBlockTraces: 72h
+            beaconBlocks: 72h
+
+      ethereum:
+        config:
+          repository: ethpandaops/pectra-devnets
+          branch: master
+          path: network-configs/devnet-2/metadata
+        tools:
+          ncli:
+            repository: status-im/nimbus-eth2
+            branch: unstable
+          lcli:
+            repository: sigp/lighthouse
+            branch: electra-devnet-1
+          zcli:
+            fork: electra
 
     agents:
       - name: bootnode-1
