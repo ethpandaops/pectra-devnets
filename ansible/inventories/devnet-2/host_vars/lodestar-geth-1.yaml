@@ -2,7 +2,7 @@ lodestar_container_entrypoint:
   - node
 
 lodestar_inspect_port: 9229
-
+ethereum_node_cl_checkpoint_sync_enabled: false
 
 lodestar_container_ports:
   - "127.0.0.1:{{ lodestar_ports_http_beacon }}:{{ lodestar_ports_http_beacon }}"
