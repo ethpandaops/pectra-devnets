@@ -82,4 +82,4 @@ blockscout:
     fullnameOverride: blockscout-postgresql
     primary:
       persistence:
-        size: 100Gi
+        size: "100Gi"
