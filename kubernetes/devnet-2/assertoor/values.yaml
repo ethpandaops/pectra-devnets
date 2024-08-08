@@ -6,7 +6,7 @@ assertoor:
   image:
     repository: ethpandaops/assertoor
     tag: electra-support
-    pullPolicy: Always
+    pullPolicy: IfNotPresent
   resources:
     requests:
       cpu: 64m
@@ -15,7 +15,7 @@ assertoor:
       cpu: 500m
       memory: 512Mi
 
-  ingess:
+  ingress:
     enabled: true
     className: ingress-nginx-public
     annotations:
@@ -25,20 +25,17 @@ assertoor:
         paths:
           - path: /
             pathType: Prefix
-            backend:
-              service:
-                name: assertoor
-                port:
-                  number: 8082
-      # - host: assertoor-admin.pectra-devnet-2.ethpandaops.io
-      #   paths:
-      #     - path: /
-      #       pathType: Prefix
-      #       backend:
-      #         service:
-      #           name: assertoor
-      #           port:
-      #             number: 8080
+
+  # ingressAdmin:
+  #   enabled: true
+  #   className: ingress-nginx-public
+  #   annotations:
+  #     cert-manager.io/cluster-issuer: letsencrypt-production
+  #   hosts:
+  #     - host: assertoor-admin.pectra-devnet-2.ethpandaops.io
+  #       paths:
+  #         - path: /
+  #           pathType: Prefix
 
   endpoints:
     - name:  bootnode-1
@@ -152,6 +149,6 @@ assertoor:
     - name:  teku-reth-1
       executionUrl: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@rpc.teku-reth-1.pectra-devnet-2.ethpandaops.io
       consensusUrl: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.teku-reth-1.pectra-devnet-2.ethpandaops.io
-  validatorNamesInventory: https://config.pectra-devnet-2.ethpandaops.io/api/v1/nodes/validator-ranges
 
+  validatorNamesInventory: https://config.pectra-devnet-2.ethpandaops.io/api/v1/nodes/validator-ranges
   assertoorTests: []
