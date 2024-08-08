@@ -5,7 +5,7 @@ assertoor:
 
   image:
     repository: ethpandaops/assertoor
-    tag: latest
+    tag: electra-support
     pullPolicy: Always
   resources:
     requests:
