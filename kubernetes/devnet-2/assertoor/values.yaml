@@ -21,21 +21,21 @@ assertoor:
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-production
     hosts:
-      - host: assertoor-admin.pectra-devnet-2.ethpandaops.io
+      - host: assertoor.pectra-devnet-2.ethpandaops.io
         paths:
           - path: /
             pathType: Prefix
 
-  # ingressAdmin:
-  #   enabled: true
-  #   className: ingress-nginx-public
-  #   annotations:
-  #     cert-manager.io/cluster-issuer: letsencrypt-production
-  #   hosts:
-  #     - host: assertoor-admin.pectra-devnet-2.ethpandaops.io
-  #       paths:
-  #         - path: /
-  #           pathType: Prefix
+  ingressAdmin:
+    enabled: true
+    className: ingress-nginx-public
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-production
+    hosts:
+      - host: assertoor-admin.pectra-devnet-2.ethpandaops.io
+        paths:
+          - path: /
+            pathType: Prefix
 
   endpoints:
     - name:  bootnode-1

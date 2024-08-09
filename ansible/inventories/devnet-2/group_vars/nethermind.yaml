@@ -35,11 +35,15 @@ nethermind_container_command_extra_args:
   - --Init.IsMining=false
   - --Pruning.Mode=None
   - --config=none.cfg
-  - --EthStats.Enabled=true
-  - --EthStats.Name={{ inventory_hostname }}
-  - --EthStats.Secret={{ ethstats_secret }}
-  - --EthStats.Server=wss://{{ ethstats_url }}/api/
-  - --log=DEBUG
+  # - --EthStats.Enabled=true
+  # - --EthStats.Name={{ inventory_hostname }}
+  # - --EthStats.Secret={{ ethstats_secret }}
+  # - --EthStats.Server=wss://{{ ethstats_url }}/api/
+  - --log=INFO
+  - --Seq.MinLevel=Info
+  - --Seq.ServerUrl={{ nethermind_seq_server }}
+  - --Seq.ApiKey={{ nethermind_seq_api_key }}
+  - --Metrics.PushGatewayUrl={{ nethermind_push_gateway }}
 
 nethermind_container_pull: true
 
