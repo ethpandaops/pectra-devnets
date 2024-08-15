@@ -45,8 +45,7 @@ dora:
     priority: -1
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.grandine-besu-1.pectra-devnet-2.ethpandaops.io
     name: grandine-besu-1
-    priority: 2
-    archive: true
+    priority: -1
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.grandine-erigon-1.pectra-devnet-2.ethpandaops.io
     name: grandine-erigon-1
     priority: -1
@@ -55,8 +54,7 @@ dora:
     priority: -1
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.grandine-geth-1.pectra-devnet-2.ethpandaops.io
     name: grandine-geth-1
-    priority: 2
-    archive: true
+    priority: -1
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.grandine-nethermind-1.pectra-devnet-2.ethpandaops.io
     name: grandine-nethermind-1
     priority: -1
