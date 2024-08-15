@@ -56,23 +56,9 @@ tracoor-single:
       services:
         indexer:
           retention:
-            beaconStates: 100h
-            executionBlockTraces: 100h
-            beaconBlocks: 100h
-      ethereum:
-        config:
-          repository: ethpandaops/pectra-devnets
-          branch: master
-          path: network-configs/devnet-2/metadata
-        tools:
-          ncli:
-            repository: status-im/nimbus-eth2
-            branch: unstable
-          lcli:
-            repository: sigp/lighthouse
-            branch: electra-devnet-1
-          zcli:
-            fork: electra
+            beaconStates: 168h
+            executionBlockTraces: 168h
+            beaconBlocks: 168h
 
     agents:
       - name: bootnode-1
