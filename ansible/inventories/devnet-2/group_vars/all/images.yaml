@@ -3,8 +3,8 @@ default_ethereum_client_images:
   lighthouse: ethpandaops/lighthouse:electra-devnet-1-51d51f5
   lodestar: ethpandaops/lodestar:electra-fork-rebasejul30-7db51a1
   nimbus: ethpandaops/nimbus-eth2:unstable-f5d360d
-  prysm: ethpandaops/prysm-beacon-chain:develop-4d823ac
-  prysm_validator: ethpandaops/prysm-validator:develop-4d823ac
+  prysm: ethpandaops/prysm-beacon-chain:develop-22f6f78
+  prysm_validator: ethpandaops/prysm-validator:develop-22f6f78
   teku: ethpandaops/teku:master-2d2d17b
   grandine: ethpandaops/grandine:electra-d61707d
 ### Execution layer clients
