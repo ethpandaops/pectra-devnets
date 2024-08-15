@@ -7,11 +7,11 @@ tracoor-single:
     pullPolicy: IfNotPresent
   resources:
     requests:
-      cpu: 500m
-      memory: 1Gi
-    limits:
       cpu: 1000m
       memory: 2Gi
+    limits:
+      cpu: 2000m
+      memory: 4Gi
   ingress:
     http:
       enabled: true
@@ -56,9 +56,23 @@ tracoor-single:
       services:
         indexer:
           retention:
-            beaconStates: 168h
-            executionBlockTraces: 168h
-            beaconBlocks: 168h
+            beaconStates: 100h
+            executionBlockTraces: 100h
+            beaconBlocks: 100h
+      ethereum:
+        config:
+          repository: ethpandaops/pectra-devnets
+          branch: master
+          path: network-configs/devnet-2/metadata
+        tools:
+          ncli:
+            repository: status-im/nimbus-eth2
+            branch: unstable
+          lcli:
+            repository: sigp/lighthouse
+            branch: electra-devnet-1
+          zcli:
+            fork: electra
 
     agents:
       - name: bootnode-1

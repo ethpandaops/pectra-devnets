@@ -95,6 +95,7 @@ testnet-homepage:
         beaconRpcUrl: https://beacon.pectra-devnet-2.ethpandaops.io
         explorerUrl: https://explorer.pectra-devnet-2.ethpandaops.io
         forkmonUrl: https://forkmon.pectra-devnet-2.ethpandaops.io
+        assertoorUrl: https://assertoor.pectra-devnet-2.ethpandaops.io
         beaconexplorerUrl: "https://pectra-devnet-2.beaconcha.in"
         doraUrl: https://dora.pectra-devnet-2.ethpandaops.io
         checkpointSyncUrl: "https://checkpoint-sync.pectra-devnet-2.ethpandaops.io"
@@ -127,6 +128,8 @@ testnet-homepage:
         dataLookup: explorerUrl
       - name: "Dora the Explorer"
         dataLookup: doraUrl
+      - name: "Assertoor"
+        dataLookup: assertoorUrl
       - name: "Beaconchain explorer"
         dataLookup: "beaconexplorerUrl"
       - name: "Blobscan"

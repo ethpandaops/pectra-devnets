@@ -92,6 +92,7 @@ teku-geth-001:
               - --verbosity=debug
               - --subscribe-all-subnets
               - --save-full-execution-payloads
+              - --enable-experimental-backfill
               - --blob-save-fsync
               - --bootstrap-node=enr:-Iq4QOOkJD0qgHavhOOoYgWH1YVuDDTNutSfL1mr8uxT7SSkCa_qzADGsC4-761Fni-dC5Vw99AXTYC3FhXEz7rXVTaGAZEDPIUDgmlkgnY0gmlwhES3TDSJc2VjcDI1NmsxoQJJ3h8aUO3GJHv-bdvHtsQZ2OEisutelYfGjXO4lSg8BYN1ZHCCIzI
               - --bootstrap-node=enr:-LK4QHjpnl0IndDQIPPwx86lCwDCJKZMYwMVIDWQx4a7bIe9ejCQOzJZD1AGlJ7ixnKQ7fRVOF8tHFGOL-jfynU_ndEPh2F0dG5ldHOIAAAAAAAAADCEZXRoMpA-V8cdYEWHOf__________gmlkgnY0gmlwhES3TDSJc2VjcDI1NmsxoQMurKOrgb0FqbTRQvQJFPBGScdfdHeBmO5sdlYqlUb2MYN0Y3CCIyiDdWRwgiMo
