@@ -5,8 +5,8 @@ assertoor:
 
   image:
     repository: ethpandaops/assertoor
-    tag: electra-support
-    pullPolicy: IfNotPresent
+    tag: electra-support-latest
+    pullPolicy: Always
   resources:
     requests:
       cpu: 64m
@@ -151,4 +151,81 @@ assertoor:
       consensusUrl: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.teku-reth-1.pectra-devnet-2.ethpandaops.io
 
   validatorNamesInventory: https://config.pectra-devnet-2.ethpandaops.io/api/v1/nodes/validator-ranges
+  globalVariables:
+    walletPrivkey: "<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.assertoor_private_key}>"
+    clientPairNames:
+      - bootnode-1
+      - grandine-besu-1
+      - grandine-erigon-1
+      - grandine-ethereumjs-1
+      - grandine-geth-1
+      - grandine-nethermind-1
+      - grandine-reth-1
+      - lighthouse-besu-1
+      - lighthouse-erigon-1
+      - lighthouse-ethereumjs-1
+      - lighthouse-geth-1
+      - lighthouse-nethermind-1
+      - lighthouse-reth-1
+      - lodestar-besu-1
+      - lodestar-erigon-1
+      - lodestar-ethereumjs-1
+      - lodestar-geth-1
+      - lodestar-nethermind-1
+      - lodestar-reth-1
+      - nimbus-besu-1
+      - nimbus-erigon-1
+      - nimbus-ethereumjs-1
+      - nimbus-geth-1
+      - nimbus-nethermind-1
+      - nimbus-reth-1
+      - prysm-besu-1
+      - prysm-erigon-1
+      - prysm-ethereumjs-1
+      - prysm-geth-1
+      - prysm-nethermind-1
+      - prysm-reth-1
+      - teku-besu-1
+      - teku-erigon-1
+      - teku-ethereumjs-1
+      - teku-geth-1
+      - teku-nethermind-1
+      - teku-reth-1
+    validatorPairNames:
+      - grandine-besu-1
+      - grandine-erigon-1
+      - grandine-ethereumjs-1
+      - grandine-geth-1
+      - grandine-nethermind-1
+      - grandine-reth-1
+      - lighthouse-besu-1
+      - lighthouse-erigon-1
+      - lighthouse-ethereumjs-1
+      - lighthouse-nethermind-1
+      - lighthouse-reth-1
+      - lodestar-besu-1
+      - lodestar-erigon-1
+      - lodestar-ethereumjs-1
+      - lodestar-geth-1
+      - lodestar-nethermind-1
+      - lodestar-reth-1
+      - nimbus-besu-1
+      - nimbus-erigon-1
+      - nimbus-ethereumjs-1
+      - nimbus-geth-1
+      - nimbus-nethermind-1
+      - nimbus-reth-1
+      - prysm-besu-1
+      - prysm-erigon-1
+      - prysm-ethereumjs-1
+      - prysm-geth-1
+      - prysm-nethermind-1
+      - prysm-reth-1
+      - teku-besu-1
+      - teku-erigon-1
+      - teku-ethereumjs-1
+      - teku-geth-1
+      - teku-nethermind-1
+      - teku-reth-1
+
   assertoorTests: []
