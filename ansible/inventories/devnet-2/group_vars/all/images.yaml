@@ -8,7 +8,7 @@ default_ethereum_client_images:
   teku: ethpandaops/teku:master-2d2d17b
   grandine: ethpandaops/grandine:electra-d61707d
 ### Execution layer clients
-  besu: ethpandaops/besu:main-ec8429f
+  besu: ethpandaops/besu:main-8523ed0
   geth: ethpandaops/geth:lightclient-prague-devnet-1-37c4b03
   erigon: thorax/erigon:docker_pectra
   ethereumjs: ethpandaops/ethereumjs:master-f9788a1
