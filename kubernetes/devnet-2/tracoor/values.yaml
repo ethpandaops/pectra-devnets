@@ -3,7 +3,7 @@ tracoor-single:
   fullnameOverride: "tracoor"
   image:
     repository: ethpandaops/tracoor
-    tag: 0.0.1-index-debian
+    tag: 0.0.2-index-debian
     pullPolicy: IfNotPresent
   resources:
     requests:
