@@ -3,6 +3,7 @@ bootstrap_default_user_authorized_keys_github_team_el:
   - Giulio2002
   - yperbasis
   - somnathb1
+  - sudeepdino008
 
 # role: ethpandaops.general.ethereum_node
 ethereum_node_el: erigon
