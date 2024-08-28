@@ -6,7 +6,7 @@ checkpointz:
 
   image:
     repository: ethpandaops/checkpointz
-    tag: latest
+    tag: 0.0.5-electra-debian
     pullPolicy: Always
   resources:
     requests:
