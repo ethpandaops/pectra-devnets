@@ -3,7 +3,7 @@ default_ethereum_client_images:
   lighthouse: ethpandaops/lighthouse:electra-devnet-1-51d51f5
   lodestar: ethpandaops/lodestar:electra-fork-rebasejul30
   nimbus: ethpandaops/nimbus-eth2:unstable-f5d360d
-  prysm: gcr.io/prylabs-dev/prysm/beacon-chain:pectra-devnet-2-fix
+  prysm: gcr.io/prylabs-dev/prysm/beacon-chain:pectra-devnet-2-02-09-2024
   prysm_validator: ethpandaops/prysm-validator:develop-9e25026
   teku: ethpandaops/teku:master-2d2d17b
   grandine: ethpandaops/grandine:electra-d61707d
