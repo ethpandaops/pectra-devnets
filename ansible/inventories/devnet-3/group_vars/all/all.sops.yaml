@@ -12,24 +12,21 @@ secret_genesis_mnemonic: ENC[AES256_GCM,data:MILGlFDIsVhL/KLYehzZPbouuu1xNtZnJDx
 secret_mev_signingkey: ENC[AES256_GCM,data:7xug6L4MXETqWb7cmZS6BpAxBercs4mnJEg1NKp+LwZjCWl5pPAlTbfZASwXVBMo24Xoqi9/FbjeJML6WtaJ2Q==,iv:UGcVz81+wBNdb4cmkg9t4tSamqOaBUfWk6glh/6jUA8=,tag:W5Y00+vamA2tq2tEpAEhQA==,type:str]
 secret_mev_flood_private_key: ENC[AES256_GCM,data:2vVJ+N0XLer202Dc5J2HVjTEW6XUa+LpmhS/mo2brt+qzabraTSaD7d4P5rVqbovW+W5Je5FdDr4s7rScyn/RA==,iv:1qNfUVqJ9eebRmA4Ly59KFR9WmaQ8eelSvNLJAWCJ10=,tag:knDhqt3zak1OEsHi2nQ3oA==,type:str]
 secret_mev_flood_user_key: ENC[AES256_GCM,data:+XXSXUZdEKClV09Pfy/YWULlRl+5njMWcKOvPwuF6YUWHP2spLbJa8BnOimxxi6v7ioGMXEZW7XROVqqQiY4Aw==,iv:efkOBcrGeGJwT91SR+2wFI/fpnWASQeqjH3MJSIQBAA=,tag:KjJMfc7VgZkc8cy/IHrNNA==,type:str]
-secret_xatu_sentry:
-    server_address: ENC[AES256_GCM,data:U3A2QJfVr5/cj7sMbf1C8ztynZc9MS5K9tstLiNYRzhGtC9ZU6npoGL/xsV8y5Z8yg+Z,iv:fuAuq7J/ksqoOiUKMmL96DB5Qbx6HJs4qHVYMoAziOE=,tag:LhQAkrXq9QsWrUneltJXig==,type:str]
-    user: ENC[AES256_GCM,data:6Rl/PXMHqw==,iv:gHXmk6tie0m6usKO6v9kwBI3BW0Kjj04wuMiijQYVbg=,tag:qjLt4uzXQ2s3j+xvEGlYFQ==,type:str]
-    password: ENC[AES256_GCM,data:Qs3nM2MRodo/iUNB+w6ezZo5jIBpWp/vjuZmzDly55IYMobc,iv:qdGn0xmCaDu8W+y2cOh4tDaXz9eifsMc186OqaPFcAk=,tag:kiSkV9uWDoAtzSSWkHiZ/g==,type:str]
 tx_fuzz_blobs_privkey: ENC[AES256_GCM,data:XUiDF6puTOcP0veM5k2x9PmPSA2vP1FeoxSY7rn0bxLMB0b/DsB7y7bfsjBlgPIiL9f2AOSfsol8WWxd3zT6IA==,iv:qTk22/lpJyWFycayBupQp0sBaw2E2oq7peWypQh+0Ic=,tag:Eeqpv2JCfrsQd5ovOcpdVg==,type:str]
 tx_fuzz_txs_privkey: ENC[AES256_GCM,data:c52KtPzcxyZPj3vQ6tx0Di5uLFy5JoRUSZ5ZH/WEj7nqC7JTwRw3+bNPk8Y43wjE7caqRZ7eq0la0Bc42ydpew==,iv:gHO+ttqzJCbRBCUvmlsTVNQK6vpnGXamIag63HS/fas=,tag:1Qultc6tndFGDuSKjm/TVg==,type:str]
 goomy_private_key: ENC[AES256_GCM,data:+AwqAcOobrvR5gXxdABQki0rH41Ns8H3sJvVtQb5sh/596u1oDPq2bEh6Tpkfx8B+x4rSp+MRQi5wHwk9/Nqcw==,iv:Ibm4sLvU+tNk7EqaSPs/2CRLU1yLlNDgSWjR+uNPrvQ=,tag:oWbWW/jt9pPTWFcRoVTBsg==,type:str]
 nethermind_seq_api_key: ENC[AES256_GCM,data:fxY/OkvHP2w5r2WdAwwGkdPOG9Q=,iv:8RFbkiSRAdtEPHM5JvmQskIHybMuZdbzP1CV1rGp1DM=,tag:HWEciIkJpTbJhumao1CaHA==,type:str]
 nethermind_seq_server: ENC[AES256_GCM,data:tNMBXIUTbUfXP2quBzmzLHUk+/+Dg5wzIQ==,iv:N0JY8nvNIqVQuBvUZF+TtBhgrnwtzCEu40axAxTMwWc=,tag:zFCJZekruevCbvdDAlmakg==,type:str]
 nethermind_push_gateway: ENC[AES256_GCM,data:ZZVpFiiuIPhj1bttOr9pA03/wHS3lY+f6n/DD05PRLEK1Vtla0Pu3I9k1vjZdkkbMYFeLwy+dDUxk6UQeQTFpS430E68O51ers31YF9M4kOFiKVWM1q2cO705QKRjysd2Y52OI1UMk1G3yTJdmIim0cBvt1yZafso05dIZa1Thi+cYQNg0Z6re3QU53GMzbSfg==,iv:TwKc357lNh4ICSQBR/0QbBJrVCZuTOI+1wWXEoVT2Ys=,tag:Hq55iZFPmCPALhR3SWaRNg==,type:str]
+secret_xatu_event_ingester_secret: ENC[AES256_GCM,data:QIJlPRKhCyoL+o3T//C6Qu3AMBJrvIXbhOjHtukdUH4QRdA=,iv:mt/2lpmyCFvEh0vLqa5gu4w1rVVyKWMpCxYqN7zc1NY=,tag:3E0xdFSeFVN3Z9DHZTe/GA==,type:str]
 sops:
     kms: []
     gcp_kms: []
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2024-09-11T10:08:46Z"
-    mac: ENC[AES256_GCM,data:EQ+zXd+FSZSKm5JqU8HSFnWcQD9HD+fEGfJnpPUcbHbUxBi4TguGPIwyBzVV2gR3Kk2z868HiFeWRm+N2UodqInR4QwV645nTnIZ+WL4pCmpnzGsWr150YT40b90lbDeY0TLG8jaEpxLfUMWH0NMgBKC6DuEKAQxAEZUnK14vJI=,iv:HU95U3ZqE/yXSFl46ta+F3VqdPwBL8dxmS6l+CkNY6s=,tag:8Kz4h7/5JLGQad2boAsHgg==,type:str]
+    lastmodified: "2024-09-12T08:58:14Z"
+    mac: ENC[AES256_GCM,data:J2FiJDKW5ajohCjsVw+Y2df5zIyPslmJwKco2i1Jj6U6knPeTQvZAXno+mct8Q9JoDWC/53/Nwi06CkEQxU1quzXPOPOCtneiiKtxGB/86ES/y40O8OFUywpFcFJTEkh/vhqYru29k/CfmspJHvkpkBFKcuooeBYv7/7nZg12Uo=,iv:nbH91r8QU9fdQ06wq6Oc/nK/vrAzCCOcLTkRaY0fb6s=,tag:bFMtVRPhLiUonaG1xu3+6w==,type:str]
     pgp:
         - created_at: "2023-09-28T11:48:21Z"
           enc: |-

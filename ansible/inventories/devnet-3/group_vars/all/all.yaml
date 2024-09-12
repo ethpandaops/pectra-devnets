@@ -115,7 +115,7 @@ bootstrap_default_user_authorized_keys_github: >
 # role: ethpandaops.general.ethereum_node
 ethereum_node_images_always_pull: true
 ethereum_node_metrics_exporter_enabled: true
-ethereum_node_xatu_sentry_enabled: false
+ethereum_node_xatu_sentry_enabled: true
 ethereum_node_cl_validator_enabled: "{{ validator_start is defined and validator_end is defined }}"
 ethereum_node_cl_validator_fee_recipient: "0xf97e180c050e5Ab072211Ad2C213Eb5AEE4DF134"
 ethereum_node_cl_ports_p2p_tcp: 9000
@@ -136,10 +136,23 @@ ethereum_node_json_rpc_snooper_engine_name: "snooper-engine"
 # role: ethpandaops.general.xatu_sentry
 xatu_sentry_container_image: "{{ default_tooling_images.xatu_sentry }}"
 xatu_sentry_config_name: "{{ ethereum_network_name }}-{{ inventory_hostname }}"
-xatu_sentry_config_server_address: "{{ secret_xatu_sentry.server_address }}"
-xatu_sentry_config_server_auth_user: "{{ secret_xatu_sentry.user }}"
-xatu_sentry_config_server_auth_password: "{{ secret_xatu_sentry.password }}"
+xatu_sentry_config_server_address: "server.xatu.{{ ethereum_network_name }}.ethpandaops.io:80"
 xatu_sentry_config_network_name_override: "{{ ethereum_network_name }}"
+xatu_sentry_config: |
+  logging: "info"
+  metricsAddr: ":9090"
+  name: "{{ xatu_sentry_config_name }}"
+  ethereum:
+    beaconNodeAddress: {{ xatu_sentry_config_beacon_uri }}
+    overrideNetworkName: {{ xatu_sentry_config_network_name_override }}
+  outputs:
+  - name: grpc
+    type: xatu
+    config:
+      address: {{ xatu_sentry_config_server_address }}
+      authorization_secret: {{ secret_xatu_event_ingester_secret }}
+      tls: false
+
 
 # role: ethpandaops.general.ethereum_metrics_exporter
 ethereum_metrics_exporter_container_image: "{{ default_tooling_images.ethereum_metrics_exporter }}"

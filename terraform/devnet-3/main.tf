@@ -63,6 +63,7 @@ locals {
   vm_groups = [
     var.mev_relay,
     var.bootnode,
+    var.xatu,
     var.lighthouse_geth,
     var.lighthouse_nethermind,
     var.lighthouse_erigon,
