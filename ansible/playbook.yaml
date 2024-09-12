@@ -115,3 +115,9 @@
   roles:
     - role: ethpandaops.general.goomy
       tags: [goomy]
+
+- hosts: xatu
+  become: true
+  roles:
+    - role: ethpandaops.general.xatu_stack
+      tags: [ethereum, xatu]

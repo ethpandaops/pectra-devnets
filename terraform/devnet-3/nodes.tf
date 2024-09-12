@@ -18,6 +18,18 @@ variable "mev_relay" {
     #size            = "s-4vcpu-8gb-240gb-intel"
   }
 }
+
+# xatu
+variable "xatu" {
+  default = {
+    name            = "xatu"
+    count           = 1
+    validator_start = 0
+    validator_end   = 0
+    size            = "s-8vcpu-16gb-amd"
+  }
+}
+
 # Lighthouse
 variable "lighthouse_geth" {
   default = {
