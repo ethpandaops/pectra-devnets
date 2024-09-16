@@ -15,6 +15,7 @@ ethereum_el_bootnodes:
   - "{{ hostvars['prysm-geth-1']['ethereum_node_fact_el_enode'] }}"
   - "{{ hostvars['prysm-nethermind-1']['ethereum_node_fact_el_enode'] }}"
   - "{{ hostvars['teku-nethermind-1']['ethereum_node_fact_el_enode'] }}"
+  - "{{ hostvars['prysm-reth-1']['ethereum_node_fact_el_enode'] }}"
 
 # role: ethpandaops.general.prometheus
 prometheus_remote_push_url: https://victoriametrics-public.analytics.production.platform.ethpandaops.io/insert/1/prometheus
