@@ -41,6 +41,7 @@ lighthouse_container_volumes:
 lighthouse_container_command_extra_args:
   - --testnet-dir=/network-config
   - --boot-nodes={{ ethereum_cl_bootnodes | join(',') }}
+  - --invalid-gossip-verified-blocks-path=/data/lighthouse/invalid
 
 lighthouse_validator_container_volumes:
   - "{{ lighthouse_validator_datadir }}:/validator-data"

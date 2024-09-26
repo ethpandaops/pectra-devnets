@@ -1,25 +1,25 @@
 default_ethereum_client_images:
 ### Consensus layer clients
   lighthouse: ethpandaops/lighthouse:unstable-a94b12b
-  lodestar: ethpandaops/lodestar:unstable-6c1e335
+  lodestar: ethpandaops/lodestar:unstable-295690b
   nimbus: ethpandaops/nimbus-eth2:unstable-1503c7d
   prysm: ethpandaops/prysm-beacon-chain:develop-a03b34a
   prysm_validator: ethpandaops/prysm-validator:develop-a03b34a
   teku: ethpandaops/teku:master-aeadce1
   grandine: ethpandaops/grandine:electra-af79d77
 ### Execution layer clients
-  besu: ethpandaops/besu:main-6ea0ed4
+  besu: ethpandaops/besu:main-2cf38fa
   geth: ethpandaops/geth:prague-devnet-3-effcd38
-  erigon: thorax/erigon:docker_pectra_temp
-  ethereumjs: ethpandaops/ethereumjs:7702-update-4287e95
-  nethermind: nethermindeth/nethermind:pectra
+  erigon: thorax/erigon:docker_pectra
+  ethereumjs: ethpandaops/ethereumjs:master-766bd8f
+  nethermind: nethermindeth/nethermind:pectra_test
   reth: ethpandaops/reth:onbjerg-devnet-3-ed42356
 
 
 default_tooling_images:
   xatu_sentry: ethpandaops/xatu:latest
   ethereum_metrics_exporter: ethpandaops/ethereum-metrics-exporter:latest
-  tx_fuzz: ethpandaops/tx-fuzz:latest
+  tx_fuzz: ethpandaops/tx-fuzz:pr-56
   forkmon: skylenet/nodemonitor:darkmode
   forky: ethpandaops/forky:latest
   fauceth: skylenet/fauceth:fix_fee_estimation

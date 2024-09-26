@@ -31,3 +31,4 @@ besu_container_command_extra_args:
   - --bonsai-limit-trie-logs-enabled=false
   - --ethstats={{ inventory_hostname }}:{{ ethstats_secret }}@{{ ethstats_url }}:443
 besu_container_pull: true
+besu_container_entrypoint: /opt/besu/bin/besu

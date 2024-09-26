@@ -6,7 +6,7 @@ roles:
   - name: geerlingguy.firewall
     version: "2.5.0"
   - src: geerlingguy.pip
-    version: "2.2.0"
+    version: "3.0.3"
   - name: robertdebock.fail2ban
     version: "4.2.3"
 
