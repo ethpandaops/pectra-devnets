@@ -145,12 +145,27 @@ xatu_sentry_config: |
   ethereum:
     beaconNodeAddress: {{ xatu_sentry_config_beacon_uri }}
     overrideNetworkName: {{ xatu_sentry_config_network_name_override }}
+    beaconSubscriptions:
+    - attestation
+    - block
+    - head
+    - chain_reorg
+    - finalized_checkpoint
+    - voluntary_exit
+    - contribution_and_proof
+    - blob_sidecar
+
+  proposerDuty:
+    enabled: true
+  beaconCommittees:
+    enabled: true
+
   outputs:
   - name: grpc
     type: xatu
     config:
       address: {{ xatu_sentry_config_server_address }}
-      authorization_secret: {{ secret_xatu_event_ingester_secret }}
+      authorizationSecret: {{ secret_xatu_event_ingester_secret }}
       tls: false
 
 

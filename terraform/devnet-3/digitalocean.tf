@@ -319,9 +319,9 @@ resource "cloudflare_record" "xatu-server" {
   ttl     = 120
 }
 
-resource "cloudflare_record" "grafana" {
+resource "cloudflare_record" "xatu-wildcard" {
   zone_id = data.cloudflare_zone.default.id
-  name    = "grafana.xatu.${var.ethereum_network}"
+  name    = "*.xatu.${var.ethereum_network}"
   type    = "CNAME"
   value   = "xatu.${var.ethereum_network}.ethpandaops.io"
   proxied = true

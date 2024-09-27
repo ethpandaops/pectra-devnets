@@ -17,7 +17,7 @@ default_ethereum_client_images:
 
 
 default_tooling_images:
-  xatu_sentry: ethpandaops/xatu:latest
+  xatu_sentry: ethpandaops/xatu:0.0.2-pectra-debian
   ethereum_metrics_exporter: ethpandaops/ethereum-metrics-exporter:latest
   tx_fuzz: ethpandaops/tx-fuzz:pr-56
   forkmon: skylenet/nodemonitor:darkmode
