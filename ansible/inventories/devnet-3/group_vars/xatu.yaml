@@ -3,7 +3,7 @@ xatu_stack_cleanup: false
 xatu_stack_user: "xatu"
 
 xatu_stack_repo_url: "https://github.com/ethpandaops/xatu"
-xatu_stack_repo_version: "master"
+xatu_stack_repo_version: "release/pectra"
 xatu_stack_repo_path: "/data/xatu"
 
 xatu_stack_paths_config: /etc/xatu
