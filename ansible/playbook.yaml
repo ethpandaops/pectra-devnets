@@ -74,8 +74,20 @@
     - name: Refresh inventory web
       ansible.builtin.import_role:
         name: ethpandaops.general.ethereum_inventory_web
-      tags: [ethereum, ethereum_node, eth_inventory_web, ethereum_inventory_web]
+      tags:
+        - ethereum
+        - ethereum_node
+        - eth_inventory_web
+        - ethereum_inventory_web
       delegate_to: bootnode-1
+      vars:
+        eth_inventory_web_container_networks: "{{ docker_networks_shared }}"
+        eth_inventory_web_container_env:
+          VIRTUAL_HOST: "bootnode-1.{{ network_subdomain }}"
+          VIRTUAL_PORT: "80"
+          VIRTUAL_PATH: "/meta/api"
+          VIRTUAL_DEST: "/"
+          LETSENCRYPT_HOST: "bootnode-1.{{ network_subdomain }}"
 
 - hosts: bootnode
   become: true
