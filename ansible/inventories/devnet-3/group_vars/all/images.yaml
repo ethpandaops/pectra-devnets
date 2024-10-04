@@ -12,7 +12,7 @@ default_ethereum_client_images:
   geth: ethpandaops/geth:prague-devnet-3-effcd38
   erigon: thorax/erigon:docker_pectra
   ethereumjs: ethpandaops/ethereumjs:master-766bd8f
-  nethermind: nethermindeth/nethermind:pectra_test
+  nethermind: nethermindeth/nethermind:pectra
   reth: ethpandaops/reth:onbjerg-devnet-3-ed42356
 
 

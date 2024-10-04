@@ -80,6 +80,7 @@
         - eth_inventory_web
         - ethereum_inventory_web
       delegate_to: bootnode-1
+      run_once: true
       vars:
         eth_inventory_web_container_networks: "{{ docker_networks_shared }}"
         eth_inventory_web_container_env:
