@@ -19,6 +19,7 @@
     - role: geerlingguy.pip
       pip_install_packages:
         - name: docker
+          extra_args: --break-system-packages
       tags: [init-server, pip]
     - role: ethpandaops.general.docker_cleanup
       tags: [init-server, docker_cleanup]
@@ -74,11 +75,7 @@
     - name: Refresh inventory web
       ansible.builtin.import_role:
         name: ethpandaops.general.ethereum_inventory_web
-      tags:
-        - ethereum
-        - ethereum_node
-        - eth_inventory_web
-        - ethereum_inventory_web
+      tags: [eth_inventory_web, ethereum_inventory_web]
       delegate_to: bootnode-1
       run_once: true
       vars:
