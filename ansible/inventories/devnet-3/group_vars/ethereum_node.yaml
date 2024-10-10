@@ -4,7 +4,6 @@ ethereum_cl_bootnodes:
   - "{{ hostvars['lighthouse-geth-1']['ethereum_node_fact_cl_enr'] }}"
   - "{{ hostvars['teku-nethermind-1']['ethereum_node_fact_cl_enr'] }}"
   - "{{ hostvars['nimbus-reth-1']['ethereum_node_fact_cl_enr'] }}"
-  - "{{ hostvars['lodestar-besu-1']['ethereum_node_fact_cl_enr'] }}"
 
 ethereum_el_bootnodes:
   - "{{ hostvars['bootnode-1']['ethereum_node_fact_el_enode'] }}"

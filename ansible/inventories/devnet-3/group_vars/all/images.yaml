@@ -9,7 +9,7 @@ default_ethereum_client_images:
   grandine: ethpandaops/grandine:electra-af79d77
 ### Execution layer clients
   besu: ethpandaops/besu:pectra-devnet3-block-110500-issue-6393399
-  geth: ethpandaops/geth:prague-devnet-3-effcd38
+  geth: ethpandaops/geth:lightclient-prague-devnet-3-efc5f1b
   erigon: thorax/erigon:docker_pectra
   ethereumjs: ethpandaops/ethereumjs:master-766bd8f
   nethermind: nethermindeth/nethermind:pectra
