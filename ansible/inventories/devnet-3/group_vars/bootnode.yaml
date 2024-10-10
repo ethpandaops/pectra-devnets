@@ -27,7 +27,7 @@ teku_container_volumes:
   - "{{ eth_testnet_config_dir }}:/network-config:ro"
 teku_container_command_extra_args:
   - --network=/network-config/config.yaml
-  - --initial-state=/network-config/genesis.ssz
+  - --genesis-state=/network-config/genesis.ssz
   - --p2p-peer-upper-bound=100
   - --data-storage-non-canonical-blocks-enabled=true
   - --data-storage-mode=PRUNE
