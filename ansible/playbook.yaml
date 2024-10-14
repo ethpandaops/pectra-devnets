@@ -39,6 +39,9 @@
       tags: [cl_bootnode]
     - role: ethpandaops.general.ethereum_testnet_config
       tags: [ethereum, eth_testnet_config, ethereum_testnet_config]
+    - role: ethpandaops.general.validator_keys
+      when: ethereum_node_cl_validator_enabled == true
+      tags: [ethereum, validator_keys]
     - role: ethpandaops.general.ethereum_node
       tags: [ethereum, ethereum_node]
     - role: ethpandaops.general.docker_nginx_proxy
@@ -79,8 +82,8 @@
       delegate_to: bootnode-1
       run_once: true
       vars:
-        eth_inventory_web_container_networks: "{{ docker_networks_shared }}"
-        eth_inventory_web_container_env:
+        eth_inventory_web_container_networks: "{{ docker_networks_shared }}" # noqa var-naming[no-role-prefix]
+        eth_inventory_web_container_env: # noqa var-naming[no-role-prefix]
           VIRTUAL_HOST: "bootnode-1.{{ network_subdomain }}"
           VIRTUAL_PORT: "80"
           VIRTUAL_PATH: "/meta/api"
