@@ -37,6 +37,9 @@ assertoor:
           - path: /
             pathType: Prefix
 
+  persistence:
+    enabled: true
+
   endpoints:
     - name:  bootnode-1
       executionUrl: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@rpc.bootnode-1.pectra-devnet-3.ethpandaops.io

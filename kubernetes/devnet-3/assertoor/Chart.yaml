@@ -8,4 +8,4 @@ version: 0.1.0
 dependencies:
   - name: assertoor
     repository: https://ethpandaops.github.io/ethereum-helm-charts
-    version: 0.0.4
+    version: 1.0.0
