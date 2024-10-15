@@ -134,7 +134,7 @@ ethereum_node_json_rpc_snooper_engine_port: 8561
 ethereum_node_json_rpc_snooper_engine_name: "snooper-engine"
 
 # role: ethpandaops.general.xatu_sentry
-xatu_sentry_container_image: "{{ default_tooling_images.xatu_sentry }}"
+xatu_sentry_container_image: "ethpandaops/xatu:0.0.9-pectra-debian"
 xatu_sentry_config_name: "{{ ethereum_network_name }}-{{ inventory_hostname }}"
 xatu_sentry_config_server_address: "server.xatu.{{ ethereum_network_name }}.ethpandaops.io:80"
 xatu_sentry_config_network_name_override: "{{ ethereum_network_name }}"
@@ -165,7 +165,8 @@ xatu_sentry_config: |
     type: xatu
     config:
       address: {{ xatu_sentry_config_server_address }}
-      authorizationSecret: {{ secret_xatu_event_ingester_secret }}
+      headers:
+        Authorization: "{{ secret_xatu_event_ingester_secret }}"
       tls: false
 
 

@@ -14,4 +14,15 @@ xatu_stack_env_vars:
   GRAFANA_ADDRESS: 127.0.0.1
   PROMETHEUS_PORT: 9091
   BASE_HOSTNAME: "xatu.{{ ethereum_network_name }}.ethpandaops.io"
-  EVENT_INGESTER_AUTHORIZATION_SECRET: "{{ secret_xatu_event_ingester_secret }}"
+
+  COMPOSE_PROFILES: "*" # Run cannon
+
+  SERVER_EVENT_INGESTER_BASIC_AUTH_USERNAME: "{{ secret_xatu_event_ingester_username }}"
+  SERVER_EVENT_INGESTER_BASIC_AUTH_PASSWORD: "{{ secret_xatu_event_ingester_password }}"
+
+  SERVER_COORDINATOR_AUTH_SECRET: "{{ secret_xatu_coordinator_secret }}"
+
+  CANNON_XATU_COORDINATOR_AUTHORIZATION: "{{ secret_xatu_coordinator_secret }}"
+  CANNON_XATU_OUTPUT_AUTHORIZATION: "Bearer {{ secret_xatu_event_ingester_secret }}"
+  CANNON_BEACON_NODE_URL: https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@bn.bootnode-1.{{ network_subdomain }}
+  CANNON_NETWORK_NAME: "{{ ethereum_network_name }}"
