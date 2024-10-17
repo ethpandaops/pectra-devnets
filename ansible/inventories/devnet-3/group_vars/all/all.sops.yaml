@@ -27,14 +27,16 @@ secret_xatu_coordinator_secret: ENC[AES256_GCM,data:PhRuYyuIQ82qWpQjXGsqUGjE0Vic
 secret_xatu_event_ingester_username: ENC[AES256_GCM,data:gMo022YIbEc1Lgc=,iv:7hBzswEltg2rQxckiR0d08D82VfjoChw7KPFoPhw6as=,tag:QpG1Xmhjg598sLIhhXgCCQ==,type:str]
 secret_xatu_event_ingester_password: ENC[AES256_GCM,data:iQGB10f8vSleYkaoysjX8nWANtTOsCPYwfq5FkYDEg==,iv:CBT+QEtMdwwfeu5mnWD1XF5Gsfy0gRC16GUQyAcaUwM=,tag:jbwCaQm/2EQSihH0xb0zQg==,type:str]
 secret_xatu_event_ingester_secret: ENC[AES256_GCM,data:IWcvTaJMchGSeqhsRG0QN6LamnjQJXCi+X3rbZLziy4Lw3iJ/9i5eStMmypzgUjHhW0zUiZzmO6YlM/13bWGpYzP,iv:TO4LRal9Eo3F5zZdlWrdwiFLlnmN7ZQpPt1VEY62dwI=,tag:2AbVeccTr4C5fDDdpEMbtA==,type:str]
+secret_xatu_clickhouse_password: ENC[AES256_GCM,data:m1QQe1YQP9LSjGKz+bif30lfgANfslMpqT+wrJHecnQ0kazy,iv:e4D3b4oKiyumKWyVHj1+jlkyqDafYWX9MXextcKctGU=,tag:sbr+FbekBnYOhMxzfoIS1A==,type:str]
+secret_xatu_clickhouse_readonly_password: ENC[AES256_GCM,data:IQ+XtcwfJLBCCZYMmsCr0CRKTtjPsOb4BXT8kYzYd3byaN3P,iv:M1rGk5HekNQyNnBc2fZJVTmrAf8QudNRGF7KaR+5SNM=,tag:ATSNGclKdqpFjvnbm5K/Ug==,type:str]
 sops:
     kms: []
     gcp_kms: []
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2024-10-15T05:51:26Z"
-    mac: ENC[AES256_GCM,data:71gsdKAkEMz5d5mml4oN4gx3xS3xxhkiSUVMomTgExOVQiseOGdKUolZsbCAKzjsGYC+CMvS3PIdXVYF+QzQ36O1Cbes8LHHH3wfPe5W2WgDxegEMsDVr87DX3XFDkm/qcHYYmRCGMLqo+PoH+aPYLWs/B/fjLCFC+HWF7fdnic=,iv:pavWmZYpseDEywqMcJOD84Kv+saBqeR3toghfzQE5Lc=,tag:d7AYO+KqyvGokQuvTNPcbg==,type:str]
+    lastmodified: "2024-10-17T03:59:16Z"
+    mac: ENC[AES256_GCM,data:7D8tVjYWEtbYXipE6kwcFVwJM3Ok9ds5FQ66vWKqhx83g+sI+putiCdMDCCvR2K5BNt9ENmjkbNKZR6LDYBcCcRmu+VDzQkzQqwtduo/uTDAThvwg6PaAVtK7jHKLNAoCKkCWZLw6Ym7lo3NGP2eS11/m8W0Pf+EiIPT0EGXEm8=,iv:gPOomOhpM8K2j+vzpsCiaDP3yNMBs35KF7OCSCWQ5B8=,tag:uPxnGWCviC5CHeVAiDi6rw==,type:str]
     pgp:
         - created_at: "2023-09-28T11:48:21Z"
           enc: |-
