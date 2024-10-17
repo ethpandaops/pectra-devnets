@@ -22,6 +22,9 @@ xatu_stack_env_vars:
 
   SERVER_COORDINATOR_AUTH_SECRET: "{{ secret_xatu_coordinator_secret }}"
 
+  CLICKHOUSE_PASSWORD: "{{ secret_xatu_clickhouse_password }}"
+  CLICKHOUSE_USER_READONLY_PASSWORD: "{{ secret_xatu_clickhouse_readonly_password }}"
+  
   CANNON_XATU_COORDINATOR_AUTHORIZATION: "{{ secret_xatu_coordinator_secret }}"
   CANNON_XATU_OUTPUT_AUTHORIZATION: "Bearer {{ secret_xatu_event_ingester_secret }}"
   CANNON_BEACON_NODE_URL: https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@bn.bootnode-1.{{ network_subdomain }}
