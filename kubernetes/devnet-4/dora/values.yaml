@@ -24,7 +24,7 @@ dora:
 
   name: pectra-devnet-4
   configPath: "https://config.pectra-devnet-4.ethpandaops.io/cl/config.yaml"
-  validatorNamesInventory: "https://config.pectra-devnet-4.ethpandaops.io/api/v1/nodes/validator-ranges"
+  validatorNamesInventory: "https://bootnode-1.pectra-devnet-4.ethpandaops.io/meta/api/v1/validator-ranges.json"
   proxyCount: 2
   extraEnv:
     - name: FRONTEND_PPROF
