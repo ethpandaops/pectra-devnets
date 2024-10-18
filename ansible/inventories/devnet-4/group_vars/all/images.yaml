@@ -1,18 +1,18 @@
 default_ethereum_client_images:
 ### Consensus layer clients
-  lighthouse: ethpandaops/lighthouse:unstable-48dd3f3
-  lodestar: ethpandaops/lodestar:unstable-295690b
-  nimbus: ethpandaops/nimbus-eth2:unstable-1503c7d
-  prysm: ethpandaops/prysm-beacon-chain:develop-a03b34a
-  prysm_validator: ethpandaops/prysm-validator:develop-a03b34a
-  teku: ethpandaops/teku:master-aeadce1
-  grandine: ethpandaops/grandine:electra-linux-amd64-af79d77
+  lighthouse: ethpandaops/lighthouse:pawan-electra-alpha7-0dd215c
+  lodestar: ethpandaops/lodestar:devnet-4-1531b19
+  nimbus: ethpandaops/nimbus-eth2:rRH-1f12f14
+  prysm: ethpandaops/prysm-beacon-chain:develop-4aa5410
+  prysm_validator: ethpandaops/prysm-validator:evelop-4aa5410
+  teku: ethpandaops/teku:master-b22b3d5
+  grandine: ethpandaops/grandine:develop-ce7b06d
 ### Execution layer clients
   besu: ethpandaops/besu:pectra-devnet3-block-110500-issue-6393399
-  geth: ethpandaops/geth:lightclient-prague-devnet-3-efc5f1b
+  geth: ethpandaops/geth:lightclient-prague-devnet-4-37035c5
   erigon: thorax/erigon:docker_pectra
-  ethereumjs: ethpandaops/ethereumjs:master-766bd8f
-  nethermind: nethermindeth/nethermind:pectra
+  ethereumjs: ethpandaops/ethereumjs:7702-devnet-4-plus-t8ntool-3f3a3cc
+  nethermind: ethpandaops/nethermind:pectra_devnet_4-c3827bc
   reth: ethpandaops/reth:onbjerg-devnet-3-ed42356
 
 
@@ -32,7 +32,7 @@ default_tooling_images:
   eth_fauceth: chainflag/eth-faucet:latest
   blobscan: blossomlabs/blobscan:latest
   blobscan_indexer: blossomlabs/blobscan-indexer:latest
-  dora: ethpandaops/dora:latest
+  dora: ethpandaops/dora:master-latest
   dugtrio: ethpandaops/dugtrio:latest
   ethereum_genesis_generator: ethpandaops/ethereum-genesis-generator:3.3.7
   tracoor: ethpandaops/tracoor:0.0.25-debian

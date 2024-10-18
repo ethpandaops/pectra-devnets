@@ -1,0 +1,9 @@
+mev_boost_container_image: jtraglia/mev-boost:electra
+
+mev_boost_container_env:
+  GENESIS_FORK_VERSION: "0x10528811"
+  SKIP_RELAY_SIGNATURE_CHECK: "1"
+  BOOST_LISTEN_ADDR: 0.0.0.0:{{ mev_boost_server_port }}
+  RELAYS: http://0xa3bed304c277980e2e7c8e3717b2bf737082cdb3d8984ecdad69cce47396c2a256f33fe412b2d3ad6b9e754565457ca0@68.183.214.175:28545/
+
+ethereum_node_mev_boost_enabled: true
