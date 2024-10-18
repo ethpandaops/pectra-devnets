@@ -244,7 +244,7 @@ teku-geth-001:
           GENESIS_CONFIG_URI=https://config.pectra-devnet-4.ethpandaops.io/cl/config.yaml;
           GENESIS_SSZ_URI=https://config.pectra-devnet-4.ethpandaops.io/cl/genesis.ssz;
           mkdir -p /data/network-config;
-          curl -s https://config.pectra-devnet-4.ethpandaops.io/api/v1/nodes/inventory | jq -r '.ethereum_pairs[] | .consensus.enr' > /data/network-config/bootstrap_nodes.txt;
+          curl -s https://bootnode-1.pectra-devnet-4.ethpandaops.io/meta/api/v1/inventory.json | jq -r '.ethereum_pairs[] | .consensus.enr' > /data/network-config/bootstrap_nodes.txt;
           if ! [ -f /data/network-config/genesis.ssz ];
           then
             wget -O /data/network-config/deposit_contract.txt $DEPOSIT_CONTRACT_URI;
