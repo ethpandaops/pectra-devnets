@@ -4,16 +4,16 @@ default_ethereum_client_images:
   lodestar: ethpandaops/lodestar:devnet-4-1531b19
   nimbus: ethpandaops/nimbus-eth2:rRH-1f12f14
   prysm: ethpandaops/prysm-beacon-chain:develop-4aa5410
-  prysm_validator: ethpandaops/prysm-validator:evelop-4aa5410
+  prysm_validator: ethpandaops/prysm-validator:develop-4aa5410
   teku: ethpandaops/teku:master-b22b3d5
   grandine: ethpandaops/grandine:pectra-devnet4-05da9f1
 ### Execution layer clients
-  besu: ethpandaops/besu:pectra-devnet3-block-110500-issue-6393399
+  besu: ethpandaops/besu:pectra-devnet-4-9a317b1
   geth: ethpandaops/geth:lightclient-prague-devnet-4-37035c5
   erigon: thorax/erigon:docker_pectra
   ethereumjs: ethpandaops/ethereumjs:7702-devnet-4-plus-t8ntool-3f3a3cc
   nethermind: ethpandaops/nethermind:pectra_devnet_4-c3827bc
-  reth: ethpandaops/reth:onbjerg-devnet-3-ed42356
+  reth: ethpandaops/reth:onbjerg-devnet-4-requests-c820082
 
 
 default_tooling_images:
@@ -34,7 +34,7 @@ default_tooling_images:
   blobscan_indexer: blossomlabs/blobscan-indexer:latest
   dora: ethpandaops/dora:master-latest
   dugtrio: ethpandaops/dugtrio:latest
-  ethereum_genesis_generator: ethpandaops/ethereum-genesis-generator:3.3.7
+  ethereum_genesis_generator: ethpandaops/ethereum-genesis-generator:3.4.0
   tracoor: ethpandaops/tracoor:0.0.25-debian
   ncli: status-im/nimbus-eth2:unstable
   lcli: ethpandaops/lighthouse:unstable-a94b12blo

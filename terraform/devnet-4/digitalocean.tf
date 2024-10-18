@@ -45,7 +45,7 @@ locals {
         id         = "${vm_group.name}-${i + 1}"
         vms = {
           "${i + 1}" = {
-            tags   = "group_name:${vm_group.name},val_start:${vm_group.validator_start + (i * (vm_group.validator_end - vm_group.validator_start) / vm_group.count)},val_end:${min(vm_group.validator_start + ((i + 1) * (vm_group.validator_end - vm_group.validator_start) / vm_group.count), vm_group.validator_end)}"
+            tags   = "group_name:${vm_group.name},val_start:${vm_group.validator_start + ceil(i * (vm_group.validator_end - vm_group.validator_start) / vm_group.count)},val_end:${min(vm_group.validator_start + ceil((i + 1) * (vm_group.validator_end - vm_group.validator_start) / vm_group.count), vm_group.validator_end)}"
             region = element(var.digitalocean_regions, i % length(var.digitalocean_regions))
             size   = try(vm_group.size, local.digitalocean_default_size)
             ipv6   = try(vm_group.ipv6, true)
@@ -61,8 +61,8 @@ locals {
   digitalocean_default_size   = "s-4vcpu-8gb-240gb-intel"
   digitalocean_default_image  = "debian-12-x64"
   digitalocean_global_tags = [
-    "owner:devops",
-    "ethnetwork:${var.ethereum_network}"
+    "Owner:Devops",
+    "EthNetwork:${var.ethereum_network}"
   ]
 
   # flatten vm_groups so that we can use it with for_each()
@@ -141,7 +141,7 @@ resource "digitalocean_firewall" "main" {
   // Tags are used to select which droplets should
   // be assigned to this firewall.
   tags = [
-    "ethnetwork:${var.ethereum_network}"
+    "EthNetwork:${var.ethereum_network}"
   ]
 
   // SSH
