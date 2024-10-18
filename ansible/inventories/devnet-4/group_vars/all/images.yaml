@@ -13,7 +13,7 @@ default_ethereum_client_images:
   erigon: thorax/erigon:docker_pectra
   ethereumjs: ethpandaops/ethereumjs:7702-devnet-4-plus-t8ntool-3f3a3cc
   nethermind: ethpandaops/nethermind:pectra_devnet_4-c3827bc
-  reth: ethpandaops/reth:onbjerg-devnet-4-requests-c820082
+  reth: ethpandaops/reth:onbjerg-devnet-4-requests-3fcd6c7
 
 
 default_tooling_images:
