@@ -34,3 +34,5 @@ network-configs/**/mnemonics.yaml
 
 # Ignore blobscan for now
 kubernetes/*/blobscan
+# too big
+network-configs/parsed/*
