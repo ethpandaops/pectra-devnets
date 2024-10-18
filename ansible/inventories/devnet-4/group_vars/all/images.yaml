@@ -6,7 +6,7 @@ default_ethereum_client_images:
   prysm: ethpandaops/prysm-beacon-chain:develop-4aa5410
   prysm_validator: ethpandaops/prysm-validator:evelop-4aa5410
   teku: ethpandaops/teku:master-b22b3d5
-  grandine: ethpandaops/grandine:develop-ce7b06d
+  grandine: ethpandaops/grandine:pectra-devnet4-05da9f1
 ### Execution layer clients
   besu: ethpandaops/besu:pectra-devnet3-block-110500-issue-6393399
   geth: ethpandaops/geth:lightclient-prague-devnet-4-37035c5

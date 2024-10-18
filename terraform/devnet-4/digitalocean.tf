@@ -61,8 +61,8 @@ locals {
   digitalocean_default_size   = "s-4vcpu-8gb-240gb-intel"
   digitalocean_default_image  = "debian-12-x64"
   digitalocean_global_tags = [
-    "Owner:Devops",
-    "EthNetwork:${var.ethereum_network}"
+    "owner:devops",
+    "ethnetwork:${var.ethereum_network}"
   ]
 
   # flatten vm_groups so that we can use it with for_each()
@@ -141,7 +141,7 @@ resource "digitalocean_firewall" "main" {
   // Tags are used to select which droplets should
   // be assigned to this firewall.
   tags = [
-    "EthNetwork:${var.ethereum_network}"
+    "ethnetwork:${var.ethereum_network}"
   ]
 
   // SSH
