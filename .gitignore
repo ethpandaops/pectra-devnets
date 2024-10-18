@@ -34,5 +34,6 @@ network-configs/**/mnemonics.yaml
 
 # Ignore blobscan for now
 kubernetes/*/blobscan
+kubernetes/*/beacon-metrics-gazer
 # too big
 network-configs/parsed/*
