@@ -38,7 +38,8 @@ teku-geth-001:
             geth:
               - --http.api=eth,net,web3,debug,admin
               - --http.vhosts=*
-              - --state.scheme=path
+              - --state.scheme=hash
+              - --gcmode=archive
               - --networkid=7042905162
               - --syncmode=full
               - --bootnodes=enode://f84d7d2d86b324b7fa6004d0a9f315b5a68eca4b5febfda338e38c4622159333f5aa91d5e0682e1e25775ba697e5a0bac06b83ec76a31c4d4df90f287db2c547@209.38.212.82:30303?discport=30303,enode://280308b80e415c156454c6ff425b304a1588e23b6686ace2dcc5fbfa659a7356fae3dbf1d1dc5aed7135b559af12833e75b9e336886dd1e162366e866aa96d3c@134.122.90.191:30303?discport=30303,enode://ac7f00ac1a3880f20f3da7c450fc0ffb3e8a84a5cfea3a8cb7aac6defa83e6d38ac38afacfb7a736447f7ab707723b0033e9f259b13b82a0973d8f3c9191bd74@159.65.117.74:30303?discport=30303
@@ -188,7 +189,7 @@ teku-geth-001:
           - >
             if ! [ -f /data/genesis_init_done ];
             then
-              geth init --datadir /data /data/network-config/genesis.json;
+              geth init --datadir --state.scheme=hash /data /data/network-config/genesis.json;
               touch /data/genesis_init_done;
               echo "genesis init done";
             else
