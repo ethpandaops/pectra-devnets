@@ -189,7 +189,7 @@ teku-geth-001:
           - >
             if ! [ -f /data/genesis_init_done ];
             then
-              geth init --datadir --state.scheme=hash /data /data/network-config/genesis.json;
+              geth --datadir /data init --state.scheme=hash /data/network-config/genesis.json;
               touch /data/genesis_init_done;
               echo "genesis init done";
             else
