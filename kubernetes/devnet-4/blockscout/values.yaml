@@ -1,7 +1,7 @@
 # Ansible managed. Don't change this file manually. Template info: /vendor/collections/ansible_collections/ethpandaops/general/roles/generate_kubernetes_config/templates/blockscout.yaml.j2
 
 blockscout-stack:
-  fullnameOverride: blockscout
+  fullnameOverride: blockscout-stack
   config:
     network:
       id: 7042905162
@@ -97,8 +97,20 @@ blockscout-stack:
       NEXT_PUBLIC_APP_PROTOCOL: https
 
 postgresql:
-    enabled: true
-    fullnameOverride: blockscout-postgresql
-    primary:
-      persistence:
-        size: "100Gi"
+  enabled: true
+  image:
+    registry: docker.io
+    repository: bitnami/postgresql
+    tag: 15.3.0-debian-11-r7
+  auth:
+    enablePostgresUser: true
+    postgresPassword: postgres
+    username: postgres
+    password: postgres
+  fullnameOverride: blockscout-postgresql
+  primary:
+    extendedConfiguration: |
+      max_connections = 1024
+    persistence:
+      enabled: true
+      size: "100Gi"
