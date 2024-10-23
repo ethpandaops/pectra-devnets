@@ -48,6 +48,12 @@ blockscout-stack:
     service:
       type: ClusterIP
       port: 4000
+    ingress:
+      enabled: true
+      className: ingress-nginx-public
+      hostname: explorer-api.pectra-devnet-4.ethpandaops.io
+      tls:
+        enabled: true
     extraVolumes:
       - name: config-update
         emptyDir: {}
@@ -92,9 +98,9 @@ blockscout-stack:
         enabled: true
 
     env:
-      NEXT_PUBLIC_API_HOST: blockscout-stack-blockscout-svc:4000
-      NEXT_PUBLIC_API_PROTOCOL: http
-      NEXT_PUBLIC_API_WEBSOCKET_PROTOCOL: ws
+      NEXT_PUBLIC_API_HOST: explorer-api.pectra-devnet-4.ethpandaops.io
+      NEXT_PUBLIC_API_PROTOCOL: https
+      NEXT_PUBLIC_API_WEBSOCKET_PROTOCOL: wss
       #NEXT_PUBLIC_STATS_API_HOST: blockscout-stack-blockscout-svc
       NEXT_PUBLIC_NETWORK_NAME: pectra-devnet-4
       NEXT_PUBLIC_NETWORK_ID: 7042905162
