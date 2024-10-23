@@ -26,7 +26,7 @@ default_tooling_images:
   powfaucet: pk910/powfaucet:v2-stable
   ethstats: skylenet/ethstats-server:poa-no-geoip
   homepage: ethpandaops/ethereum-testnet-homepage:latest
-  checkpointz: ethpandaops/checkpointz:0.0.5-electra-debian
+  checkpointz: ethpandaops/checkpointz:0.0.6-electra-debian
   blockscout: blockscout/blockscout:master
   beacon_metrics_gazer: dapplion/beacon-metrics-gazer:latest
   eth_fauceth: chainflag/eth-faucet:latest
