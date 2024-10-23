@@ -45,6 +45,9 @@ blockscout-stack:
       POOL_SIZE: "15"
       CHAIN_SPEC_PATH: /config-update/chainspec.json
 
+    service:
+      type: ClusterIP
+      port: 4000
     extraVolumes:
       - name: config-update
         emptyDir: {}
