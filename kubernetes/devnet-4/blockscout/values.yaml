@@ -18,6 +18,8 @@ blockscout-stack:
     nameService:
       enabled: true
       url: "https://explorer.pectra-devnet-4.ethpandaops.io"
+    prometheus:
+      enabled: false
   postgresql:
     enabled: true
     fullnameOverride: blockscout-postgresql
