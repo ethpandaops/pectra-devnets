@@ -92,7 +92,7 @@ blockscout-stack:
         enabled: true
 
     env:
-      NEXT_PUBLIC_API_HOST: blockscout-stack-blockscout-svc
+      NEXT_PUBLIC_API_HOST: blockscout-stack-blockscout-svc:4000
       NEXT_PUBLIC_API_PROTOCOL: http
       NEXT_PUBLIC_API_WEBSOCKET_PROTOCOL: ws
       #NEXT_PUBLIC_STATS_API_HOST: blockscout-stack-blockscout-svc
