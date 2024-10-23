@@ -1,6 +1,12 @@
 dependencies:
-- name: blockscout
-  repository: https://ethpandaops.github.io/ethereum-helm-charts
-  version: 0.2.2
-digest: sha256:48b9cce0626e0e66d2634a86997b593a7eb624c5bd474e8f9310ac48846d7d6c
-generated: "2024-10-18T18:05:18.07661+02:00"
+- name: blockscout-stack
+  repository: https://blockscout.github.io/helm-charts
+  version: 1.6.8
+- name: postgresql
+  repository: https://charts.bitnami.com/bitnami
+  version: 14.3.3
+- name: redis
+  repository: https://charts.bitnami.com/bitnami
+  version: 18.19.4
+digest: sha256:8bd0cc33f59615e29e974dd0d2f26bf5970b260713325daf3201671d8955a0a0
+generated: "2024-10-23T13:40:34.880148+02:00"
