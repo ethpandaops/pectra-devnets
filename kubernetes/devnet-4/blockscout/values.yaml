@@ -28,7 +28,7 @@ blockscout-stack:
 
     image:
       repository: blockscout/blockscout
-      tag: 6.8.1
+      tag: latest
       pullPolicy: IfNotPresent
     env:
       ETHEREUM_JSONRPC_VARIANT: "geth"
