@@ -29,7 +29,7 @@ blockscout-stack:
     image:
       repository: blockscout/blockscout
       tag: latest
-      pullPolicy: IfNotPresent
+      pullPolicy: Always
     env:
       ETHEREUM_JSONRPC_VARIANT: "geth"
       ETHEREUM_JSONRPC_HTTP_URL: http://geth-teku-001:8545
@@ -54,6 +54,7 @@ blockscout-stack:
       hostname: explorer-api.pectra-devnet-4.ethpandaops.io
       tls:
         enabled: true
+
     extraVolumes:
       - name: config-update
         emptyDir: {}
@@ -101,7 +102,6 @@ blockscout-stack:
       NEXT_PUBLIC_API_HOST: explorer-api.pectra-devnet-4.ethpandaops.io
       NEXT_PUBLIC_API_PROTOCOL: https
       NEXT_PUBLIC_API_WEBSOCKET_PROTOCOL: wss
-      #NEXT_PUBLIC_STATS_API_HOST: blockscout-stack-blockscout-svc
       NEXT_PUBLIC_NETWORK_NAME: pectra-devnet-4
       NEXT_PUBLIC_NETWORK_ID: 7042905162
       NEXT_PUBLIC_NETWORK_RPC_URL: https://rpc.pectra-devnet-4.ethpandaops.io
@@ -109,6 +109,16 @@ blockscout-stack:
       NEXT_PUBLIC_APP_PROTOCOL: https
       NEXT_PUBLIC_AD_BANNER_PROVIDER: none
       NEXT_PUBLIC_AD_TEXT_PROVIDER: none
+      NEXT_PUBLIC_STATS_API_HOST: explorer-stats.pectra-devnet-4.ethpandaops.io
+
+  stats:
+    enabled: true
+    ingress:
+      enabled: true
+      className: ingress-nginx-public
+      hostname: explorer-stats.pectra-devnet-4.ethpandaops.io
+    tls:
+      enabled: true
 
 postgresql:
   enabled: true
