@@ -275,6 +275,16 @@ tracoor-single:
             traceDisableMemory: true
             traceDisableStack: true
             traceDisableStorage: true
+      - name: lighthouse-nimbusel-1
+        ethereum:
+          overrideNetworkName: pectra-devnet-4
+          beacon:
+            nodeAddress: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-nimbusel-1.pectra-devnet-4.ethpandaops.io
+          execution:
+            nodeAddress: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@rpc.lighthouse-nimbusel-1.pectra-devnet-4.ethpandaops.io
+            traceDisableMemory: true
+            traceDisableStack: true
+            traceDisableStorage: true
       - name: lighthouse-reth-1
         ethereum:
           overrideNetworkName: pectra-devnet-4

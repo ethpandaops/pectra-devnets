@@ -83,6 +83,15 @@ variable "prysm_erigon" {
   }
 }
 
+variable "prysm_nimbusel" {
+  default = {
+    name            = "prysm-nimbusel"
+    count           = 0
+    validator_start = 0
+    validator_end   = 0
+  }
+}
+
 variable "lighthouse_geth" {
   default = {
     name            = "lighthouse-geth"
@@ -134,6 +143,15 @@ variable "lighthouse_erigon" {
     count           = 1
     validator_start = 4800
     validator_end   = 5000
+  }
+}
+
+variable "lighthouse_nimbusel" {
+  default = {
+    name            = "lighthouse-nimbusel"
+    count           = 1
+    validator_start = 0
+    validator_end   = 0
   }
 }
 
@@ -191,6 +209,15 @@ variable "teku_erigon" {
   }
 }
 
+variable "teku_nimbusel" {
+  default = {
+    name            = "teku-nimbusel"
+    count           = 0
+    validator_start = 0
+    validator_end   = 0
+  }
+}
+
 variable "lodestar_geth" {
   default = {
     name            = "lodestar-geth"
@@ -242,6 +269,15 @@ variable "lodestar_erigon" {
     count           = 1
     validator_start = 7920
     validator_end   = 8000
+  }
+}
+
+variable "lodestar_nimbusel" {
+  default = {
+    name            = "lodestar-nimbusel"
+    count           = 0
+    validator_start = 0
+    validator_end   = 0
   }
 }
 
@@ -299,6 +335,15 @@ variable "nimbus_erigon" {
   }
 }
 
+variable "nimbus_nimbusel" {
+  default = {
+    name            = "nimbus-nimbusel"
+    count           = 0
+    validator_start = 0
+    validator_end   = 0
+  }
+}
+
 variable "grandine_geth" {
   default = {
     name            = "grandine-geth"
@@ -350,5 +395,14 @@ variable "grandine_erigon" {
     count           = 1
     validator_start = 9920
     validator_end   = 10000
+  }
+}
+
+variable "grandine_nimbusel" {
+  default = {
+    name            = "grandine-nimbusel"
+    count           = 0
+    validator_start = 0
+    validator_end   = 0
   }
 }

@@ -114,7 +114,6 @@ blockscout-stack:
       NEXT_PUBLIC_HAS_BEACON_CHAIN: true
       NEXT_PUBLIC_NETWORK_VERIFICATION_TYPE: validation
 
-
 postgresql:
   enabled: true
   image:

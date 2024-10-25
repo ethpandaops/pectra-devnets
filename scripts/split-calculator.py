@@ -18,10 +18,11 @@ cl_split = {
 el_split = {
     'geth': 0.50,
     'nethermind': 0.25,
-    'ethereumJS': 0.01,
+    'ethereumjs': 0.01,
     'reth': 0.08,
     'besu': 0.08,
-    'erigon': 0.08
+    'erigon': 0.07,
+    'nimbusel': 0.01,
 }
 
 pairwise_validators = {}

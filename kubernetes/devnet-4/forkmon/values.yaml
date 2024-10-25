@@ -57,6 +57,8 @@ forkmon:
     name: lighthouse-nethermind-2
   - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@rpc.lighthouse-nethermind-3.pectra-devnet-4.ethpandaops.io
     name: lighthouse-nethermind-3
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@rpc.lighthouse-nimbusel-1.pectra-devnet-4.ethpandaops.io
+    name: lighthouse-nimbusel-1
   - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@rpc.lighthouse-reth-1.pectra-devnet-4.ethpandaops.io
     name: lighthouse-reth-1
   - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@rpc.lodestar-besu-1.pectra-devnet-4.ethpandaops.io

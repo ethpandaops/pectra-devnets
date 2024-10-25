@@ -24,7 +24,7 @@ dora:
 
   name: pectra-devnet-4
   configPath: "https://config.pectra-devnet-4.ethpandaops.io/cl/config.yaml"
-  validatorNamesInventory: "https://bootnode-1.pectra-devnet-4.ethpandaops.io/meta/api/v1/validator-ranges.json"
+  validatorNamesInventory: "https://config.pectra-devnet-4.ethpandaops.io/api/v1/nodes/validator-ranges"
   proxyCount: 2
   extraEnv:
     - name: FRONTEND_PPROF
@@ -107,6 +107,10 @@ dora:
     archive: true
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-nethermind-3.pectra-devnet-4.ethpandaops.io
     name: lighthouse-nethermind-3
+    priority: -1
+    archive: true
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-nimbusel-1.pectra-devnet-4.ethpandaops.io
+    name: lighthouse-nimbusel-1
     priority: -1
     archive: true
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-reth-1.pectra-devnet-4.ethpandaops.io
@@ -301,6 +305,10 @@ dora:
     archive: false
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@rpc.lighthouse-nethermind-3.pectra-devnet-4.ethpandaops.io
     name: lighthouse-nethermind-3
+    priority: -1
+    archive: false
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@rpc.lighthouse-nimbusel-1.pectra-devnet-4.ethpandaops.io
+    name: lighthouse-nimbusel-1
     priority: -1
     archive: false
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@rpc.lighthouse-reth-1.pectra-devnet-4.ethpandaops.io

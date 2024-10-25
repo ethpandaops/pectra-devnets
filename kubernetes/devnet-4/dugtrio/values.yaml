@@ -69,6 +69,8 @@ dugtrio:
     name: lighthouse-nethermind-2
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-nethermind-3.pectra-devnet-4.ethpandaops.io
     name: lighthouse-nethermind-3
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-nimbusel-1.pectra-devnet-4.ethpandaops.io
+    name: lighthouse-nimbusel-1
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-reth-1.pectra-devnet-4.ethpandaops.io
     name: lighthouse-reth-1
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lodestar-besu-1.pectra-devnet-4.ethpandaops.io

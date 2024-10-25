@@ -98,6 +98,9 @@ assertoor:
     - name:  lighthouse-nethermind-3
       executionUrl: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@rpc.lighthouse-nethermind-3.pectra-devnet-4.ethpandaops.io
       consensusUrl: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-nethermind-3.pectra-devnet-4.ethpandaops.io
+    - name:  lighthouse-nimbusel-1
+      executionUrl: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@rpc.lighthouse-nimbusel-1.pectra-devnet-4.ethpandaops.io
+      consensusUrl: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-nimbusel-1.pectra-devnet-4.ethpandaops.io
     - name:  lighthouse-reth-1
       executionUrl: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@rpc.lighthouse-reth-1.pectra-devnet-4.ethpandaops.io
       consensusUrl: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-reth-1.pectra-devnet-4.ethpandaops.io
@@ -233,6 +236,7 @@ assertoor:
       - lighthouse-nethermind-1
       - lighthouse-nethermind-2
       - lighthouse-nethermind-3
+      - lighthouse-nimbusel-1
       - lighthouse-reth-1
       - lodestar-besu-1
       - lodestar-erigon-1
