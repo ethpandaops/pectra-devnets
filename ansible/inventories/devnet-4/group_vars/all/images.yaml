@@ -14,7 +14,7 @@ default_ethereum_client_images:
   ethereumjs: ethpandaops/ethereumjs:7702-devnet-4-plus-t8ntool-f487448
   nethermind: ethpandaops/nethermind:pectra_devnet_4-c3827bc
   reth: ethpandaops/reth:onbjerg-devnet-4-8a40d5c
-  nimbusel: ethpandaops/nimbus-eth1:master-ba1cbed
+  nimbusel: ethpandaops/nimbus-eth1:master-fa95633
 
 default_tooling_images:
   xatu_sentry: ethpandaops/xatu:0.0.9-pectra-debian
