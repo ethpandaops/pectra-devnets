@@ -6,14 +6,14 @@ default_ethereum_client_images:
   prysm: ethpandaops/prysm-beacon-chain:develop-4aa5410
   prysm_validator: ethpandaops/prysm-validator:develop-4aa5410
   teku: ethpandaops/teku:master-b22b3d5
-  grandine: ethpandaops/grandine:pectra-devnet4-6d50ac1
+  grandine: ethpandaops/grandine:pectra-devnet4-9e75876
 ### Execution layer clients
   besu: ethpandaops/besu:pectra-devnet-4-8ab3aac
   geth: ethpandaops/geth:lightclient-prague-devnet-4-37035c5
-  erigon: ethpandaops/erigon:pectra-e2-0b1e91b
+  erigon: ethpandaops/erigon:pectra_e2-a01dd24
   ethereumjs: ethpandaops/ethereumjs:7702-devnet-4-plus-t8ntool-f487448
   nethermind: ethpandaops/nethermind:pectra_devnet_4-c3827bc
-  reth: ethpandaops/reth:onbjerg-devnet-4-8a40d5c
+  reth: ethpandaops/reth:main-dd18af1
   nimbusel: ethpandaops/nimbus-eth1:master-fa95633
 
 default_tooling_images:
