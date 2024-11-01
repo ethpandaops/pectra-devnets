@@ -6,11 +6,11 @@ default_ethereum_client_images:
   prysm: ethpandaops/prysm-beacon-chain:develop-4aa5410
   prysm_validator: ethpandaops/prysm-validator:develop-4aa5410
   teku: ethpandaops/teku:master-b22b3d5
-  grandine: ethpandaops/grandine:pectra-devnet4-9e75876
+  grandine: ethpandaops/grandine:pectra-devnet4--a72cc49
 ### Execution layer clients
   besu: ethpandaops/besu:pectra-devnet-4-8ab3aac
   geth: ethpandaops/geth:lightclient-prague-devnet-4-37035c5
-  erigon: ethpandaops/erigon:pectra_e2-a01dd24
+  erigon: ethpandaops/erigon:pectra_e2-b3fbcc0
   ethereumjs: ethpandaops/ethereumjs:7702-devnet-4-plus-t8ntool-f487448
   nethermind: ethpandaops/nethermind:pectra_devnet_4-c3827bc
   reth: ethpandaops/reth:main-dd18af1
@@ -19,7 +19,7 @@ default_ethereum_client_images:
 default_tooling_images:
   xatu_sentry: ethpandaops/xatu:0.0.9-pectra-debian
   ethereum_metrics_exporter: ethpandaops/ethereum-metrics-exporter:latest
-  tx_fuzz: ethpandaops/tx-fuzz:7702-3a117fb
+  tx_fuzz: ethpandaops/tx-fuzz:pr-56
   forkmon: skylenet/nodemonitor:darkmode
   forky: ethpandaops/forky:latest
   fauceth: skylenet/fauceth:fix_fee_estimation
