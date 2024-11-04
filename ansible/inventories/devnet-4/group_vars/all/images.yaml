@@ -10,7 +10,7 @@ default_ethereum_client_images:
 ### Execution layer clients
   besu: ethpandaops/besu:pectra-devnet-4-8ab3aac
   geth: ethpandaops/geth:lightclient-prague-devnet-4-37035c5
-  erigon: ethpandaops/erigon:pectra_e2-b3fbcc0
+  erigon: ethpandaops/erigon:pectra_e2-0ff147f
   ethereumjs: ethpandaops/ethereumjs:7702-devnet-4-plus-t8ntool-f487448
   nethermind: ethpandaops/nethermind:pectra_devnet_4-c3827bc
   reth: ethpandaops/reth:main-dd18af1
