@@ -34,7 +34,7 @@ nethermind_container_command_extra_args:
   - --Discovery.Bootnodes={{ ethereum_el_bootnodes | join(',') }}
   - --Init.IsMining=false
   - --Pruning.Mode=None
-  - --config=none.cfg
+  - --config=none
   - --log=INFO
   - --Seq.MinLevel=Info
   - --Seq.ServerUrl={{ nethermind_seq_server }}
