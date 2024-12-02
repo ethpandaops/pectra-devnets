@@ -53,6 +53,8 @@
             - "snooper-engine"
             - "snooper-rpc"
             - "cl-bootnode"
+            - "mev-boost"
+            - "external-block-builder"
         - name: Remove data dirs
           file:
             state: absent
