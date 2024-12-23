@@ -9,6 +9,8 @@ roles:
     version: "3.0.3"
   - name: robertdebock.fail2ban
     version: "4.2.3"
+  - name: gantsign.golang
+    version: "3.4.0"
 
 collections:
   - name: ansible.posix

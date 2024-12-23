@@ -1,0 +1,33 @@
+# role: ethpandaops.general.hive
+hive_container_www_image: "docker.ethquokkaops.io/dh/library/nginx:1.27.3-alpine"
+hive_container_www_env:
+  VIRTUAL_PORT: "80"
+  VIRTUAL_HOST: "hive.{{ network_subdomain }}"
+  LETSENCRYPT_HOST: "hive.{{ network_subdomain }}"
+hive_repo_address: "https://github.com/ethereum/hive.git"
+hive_repo_version: "master"
+hive_simulations_client_config: []
+ - client: go-ethereum
+   nametag: prague-devnet-5
+   dockerfile: git
+   build_args:
+     github: s1na/go-ethereum
+     tag: eip-7623-rebased
+ - client: besu
+   nametag: prague-devnet-4
+   dockerfile: git
+   build_args:
+     github: siladu/besu
+     tag: pectra-devnet-5-interop
+hive_simulations_tests: []
+#   - simulator: ethereum/sync
+#     clients:
+#       - besu
+#       - erigon
+#       - ethereumjs
+#       - go-ethereum
+#       - nethermind
+#       - nimbus-el
+#       - reth
+#     extra_flags:
+#       - --client.checktimelimit=60s
