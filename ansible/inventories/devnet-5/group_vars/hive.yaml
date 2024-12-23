@@ -20,9 +20,25 @@ hive_simulations_client_config:
      github: siladu/besu
      tag: pectra-devnet-5-interop
 hive_simulations_tests:
-  - simulator: ethereum/sync
+  # Consume Engine
+  - simulator: ethereum/eest/consume-engine
     clients:
       - besu
       - go-ethereum
     extra_flags:
       - --client.checktimelimit=60s
+      - --sim.parallelism=4
+      #- --sim.timelimit=2h
+      - --sim.buildarg fixtures=https://github.com/ethereum/execution-spec-tests/releases/download/pectra-devnet-5%40v1.0.0/fixtures_pectra-devnet-5.tar.gz
+      - --sim.buildarg branch=pectra-devnet-5
+  # Consume RLP
+  - simulator: ethereum/eest/consume-rlp
+    clients:
+      - besu
+      - go-ethereum
+    extra_flags:
+      - --client.checktimelimit=60s
+      - --sim.parallelism=4
+      #- --sim.timelimit=2h
+      - --sim.buildarg fixtures=https://github.com/ethereum/execution-spec-tests/releases/download/pectra-devnet-5%40v1.0.0/fixtures_pectra-devnet-5.tar.gz
+      - --sim.buildarg branch=pectra-devnet-5
