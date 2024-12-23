@@ -147,7 +147,7 @@
     - role: gantsign.golang
       golang_gopath: '/data/workspace-go'
       golang_version: '1.21.13'
-      tags: [golang]
+      tags: [init-server, golang]
     - role: ethpandaops.general.hive
       tags: [hive]
     - role: ethpandaops.general.docker_nginx_proxy
