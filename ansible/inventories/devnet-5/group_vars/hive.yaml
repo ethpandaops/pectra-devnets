@@ -14,7 +14,7 @@ hive_simulations_client_config:
      github: s1na/go-ethereum
      tag: eip-7623-rebased
  - client: besu
-   nametag: prague-devnet-4
+   nametag: prague-devnet-5
    dockerfile: git
    build_args:
      github: siladu/besu
