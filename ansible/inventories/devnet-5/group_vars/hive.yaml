@@ -19,15 +19,10 @@ hive_simulations_client_config:
    build_args:
      github: siladu/besu
      tag: pectra-devnet-5-interop
-hive_simulations_tests: []
-#   - simulator: ethereum/sync
-#     clients:
-#       - besu
-#       - erigon
-#       - ethereumjs
-#       - go-ethereum
-#       - nethermind
-#       - nimbus-el
-#       - reth
-#     extra_flags:
-#       - --client.checktimelimit=60s
+hive_simulations_tests:
+  - simulator: ethereum/sync
+    clients:
+      - besu
+      - go-ethereum
+    extra_flags:
+      - --client.checktimelimit=60s
