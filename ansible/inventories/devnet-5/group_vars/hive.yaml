@@ -12,7 +12,7 @@ hive_simulations_client_config:
    dockerfile: git
    build_args:
      github: s1na/go-ethereum
-     tag: eip-7623-rebased
+     tag: prague-devnet-5
  - client: besu
    nametag: prague-devnet-5
    dockerfile: git
