@@ -19,12 +19,19 @@ hive_simulations_client_config:
    build_args:
      github: siladu/besu
      tag: pectra-devnet-5-interop
+ - client: reth
+   nametag: main
+   dockerfile: git
+   build_args:
+     github: paradigmxyz/reth
+     tag: main
 hive_simulations_tests:
   # Consume Engine
   - simulator: ethereum/eest/consume-engine
     clients:
       - besu
       - go-ethereum
+      - reth
     extra_flags:
       - --client.checktimelimit=60s
       - --sim.parallelism=4
@@ -36,6 +43,7 @@ hive_simulations_tests:
     clients:
       - besu
       - go-ethereum
+      - reth
     extra_flags:
       - --client.checktimelimit=60s
       - --sim.parallelism=4
