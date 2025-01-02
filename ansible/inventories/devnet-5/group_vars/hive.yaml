@@ -1,0 +1,53 @@
+# role: ethpandaops.general.hive
+hive_container_www_image: "docker.ethquokkaops.io/dh/library/nginx:1.27.3-alpine"
+hive_container_www_env:
+  VIRTUAL_PORT: "80"
+  VIRTUAL_HOST: "hive.{{ network_subdomain }}"
+  LETSENCRYPT_HOST: "hive.{{ network_subdomain }}"
+hive_repo_address: "https://github.com/ethereum/hive.git"
+hive_repo_version: "master"
+hive_simulations_prune_test_results_older_than: "72h"
+hive_simulations_client_config:
+ - client: go-ethereum
+   nametag: prague-devnet-5
+   dockerfile: git
+   build_args:
+     github: s1na/go-ethereum
+     tag: prague-devnet-5
+ - client: besu
+   nametag: prague-devnet-5
+   dockerfile: git
+   build_args:
+     github: siladu/besu
+     tag: pectra-devnet-5-interop
+ - client: reth
+   nametag: main
+   dockerfile: git
+   build_args:
+     github: paradigmxyz/reth
+     tag: main
+hive_simulations_tests:
+  # Consume Engine
+  - simulator: ethereum/eest/consume-engine
+    clients:
+      - besu
+      - go-ethereum
+      - reth
+    extra_flags:
+      - --client.checktimelimit=60s
+      - --sim.parallelism=4
+      #- --sim.timelimit=2h
+      - --sim.buildarg fixtures=https://github.com/ethereum/execution-spec-tests/releases/download/pectra-devnet-5%40v1.0.0/fixtures_pectra-devnet-5.tar.gz
+      - --sim.buildarg branch=pectra-devnet-5
+  # Consume RLP
+  - simulator: ethereum/eest/consume-rlp
+    clients:
+      - besu
+      - go-ethereum
+      - reth
+    extra_flags:
+      - --client.checktimelimit=60s
+      - --sim.parallelism=4
+      #- --sim.timelimit=2h
+      - --sim.buildarg fixtures=https://github.com/ethereum/execution-spec-tests/releases/download/pectra-devnet-5%40v1.0.0/fixtures_pectra-devnet-5.tar.gz
+      - --sim.buildarg branch=pectra-devnet-5
