@@ -21,11 +21,11 @@ hive_simulations_client_config:
      github: siladu/besu
      tag: pectra-devnet-5-interop
  - client: reth
-   nametag: main
+   nametag: devnet5
    dockerfile: git
    build_args:
      github: paradigmxyz/reth
-     tag: main
+     tag: devnet5
 hive_simulations_tests:
   # Consume Engine
   - simulator: ethereum/eest/consume-engine
