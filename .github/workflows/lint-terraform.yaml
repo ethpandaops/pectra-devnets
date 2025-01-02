@@ -27,3 +27,4 @@ jobs:
         working-directory: ./terraform
         run: >
           terraform fmt --recursive --check --list=true --diff
+
