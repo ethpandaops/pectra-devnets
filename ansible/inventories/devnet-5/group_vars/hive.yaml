@@ -6,6 +6,7 @@ hive_container_www_env:
   LETSENCRYPT_HOST: "hive.{{ network_subdomain }}"
 hive_repo_address: "https://github.com/ethereum/hive.git"
 hive_repo_version: "master"
+hive_simulations_prune_test_results_older_than: "72h"
 hive_simulations_client_config:
  - client: go-ethereum
    nametag: prague-devnet-5
