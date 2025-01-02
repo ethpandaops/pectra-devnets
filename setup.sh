@@ -13,3 +13,6 @@ asdf install
 
 # Install python tools
 pip install -r requirements.txt
+
+# reinstall terraform
+PLUGIN=terraform asdf list $PLUGIN | awk '{print "asdf uninstall $PLUGIN " $1 "; asdf install $PLUGIN " $1}' | bash
