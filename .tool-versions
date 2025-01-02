@@ -1,9 +1,9 @@
 age 1.1.1
 helm 3.12.1
 sops 3.7.3
-terraform 1.10.3
 shellcheck 0.10.0
 python 3.12.4
 ansible-lint 6.17.2
 awscli 2.13.7
 yq 4.35.2
+terraform 1.10.3
