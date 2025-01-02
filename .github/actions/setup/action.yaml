@@ -9,3 +9,6 @@ runs:
     - name: Install asdf tools
       shell: bash
       run: ./setup.sh
+    - uses: asdf-vm/actions/plugin-test@v3
+      with:
+          command: terraform --version
