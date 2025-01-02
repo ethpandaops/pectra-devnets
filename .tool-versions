@@ -6,4 +6,4 @@ python 3.12.4
 ansible-lint 6.17.2
 awscli 2.13.7
 yq 4.35.2
-terraform 1.10.3
+terraform 1.6.5
