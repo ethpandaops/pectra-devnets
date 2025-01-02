@@ -23,19 +23,19 @@ if ! asdf plugin list | grep -q helm; then
 fi
 
 if ! asdf plugin list | grep -q python; then
-  asdf plugin add python
+  asdf plugin add python https://github.com/asdf-community/asdf-python.git
 fi
 
 if ! asdf plugin list | grep -q ansible-lint; then
-  asdf plugin add ansible-lint
+  asdf plugin add ansible-lint https://github.com/amrox/asdf-ansible-lint.git
 fi
 
 if ! asdf plugin list | grep -q awscli; then
-  asdf plugin add awscli
+  asdf plugin add awscli https://github.com/MetricMike/asdf-awscli.git
 fi
 
 if ! asdf plugin list | grep -q yq; then
-  asdf plugin add yq
+  asdf plugin add yq https://github.com/sudermanjr/asdf-yq.git
 fi
 
 asdf install
