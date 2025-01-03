@@ -37,7 +37,7 @@ hive_simulations_tests:
       - --client.checktimelimit=60s
       - --sim.parallelism=4
       #- --sim.timelimit=2h
-      - --sim.buildarg fixtures=https://github.com/ethereum/execution-spec-tests/releases/download/pectra-devnet-5%40v1.0.0/fixtures_pectra-devnet-5.tar.gz
+      - --sim.buildarg fixtures=https://github.com/ethereum/execution-spec-tests/releases/download/pectra-devnet-5%40v1.1.0/fixtures_pectra-devnet-5.tar.gz
       - --sim.buildarg branch=pectra-devnet-5
   # Consume RLP
   - simulator: ethereum/eest/consume-rlp
@@ -49,5 +49,5 @@ hive_simulations_tests:
       - --client.checktimelimit=60s
       - --sim.parallelism=4
       #- --sim.timelimit=2h
-      - --sim.buildarg fixtures=https://github.com/ethereum/execution-spec-tests/releases/download/pectra-devnet-5%40v1.0.0/fixtures_pectra-devnet-5.tar.gz
+      - --sim.buildarg fixtures=https://github.com/ethereum/execution-spec-tests/releases/download/pectra-devnet-5%40v1.1.0/fixtures_pectra-devnet-5.tar.gz
       - --sim.buildarg branch=pectra-devnet-5
