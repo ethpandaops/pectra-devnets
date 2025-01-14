@@ -15,11 +15,11 @@ hive_simulations_client_config:
      github: s1na/go-ethereum
      tag: prague-devnet-5
  - client: besu
-   nametag: prague-devnet-5
+   nametag: main
    dockerfile: git
    build_args:
-     github: siladu/besu
-     tag: pectra-devnet-5-interop
+     github: hyperledger/besu
+     tag: main
  - client: reth
    nametag: main
    dockerfile: git
@@ -27,7 +27,7 @@ hive_simulations_client_config:
      github: paradigmxyz/reth
      tag: main
  - client: nethermind
-   nametag: main
+   nametag: pectra-devnet-5
    dockerfile: git
    build_args:
      github: NethermindEth/nethermind
@@ -50,7 +50,7 @@ hive_simulations_tests:
       - --client.checktimelimit=60s
       - --sim.parallelism=4
       #- --sim.timelimit=2h
-      - --sim.buildarg fixtures=https://github.com/ethereum/execution-spec-tests/releases/download/pectra-devnet-5%40v1.1.0/fixtures_pectra-devnet-5.tar.gz
+      - --sim.buildarg fixtures=https://github.com/ethereum/execution-spec-tests/releases/download/pectra-devnet-5%40v1.2.0/fixtures_pectra-devnet-5.tar.gz
       - --sim.buildarg branch=pectra-devnet-5
   # Consume RLP
   - simulator: ethereum/eest/consume-rlp
@@ -64,7 +64,7 @@ hive_simulations_tests:
       - --client.checktimelimit=60s
       - --sim.parallelism=4
       #- --sim.timelimit=2h
-      - --sim.buildarg fixtures=https://github.com/ethereum/execution-spec-tests/releases/download/pectra-devnet-5%40v1.1.0/fixtures_pectra-devnet-5.tar.gz
+      - --sim.buildarg fixtures=https://github.com/ethereum/execution-spec-tests/releases/download/pectra-devnet-5%40v1.2.0/fixtures_pectra-devnet-5.tar.gz
       - --sim.buildarg branch=pectra-devnet-5
   # Consume RLP
   - simulator: ethereum/rpc-compat
@@ -78,5 +78,5 @@ hive_simulations_tests:
       - --client.checktimelimit=60s
       - --sim.parallelism=4
       #- --sim.timelimit=2h
-      - --sim.buildarg fixtures=https://github.com/ethereum/execution-spec-tests/releases/download/pectra-devnet-5%40v1.1.0/fixtures_pectra-devnet-5.tar.gz
+      - --sim.buildarg fixtures=https://github.com/ethereum/execution-spec-tests/releases/download/pectra-devnet-5%40v1.2.0/fixtures_pectra-devnet-5.tar.gz
       - --sim.buildarg branch=pectra-devnet-5
