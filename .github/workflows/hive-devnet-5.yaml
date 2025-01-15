@@ -1,0 +1,181 @@
+name: Hive - Devnet 5
+on:
+  push:
+    branches:
+      - skylenet/hive-action
+  workflow_dispatch:
+    # Note: We're limited to 10 inputs
+    inputs:
+      client:
+        type: string
+        default: go-ethereum, besu, reth, nethermind, erigon
+        description: Comma-separated list of clients to test .e.g go-ethereum, besu, reth, nethermind, erigon
+      simulator:
+        type: string
+        default: ethereum/rpc-compat, ethereum/eest/consume-engine, ethereum/eest/consume-rlp
+        description: Comma-separated list of simulators to test .e.g ethereum/rpc-compat, ethereum/eest/consume-engine, ethereum/eest/consume-rlp
+      geth_version:
+        type: string
+        default: s1na/go-ethereum@prague-devnet-5
+        description: GitHub repository and tag for go-ethereum (repo@tag)
+      besu_version:
+        type: string
+        default: siladu/besu@pectra-devnet-5-interop
+        description: GitHub repository and tag for besu (repo@tag)
+      reth_version:
+        type: string
+        default: paradigmxyz/reth@main
+        description: GitHub repository and tag for reth (repo@tag)
+      nethermind_version:
+        type: string
+        default: NethermindEth/nethermind@pectra-devnet-5
+        description: GitHub repository and tag for nethermind (repo@tag)
+      erigon_version:
+        type: string
+        default: erigontech/erigon@pectra5
+        description: Docker image and tag for erigon (image@tag)
+
+env:
+  S3_BUCKET: hive-results
+  S3_PATH: pectra-devnet-5
+  S3_PUBLIC_URL: https://hive.ethpandaops.io/pectra-devnet-5
+  INSTALL_RCLONE_VERSION: v1.68.2
+  GLOBAL_EXTRA_FLAGS: >-
+    --sim.buildarg fixtures=https://github.com/ethereum/execution-spec-tests/releases/download/pectra-devnet-5%40v1.1.0/fixtures_pectra-devnet-5.tar.gz
+    --sim.buildarg branch=pectra-devnet-5
+    --client.checktimelimit=60s
+    --sim.parallelism=4
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      # Versions of the clients
+      geth_repo: ${{ steps.parse.outputs.geth_repo }}
+      geth_tag: ${{ steps.parse.outputs.geth_tag }}
+      geth_docker_image_tag: ${{ steps.parse.outputs.geth_docker_image_tag }}
+      besu_repo: ${{ steps.parse.outputs.besu_repo }}
+      besu_tag: ${{ steps.parse.outputs.besu_tag }}
+      besu_docker_image_tag: ${{ steps.parse.outputs.besu_docker_image_tag }}
+      reth_repo: ${{ steps.parse.outputs.reth_repo }}
+      reth_tag: ${{ steps.parse.outputs.reth_tag }}
+      reth_docker_image_tag: ${{ steps.parse.outputs.reth_docker_image_tag }}
+      nethermind_repo: ${{ steps.parse.outputs.nethermind_repo }}
+      nethermind_tag: ${{ steps.parse.outputs.nethermind_tag }}
+      nethermind_docker_image_tag: ${{ steps.parse.outputs.nethermind_docker_image_tag }}
+      erigon_image: ${{ steps.parse.outputs.erigon_image }}
+      erigon_tag: ${{ steps.parse.outputs.erigon_tag }}
+      erigon_docker_image_tag: ${{ steps.parse.outputs.erigon_docker_image_tag }}
+      # client_config contains the YAML client config for Hive
+      client_config: ${{ steps.client_config.outputs.config }}
+    steps:
+      - id: parse
+        run: |
+          # Default client versions
+          GETH_DEFAULT="s1na/go-ethereum@prague-devnet-5"
+          BESU_DEFAULT="siladu/besu@pectra-devnet-5-interop"
+          RETH_DEFAULT="paradigmxyz/reth@main"
+          NETHERMIND_DEFAULT="NethermindEth/nethermind@pectra-devnet-5"
+          ERIGON_DEFAULT="erigontech/erigon@pectra5"
+
+          # Parse geth
+          echo "geth_repo=$(echo ${GETH_VERSION:-$GETH_DEFAULT} | cut -d@ -f1)" >> $GITHUB_OUTPUT
+          echo "geth_tag=$(echo ${GETH_VERSION:-$GETH_DEFAULT} | cut -d@ -f2)" >> $GITHUB_OUTPUT
+          echo "geth_docker_image_tag=geth_$(echo ${GETH_VERSION:-$GETH_DEFAULT} | sed 's/[@\/]/_/g' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
+
+          # Parse besu
+          echo "besu_repo=$(echo ${BESU_VERSION:-$BESU_DEFAULT} | cut -d@ -f1)" >> $GITHUB_OUTPUT
+          echo "besu_tag=$(echo ${BESU_VERSION:-$BESU_DEFAULT} | cut -d@ -f2)" >> $GITHUB_OUTPUT
+          echo "besu_docker_image_tag=besu_$(echo ${BESU_VERSION:-$BESU_DEFAULT} | sed 's/[@\/]/_/g' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
+
+          # Parse reth
+          echo "reth_repo=$(echo ${RETH_VERSION:-$RETH_DEFAULT} | cut -d@ -f1)" >> $GITHUB_OUTPUT
+          echo "reth_tag=$(echo ${RETH_VERSION:-$RETH_DEFAULT} | cut -d@ -f2)" >> $GITHUB_OUTPUT
+          echo "reth_docker_image_tag=reth_$(echo ${RETH_VERSION:-$RETH_DEFAULT} | sed 's/[@\/]/_/g' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
+
+          # Parse nethermind
+          echo "nethermind_repo=$(echo ${NETHERMIND_VERSION:-$NETHERMIND_DEFAULT} | cut -d@ -f1)" >> $GITHUB_OUTPUT
+          echo "nethermind_tag=$(echo ${NETHERMIND_VERSION:-$NETHERMIND_DEFAULT} | cut -d@ -f2)" >> $GITHUB_OUTPUT
+          echo "nethermind_docker_image_tag=nethermind_$(echo ${NETHERMIND_VERSION:-$NETHERMIND_DEFAULT} | sed 's/[@\/]/_/g' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
+
+          # Parse erigon
+          echo "erigon_image=$(echo ${ERIGON_VERSION:-$ERIGON_DEFAULT} | cut -d@ -f1)" >> $GITHUB_OUTPUT
+          echo "erigon_tag=$(echo ${ERIGON_VERSION:-$ERIGON_DEFAULT} | cut -d@ -f2)" >> $GITHUB_OUTPUT
+          echo "erigon_docker_image_tag=erigon_$(echo ${ERIGON_VERSION:-$ERIGON_DEFAULT} | sed 's/[@\/]/_/g' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
+        env:
+          GETH_VERSION: ${{ inputs.geth_version }}
+          BESU_VERSION: ${{ inputs.besu_version }}
+          RETH_VERSION: ${{ inputs.reth_version }}
+          NETHERMIND_VERSION: ${{ inputs.nethermind_version }}
+          ERIGON_VERSION: ${{ inputs.erigon_version }}
+      - id: client_config
+        run: |
+          cat << 'EOF' >> $GITHUB_OUTPUT
+          config<<ENDCONFIG
+          - client: go-ethereum
+            nametag: ${{ steps.parse.outputs.geth_docker_image_tag }}
+            dockerfile: git
+            build_args:
+              github: ${{ steps.parse.outputs.geth_repo }}
+              tag: ${{ steps.parse.outputs.geth_tag }}
+          - client: besu
+            nametag: ${{ steps.parse.outputs.besu_docker_image_tag }}
+            dockerfile: git
+            build_args:
+              github: ${{ steps.parse.outputs.besu_repo }}
+              tag: ${{ steps.parse.outputs.besu_tag }}
+          - client: reth
+            nametag: ${{ steps.parse.outputs.reth_docker_image_tag }}
+            dockerfile: git
+            build_args:
+              github: ${{ steps.parse.outputs.reth_repo }}
+              tag: ${{ steps.parse.outputs.reth_tag }}
+          - client: nethermind
+            nametag: ${{ steps.parse.outputs.nethermind_docker_image_tag }}
+            dockerfile: git
+            build_args:
+              github: ${{ steps.parse.outputs.nethermind_repo }}
+              tag: ${{ steps.parse.outputs.nethermind_tag }}
+          - client: erigon
+            nametag: ${{ steps.parse.outputs.erigon_docker_image_tag }}
+            build_args:
+              baseimage: ${{ steps.parse.outputs.erigon_image }}
+              tag: ${{ steps.parse.outputs.erigon_tag }}
+          ENDCONFIG
+          EOF
+
+  test:
+    needs: prepare
+    runs-on: >-
+      ${{
+        matrix.simulator == 'ethereum/rpc-compat' && 'ubuntu-latest' ||
+        contains(matrix.simulator, 'ethereum/eest/') && 'self-hosted-ghr-size-m-x64' ||
+        'ubuntu-latest'
+      }}
+    concurrency:
+      group: >-
+        ${{ github.head_ref || inputs }}-${{ matrix.client }}-${{ matrix.simulator }}
+    strategy:
+      fail-fast: false
+      matrix:
+        #client: ${{ fromJSON(format('[{0}]', inputs.client || '"go-ethereum","besu","reth","nethermind","erigon"')) }}
+        #simulator: ${{ fromJSON(format('[{0}]', inputs.simulator || '"ethereum/rpc-compat","ethereum/eest/consume-engine","ethereum/eest/consume-rlp"')) }}
+        client: ${{ fromJSON(format('[{0}]', inputs.client || '"go-ethereum"')) }}
+        simulator: ${{ fromJSON(format('[{0}]', inputs.simulator || '"ethereum/rpc-compat"')) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/hive-deps
+        if: runner.environment != 'github-hosted'
+      - uses: ethpandaops/hive-github-action@master
+        with:
+          client: ${{ matrix.client }}
+          simulator: ${{ matrix.simulator }}
+          client_config: ${{ needs.prepare.outputs.client_config }}
+          extra_flags: ${{ env.GLOBAL_EXTRA_FLAGS }}
+          s3_upload: true
+          s3_bucket: ${{ env.S3_BUCKET }}
+          s3_path: ${{ env.S3_PATH }}
+          s3_public_url: ${{ env.S3_PUBLIC_URL }}
+          rclone_config: ${{ secrets.HIVE_RCLONE_CONFIG }}
+          rclone_version: ${{ env.INSTALL_RCLONE_VERSION }}
+          workflow_artifact_upload: true
