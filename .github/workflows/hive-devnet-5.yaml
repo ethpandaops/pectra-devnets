@@ -14,6 +14,10 @@ on:
         type: string
         default: '"ethereum/rpc-compat","ethereum/eest/consume-engine","ethereum/eest/consume-rlp"'
         description: Comma-separated list of simulators to test .e.g ethereum/rpc-compat, ethereum/eest/consume-engine, ethereum/eest/consume-rlp
+      hive_version:
+        type: string
+        default: ethereum/hive@master
+        description: GitHub repository and tag for hive (repo@tag)
       geth_version:
         type: string
         default: s1na/go-ethereum@prague-devnet-5
@@ -50,6 +54,9 @@ jobs:
   prepare:
     runs-on: ubuntu-latest
     outputs:
+      # Hive version
+      hive_repo: ${{ steps.parse.outputs.hive_repo }}
+      hive_tag: ${{ steps.parse.outputs.hive_tag }}
       # Versions of the clients
       geth_repo: ${{ steps.parse.outputs.geth_repo }}
       geth_tag: ${{ steps.parse.outputs.geth_tag }}
@@ -102,6 +109,10 @@ jobs:
           echo "erigon_image=$(echo ${ERIGON_VERSION:-$ERIGON_DEFAULT} | cut -d@ -f1)" >> $GITHUB_OUTPUT
           echo "erigon_tag=$(echo ${ERIGON_VERSION:-$ERIGON_DEFAULT} | cut -d@ -f2)" >> $GITHUB_OUTPUT
           echo "erigon_docker_image_tag=erigon_$(echo ${ERIGON_VERSION:-$ERIGON_DEFAULT} | sed 's/[@\/]/_/g' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
+
+          # Parse hive
+          echo "hive_repo=$(echo ${HIVE_VERSION:-$HIVE_DEFAULT} | cut -d@ -f1)" >> $GITHUB_OUTPUT
+          echo "hive_tag=$(echo ${HIVE_VERSION:-$HIVE_DEFAULT} | cut -d@ -f2)" >> $GITHUB_OUTPUT
         env:
           GETH_VERSION: ${{ inputs.geth_version }}
           BESU_VERSION: ${{ inputs.besu_version }}
@@ -168,6 +179,8 @@ jobs:
         if: runner.environment != 'github-hosted'
       - uses: ethpandaops/hive-github-action@master
         with:
+          hive_repository: ${{ needs.prepare.outputs.hive_repo }}
+          hive_version: ${{ needs.prepare.outputs.hive_tag }}
           client: ${{ matrix.client }}
           simulator: ${{ matrix.simulator }}
           client_config: ${{ needs.prepare.outputs.client_config }}
