@@ -8,11 +8,11 @@ on:
     inputs:
       client:
         type: string
-        default: go-ethereum, besu, reth, nethermind, erigon
+        default: '"go-ethereum","besu","reth","nethermind","erigon"'
         description: Comma-separated list of clients to test .e.g go-ethereum, besu, reth, nethermind, erigon
       simulator:
         type: string
-        default: ethereum/rpc-compat, ethereum/eest/consume-engine, ethereum/eest/consume-rlp
+        default: '"ethereum/rpc-compat","ethereum/eest/consume-engine","ethereum/eest/consume-rlp"'
         description: Comma-separated list of simulators to test .e.g ethereum/rpc-compat, ethereum/eest/consume-engine, ethereum/eest/consume-rlp
       geth_version:
         type: string
