@@ -146,12 +146,15 @@ jobs:
 
   test:
     needs: prepare
-    #runs-on: self-hosted-ghr-size-m-x64
-    runs-on: ubuntu-latest
+    runs-on: >-
+      ${{
+        matrix.simulator == 'ethereum/rpc-compat' && 'ubuntu-latest' ||
+        contains(matrix.simulator, 'ethereum/eest/') && 'self-hosted-ghr-size-m-x64' ||
+        'ubuntu-latest'
+      }}
     concurrency:
       group: >-
         ${{ github.head_ref || inputs }}-${{ matrix.client }}-${{ matrix.simulator }}
-      cancel-in-progress: true
     strategy:
       fail-fast: false
       matrix:
