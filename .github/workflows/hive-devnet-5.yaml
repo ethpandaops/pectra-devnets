@@ -162,6 +162,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/hive-deps
+        if: runner.environment != 'github-hosted'
       - uses: ethpandaops/hive-github-action@master
         with:
           client: ${{ matrix.client }}

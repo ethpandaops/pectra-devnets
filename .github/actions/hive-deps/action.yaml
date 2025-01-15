@@ -15,6 +15,6 @@ runs:
     - name: Install apt packages
       shell: bash
       run: |
-        sudo apt update && sudo apt install -y unzip gh
+        apt update && apt install -y unzip gh
     - name: Install yq
       uses: dcarbone/install-yq-action@4075b4dca348d74bd83f2bf82d30f25d7c54539b # v1.3.1
