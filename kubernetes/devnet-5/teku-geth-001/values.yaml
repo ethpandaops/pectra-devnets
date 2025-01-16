@@ -44,6 +44,8 @@ teku-geth-001:
               - --bootnodes=enode://0b290b3374f0e7a6808ff31c85d6c41ca7910861f3991cebb86d91db5c783a3bdb38656652fb9de590ac28eeb83a9198349d417a54b0f6c80bd20f225ab1c3b5@64.226.102.217:30303?discport=30303
               - --ethstats=k8s-teku-geth-001:<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.ethstats_secret}>@ethstats.pectra-devnet-5.ethpandaops.io
               - --rpc.allow-unprotected-txs
+              - --gcmode=archive
+              - --state.scheme=hash
             erigon:
               - --networkid=7088110746
               - --bootnodes=enode://0b290b3374f0e7a6808ff31c85d6c41ca7910861f3991cebb86d91db5c783a3bdb38656652fb9de590ac28eeb83a9198349d417a54b0f6c80bd20f225ab1c3b5@64.226.102.217:30303?discport=30303
@@ -184,7 +186,7 @@ teku-geth-001:
           - >
             if ! [ -f /data/genesis_init_done ];
             then
-              geth init --datadir /data /data/network-config/genesis.json;
+              geth init --state.scheme=hash --datadir /data /data/network-config/genesis.json;
               touch /data/genesis_init_done;
               echo "genesis init done";
             else
