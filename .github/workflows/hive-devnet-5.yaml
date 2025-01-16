@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - skylenet/hive-action
+  schedule:
+    - cron: '45 16 * * *'
   workflow_dispatch:
     # Note: We're limited to 10 inputs
     inputs:
@@ -168,10 +170,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        #client: ${{ fromJSON(format('[{0}]', inputs.client || '"go-ethereum","besu","reth","nethermind","erigon"')) }}
-        #simulator: ${{ fromJSON(format('[{0}]', inputs.simulator || '"ethereum/rpc-compat","ethereum/eest/consume-engine","ethereum/eest/consume-rlp"')) }}
-        client: ${{ fromJSON(format('[{0}]', inputs.client || '"go-ethereum"')) }}
-        simulator: ${{ fromJSON(format('[{0}]', inputs.simulator || '"ethereum/rpc-compat"')) }}
+        client: ${{ fromJSON(format('[{0}]', inputs.client || '"go-ethereum","besu","reth","nethermind","erigon"')) }}
+        simulator: ${{ fromJSON(format('[{0}]', inputs.simulator || '"ethereum/rpc-compat","ethereum/eest/consume-engine","ethereum/eest/consume-rlp"')) }}
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/hive-deps
