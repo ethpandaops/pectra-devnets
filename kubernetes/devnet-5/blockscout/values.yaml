@@ -1,0 +1,135 @@
+# Ansible managed. Don't change this file manually. Template info: /vendor/collections/ansible_collections/ethpandaops/general/roles/generate_kubernetes_config/templates/blockscout.yaml.j2
+
+blockscout-stack:
+  fullnameOverride: blockscout-stack
+  config:
+    network:
+      id: 7088110746
+      name: pectra-devnet-5
+      shortname: pectra-devnet-5
+      currency:
+        name: Ether
+        symbol: ETH
+        decimals: 18
+        dualToken: false
+    account:
+      enabled: false
+    testnet: true
+    nameService:
+      enabled: true
+      url: "https://explorer.pectra-devnet-5.ethpandaops.io"
+    prometheus:
+      enabled: false
+
+  blockscout:
+    fullnameOverride: blockscout-backend
+    podAnnotations:
+      "promtail.io/ignore_pod": "true"
+
+    image:
+      repository: docker.ethquokkaops.io/dh/blockscout/blockscout
+      tag: latest
+      pullPolicy: Always
+    env:
+      ETHEREUM_JSONRPC_VARIANT: "geth"
+      ETHEREUM_JSONRPC_HTTP_URL: http://geth-teku-001:8545
+      ETHEREUM_JSONRPC_WS_URL: ws://geth-teku-001:8546
+      ETHEREUM_JSONRPC_TRACE_URL: http://geth-teku-001:8545
+      COIN: ETH
+      DATABASE_URL: postgres://postgres:postgres@blockscout-postgresql:5432/blockscout?ssl=false
+      DISABLE_EXCHANGE_RATES: "true"
+      ECTO_USE_SSL: "false"
+      INDEXER_COIN_BALANCES_BATCH_SIZE: "5"
+      NETWORK: Ethereum
+      SUBNETWORK: pectra-devnet-5
+      POOL_SIZE: "15"
+      CHAIN_SPEC_PATH: /config-update/chainspec.json
+
+    service:
+      type: ClusterIP
+      port: 4000
+    ingress:
+      enabled: true
+      className: ingress-nginx-public
+      hostname: explorer-api.pectra-devnet-5.ethpandaops.io
+      tls:
+        enabled: true
+
+    extraVolumes:
+      - name: config-update
+        emptyDir: {}
+
+    extraVolumeMounts:
+      - name: config-update
+        mountPath: "/config-update"
+
+    initContainers:
+      - name: init-config
+        image: alpine:latest
+        imagePullPolicy: IfNotPresent
+        securityContext:
+          runAsNonRoot: false
+          runAsUser: 0
+        command:
+        - sh
+        - -ace
+        - >
+          CHAINSPEC=https://config.pectra-devnet-5.ethpandaops.io/el/chainspec.json;
+          mkdir -p /config-update;
+          wget -O /config-update/chainspec.json $CHAINSPEC;
+          echo "got genesis";
+          /bin/blockscout eval "Elixir.Explorer.ReleaseTasks.create_and_migrate()"
+        volumeMounts:
+          - name: config-update
+            mountPath: /config-update
+
+  frontend:
+    image:
+      repository: docker.ethquokkaops.io/dh/ghcr.io/blockscout/frontend
+      tag: latest
+      pullPolicy: Always
+    podAnnotations:
+      "promtail.io/ignore_pod": "true"
+
+    ingress:
+      enabled: true
+      className: ingress-nginx-public
+      hostname: explorer.pectra-devnet-5.ethpandaops.io
+      tls:
+        enabled: true
+
+    env:
+      NEXT_PUBLIC_API_HOST: explorer-api.pectra-devnet-5.ethpandaops.io
+      NEXT_PUBLIC_API_PROTOCOL: https
+      NEXT_PUBLIC_API_WEBSOCKET_PROTOCOL: wss
+      NEXT_PUBLIC_NETWORK_NAME: pectra-devnet-5
+      NEXT_PUBLIC_NETWORK_ID: 7088110746
+      NEXT_PUBLIC_NETWORK_RPC_URL: https://rpc.pectra-devnet-5.ethpandaops.io
+      NEXT_PUBLIC_APP_HOST: explorer.pectra-devnet-5.ethpandaops.io
+      NEXT_PUBLIC_APP_PROTOCOL: https
+      NEXT_PUBLIC_AD_BANNER_PROVIDER: none
+      NEXT_PUBLIC_AD_TEXT_PROVIDER: none
+      NEXT_PUBLIC_IS_TESTNET: true
+      NEXT_PUBLIC_GAS_TRACKER_ENABLED: true
+      NEXT_PUBLIC_HAS_BEACON_CHAIN: true
+      NEXT_PUBLIC_NETWORK_VERIFICATION_TYPE: validation
+      NEXT_PUBLIC_NETWORK_ICON: https://ethpandaops.io/logo.png
+
+postgresql:
+  enabled: true
+  image:
+    registry: docker.io
+    repository: bitnami/postgresql
+    tag: 15.3.0-debian-11-r7
+  auth:
+    enablePostgresUser: true
+    postgresPassword: postgres
+    username: postgres
+    password: postgres
+  fullnameOverride: blockscout-postgresql
+  primary:
+    extendedConfiguration: |
+      max_connections = 1024
+    persistence:
+      enabled: true
+      size: "100Gi"
