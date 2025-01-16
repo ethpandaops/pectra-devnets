@@ -1,23 +1,23 @@
 default_ethereum_client_images:
 ### Consensus layer clients
-  lighthouse: docker.ethquokkaops.io/dh/ethpandaops/lighthouse:pawanjay176-electra-alpha7-def2498
-  lodestar: docker.ethquokkaops.io/dh/ethpandaops/lodestar:unstable-3f3c7fc
-  nimbus: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth2:mekong-support-03fe86f
-  prysm: docker.ethquokkaops.io/dh/ethpandaops/prysm-beacon-chain:v5.1.2-mekong-1
-  prysm_validator: docker.ethquokkaops.io/dh/ethpandaops/prysm-validator:v5.1.2-mekong-1
-  teku: docker.ethquokkaops.io/dh/ethpandaops/teku:mekong-297263b
-  grandine: docker.ethquokkaops.io/dh/ethpandaops/grandine:mekong-171fc11
+  lighthouse: docker.ethquokkaops.io/dh/ethpandaops/lighthouse:single_attestation-b6d80eb
+  lodestar: docker.ethquokkaops.io/dh/ethpandaops/lodestar:devnet-5-38d40e8
+  nimbus: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth2:unstable-fb1c3ba
+  prysm: docker.ethquokkaops.io/dh/ethpandaops/prysm-beacon-chain:develop-0b16c79
+  prysm_validator: docker.ethquokkaops.io/dh/ethpandaops/prysm-validator:develop-0b16c79
+  teku: docker.ethquokkaops.io/dh/consensys/teku:develop
+  grandine: docker.ethquokkaops.io/dh/ethpandaops/grandine:devnet5-60cd7b0
 ### Execution layer clients
-  besu: docker.ethquokkaops.io/dh/ethpandaops/besu:pectra-devnet-4-8ab3aac
-  geth: docker.ethquokkaops.io/dh/ethpandaops/geth:lightclient-prague-devnet-4-37035c5
-  erigon: docker.ethquokkaops.io/dh/erigontech/erigon:v2.61.0-beta1
+  besu: docker.ethquokkaops.io/dh/ethpandaops/besu:main-1e7f6f6
+  geth: docker.ethquokkaops.io/dh/ethpandaops/geth:prague-devnet-5-f85cde7
+  erigon: docker.ethquokkaops.io/dh/ethpandaops/erigon:pectra5-3d65c9b
   ethereumjs: docker.ethquokkaops.io/dh/ethpandaops/ethereumjs:master-100d77d
-  nethermind: docker.ethquokkaops.io/dh/ethpandaops/nethermind:pectra_devnet_4-c3827bc
-  reth: docker.ethquokkaops.io/dh/ethpandaops/reth:main-28ef574
-  nimbusel: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth1:master-90dd86b
+  nethermind: docker.ethquokkaops.io/dh/ethpandaops/nethermind:pectra-devnet-5-e7c94c1
+  reth: docker.ethquokkaops.io/dh/ethpandaops/reth:main-11bd9dd
+  nimbusel: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth1:master-ac053bf
 
 default_tooling_images:
-  xatu_sentry: docker.ethquokkaops.io/dh/ethpandaops/xatu:0.0.16-pectra-debian
+  xatu_sentry: docker.ethquokkaops.io/dh/ethpandaops/xatu:0.0.25-pectra-debian
   ethereum_metrics_exporter: docker.ethquokkaops.io/dh/ethpandaops/ethereum-metrics-exporter:latest
   tx_fuzz: docker.ethquokkaops.io/dh/ethpandaops/tx-fuzz:pr-56
   forkmon: docker.ethquokkaops.io/dh/skylenet/nodemonitor:darkmode
@@ -33,13 +33,13 @@ default_tooling_images:
   eth_fauceth: docker.ethquokkaops.io/dh/chainflag/eth-faucet:latest
   blobscan: docker.ethquokkaops.io/dh/blossomlabs/blobscan:latest
   blobscan_indexer: docker.ethquokkaops.io/dh/blossomlabs/blobscan-indexer:latest
-  dora: docker.ethquokkaops.io/dh/ethpandaops/dora:pk910-per-validator-operations-latest
+  dora: docker.ethquokkaops.io/dh/ethpandaops/dora:master-latest
   dugtrio: docker.ethquokkaops.io/dh/ethpandaops/dugtrio:latest
-  ethereum_genesis_generator: docker.ethquokkaops.io/dh/ethpandaops/ethereum-genesis-generator:3.4.0
-  tracoor: docker.ethquokkaops.io/dh/ethpandaops/tracoor:0.0.25-debian
+  ethereum_genesis_generator: docker.ethquokkaops.io/dh/ethpandaops/ethereum-genesis-generator:3.5.4
+  tracoor: docker.ethquokkaops.io/dh/ethpandaops/tracoor:0.0.26-debian
   ncli: docker.ethquokkaops.io/dh/status-im/nimbus-eth2:unstable
   lcli: docker.ethquokkaops.io/dh/ethpandaops/lighthouse:unstable-a94b12blo
   zcli: electra
-  assertoor: docker.ethquokkaops.io/dh/ethpandaops/assertoor:electra-support-latest
+  assertoor: docker.ethquokkaops.io/dh/ethpandaops/assertoor:latest
   erpc: docker.ethquokkaops.io/gh/erpc/erpc:main
   prometheus: docker.ethquokkaops.io/dh/prom/prometheus:v2.40.7
