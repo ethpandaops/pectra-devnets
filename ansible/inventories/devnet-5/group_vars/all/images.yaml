@@ -28,7 +28,7 @@ default_tooling_images:
   homepage: docker.ethquokkaops.io/dh/ethpandaops/ethereum-testnet-homepage:latest
   checkpointz: docker.ethquokkaops.io/dh/ethpandaops/checkpointz:0.0.10-electra
   blockscout: docker.ethquokkaops.io/dh/blockscout/blockscout:latest
-  blockscout_frontend: docker.ethquokkaops.io/dh/ghcr.io/blockscout/frontend:latest
+  blockscout_frontend: docker.ethquokkaops.io/gh/blockscout/frontend:latest
   beacon_metrics_gazer: docker.ethquokkaops.io/dh/dapplion/beacon-metrics-gazer:latest
   eth_fauceth: docker.ethquokkaops.io/dh/chainflag/eth-faucet:latest
   blobscan: docker.ethquokkaops.io/dh/blossomlabs/blobscan:latest

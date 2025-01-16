@@ -85,7 +85,7 @@ blockscout-stack:
 
   frontend:
     image:
-      repository: docker.ethquokkaops.io/dh/ghcr.io/blockscout/frontend
+      repository: docker.ethquokkaops.io/dh/blockscout/blockscout
       tag: latest
       pullPolicy: Always
     podAnnotations:
