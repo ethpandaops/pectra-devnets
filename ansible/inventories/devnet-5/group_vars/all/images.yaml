@@ -11,13 +11,13 @@ default_ethereum_client_images:
   besu: docker.ethquokkaops.io/dh/ethpandaops/besu:main-1e7f6f6
   geth: docker.ethquokkaops.io/dh/ethpandaops/geth:prague-devnet-5-f85cde7
   erigon: docker.ethquokkaops.io/dh/ethpandaops/erigon:pectra5-3d65c9b
-  ethereumjs: docker.ethquokkaops.io/dh/ethpandaops/ethereumjs:master-100d77d
+  ethereumjs: docker.ethquokkaops.io/dh/ethpandaops/ethereumjs:master-be2b63a
   nethermind: docker.ethquokkaops.io/dh/ethpandaops/nethermind:pectra-devnet-5-52b679a
   reth: docker.ethquokkaops.io/dh/ethpandaops/reth:main-11bd9dd
   nimbusel: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth1:master-ac053bf
 
 default_tooling_images:
-  xatu_sentry: docker.ethquokkaops.io/dh/ethpandaops/xatu:0.0.25-pectra-debian
+  xatu_sentry: docker.ethquokkaops.io/dh/ethpandaops/xatu:1.0.25-debian
   ethereum_metrics_exporter: docker.ethquokkaops.io/dh/ethpandaops/ethereum-metrics-exporter:latest
   tx_fuzz: docker.ethquokkaops.io/dh/ethpandaops/tx-fuzz:pr-56
   forkmon: docker.ethquokkaops.io/dh/skylenet/nodemonitor:darkmode
@@ -43,3 +43,9 @@ default_tooling_images:
   assertoor: docker.ethquokkaops.io/dh/ethpandaops/assertoor:latest
   erpc: docker.ethquokkaops.io/gh/erpc/erpc:main
   prometheus: docker.ethquokkaops.io/dh/prom/prometheus:v2.40.7
+  node_exporter: docker.ethquokkaops.io/dh/prom/node-exporter:v1.5.0
+  cl_bootnode: docker.ethquokkaops.io/dh/protolambda/eth2-bootnode:cleanup
+  json_rpc_snooper: docker.ethquokkaops.io/dh/ethpandaops/json-rpc-snoop:1.1.0
+  nginx_proxy: docker.ethquokkaops.io/dh/nginx:alpine
+  nginx_proxy_gen: docker.ethquokkaops.io/dh/nginxproxy/docker-gen
+  nginx_proxy_acme: docker.ethquokkaops.io/dh/nginxproxy/acme-companion
