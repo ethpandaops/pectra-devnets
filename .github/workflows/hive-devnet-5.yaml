@@ -1,8 +1,5 @@
 name: Hive - Devnet 5
 on:
-  push:
-    branches:
-      - skylenet/hive-action
   schedule:
     - cron: '45 16 * * *'
   workflow_dispatch:
