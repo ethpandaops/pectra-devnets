@@ -5,15 +5,15 @@ assertoor:
 
   image:
     repository: docker.ethquokkaops.io/dh/ethpandaops/assertoor
-    tag: latest
+    tag: master-latest
     pullPolicy: Always
   resources:
     requests:
       cpu: 500m
-      memory: 500Mi
+      memory: 6Gi
     limits:
-      cpu: 2000m
-      memory: 2Gi
+      cpu: 3000m
+      memory: 8Gi
 
   ingress:
     enabled: true
