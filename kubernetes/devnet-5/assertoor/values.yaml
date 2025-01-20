@@ -5,7 +5,7 @@ assertoor:
 
   image:
     repository: docker.ethquokkaops.io/dh/ethpandaops/assertoor
-    tag: latest
+    tag: master-latest
     pullPolicy: Always
   resources:
     requests:

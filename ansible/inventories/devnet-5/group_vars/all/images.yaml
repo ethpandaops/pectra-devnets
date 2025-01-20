@@ -40,7 +40,7 @@ default_tooling_images:
   ncli: docker.ethquokkaops.io/dh/status-im/nimbus-eth2:unstable
   lcli: docker.ethquokkaops.io/dh/ethpandaops/lighthouse:unstable-a94b12blo
   zcli: electra
-  assertoor: docker.ethquokkaops.io/dh/ethpandaops/assertoor:latest
+  assertoor: docker.ethquokkaops.io/dh/ethpandaops/assertoor:master-latest
   erpc: docker.ethquokkaops.io/gh/erpc/erpc:main
   prometheus: docker.ethquokkaops.io/dh/prom/prometheus:v2.40.7
   node_exporter: docker.ethquokkaops.io/dh/prom/node-exporter:v1.5.0
