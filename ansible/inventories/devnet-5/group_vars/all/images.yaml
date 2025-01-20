@@ -1,14 +1,14 @@
 default_ethereum_client_images:
 ### Consensus layer clients
   lighthouse: docker.ethquokkaops.io/dh/ethpandaops/lighthouse:single_attestation-b6d80eb
-  lodestar: docker.ethquokkaops.io/dh/ethpandaops/lodestar:devnet-5-38d40e8
-  nimbus: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth2:pWx-linux-amd64
+  lodestar: docker.ethquokkaops.io/dh/ethpandaops/lodestar:nflaig-block-voluntary-exit-check-2fe2563
+  nimbus: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth2:devnet-5-candidate-1-af895e8
   prysm: docker.ethquokkaops.io/dh/ethpandaops/prysm-beacon-chain:develop-0b16c79
   prysm_validator: docker.ethquokkaops.io/dh/ethpandaops/prysm-validator:develop-0b16c79
   teku: docker.ethquokkaops.io/dh/consensys/teku:develop
   grandine: docker.ethquokkaops.io/dh/ethpandaops/grandine:devnet5-60cd7b0
 ### Execution layer clients
-  besu: docker.ethquokkaops.io/dh/ethpandaops/besu:main-1e7f6f6
+  besu: docker.ethquokkaops.io/dh/ethpandaops/besu:main-a98e950
   geth: docker.ethquokkaops.io/dh/ethpandaops/geth:prague-devnet-5-f85cde7
   erigon: docker.ethquokkaops.io/dh/ethpandaops/erigon:pectra5-3d65c9b
   ethereumjs: docker.ethquokkaops.io/dh/ethpandaops/ethereumjs:master-be2b63a
