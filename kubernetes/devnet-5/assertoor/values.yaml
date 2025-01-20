@@ -10,10 +10,10 @@ assertoor:
   resources:
     requests:
       cpu: 500m
-      memory: 4Gi
-    limits:
-      cpu: 2000m
       memory: 6Gi
+    limits:
+      cpu: 3000m
+      memory: 8Gi
 
   ingress:
     enabled: true
