@@ -14,7 +14,7 @@ default_ethereum_client_images:
   ethereumjs: docker.ethquokkaops.io/dh/ethpandaops/ethereumjs:master-be2b63a
   nethermind: docker.ethquokkaops.io/dh/ethpandaops/nethermind:pectra-devnet-5-52b679a
   reth: docker.ethquokkaops.io/dh/ethpandaops/reth:main-11bd9dd
-  nimbusel: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth1:master-ac053bf
+  nimbusel: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth1:master-c62024e
 
 default_tooling_images:
   xatu_sentry: docker.ethquokkaops.io/dh/ethpandaops/xatu:1.0.25-debian
