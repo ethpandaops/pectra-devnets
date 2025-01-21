@@ -200,7 +200,7 @@ teku-geth-001:
     enabled: true
     fullnameOverride: teku-geth-001
     image:
-      repository: docker.ethquokkaops.io/dh/consensys/teku
+      repository: docker.ethquokkaops.io/dh/ethpandaops/teku
       tag: master-d56ce97
       pullPolicy: Always
     mode: "beacon"
