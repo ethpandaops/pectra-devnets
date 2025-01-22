@@ -26,7 +26,7 @@ default_tooling_images:
   powfaucet: docker.ethquokkaops.io/dh/pk910/powfaucet:v2-stable
   ethstats: docker.ethquokkaops.io/dh/skylenet/ethstats-server:poa-no-geoip
   homepage: docker.ethquokkaops.io/dh/ethpandaops/ethereum-testnet-homepage:latest
-  checkpointz: docker.ethquokkaops.io/dh/ethpandaops/checkpointz:0.0.10-electra
+  checkpointz: docker.ethquokkaops.io/dh/ethpandaops/checkpointz:0.0.11-electra
   blockscout: docker.ethquokkaops.io/dh/blockscout/blockscout:latest
   blockscout_frontend: docker.ethquokkaops.io/gh/blockscout/frontend:latest
   beacon_metrics_gazer: docker.ethquokkaops.io/dh/dapplion/beacon-metrics-gazer:latest
