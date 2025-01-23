@@ -118,7 +118,7 @@ erpc:
             - "eth_getTransactionByBlockNumberAndIndex"
             - "eth_getTransactionByHash"
             - "eth_getTransactionCount"
-            #- "eth_getTransactionReceipt" tmp disable
+            - "eth_getTransactionReceipt"
             - "eth_newBlockFilter"
             - "eth_newPendingTransactionFilter"
             - "eth_maxPriorityFeePerGas"
