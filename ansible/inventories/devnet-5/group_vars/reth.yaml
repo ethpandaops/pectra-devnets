@@ -4,6 +4,7 @@ bootstrap_default_user_authorized_keys_github_team_el:
    - shekhirin
    - onbjerg
    - klkvr
+   - rkrasiuk
 # role: ethpandaops.general.ethereum_node
 ethereum_node_el: reth
 # role: ethpandaops.general.reth
