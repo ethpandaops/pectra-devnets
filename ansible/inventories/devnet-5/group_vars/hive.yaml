@@ -33,10 +33,10 @@ hive_simulations_client_config:
      github: NethermindEth/nethermind
      tag: pectra-devnet-5
  - client: erigon
-   nametag: pectra5
+   nametag: main
    build_args:
     baseimage: erigontech/erigon
-    tag: pectra5
+    tag: main
 hive_simulations_tests:
   # Consume Engine
   - simulator: ethereum/eest/consume-engine

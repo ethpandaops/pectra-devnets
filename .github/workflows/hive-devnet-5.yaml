@@ -35,7 +35,7 @@ on:
         description: GitHub repository and tag for nethermind (repo@tag)
       erigon_version:
         type: string
-        default: erigontech/erigon@pectra5
+        default: erigontech/erigon@main
         description: Docker image and tag for erigon (image@tag)
 
 env:
@@ -81,7 +81,7 @@ jobs:
           BESU_DEFAULT="hyperledger/besu@main"
           RETH_DEFAULT="paradigmxyz/reth@main"
           NETHERMIND_DEFAULT="NethermindEth/nethermind@pectra-devnet-5"
-          ERIGON_DEFAULT="erigontech/erigon@pectra5"
+          ERIGON_DEFAULT="erigontech/erigon@main"
 
           # Parse geth
           echo "geth_repo=$(echo ${GETH_VERSION:-$GETH_DEFAULT} | cut -d@ -f1)" >> $GITHUB_OUTPUT
