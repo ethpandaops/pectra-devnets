@@ -49,6 +49,7 @@ env:
     --sim.limit="fork_CancunToPrague or fork_Prague"
     --client.checktimelimit=60s
     --sim.parallelism=4
+    --docker.buildoutput
 
 jobs:
   prepare:
