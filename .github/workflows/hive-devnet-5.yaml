@@ -43,12 +43,26 @@ env:
   S3_PATH: pectra-devnet-5
   S3_PUBLIC_URL: https://hive.ethpandaops.io/pectra-devnet-5
   INSTALL_RCLONE_VERSION: v1.68.2
-  GLOBAL_EXTRA_FLAGS: >-
+  EEST_COMMON_FLAGS: >-
     --sim.buildarg fixtures=https://github.com/ethereum/execution-spec-tests/releases/download/pectra-devnet-5%40v1.2.0/fixtures_pectra-devnet-5.tar.gz
     --sim.buildarg branch=pectra-devnet-5@v1.2.0
     --sim.limit="fork_CancunToPrague or fork_Prague"
+  # Flags used for all simulators
+  GLOBAL_EXTRA_FLAGS: >-
     --client.checktimelimit=60s
     --sim.parallelism=4
+    --docker.buildoutput
+  # Flags used for the ethereum/eest/consume-engine simulator
+  EEST_ENGINE_FLAGS: >-
+    ${EEST_COMMON_FLAGS}
+    --sim.loglevel=3
+  # Flags used for the ethereum/eest/consume-rlp simulator
+  EEST_RLP_FLAGS: >-
+    ${EEST_COMMON_FLAGS}
+    --sim.loglevel=3
+  # Flags used for the ethereum/rpc-compat simulator
+  RPC_COMPAT_FLAGS: >-
+    --sim.loglevel=3
 
 jobs:
   prepare:
@@ -182,7 +196,11 @@ jobs:
           client: ${{ matrix.client }}
           simulator: ${{ matrix.simulator }}
           client_config: ${{ needs.prepare.outputs.client_config }}
-          extra_flags: ${{ env.GLOBAL_EXTRA_FLAGS }}
+          extra_flags: >-
+            ${{ env.GLOBAL_EXTRA_FLAGS }}
+            ${{ matrix.simulator == 'ethereum/rpc-compat' && env.RPC_COMPAT_FLAGS || '' }}
+            ${{ matrix.simulator == 'ethereum/eest/consume-engine' && env.EEST_ENGINE_FLAGS || '' }}
+            ${{ matrix.simulator == 'ethereum/eest/consume-rlp' && env.EEST_RLP_FLAGS || '' }}
           s3_upload: true
           s3_bucket: ${{ env.S3_BUCKET }}
           s3_path: ${{ env.S3_PATH }}
