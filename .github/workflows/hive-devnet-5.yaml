@@ -45,6 +45,8 @@ env:
   INSTALL_RCLONE_VERSION: v1.68.2
   GLOBAL_EXTRA_FLAGS: >-
     --sim.buildarg fixtures=https://github.com/ethereum/execution-spec-tests/releases/download/pectra-devnet-5%40v1.2.0/fixtures_pectra-devnet-5.tar.gz
+    --sim.buildarg branch=pectra-devnet-5@v1.2.0
+    --sim.limit "fork_CancunToPrague or fork_Prague"
     --client.checktimelimit=60s
     --sim.parallelism=4
 
