@@ -4,6 +4,13 @@ bootstrap_default_user_authorized_keys_github_team_cl:
    - povi
    - tumas
 
+# role: geerlingguy.docker
+docker_daemon_options:
+  "log-driver": "json-file"
+  "log-opts":
+      "max-size": "500m"
+      "max-file": "40"
+
 # role: validator_keys
 validator_keys_sync_files:
   - src: "{{ inventory_dir }}/files/validator_keys/{{ inventory_hostname }}/teku-keys/"
