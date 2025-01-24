@@ -44,8 +44,8 @@ env:
   S3_PUBLIC_URL: https://hive.ethpandaops.io/pectra-devnet-5
   INSTALL_RCLONE_VERSION: v1.68.2
   EEST_COMMON_FLAGS: >-
-    --sim.buildarg fixtures=https://github.com/ethereum/execution-spec-tests/releases/download/pectra-devnet-5%40v1.2.0/fixtures_pectra-devnet-5.tar.gz
-    --sim.buildarg branch=pectra-devnet-5@v1.2.0
+    --sim.buildarg fixtures=https://github.com/ethereum/execution-spec-tests/releases/download/pectra-devnet-5%40v1.3.0/fixtures_pectra-devnet-5.tar.gz
+    --sim.buildarg branch=pectra-devnet-5@v1.3.0
     --sim.limit="fork_CancunToPrague or fork_Prague"
   # Flags used for all simulators
   GLOBAL_EXTRA_FLAGS: >-
