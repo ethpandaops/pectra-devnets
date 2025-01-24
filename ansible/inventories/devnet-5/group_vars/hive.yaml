@@ -34,8 +34,9 @@ hive_simulations_client_config:
      tag: pectra-devnet-5
  - client: erigon
    nametag: main
+   dockerfile: git
    build_args:
-    baseimage: erigontech/erigon
+    github: erigontech/erigon
     tag: main
 hive_simulations_tests:
   # Consume Engine
