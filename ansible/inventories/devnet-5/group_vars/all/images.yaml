@@ -1,6 +1,6 @@
 default_ethereum_client_images:
 ### Consensus layer clients
-  lighthouse: docker.ethquokkaops.io/dh/ethpandaops/lighthouse:single_attestation-b6d80eb
+  lighthouse: docker.ethquokkaops.io/dh/ethpandaops/lighthouse:unstable-a1b7d61
   lodestar: docker.ethquokkaops.io/dh/ethpandaops/lodestar:unstable-d584aed
   nimbus: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth2:devnet-5-candidate-1-af895e8
   prysm: docker.ethquokkaops.io/dh/ethpandaops/prysm-beacon-chain:develop-0b16c79
