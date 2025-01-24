@@ -43,10 +43,8 @@ env:
   S3_PATH: pectra-devnet-5
   S3_PUBLIC_URL: https://hive.ethpandaops.io/pectra-devnet-5
   INSTALL_RCLONE_VERSION: v1.68.2
-  EEST_COMMON_FLAGS: >-
-    --sim.buildarg fixtures=https://github.com/ethereum/execution-spec-tests/releases/download/pectra-devnet-5%40v1.3.0/fixtures_pectra-devnet-5.tar.gz
-    --sim.buildarg branch=pectra-devnet-5@v1.3.0
-    --sim.limit="fork_CancunToPrague or fork_Prague"
+  EEST_BUILD_ARG_FIXTURES: https://github.com/ethereum/execution-spec-tests/releases/download/pectra-devnet-5%40v1.3.0/fixtures_pectra-devnet-5.tar.gz
+  EEST_BUILD_ARG_BRANCH: pectra-devnet-5@v1.3.0
   # Flags used for all simulators
   GLOBAL_EXTRA_FLAGS: >-
     --client.checktimelimit=60s
@@ -54,11 +52,15 @@ env:
     --docker.buildoutput
   # Flags used for the ethereum/eest/consume-engine simulator
   EEST_ENGINE_FLAGS: >-
-    ${EEST_COMMON_FLAGS}
+    --sim.buildarg fixtures=${EEST_BUILD_ARG_FIXTURES}
+    --sim.buildarg branch=${EEST_BUILD_ARG_BRANCH}
+    --sim.limit "fork_CancunToPrague or fork_Prague"
     --sim.loglevel=3
   # Flags used for the ethereum/eest/consume-rlp simulator
   EEST_RLP_FLAGS: >-
-    ${EEST_COMMON_FLAGS}
+    --sim.buildarg fixtures=${EEST_BUILD_ARG_FIXTURES}
+    --sim.buildarg branch=${EEST_BUILD_ARG_BRANCH}
+    --sim.limit "fork_CancunToPrague or fork_Prague"
     --sim.loglevel=3
   # Flags used for the ethereum/rpc-compat simulator
   RPC_COMPAT_FLAGS: >-
