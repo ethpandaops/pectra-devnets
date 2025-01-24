@@ -36,7 +36,7 @@ on:
       erigon_version:
         type: string
         default: erigontech/erigon@main
-        description: Docker image and tag for erigon (image@tag)
+        description: GitHub repository and tag for erigon (repo@tag)
 
 env:
   S3_BUCKET: hive-results
@@ -120,7 +120,7 @@ jobs:
           echo "nethermind_docker_image_tag=nethermind_$(echo ${NETHERMIND_VERSION:-$NETHERMIND_DEFAULT} | sed 's/[@\/]/_/g' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
 
           # Parse erigon
-          echo "erigon_image=$(echo ${ERIGON_VERSION:-$ERIGON_DEFAULT} | cut -d@ -f1)" >> $GITHUB_OUTPUT
+          echo "erigon_repo=$(echo ${ERIGON_VERSION:-$ERIGON_DEFAULT} | cut -d@ -f1)" >> $GITHUB_OUTPUT
           echo "erigon_tag=$(echo ${ERIGON_VERSION:-$ERIGON_DEFAULT} | cut -d@ -f2)" >> $GITHUB_OUTPUT
           echo "erigon_docker_image_tag=erigon_$(echo ${ERIGON_VERSION:-$ERIGON_DEFAULT} | sed 's/[@\/]/_/g' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
 
@@ -163,8 +163,9 @@ jobs:
               tag: ${{ steps.parse.outputs.nethermind_tag }}
           - client: erigon
             nametag: ${{ steps.parse.outputs.erigon_docker_image_tag }}
+            dockerfile: git
             build_args:
-              baseimage: ${{ steps.parse.outputs.erigon_image }}
+              github: ${{ steps.parse.outputs.erigon_repo }}
               tag: ${{ steps.parse.outputs.erigon_tag }}
           ENDCONFIG
           EOF
