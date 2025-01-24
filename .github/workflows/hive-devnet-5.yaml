@@ -56,12 +56,10 @@ env:
   EEST_ENGINE_FLAGS: >-
     ${EEST_COMMON_FLAGS}
     --sim.loglevel=3
-    --docker.output
   # Flags used for the ethereum/eest/consume-rlp simulator
   EEST_RLP_FLAGS: >-
     ${EEST_COMMON_FLAGS}
     --sim.loglevel=3
-    --docker.output
   # Flags used for the ethereum/rpc-compat simulator
   RPC_COMPAT_FLAGS: >-
     --sim.loglevel=3
