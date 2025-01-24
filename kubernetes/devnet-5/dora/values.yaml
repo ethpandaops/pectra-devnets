@@ -4,7 +4,7 @@ dora:
   fullnameOverride: dora
   image:
     repository: docker.ethquokkaops.io/dh/ethpandaops/dora
-    tag: master-latest
+    tag: pk910-unfinality-performance-fixes-latest
     pullPolicy: Always
   resources:
     requests:
