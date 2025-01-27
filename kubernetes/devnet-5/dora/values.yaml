@@ -31,6 +31,16 @@ dora:
       value: "true"
     - name: FRONTEND_SHOW_SENSITIVE_PEER_INFOS
       value: "true"
+    - name: FRONTEND_ETH_EXPLORER_LINK
+      value: "https://explorer.pectra-devnet-5.ethpandaops.io/"
+    - name: FRONTEND_PUBLIC_RPC_URL
+      value: "https://rpc.pectra-devnet-5.ethpandaops.io"
+    - name: FRONTEND_RAINBOWKIT_PROJECT_ID
+      value: "15fe4ab4d5c0bcb6f0dc7c398301ff0e"
+    - name: FRONTEND_SHOW_SUBMIT_DEPOSIT
+      value: "true"
+    - name: FRONTEND_SHOW_SUBMIT_EL_REQUESTS
+      value: "true"
   postgresql:
     name: "dora-postgresql"
     fullnameOverride: "dora-postgresql"
