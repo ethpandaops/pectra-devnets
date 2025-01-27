@@ -6,7 +6,7 @@ default_ethereum_client_images:
   prysm: docker.ethquokkaops.io/dh/ethpandaops/prysm-beacon-chain:fix-batch-process-pending-deposits-e97788e
   prysm_validator: docker.ethquokkaops.io/dh/ethpandaops/prysm-validator:fix-batch-process-pending-deposits-e97788e
   teku: docker.ethquokkaops.io/dh/ethpandaops/teku:master-28f69d3
-  grandine: docker.ethquokkaops.io/dh/ethpandaops/grandine:devnet5-7a64a1c
+  grandine: docker.ethquokkaops.io/dh/ethpandaops/grandine:devnet5-7ba51a4
 ### Execution layer clients
   besu: docker.ethquokkaops.io/dh/ethpandaops/besu:main-846e483
   geth: docker.ethquokkaops.io/dh/ethpandaops/geth:prague-devnet-5-f24d6f6
