@@ -104,27 +104,27 @@ jobs:
           # Parse geth
           echo "geth_repo=$(echo ${GETH_VERSION:-$GETH_DEFAULT} | cut -d@ -f1)" >> $GITHUB_OUTPUT
           echo "geth_tag=$(echo ${GETH_VERSION:-$GETH_DEFAULT} | cut -d@ -f2)" >> $GITHUB_OUTPUT
-          echo "geth_docker_image_tag=geth_$(echo ${GETH_VERSION:-$GETH_DEFAULT} | sed 's/[@\/]/_/g' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
+          echo "geth_docker_image_tag=$(echo ${GETH_VERSION:-$GETH_DEFAULT} | sed 's/[@\/]/_/g' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
 
           # Parse besu
           echo "besu_repo=$(echo ${BESU_VERSION:-$BESU_DEFAULT} | cut -d@ -f1)" >> $GITHUB_OUTPUT
           echo "besu_tag=$(echo ${BESU_VERSION:-$BESU_DEFAULT} | cut -d@ -f2)" >> $GITHUB_OUTPUT
-          echo "besu_docker_image_tag=besu_$(echo ${BESU_VERSION:-$BESU_DEFAULT} | sed 's/[@\/]/_/g' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
+          echo "besu_docker_image_tag=$(echo ${BESU_VERSION:-$BESU_DEFAULT} | sed 's/[@\/]/_/g' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
 
           # Parse reth
           echo "reth_repo=$(echo ${RETH_VERSION:-$RETH_DEFAULT} | cut -d@ -f1)" >> $GITHUB_OUTPUT
           echo "reth_tag=$(echo ${RETH_VERSION:-$RETH_DEFAULT} | cut -d@ -f2)" >> $GITHUB_OUTPUT
-          echo "reth_docker_image_tag=reth_$(echo ${RETH_VERSION:-$RETH_DEFAULT} | sed 's/[@\/]/_/g' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
+          echo "reth_docker_image_tag=$(echo ${RETH_VERSION:-$RETH_DEFAULT} | sed 's/[@\/]/_/g' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
 
           # Parse nethermind
           echo "nethermind_repo=$(echo ${NETHERMIND_VERSION:-$NETHERMIND_DEFAULT} | cut -d@ -f1)" >> $GITHUB_OUTPUT
           echo "nethermind_tag=$(echo ${NETHERMIND_VERSION:-$NETHERMIND_DEFAULT} | cut -d@ -f2)" >> $GITHUB_OUTPUT
-          echo "nethermind_docker_image_tag=nethermind_$(echo ${NETHERMIND_VERSION:-$NETHERMIND_DEFAULT} | sed 's/[@\/]/_/g' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
+          echo "nethermind_docker_image_tag=$(echo ${NETHERMIND_VERSION:-$NETHERMIND_DEFAULT} | sed 's/[@\/]/_/g' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
 
           # Parse erigon
           echo "erigon_repo=$(echo ${ERIGON_VERSION:-$ERIGON_DEFAULT} | cut -d@ -f1)" >> $GITHUB_OUTPUT
           echo "erigon_tag=$(echo ${ERIGON_VERSION:-$ERIGON_DEFAULT} | cut -d@ -f2)" >> $GITHUB_OUTPUT
-          echo "erigon_docker_image_tag=erigon_$(echo ${ERIGON_VERSION:-$ERIGON_DEFAULT} | sed 's/[@\/]/_/g' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
+          echo "erigon_docker_image_tag=$(echo ${ERIGON_VERSION:-$ERIGON_DEFAULT} | sed 's/[@\/]/_/g' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
 
           # Parse hive
           echo "hive_repo=$(echo ${HIVE_VERSION:-$HIVE_DEFAULT} | cut -d@ -f1)" >> $GITHUB_OUTPUT
