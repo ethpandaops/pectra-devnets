@@ -1,20 +1,20 @@
 default_ethereum_client_images:
 ### Consensus layer clients
   lighthouse: docker.ethquokkaops.io/dh/ethpandaops/lighthouse:unstable-a1b7d61
-  lodestar: docker.ethquokkaops.io/dh/ethpandaops/lodestar:unstable-d584aed
+  lodestar: docker.ethquokkaops.io/dh/ethpandaops/lodestar:unstable-cf23839
   nimbus: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth2:devnet-5-candidate-1-af895e8
   prysm: docker.ethquokkaops.io/dh/ethpandaops/prysm-beacon-chain:fix-batch-process-pending-deposits-e97788e
   prysm_validator: docker.ethquokkaops.io/dh/ethpandaops/prysm-validator:fix-batch-process-pending-deposits-e97788e
-  teku: docker.ethquokkaops.io/dh/ethpandaops/teku:master-d56ce97
+  teku: docker.ethquokkaops.io/dh/ethpandaops/teku:master-28f69d3
   grandine: docker.ethquokkaops.io/dh/ethpandaops/grandine:devnet5-7a64a1c
 ### Execution layer clients
-  besu: docker.ethquokkaops.io/dh/ethpandaops/besu:feat-issue-8147-devnet5_7702_fixes-e63be00
+  besu: docker.ethquokkaops.io/dh/ethpandaops/besu:main-846e483
   geth: docker.ethquokkaops.io/dh/ethpandaops/geth:prague-devnet-5-f24d6f6
-  erigon: docker.ethquokkaops.io/dh/ethpandaops/erigon:main-2700d765
+  erigon: docker.ethquokkaops.io/dh/ethpandaops/erigon:pectra5-29b1f17
   ethereumjs: docker.ethquokkaops.io/dh/ethpandaops/ethereumjs:devnet5-excessgas-fix-573f023
   nethermind: docker.ethquokkaops.io/dh/ethpandaops/nethermind:pectra-devnet-5-52b679a
-  reth: docker.ethquokkaops.io/dh/ethpandaops/reth:main-b97d9b4
-  nimbusel: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth1:master-c62024e
+  reth: docker.ethquokkaops.io/dh/ethpandaops/reth:main-8a453ba
+  nimbusel: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth1:master-c11f20f
 
 default_tooling_images:
   xatu_sentry: docker.ethquokkaops.io/dh/ethpandaops/xatu:1.0.25-debian
