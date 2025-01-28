@@ -5,6 +5,7 @@ bootstrap_default_user_authorized_keys_github_team_el:
    - karalabe
    - g11tech
    - lightclient
+   - s1na
 
 # role: ethpandaops.general.ethereum_node
 ethereum_node_el: geth
