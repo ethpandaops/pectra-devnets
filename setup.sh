@@ -16,6 +16,7 @@ asdf plugin add awscli || true
 
 asdf plugin-list
 asdf install
+asdf reshim
 
 # Install python tools
 pip install -r requirements.txt
