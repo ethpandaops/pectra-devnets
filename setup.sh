@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -xe
 
 # Plugin list
 asdf plugin add age https://github.com/threkk/asdf-age.git
