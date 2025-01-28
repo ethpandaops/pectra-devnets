@@ -1,8 +1,8 @@
 #!/bin/bash -xe
 
 # Uninstall previous asdf plugins that shouldn't be managed anymore under asdf
-asdf uninstall ansible
-asdf uninstall ansible-lint
+asdf uninstall ansible || true
+asdf uninstall ansible-lint || true
 
 # Plugin list
 asdf plugin add age https://github.com/threkk/asdf-age.git || true
