@@ -44,7 +44,7 @@ env:
   S3_PUBLIC_URL: https://hive.ethpandaops.io/pectra-devnet-5
   INSTALL_RCLONE_VERSION: v1.68.2
   EEST_BUILD_ARG_FIXTURES: https://github.com/ethereum/execution-spec-tests/releases/download/pectra-devnet-5%40v1.3.0/fixtures_pectra-devnet-5.tar.gz
-  EEST_BUILD_ARG_BRANCH: pectra-devnet-5@v1.3.0
+  EEST_BUILD_ARG_BRANCH: pectra-devnet-5@v1.3.0post1
   # Flags used for all simulators
   GLOBAL_EXTRA_FLAGS: >-
     --client.checktimelimit=60s
