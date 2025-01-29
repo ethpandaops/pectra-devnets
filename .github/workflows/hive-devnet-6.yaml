@@ -7,7 +7,7 @@ on:
     inputs:
       client:
         type: string
-        default: '"reth","ethereumjs","nimbus-el"'
+        default: '"reth","nethermind","ethereumjs","nimbus-el"'
         description: Comma-separated list of clients to test .e.g go-ethereum, besu, reth, nethermind, erigon, ethereumjs
       simulator:
         type: string
@@ -226,7 +226,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        client: ${{ fromJSON(format('[{0}]', inputs.client || '"reth","ethereumjs","nimbusel"')) }}
+        client: ${{ fromJSON(format('[{0}]', inputs.client || '"reth","nethermind","ethereumjs","nimbusel"')) }}
         simulator: ${{ fromJSON(format('[{0}]', inputs.simulator || '"ethereum/eest/consume-engine","ethereum/eest/consume-rlp"')) }}
     steps:
       - uses: actions/checkout@v4
