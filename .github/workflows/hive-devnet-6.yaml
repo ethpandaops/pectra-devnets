@@ -7,8 +7,8 @@ on:
     inputs:
       client:
         type: string
-        default: '"reth","nethermind","ethereumjs","nimbus-el"'
-        description: Comma-separated list of clients to test .e.g go-ethereum, besu, reth, nethermind, erigon, ethereumjs
+        default: '"go-ethereum","reth","nethermind","ethereumjs","nimbus-el"'
+        description: Comma-separated list of clients to test .e.g go-ethereum, besu, reth, nethermind, erigon, ethereumjs, nimbus-el
       simulator:
         type: string
         default: '"ethereum/eest/consume-engine","ethereum/eest/consume-rlp"'
@@ -19,7 +19,7 @@ on:
         description: GitHub repository and tag for hive (repo@tag)
       geth_version:
         type: string
-        default: s1na/go-ethereum@prague-devnet-5
+        default: s1na/go-ethereum@prague-devnet-6
         description: GitHub repository and tag for go-ethereum (repo@tag)
       besu_version:
         type: string
@@ -109,7 +109,7 @@ jobs:
       - id: parse
         run: |
           # Default client versions
-          GETH_DEFAULT="s1na/go-ethereum@prague-devnet-5"
+          GETH_DEFAULT="s1na/go-ethereum@prague-devnet-6"
           BESU_DEFAULT="hyperledger/besu@main"
           RETH_DEFAULT="paradigmxyz/reth@main"
           NETHERMIND_DEFAULT="NethermindEth/nethermind@master"
@@ -226,7 +226,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        client: ${{ fromJSON(format('[{0}]', inputs.client || '"reth","nethermind","ethereumjs","nimbusel"')) }}
+        client: ${{ fromJSON(format('[{0}]', inputs.client || '"go-ethereum","reth","nethermind","ethereumjs","nimbusel"')) }}
         simulator: ${{ fromJSON(format('[{0}]', inputs.simulator || '"ethereum/eest/consume-engine","ethereum/eest/consume-rlp"')) }}
     steps:
       - uses: actions/checkout@v4
