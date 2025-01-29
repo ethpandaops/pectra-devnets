@@ -226,8 +226,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        client: ${{ fromJSON(format('[{0}]', inputs.client || '"go-ethereum","besu","reth","nethermind","erigon","ethereumjs"')) }}
-        simulator: ${{ fromJSON(format('[{0}]', inputs.simulator || '"ethereum/rpc-compat","ethereum/eest/consume-engine","ethereum/eest/consume-rlp"')) }}
+        client: ${{ fromJSON(format('[{0}]', inputs.client || '"reth","ethereumjs","nimbusel"')) }}
+        simulator: ${{ fromJSON(format('[{0}]', inputs.simulator || '"ethereum/eest/consume-engine","ethereum/eest/consume-rlp"')) }}
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/hive-deps
