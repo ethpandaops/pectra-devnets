@@ -1,8 +1,8 @@
 #!/bin/bash -xe
 
 # Uninstall previous asdf plugins that shouldn't be managed anymore under asdf
-asdf uninstall ansible
-asdf uninstall ansible-lint
+asdf uninstall ansible || true
+asdf uninstall ansible-lint || true
 
 # Plugin list
 asdf plugin add age https://github.com/threkk/asdf-age.git || true
@@ -11,13 +11,13 @@ asdf plugin add sops https://github.com/feniix/asdf-sops.git || true
 asdf plugin-add terraform https://github.com/asdf-community/asdf-hashicorp.git || true
 asdf plugin-add helm https://github.com/Antiarchitect/asdf-helm.git || true
 asdf plugin-add python || true
+asdf plugin-add yq https://github.com/sudermanjr/asdf-yq.git
 asdf plugin add awscli || true
 
 asdf plugin-list
 asdf install
+asdf reshim
 
 # Install python tools
 pip install -r requirements.txt
 
-# reinstall terraform
-PLUGIN=terraform asdf list $PLUGIN | awk '{print "asdf uninstall $PLUGIN " $1 "; asdf install $PLUGIN " $1}' | bash
