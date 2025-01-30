@@ -31,7 +31,7 @@ on:
         description: GitHub repository and tag for reth (repo@tag)
       nethermind_version:
         type: string
-        default: NethermindEth/nethermind@master
+        default: NethermindEth/nethermind@pectra-devnet-5
         description: GitHub repository and tag for nethermind (repo@tag)
       erigon_version:
         type: string
@@ -105,7 +105,7 @@ jobs:
           GETH_DEFAULT="s1na/go-ethereum@prague-devnet-5"
           BESU_DEFAULT="hyperledger/besu@main"
           RETH_DEFAULT="paradigmxyz/reth@main"
-          NETHERMIND_DEFAULT="NethermindEth/nethermind@master"
+          NETHERMIND_DEFAULT="NethermindEth/nethermind@pectra-devnet-5"
           ERIGON_DEFAULT="erigontech/erigon@main"
           ETHEREUMJS_DEFAULT="ethereumjs/ethereumjs-monorepo@master"
 

@@ -31,7 +31,7 @@ hive_simulations_client_config:
    dockerfile: git
    build_args:
      github: NethermindEth/nethermind
-     tag: master
+     tag: pectra-devnet-5
  - client: erigon
    nametag: main
    dockerfile: git
