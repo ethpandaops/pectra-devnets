@@ -154,37 +154,37 @@ jobs:
           cat << 'EOF' >> $GITHUB_OUTPUT
           config<<ENDCONFIG
           - client: go-ethereum
-            nametag: ${{ steps.parse.outputs.geth_docker_image_tag }}
+            nametag: default
             dockerfile: git
             build_args:
               github: ${{ steps.parse.outputs.geth_repo }}
               tag: ${{ steps.parse.outputs.geth_tag }}
           - client: besu
-            nametag: ${{ steps.parse.outputs.besu_docker_image_tag }}
+            nametag: default
             dockerfile: git
             build_args:
               github: ${{ steps.parse.outputs.besu_repo }}
               tag: ${{ steps.parse.outputs.besu_tag }}
           - client: reth
-            nametag: ${{ steps.parse.outputs.reth_docker_image_tag }}
+            nametag: default
             dockerfile: git
             build_args:
               github: ${{ steps.parse.outputs.reth_repo }}
               tag: ${{ steps.parse.outputs.reth_tag }}
           - client: nethermind
-            nametag: ${{ steps.parse.outputs.nethermind_docker_image_tag }}
+            nametag: default
             dockerfile: git
             build_args:
               github: ${{ steps.parse.outputs.nethermind_repo }}
               tag: ${{ steps.parse.outputs.nethermind_tag }}
           - client: erigon
-            nametag: ${{ steps.parse.outputs.erigon_docker_image_tag }}
+            nametag: default
             dockerfile: git
             build_args:
               github: ${{ steps.parse.outputs.erigon_repo }}
               tag: ${{ steps.parse.outputs.erigon_tag }}
           - client: ethereumjs
-            nametag: ${{ steps.parse.outputs.ethereumjs_docker_image_tag }}
+            nametag: default
             dockerfile: git
             build_args:
               github: ${{ steps.parse.outputs.ethereumjs_repo }}
