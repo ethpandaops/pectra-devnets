@@ -204,7 +204,7 @@ jobs:
               tag: ${{ steps.parse.outputs.ethereumjs_tag }}
           - client: nimbus-el
             nametag: ${{ steps.parse.outputs.nimbusel_docker_image_tag }}
-            # dockerfile: git
+            dockerfile: git
             build_args:
               github: ${{ steps.parse.outputs.nimbusel_repo }}
               tag: ${{ steps.parse.outputs.nimbusel_tag }}
