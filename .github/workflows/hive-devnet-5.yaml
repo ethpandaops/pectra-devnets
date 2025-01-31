@@ -23,7 +23,7 @@ on:
         description: GitHub repository and tag for go-ethereum (repo@tag)
       besu_version:
         type: string
-        default: hyperledger/besu@main
+        default: hyperledger/besu@pectra-devnet-5-fix
         description: GitHub repository and tag for besu (repo@tag)
       reth_version:
         type: string
@@ -103,7 +103,7 @@ jobs:
         run: |
           # Default client versions
           GETH_DEFAULT="s1na/go-ethereum@prague-devnet-5"
-          BESU_DEFAULT="hyperledger/besu@main"
+          BESU_DEFAULT="hyperledger/besu@pectra-devnet-5-fix"
           RETH_DEFAULT="paradigmxyz/reth@main"
           NETHERMIND_DEFAULT="NethermindEth/nethermind@pectra-devnet-5"
           ERIGON_DEFAULT="erigontech/erigon@main"
