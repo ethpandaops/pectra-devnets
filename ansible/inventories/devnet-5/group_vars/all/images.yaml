@@ -12,7 +12,7 @@ default_ethereum_client_images:
   geth: docker.ethquokkaops.io/dh/ethpandaops/geth:prague-devnet-5-f24d6f6
   erigon: docker.ethquokkaops.io/dh/ethpandaops/erigon:pectra5-d6a6601
   ethereumjs: docker.ethquokkaops.io/dh/ethpandaops/ethereumjs:devnet5-excessgas-fix-573f023
-  nethermind: docker.ethquokkaops.io/dh/ethpandaops/nethermind:pectra-devnet-5-52b679a
+  nethermind: docker.ethquokkaops.io/dh/nethermindeth/nethermind:devnet-5-blsfix
   reth: docker.ethquokkaops.io/dh/ethpandaops/reth:main-8a453ba
   nimbusel: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth1:master-c11f20f
 
