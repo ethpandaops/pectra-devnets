@@ -51,7 +51,7 @@ env:
   S3_PATH: pectra-devnet-6
   S3_PUBLIC_URL: https://hive.ethpandaops.io/pectra-devnet-6
   INSTALL_RCLONE_VERSION: v1.68.2
-  EEST_BUILD_ARG_FIXTURES: https://hive-pectra-devnet-6-fixtures.fra1.cdn.digitaloceanspaces.com/fixtures_pectra-devnet-6.tar.gz
+  EEST_BUILD_ARG_FIXTURES: https://github.com/ethereum/execution-spec-tests/releases/download/pectra-devnet-6%40v1.0.0/fixtures_pectra-devnet-6.tar.gz
   EEST_BUILD_ARG_BRANCH: main
   # Flags used for all simulators
   GLOBAL_EXTRA_FLAGS: >-
