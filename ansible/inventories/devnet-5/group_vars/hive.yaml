@@ -19,7 +19,7 @@ hive_simulations_client_config:
    dockerfile: git
    build_args:
      github: hyperledger/besu
-     tag: main
+     tag: pectra-devnet-5-fix
  - client: reth
    nametag: main
    dockerfile: git
