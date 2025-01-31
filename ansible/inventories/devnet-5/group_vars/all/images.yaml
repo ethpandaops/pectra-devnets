@@ -10,7 +10,7 @@ default_ethereum_client_images:
 ### Execution layer clients
   besu: docker.ethquokkaops.io/dh/ethpandaops/besu:pectra-devnet-5-fix-c5865e9
   geth: docker.ethquokkaops.io/dh/ethpandaops/geth:prague-devnet-5-f24d6f6
-  erigon: docker.ethquokkaops.io/dh/ethpandaops/erigon:pectra5-d6a6601
+  erigon: docker.ethquokkaops.io/dh/ethpandaops/erigon:main-a1449e15
   ethereumjs: docker.ethquokkaops.io/dh/ethpandaops/ethereumjs:devnet5-excessgas-fix-573f023
   nethermind: docker.ethquokkaops.io/dh/nethermindeth/nethermind:devnet-5-blsfix
   reth: docker.ethquokkaops.io/dh/ethpandaops/reth:main-8a453ba

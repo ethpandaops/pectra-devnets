@@ -7,7 +7,7 @@ on:
     inputs:
       client:
         type: string
-        default: '"go-ethereum","reth","nethermind","ethereumjs","nimbus-el"'
+        default: '"go-ethereum","reth","nethermind","ethereumjs","nimbus-el","besu","erigon"'
         description: Comma-separated list of clients to test .e.g go-ethereum, besu, reth, nethermind, erigon, ethereumjs, nimbus-el
       simulator:
         type: string
@@ -31,15 +31,15 @@ on:
         description: GitHub repository and tag for reth (repo@tag)
       nethermind_version:
         type: string
-        default: NethermindEth/nethermind@master
+        default: NethermindEth/nethermind@release/1.31.0
         description: GitHub repository and tag for nethermind (repo@tag)
       erigon_version:
         type: string
-        default: erigontech/erigon@main
+        default: erigontech/erigon@pectra6
         description: GitHub repository and tag for erigon (repo@tag)
       ethereumjs_version:
         type: string
-        default: ethereumjs/ethereumjs-monorepo@update-7702-devnet-6
+        default: ethereumjs/ethereumjs-monorepo@eip7840
         description: GitHub repository and tag for ethereumjs (repo@tag)
       nimbusel_version:
         type: string
@@ -112,9 +112,9 @@ jobs:
           GETH_DEFAULT="s1na/go-ethereum@prague-devnet-6"
           BESU_DEFAULT="hyperledger/besu@main"
           RETH_DEFAULT="paradigmxyz/reth@main"
-          NETHERMIND_DEFAULT="NethermindEth/nethermind@master"
-          ERIGON_DEFAULT="erigontech/erigon@main"
-          ETHEREUMJS_DEFAULT="ethereumjs/ethereumjs-monorepo@master"
+          NETHERMIND_DEFAULT="NethermindEth/nethermind@release/1.31.0"
+          ERIGON_DEFAULT="erigontech/erigon@pectra6"
+          ETHEREUMJS_DEFAULT="ethereumjs/ethereumjs-monorepo@eip7840"
           NIMBUSEL_DEFAULT="status-im/nimbus-eth1@master"
           # Parse geth
           echo "geth_repo=$(echo ${GETH_VERSION:-$GETH_DEFAULT} | cut -d@ -f1)" >> $GITHUB_OUTPUT
@@ -226,7 +226,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        client: ${{ fromJSON(format('[{0}]', inputs.client || '"go-ethereum","reth","nethermind","ethereumjs","nimbusel"')) }}
+        client: ${{ fromJSON(format('[{0}]', inputs.client || '"go-ethereum","reth","nethermind","ethereumjs","nimbusel","besu","erigon"')) }}
         simulator: ${{ fromJSON(format('[{0}]', inputs.simulator || '"ethereum/eest/consume-engine","ethereum/eest/consume-rlp"')) }}
     steps:
       - uses: actions/checkout@v4
