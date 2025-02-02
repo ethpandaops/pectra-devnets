@@ -1,0 +1,42 @@
+# Ansible managed. Don't change this file manually. Template info: /vendor/collections/ansible_collections/ethpandaops/general/roles/generate_kubernetes_config/templates/panda-pulse.yaml.j2
+
+panda-pulse:
+  fullnameOverride: "panda-pulse"
+
+  image:
+    repository: docker.ethquokkaops.io/dh/ethpandaops/panda-pulse
+    tag: latest
+    pullPolicy: Always
+  schedule: "0 7 * * *"
+
+  config:
+    network: "pectra-devnet-5"
+    discordChannel: "1207978750004690974"
+    ethereumCls:
+      - grandine
+      - lighthouse
+      - lodestar
+      - nimbus
+      - prysm
+      - teku
+    ethereumEls:
+      - besu
+      - erigon
+      - ethereumjs
+      - geth
+      - nethermind
+      - nimbusel
+      - reth
+
+  secrets:
+    grafanaServiceToken: "<path:/secrets/services/services.enc.yaml#panda-pulse | jsonPath {.grafana_service_token}>"
+    discordBotToken: "<path:/secrets/services/services.enc.yaml#panda-pulse | jsonPath {.discord_bot_token}>"
+    openrouterApiKey: "<path:/secrets/services/services.enc.yaml#panda-pulse | jsonPath {.openrouter_api_key}>"
+
+  resources:
+    limits:
+      cpu: 1000m
+      memory: 1Gi
+    requests:
+      cpu: 100m
+      memory: 128Mi
