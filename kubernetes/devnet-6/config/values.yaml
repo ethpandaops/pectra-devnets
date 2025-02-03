@@ -1,0 +1,83 @@
+# Ansible managed. Don't change this file manually. Template info: /vendor/collections/ansible_collections/ethpandaops/general/roles/generate_kubernetes_config/templates/config.yaml.j2
+
+network: devnet-6
+chainId: 7072151312
+
+domain: pectra-devnet-6.ethpandaops.io
+
+config:
+  enabled: true
+  files:
+    # Support all files as they appear in the github repo
+    - path: /metadata/besu.json
+      upstream: raw.githubusercontent.com
+      target: /ethpandaops/pectra-devnets/master/network-configs/devnet-6/metadata/besu.json
+    - path: /metadata/bootstrap_nodes.txt
+      upstream: raw.githubusercontent.com
+      target: /ethpandaops/pectra-devnets/master/network-configs/devnet-6/metadata/bootstrap_nodes.txt
+    - path: /metadata/chainspec.json
+      upstream: raw.githubusercontent.com
+      target: /ethpandaops/pectra-devnets/master/network-configs/devnet-6/metadata/chainspec.json
+    - path: /metadata/config.yaml
+      upstream: raw.githubusercontent.com
+      target: /ethpandaops/pectra-devnets/master/network-configs/devnet-6/metadata/config.yaml
+    - path: /metadata/deposit_contract.txt
+      upstream: raw.githubusercontent.com
+      target: /ethpandaops/pectra-devnets/master/network-configs/devnet-6/metadata/deposit_contract.txt
+    - path: /metadata/deposit_contract_block.txt
+      upstream: raw.githubusercontent.com
+      target: /ethpandaops/pectra-devnets/master/network-configs/devnet-6/metadata/deposit_contract_block.txt
+    - path: /metadata/deposit_contract_block_hash.txt
+      upstream: raw.githubusercontent.com
+      target: /ethpandaops/pectra-devnets/master/network-configs/devnet-6/metadata/deposit_contract_block_hash.txt
+    - path: /metadata/genesis.json
+      upstream: raw.githubusercontent.com
+      target: /ethpandaops/pectra-devnets/master/network-configs/devnet-6/metadata/genesis.json
+    - path: /metadata/genesis.ssz
+      upstream: raw.githubusercontent.com
+      target: /ethpandaops/pectra-devnets/master/network-configs/devnet-6/metadata/genesis.ssz
+    - path: /parsed/parsedConsensusGenesis.json
+      upstream: raw.githubusercontent.com
+      target: /ethpandaops/pectra-devnets/master/network-configs/devnet-6/parsed/parsedConsensusGenesis.json
+
+    # Execution Layer specific redirects
+    - path: /el/enodes.txt
+      upstream: raw.githubusercontent.com
+      target: /ethpandaops/pectra-devnets/master/network-configs/devnet-6/metadata/enodes.txt
+    - path: /el/besu.json
+      upstream: raw.githubusercontent.com
+      target: /ethpandaops/pectra-devnets/master/network-configs/devnet-6/metadata/besu.json
+    - path: /el/chainspec.json
+      upstream: raw.githubusercontent.com
+      target: /ethpandaops/pectra-devnets/master/network-configs/devnet-6/metadata/chainspec.json
+    - path: /el/genesis.json
+      upstream: raw.githubusercontent.com
+      target: /ethpandaops/pectra-devnets/master/network-configs/devnet-6/metadata/genesis.json
+
+    # Consensus Layer specific redirects
+    - path: /cl/bootstrap_nodes.txt
+      upstream: raw.githubusercontent.com
+      target: /ethpandaops/pectra-devnets/master/network-configs/devnet-6/metadata/bootstrap_nodes.txt
+    - path: /cl/config.yaml
+      upstream: raw.githubusercontent.com
+      target: /ethpandaops/pectra-devnets/master/network-configs/devnet-6/metadata/config.yaml
+    - path: /cl/genesis.ssz
+      upstream: raw.githubusercontent.com
+      target: /ethpandaops/pectra-devnets/master/network-configs/devnet-6/metadata/genesis.ssz
+    - path: /cl/deposit_contract.txt
+      upstream: raw.githubusercontent.com
+      target: /ethpandaops/pectra-devnets/master/network-configs/devnet-6/metadata/deposit_contract.txt
+    - path: /cl/deposit_contract_block.txt
+      upstream: raw.githubusercontent.com
+      target: /ethpandaops/pectra-devnets/master/network-configs/devnet-6/metadata/deposit_contract_block.txt
+    - path: /cl/deposit_contract_block_hash.txt
+      upstream: raw.githubusercontent.com
+      target: /ethpandaops/pectra-devnets/master/network-configs/devnet-6/metadata/deposit_contract_block_hash.txt
+
+    # Ansible generated ethereum nodes inventory
+    - path: /api/v1/nodes/inventory
+      upstream: bootnode-1.pectra-devnet-6.ethpandaops.io
+      target: /meta/api/v1/inventory.json
+    - path: /api/v1/nodes/validator-ranges
+      upstream: bootnode-1.pectra-devnet-6.ethpandaops.io
+      target: /meta/api/v1/validator-ranges.json
