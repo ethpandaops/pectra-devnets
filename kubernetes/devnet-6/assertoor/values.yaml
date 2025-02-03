@@ -10,10 +10,10 @@ assertoor:
   resources:
     requests:
       cpu: 500m
-      memory: 500Mi
+      memory: 4Gi
     limits:
       cpu: 2000m
-      memory: 2Gi
+      memory: 6Gi
 
   ingress:
     enabled: true
@@ -89,6 +89,9 @@ assertoor:
     - name:  lighthouse-erigon-2
       executionUrl: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@rpc.lighthouse-erigon-2.pectra-devnet-6.ethpandaops.io
       consensusUrl: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-erigon-2.pectra-devnet-6.ethpandaops.io
+    - name:  lighthouse-erigonTwo-1
+      executionUrl: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@rpc.lighthouse-erigonTwo-1.pectra-devnet-6.ethpandaops.io
+      consensusUrl: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-erigonTwo-1.pectra-devnet-6.ethpandaops.io
     - name:  lighthouse-ethereumjs-1
       executionUrl: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@rpc.lighthouse-ethereumjs-1.pectra-devnet-6.ethpandaops.io
       consensusUrl: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-ethereumjs-1.pectra-devnet-6.ethpandaops.io
@@ -350,6 +353,7 @@ assertoor:
       - lighthouse-besu-2
       - lighthouse-erigon-1
       - lighthouse-erigon-2
+      - lighthouse-erigonTwo-1
       - lighthouse-ethereumjs-1
       - lighthouse-geth-1
       - lighthouse-geth-2
@@ -446,6 +450,7 @@ assertoor:
       - lighthouse-besu-2
       - lighthouse-erigon-1
       - lighthouse-erigon-2
+      - lighthouse-erigonTwo-1
       - lighthouse-ethereumjs-1
       - lighthouse-geth-1
       - lighthouse-geth-2

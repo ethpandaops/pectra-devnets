@@ -51,6 +51,8 @@ forkmon:
     name: lighthouse-erigon-1
   - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@rpc.lighthouse-erigon-2.pectra-devnet-6.ethpandaops.io
     name: lighthouse-erigon-2
+  - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@rpc.lighthouse-erigonTwo-1.pectra-devnet-6.ethpandaops.io
+    name: lighthouse-erigonTwo-1
   - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@rpc.lighthouse-ethereumjs-1.pectra-devnet-6.ethpandaops.io
     name: lighthouse-ethereumjs-1
   - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@rpc.lighthouse-geth-1.pectra-devnet-6.ethpandaops.io

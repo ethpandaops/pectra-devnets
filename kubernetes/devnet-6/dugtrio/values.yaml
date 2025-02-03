@@ -63,6 +63,8 @@ dugtrio:
     name: lighthouse-erigon-1
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-erigon-2.pectra-devnet-6.ethpandaops.io
     name: lighthouse-erigon-2
+  - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-erigonTwo-1.pectra-devnet-6.ethpandaops.io
+    name: lighthouse-erigonTwo-1
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-ethereumjs-1.pectra-devnet-6.ethpandaops.io
     name: lighthouse-ethereumjs-1
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-geth-1.pectra-devnet-6.ethpandaops.io

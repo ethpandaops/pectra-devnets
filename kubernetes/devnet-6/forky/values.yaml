@@ -117,6 +117,11 @@ forky:
           config:
             address: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-erigon-1.pectra-devnet-6.ethpandaops.io
             polling_interval: "12s"
+        - name: lighthouse-erigonTwo-1
+          type: "beacon_node"
+          config:
+            address: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-erigonTwo-1.pectra-devnet-6.ethpandaops.io
+            polling_interval: "12s"
         - name: lighthouse-ethereumjs-1
           type: "beacon_node"
           config:

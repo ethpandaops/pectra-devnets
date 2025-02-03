@@ -78,6 +78,9 @@ checkpointz:
         - name: lighthouse-erigon-1
           address: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-erigon-1.pectra-devnet-6.ethpandaops.io
           dataProvider: true
+        - name: lighthouse-erigonTwo-1
+          address: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-erigonTwo-1.pectra-devnet-6.ethpandaops.io
+          dataProvider: true
         - name: lighthouse-ethereumjs-1
           address: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-ethereumjs-1.pectra-devnet-6.ethpandaops.io
           dataProvider: true
