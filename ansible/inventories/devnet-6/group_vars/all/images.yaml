@@ -1,20 +1,20 @@
 default_ethereum_client_images:
 ### Consensus layer clients
-  lighthouse: docker.ethquokkaops.io/ethpandaops/ethpandaops/lighthouse:unstable-95cec45
-  lodestar: docker.ethquokkaops.io/ethpandaops/ethpandaops/lodestar:unstable-7982031
-  nimbus: docker.ethquokkaops.io/ethpandaops/ethpandaops/nimbus-eth2:unstable-dec1cd3
-  prysm: docker.ethquokkaops.io/ethpandaops/ethpandaops/prysm-beacon-chain:develop-910609a
-  prysm_validator: docker.ethquokkaops.io/ethpandaops/ethpandaops/prysm-validator:develop-910609a
-  teku: docker.ethquokkaops.io/ethpandaops/ethpandaops/teku:master-96c73da
-  grandine: docker.ethquokkaops.io/ethpandaops/ethpandaops/grandine:devnet5-7ba51a4
+  lighthouse: docker.ethquokkaops.io/dh/ethpandaops/lighthouse:unstable-95cec45
+  lodestar: docker.ethquokkaops.io/dh/ethpandaops/lodestar:unstable-7982031
+  nimbus: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth2:unstable-dec1cd3
+  prysm: docker.ethquokkaops.io/dh/ethpandaops/prysm-beacon-chain:develop-910609a
+  prysm_validator: docker.ethquokkaops.io/dh/ethpandaops/prysm-validator:develop-910609a
+  teku: docker.ethquokkaops.io/dh/ethpandaops/teku:master-96c73da
+  grandine: docker.ethquokkaops.io/dh/ethpandaops/grandine:devnet5-7ba51a4
 ### Execution layer clients
-  besu: docker.ethquokkaops.io/ethpandaops/ethpandaops/besu:main-a94f376
-  geth: docker.ethquokkaops.io/ethpandaops/ethpandaops/geth:prague-devnet-6-c070db6
-  erigon: docker.ethquokkaops.io/ethpandaops/ethpandaops/erigon:main-d96f7122
-  ethereumjs: docker.ethquokkaops.io/ethpandaops/ethpandaops/ethereumjs:eip7840
-  nethermind: docker.ethquokkaops.io/ethpandaops/nethermindeth/nethermind:master-5506f83
-  reth: docker.ethquokkaops.io/ethpandaops/ethpandaops/reth:main-0ad7de4
-  nimbusel: docker.ethquokkaops.io/ethpandaops/ethpandaops/nimbus-eth1:master-d4266dc
+  besu: docker.ethquokkaops.io/dh/ethpandaops/besu:main-a94f376
+  geth: docker.ethquokkaops.io/dh/ethpandaops/geth:prague-devnet-6-c070db6
+  erigon: docker.ethquokkaops.io/dh/ethpandaops/erigon:main-d96f7122
+  ethereumjs: docker.ethquokkaops.io/dh/ethpandaops/ethereumjs:eip7840
+  nethermind: docker.ethquokkaops.io/dh/nethermindeth/nethermind:master-5506f83
+  reth: docker.ethquokkaops.io/dh/ethpandaops/reth:main-0ad7de4
+  nimbusel: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth1:master-d4266dc
 
 default_tooling_images:
   xatu_sentry: docker.ethquokkaops.io/dh/ethpandaops/xatu:1.0.25-debian
