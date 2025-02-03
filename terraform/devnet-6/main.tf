@@ -106,6 +106,6 @@ locals {
     var.grandine_ethereumjs,
     var.grandine_reth,
     var.grandine_nimbusel,
-    var.caplin_erigon,
+    var.lighthouse_erigonTwo,
   ]
 }

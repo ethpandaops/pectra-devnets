@@ -407,9 +407,9 @@ variable "grandine_nimbusel" {
   }
 }
 
-variable "caplin_erigon" {
+variable "lighthouse_erigonTwo" {
   default = {
-    name            = "caplin-erigon"
+    name            = "lighthouse-erigonTwo"
     count           = 1
     validator_start = 70000
     validator_end   = 70500
