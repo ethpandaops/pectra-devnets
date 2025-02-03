@@ -84,7 +84,7 @@ erpc:
       - id: main
         cors:
           allowedOrigins:
-            - "https://*.ethpandaops.io"
+            - "*"
           allowedMethods: 
             - "GET"
             - "POST"
