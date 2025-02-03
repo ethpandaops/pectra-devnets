@@ -43,6 +43,9 @@ on:
         description: GitHub repository and tag for ethereumjs (repo@tag)
 
 env:
+  # Proxy
+  GOPROXY: "${{ vars.GOPROXY }}"
+  # Hive action environment variables
   S3_BUCKET: hive-results
   S3_PATH: pectra-devnet-5
   S3_PUBLIC_URL: https://hive.ethpandaops.io/pectra-devnet-5
