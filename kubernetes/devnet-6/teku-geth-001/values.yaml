@@ -81,7 +81,6 @@ teku-geth-001:
               - --Xlog-include-p2p-warnings-enabled
               - --metrics-block-timing-tracking-enabled
               - --ignore-weak-subjectivity-period-enabled
-              - --p2p-advertised-port=9001
             prysm:
               - --grpc-gateway-corsdomain=*
               - --chain-config-file=/data/network-config/config.yaml
@@ -206,7 +205,7 @@ teku-geth-001:
     mode: "beacon"
     p2pNodePort:
       enabled: true
-      port: 32918
+      port: 32474
     podLabels:
       network: pectra-devnet-6
       testnet: pectra-devnet-6
