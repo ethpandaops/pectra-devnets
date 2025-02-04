@@ -11,7 +11,7 @@ panda-pulse:
 
   config:
     network: "pectra-devnet-6"
-    discordChannel: "1207978750004690974"
+    discordChannel: "1336250914461450300"
     ethereumCls:
       - lighthouse
       - lodestar
