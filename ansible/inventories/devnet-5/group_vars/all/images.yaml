@@ -49,4 +49,3 @@ default_tooling_images:
   nginx_proxy: docker.ethquokkaops.io/dh/nginx:alpine
   nginx_proxy_gen: docker.ethquokkaops.io/dh/nginxproxy/docker-gen
   nginx_proxy_acme: docker.ethquokkaops.io/dh/nginxproxy/acme-companion
-  panda_pulse: docker.ethquokkaops.io/dh/ethpandaops/panda-pulse:latest

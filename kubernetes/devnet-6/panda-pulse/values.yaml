@@ -10,7 +10,7 @@ panda-pulse:
   schedule: "0 7 * * *"
 
   config:
-    network: "pectra-devnet-5"
+    network: "pectra-devnet-6"
     discordChannel: "1207978750004690974"
     ethereumCls:
       - lighthouse
