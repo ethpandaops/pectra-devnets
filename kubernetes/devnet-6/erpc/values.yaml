@@ -118,6 +118,7 @@ erpc:
             - "eth_newPendingTransactionFilter"
             - "eth_maxPriorityFeePerGas"
             - "eth_sendRawTransaction"
+            - "eth_simulateV1"
             - "eth_subscribe"
             - "eth_syncing"
             - "eth_uninstallFilter"
