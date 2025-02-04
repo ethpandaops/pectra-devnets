@@ -13,20 +13,20 @@ panda-pulse:
     network: "pectra-devnet-5"
     discordChannel: "1207978750004690974"
     ethereumCls:
-      - grandine
       - lighthouse
       - lodestar
       - nimbus
-      - prysm
       - teku
+      - prysm
+      - grandine
     ethereumEls:
       - besu
-      - erigon
       - ethereumjs
       - geth
       - nethermind
-      - nimbusel
+      - erigon
       - reth
+      - nimbusel
 
   secrets:
     grafanaServiceToken: "<path:/secrets/services/services.enc.yaml#panda-pulse | jsonPath {.grafana_service_token}>"
