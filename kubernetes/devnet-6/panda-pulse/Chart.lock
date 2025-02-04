@@ -1,0 +1,6 @@
+dependencies:
+- name: panda-pulse
+  repository: https://ethpandaops.github.io/general-helm-charts
+  version: 0.0.2
+digest: sha256:cf07959dab9b0913b5c5c8817b31583220e1f617a0b98432171d221f8e4db4d9
+generated: "2025-02-04T16:43:05.383677+10:00"
