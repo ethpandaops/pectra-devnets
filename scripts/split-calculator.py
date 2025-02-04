@@ -1,8 +1,8 @@
 import numpy as np
 import math
 
-total_validators = 10000
-validator_per_machine = 250
+total_validators = 70000
+validator_per_machine = 1000
 start = 0
 
 cl_split = {
@@ -16,8 +16,8 @@ cl_split = {
 
 
 el_split = {
-    'geth': 0.50,
-    'nethermind': 0.25,
+    'geth': 0.40,
+    'nethermind': 0.35,
     'ethereumjs': 0.01,
     'reth': 0.08,
     'besu': 0.08,
