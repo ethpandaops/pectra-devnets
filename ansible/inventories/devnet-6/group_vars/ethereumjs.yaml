@@ -18,7 +18,6 @@ ethereumjs_container_env:
   VIRTUAL_HOST: "{{ ethereum_node_rcp_hostname }}"
   VIRTUAL_PORT: "{{ ethereum_node_el_ports_http_rpc | string }}"
   LETSENCRYPT_HOST: "{{ ethereum_node_rcp_hostname }}"
-  DEBUG: "ethjs,client,vm:*"
 ethereumjs_container_ports_ipv4:
   - "127.0.0.1:{{ ethereumjs_ports_http_rpc }}:{{ ethereumjs_ports_http_rpc }}"
   - "127.0.0.1:{{ ethereumjs_ports_engine }}:{{ ethereumjs_ports_engine }}"
