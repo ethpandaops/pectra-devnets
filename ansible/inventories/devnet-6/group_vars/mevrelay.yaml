@@ -22,7 +22,7 @@ mev_relay_shared_env:
   BELLATRIX_FORK_VERSION: "0x30{{ ethereum_genesis_fork_version_suffix }}"
   CAPELLA_FORK_VERSION: "0x40{{ ethereum_genesis_fork_version_suffix }}"
   DENEB_FORK_VERSION: "0x50{{ ethereum_genesis_fork_version_suffix }}"
-  ELECTRA_FORK_VERSION: "0x50{{ ethereum_genesis_fork_version_suffix }}"
+  ELECTRA_FORK_VERSION: "0x60{{ ethereum_genesis_fork_version_suffix }}"
   DB_TABLE_PREFIX: custom
   LOG_LEVEL: debug
 
