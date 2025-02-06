@@ -50,6 +50,10 @@ dora:
     name: bloxroute
     url: "http://0x821f2a65afb70e7f2e820a925a9b4c80a159620582c1766b1b09729fec178b11ea22abb3a51f07b288be815a1a2ff516@54.147.158.197:18550"
     blockLimit: 100
+  - index: 1
+    name: mev-relay
+    url: "https://0xa55c1285d84ba83a5ad26420cd5ad3091e49c55a813eee651cd467db38a8c8e63192f47955e9376f6b42f6d190571cb5@mev-api.pectra-devnet-6.ethpandaops.io"
+    blockLimit: 100
 
   endpoints:
   # Rpc
