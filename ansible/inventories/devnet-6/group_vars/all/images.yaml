@@ -19,6 +19,7 @@ default_ethereum_client_images:
   erigonTwo: docker.ethquokkaops.io/dh/ethpandaops/erigon:pectra6_e2-fc4f92a
 
 default_tooling_images:
+  mev_boost: docker.ethquokkaops.io/dh/ethpandaops/mev-boost:electra
   xatu_sentry: docker.ethquokkaops.io/dh/ethpandaops/xatu:1.0.25-debian
   ethereum_metrics_exporter: docker.ethquokkaops.io/dh/ethpandaops/ethereum-metrics-exporter:latest
   tx_fuzz: docker.ethquokkaops.io/dh/ethpandaops/tx-fuzz:pr-56
