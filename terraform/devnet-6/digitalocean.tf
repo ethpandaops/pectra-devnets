@@ -328,6 +328,30 @@ resource "cloudflare_record" "xatu-wildcard" {
   ttl     = 1
 }
 
+resource "cloudflare_record" "server_record_mevrelay_v4" {
+  for_each = {
+    for vm in local.digitalocean_vms : "${vm.id}" => vm if contains(vm.tags, "group_name:mevrelay")
+  }
+  zone_id = data.cloudflare_zone.default.id
+  name    = "mev-relay.${var.ethereum_network}"
+  type    = "A"
+  value   = digitalocean_droplet.main[each.value.id].ipv4_address
+  proxied = false
+  ttl     = 120
+}
+
+resource "cloudflare_record" "server_record_mevapi_v4" {
+  for_each = {
+    for vm in local.digitalocean_vms : "${vm.id}" => vm if contains(vm.tags, "group_name:mevrelay")
+  }
+  zone_id = data.cloudflare_zone.default.id
+  name    = "mev-api.${var.ethereum_network}"
+  type    = "A"
+  value   = digitalocean_droplet.main[each.value.id].ipv4_address
+  proxied = false
+  ttl     = 120
+}
+
 
 ////////////////////////////////////////////////////////////////////////////////////////
 //                          GENERATED FILES AND OUTPUTS

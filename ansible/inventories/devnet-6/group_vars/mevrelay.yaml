@@ -1,0 +1,210 @@
+mev_relay_cleanup_all: false
+
+mev_relay_user: mev_relay
+mev_relay_datadir: "/data/mev_relay"
+mev_relay_docker_network_name: shared
+mev_relay_docker_networks:
+  - name: "{{ mev_relay_docker_network_name }}"
+
+mev_relay_container_image: ethpandaops/mev-boost-relay:electra
+mev_relay_beacon_endpoint: http://beacon:5052
+mev_relay_genesis_validators_root:  >-
+  {{ (lookup('file', eth_testnet_config_local_dir_src + '../parsed/parsedConsensusGenesis.json') | from_json).genesis_validators_root }}
+mev_relay_secret_key: "607a11b45a7219cc61a3d9c5fd08c7eebd602a6a19a977f8d3771d5711a550f2" # It's a test key. It's OK to have it here.
+mev_relay_public_key: "0xa55c1285d84ba83a5ad26420cd5ad3091e49c55a813eee651cd467db38a8c8e63192f47955e9376f6b42f6d190571cb5"
+
+mev_relay_website_listening_port: 9060
+mev_relay_api_listening_port: 9062
+
+mev_relay_shared_env:
+  GENESIS_FORK_VERSION: "0x10{{ ethereum_genesis_fork_version_suffix }}"
+  GENESIS_VALIDATORS_ROOT: "{{ mev_relay_genesis_validators_root }}"
+  BELLATRIX_FORK_VERSION: "0x30{{ ethereum_genesis_fork_version_suffix }}"
+  CAPELLA_FORK_VERSION: "0x40{{ ethereum_genesis_fork_version_suffix }}"
+  DENEB_FORK_VERSION: "0x50{{ ethereum_genesis_fork_version_suffix }}"
+  ELECTRA_FORK_VERSION: "0x50{{ ethereum_genesis_fork_version_suffix }}"
+  DB_TABLE_PREFIX: custom
+  LOG_LEVEL: debug
+
+# ------------------------------------------------------------------
+# mev-relay-housekeeper
+mev_relay_housekeeper_enabled: true
+mev_relay_housekeeper_datadir: "{{ mev_relay_datadir }}/mev-relay-housekeeper"
+mev_relay_housekeeper_container_name: mev-relay-housekeeper
+mev_relay_housekeeper_container_image: "{{ mev_relay_container_image }}"
+mev_relay_housekeeper_container_env: "{{ mev_relay_shared_env }}"
+mev_relay_housekeeper_container_pull: true
+mev_relay_housekeeper_container_command_extra_args:
+    - --network=custom
+    - --beacon-uris={{ mev_relay_beacon_endpoint }}
+    - --redis-uri=mev-relay-redis:6379
+    - --db=postgres://postgres:postgres@mev-relay-database:5432/boostrelay?sslmode=disable
+
+# ------------------------------------------------------------------
+# mev-relay-api
+mev_relay_api_enabled: true
+mev_relay_api_datadir: "{{ mev_relay_datadir }}/mev-relay-api"
+mev_relay_api_container_name: mev-relay-api
+mev_relay_api_container_image: "{{ mev_relay_container_image }}"
+mev_relay_api_container_env_extra:
+  DISABLE_PAYLOAD_DATABASE_STORAGE: "1"
+  # Nginx configuration
+  VIRTUAL_HOST: "mev-api.{{ network_subdomain }}"
+  VIRTUAL_PORT: "{{ mev_relay_api_listening_port | string }}"
+  LETSENCRYPT_HOST: "mev-api.{{ network_subdomain }}"
+mev_relay_api_container_env: "{{ mev_relay_shared_env | combine(mev_relay_api_container_env_extra) }}"
+mev_relay_api_container_pull: true
+mev_relay_api_container_networks: "{{ mev_relay_docker_networks }}"
+mev_relay_api_container_ports:
+  - "127.0.0.1:{{ mev_relay_api_listening_port }}:{{ mev_relay_api_listening_port }}"
+mev_relay_api_container_command_extra_args:
+  - --network=custom
+  - --beacon-uris={{ mev_relay_beacon_endpoint }}
+  - --pprof
+  - --debug
+  - --redis-uri=mev-relay-redis:6379
+  - --db=postgres://postgres:postgres@mev-relay-database:5432/boostrelay?sslmode=disable
+  - --secret-key=0x{{ mev_relay_secret_key }}
+  - --listen-addr=0.0.0.0:9062
+  - --blocksim=http://execution:8545
+
+# ------------------------------------------------------------------
+# mev-relay-website
+mev_relay_website_enabled: true
+mev_relay_website_datadir: "{{ mev_relay_datadir }}/mev-relay-website"
+mev_relay_website_container_name: mev-relay-website
+mev_relay_website_container_image: "{{ mev_relay_container_image }}"
+mev_relay_website_container_env_extra:
+  LINK_DATA_API: https://mev-api.{{ network_subdomain }}
+  RELAY_URL: https://{{ mev_relay_public_key }}@mev-api.{{ network_subdomain }}
+  # Nginx configuration
+  VIRTUAL_HOST: "mev-relay.{{ network_subdomain }}"
+  VIRTUAL_PORT: "{{ mev_relay_website_listening_port | string}}"
+  LETSENCRYPT_HOST: "mev-relay.{{ network_subdomain }}"
+mev_relay_website_container_env: "{{ mev_relay_shared_env | combine(mev_relay_website_container_env_extra) }}"
+mev_relay_website_container_ports:
+  - "127.0.0.1:{{ mev_relay_website_listening_port }}:{{ mev_relay_website_listening_port }}"
+mev_relay_website_container_pull: true
+mev_relay_website_container_networks: "{{ mev_relay_docker_networks }}"
+mev_relay_website_container_command_extra_args:
+  - --network=custom
+  - --redis-uri=mev-relay-redis:6379
+  - --db=postgres://postgres:postgres@mev-relay-database:5432/boostrelay?sslmode=disable
+  - --show-config-details
+  - --listen-addr=0.0.0.0:{{ mev_relay_website_listening_port }}
+  - https://{{ mev_relay_public_key }}@mev-api.{{ network_subdomain }}
+
+
+###
+###
+### ETHEREUM NODE SPECIFICS
+###
+###
+
+# role: ethpandaops.general.ethereum_node
+ethereum_node_cl: lighthouse
+ethereum_node_el: reth
+ethereum_node_fact_discovery_el: false # Need to be disabled for builder.
+#ethereum_node_fact_discovery_cl: false
+
+# role: ethpandaops.general.lighthouse
+lighthouse_container_name: beacon
+lighthouse_container_image: "{{ default_ethereum_client_images.lighthouse }}"
+lighthouse_container_env:
+  VIRTUAL_HOST: "{{ ethereum_node_beacon_hostname }}"
+  VIRTUAL_PORT: "{{ ethereum_node_cl_ports_http_beacon | string }}"
+  LETSENCRYPT_HOST: "{{ ethereum_node_beacon_hostname }}"
+lighthouse_container_volumes:
+  - "{{ lighthouse_datadir }}:/data"
+  - "{{ lighthouse_auth_jwt_path }}:/execution-auth.jwt:ro"
+  - "{{ eth_testnet_config_dir }}:/network-config:ro"
+lighthouse_container_command_extra_args:
+  - --testnet-dir=/network-config
+  - --boot-nodes={{ ethereum_cl_bootnodes | join(',') }}
+  - --invalid-gossip-verified-blocks-path=/data/lighthouse/invalid
+  # Flags required for mev-relay as per https://github.com/flashbots/mev-boost-relay?tab=readme-ov-file#beacon-node-setup
+  - --always-prepare-payload
+  - --prepare-payload-lookahead=12000
+  - --disable-peer-scoring
+  - --suggested-fee-recipient={{ ethereum_node_cl_validator_fee_recipient }}
+lighthouse_container_pull: true
+
+# role: ethpandaops.general.reth
+reth_container_name: execution
+reth_container_image: "{{ default_ethereum_client_images.reth_rbuilder }}"
+reth_container_env:
+  VIRTUAL_HOST: "{{ ethereum_node_rcp_hostname }}"
+  VIRTUAL_PORT: "{{ ethereum_node_el_ports_http_rpc | string }}"
+  LETSENCRYPT_HOST: "{{ ethereum_node_rcp_hostname }}"
+  RUST_BACKTRACE: "full"
+  RUST_LOG: "info"
+reth_container_volumes:
+  - "{{ reth_datadir }}:/data"
+  - "{{ reth_auth_jwt_path }}:/execution-auth.jwt:ro"
+  - "{{ eth_testnet_config_dir }}:/network-config:ro"
+reth_container_command_extra_args:
+  - --chain=/network-config/genesis.json
+  - --bootnodes={{ ethereum_el_bootnodes | join(',') }}
+  # Flags that differ from the other reth nodes
+  - --http.api=admin,debug,eth,flashbots,net,rpc,trace,txpool,web3
+  - --engine.persistence-threshold=0
+  - --engine.memory-block-buffer-target=0
+reth_rbuilder_enabled: true
+reth_rbuilder_config: |
+  log_json = true
+  log_level = "info,rbuilder=debug"
+  redacted_telemetry_server_port = 6061
+  redacted_telemetry_server_ip = "0.0.0.0"
+  full_telemetry_server_port = 6060
+  full_telemetry_server_ip = "0.0.0.0"
+
+  chain = "/network-config/genesis.json"
+  reth_datadir = "/data"
+
+  coinbase_secret_key = "{{ mev_relay_secret_key }}"
+  relay_secret_key = "{{ mev_relay_secret_key }}"
+  optimistic_relay_secret_key = "{{ mev_relay_secret_key }}"
+
+  # cl_node_url can be a single value, array of values, or passed by an environment variables with values separated with a comma
+  cl_node_url = ["http://beacon:5052"]
+  jsonrpc_server_port = 8645
+  jsonrpc_server_ip = "0.0.0.0"
+  el_node_ipc_path = "/tmp/reth.ipc"
+  extra_data = "🐼⚡🤖"
+  genesis_fork_version = "0x10{{ ethereum_genesis_fork_version_suffix }}"
+
+  dry_run = false
+  dry_run_validation_url = "http://localhost:8545"
+
+  ignore_cancellable_orders = true
+
+  max_concurrent_seals = 4
+
+  sbundle_mergeabe_signers = []
+  # slot_delta_to_start_submits_ms is usually negative since we start bidding BEFORE the slot start
+  # slot_delta_to_start_submits_ms = -5000
+  live_builders = ["mp-ordering", "mgp-ordering"]
+  watchdog_timeout_sec = 99999
+
+  [[relays]]
+  name = "flashbots"
+  url = "http://{{ mev_relay_public_key }}@mev-relay-api:9062"
+  priority = 0
+  use_ssz_for_submit = false
+  use_gzip_for_submit = false
+
+  [[builders]]
+  name = "mgp-ordering"
+  algo = "ordering-builder"
+  discard_txs = true
+  sorting = "mev-gas-price"
+  failed_order_retries = 1
+  drop_failed_orders = true
+
+  [[builders]]
+  name = "mp-ordering"
+  algo = "ordering-builder"
+  discard_txs = true
+  sorting = "max-profit"
+  failed_order_retries = 1
+  drop_failed_orders = true

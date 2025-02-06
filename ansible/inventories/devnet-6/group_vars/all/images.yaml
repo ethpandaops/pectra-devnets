@@ -14,6 +14,7 @@ default_ethereum_client_images:
   ethereumjs: docker.ethquokkaops.io/dh/ethpandaops/ethereumjs:eip7840
   nethermind: docker.ethquokkaops.io/dh/nethermindeth/nethermind:master-5506f83
   reth: docker.ethquokkaops.io/dh/ethpandaops/reth:main-0ad7de4
+  reth_rbuilder: docker.ethquokkaops.io/dh/ethpandaops/reth-rbuilder:devnet6-fdeb4d6
   nimbusel: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth1:master-d4266dc
   erigonTwo: docker.ethquokkaops.io/dh/ethpandaops/erigon:pectra6_e2-fc4f92a
 

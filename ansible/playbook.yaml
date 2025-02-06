@@ -49,6 +49,12 @@
     - role: ethpandaops.general.generate_basic_auth_nginx
       tags: [docker_nginx_proxy]
 
+- hosts: mevrelay
+  become: true
+  roles:
+    - role: ethpandaops.general.mev_relay
+      tags: [mev_relay]
+
 - hosts: ethereum_node
   serial: "{{ batch_count | default('100%') }}"
   become: true
@@ -139,7 +145,6 @@
   roles:
     - role: ethpandaops.general.xatu_stack
       tags: [ethereum, xatu]
-
 
 - hosts: hive
   become: true
