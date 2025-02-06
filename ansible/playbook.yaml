@@ -146,6 +146,12 @@
     - role: ethpandaops.general.xatu_stack
       tags: [ethereum, xatu]
 
+- hosts: mev_flood
+  become: true
+  roles:
+    - role: ethpandaops.general.mev_flood
+      tags: [mev_flood]
+
 - hosts: hive
   become: true
   roles:
