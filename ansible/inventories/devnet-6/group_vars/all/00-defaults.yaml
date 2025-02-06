@@ -3,7 +3,7 @@ ansible_python_interpreter: /usr/bin/python3
 devnet_name: pectra
 
 # IPv6 Specific configuration
-global_ipv6_enabled: true
+global_ipv6_enabled: false
 global_ipv6_subnet_ranges:
   hetzner: "64"
   digitalocean: "124"
