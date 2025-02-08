@@ -3,8 +3,8 @@ default_ethereum_client_images:
   lighthouse: docker.ethquokkaops.io/dh/ethpandaops/lighthouse:unstable-95cec45
   lodestar: docker.ethquokkaops.io/dh/ethpandaops/lodestar:unstable-7982031
   nimbus: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth2:unstable-dec1cd3
-  prysm: docker.ethquokkaops.io/dh/ethpandaops/prysm-beacon-chain:develop-910609a
-  prysm_validator: docker.ethquokkaops.io/dh/ethpandaops/prysm-validator:develop-910609a
+  prysm: docker.ethquokkaops.io/dh/ethpandaops/prysm-beacon-chain:develop-81a2a17
+  prysm_validator: docker.ethquokkaops.io/dh/ethpandaops/prysm-validator:develop-81a2a17
   teku: docker.ethquokkaops.io/dh/ethpandaops/teku:master-96c73da
   grandine: docker.ethquokkaops.io/dh/ethpandaops/grandine:devnet5-7ba51a4
 ### Execution layer clients
