@@ -5,7 +5,7 @@ panda-pulse:
 
   image:
     repository: docker.ethquokkaops.io/dh/ethpandaops/panda-pulse
-    tag: 0.0.7
+    tag: 0.0.8
     pullPolicy: Always
   schedule: "0 7 * * *"
 
