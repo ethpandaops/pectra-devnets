@@ -8,12 +8,12 @@ default_ethereum_client_images:
   teku: docker.ethquokkaops.io/dh/ethpandaops/teku:master-96c73da
   grandine: docker.ethquokkaops.io/dh/ethpandaops/grandine:devnet5-7ba51a4
 ### Execution layer clients
-  besu: docker.ethquokkaops.io/dh/ethpandaops/besu:main-630a8f7
+  besu: docker.ethquokkaops.io/dh/ethpandaops/besu:main-72a4e4a
   geth: docker.ethquokkaops.io/dh/ethpandaops/geth:prague-devnet-6-c070db6
   erigon: docker.ethquokkaops.io/dh/erigontech/erigon:pectra6
   ethereumjs: docker.ethquokkaops.io/dh/ethpandaops/ethereumjs:eip7840
   nethermind: docker.ethquokkaops.io/dh/nethermindeth/nethermind:master-5506f83
-  reth: docker.ethquokkaops.io/dh/ethpandaops/reth:main-0ad7de4
+  reth: docker.ethquokkaops.io/dh/ethpandaops/reth:main-46d63e8
   reth_rbuilder: docker.ethquokkaops.io/dh/ethpandaops/reth-rbuilder:devnet6-fdeb4d6
   nimbusel: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth1:devnet-6-pectra--7ebede9
   erigonTwo: docker.ethquokkaops.io/dh/ethpandaops/erigon:pectra6_e2-fc4f92a
