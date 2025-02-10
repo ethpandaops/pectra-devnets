@@ -2,11 +2,11 @@ default_ethereum_client_images:
 ### Consensus layer clients
   lighthouse: docker.ethquokkaops.io/dh/ethpandaops/lighthouse:unstable-62a0f25
   lodestar: docker.ethquokkaops.io/dh/ethpandaops/lodestar:unstable-7982031
-  nimbus: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth2:unstable-dec1cd3
+  nimbus: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth2:unstable-bf344f0
   prysm: docker.ethquokkaops.io/dh/ethpandaops/prysm-beacon-chain:develop-81a2a17
   prysm_validator: docker.ethquokkaops.io/dh/ethpandaops/prysm-validator:develop-81a2a17
   teku: docker.ethquokkaops.io/dh/ethpandaops/teku:master-96c73da
-  grandine: docker.ethquokkaops.io/dh/ethpandaops/grandine:devnet5-7ba51a4
+  grandine: docker.ethquokkaops.io/dh/ethpandaops/grandine:devnet5-c4bd9e5
 ### Execution layer clients
   besu: docker.ethquokkaops.io/dh/ethpandaops/besu:main-72a4e4a
   geth: docker.ethquokkaops.io/dh/ethpandaops/geth:prague-devnet-6-c070db6
@@ -20,6 +20,7 @@ default_ethereum_client_images:
 
 default_tooling_images:
   mev_boost: docker.ethquokkaops.io/dh/ethpandaops/mev-boost:electra
+  mev_boost_relay: docker.ethquokkaops.io/dh/ethpandaops/mev-boost-relay:electra-8321f63
   xatu_sentry: docker.ethquokkaops.io/dh/ethpandaops/xatu:1.0.25-debian
   ethereum_metrics_exporter: docker.ethquokkaops.io/dh/ethpandaops/ethereum-metrics-exporter:latest
   tx_fuzz: docker.ethquokkaops.io/dh/ethpandaops/tx-fuzz:pr-56

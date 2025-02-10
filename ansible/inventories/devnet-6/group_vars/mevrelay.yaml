@@ -6,7 +6,7 @@ mev_relay_docker_network_name: shared
 mev_relay_docker_networks:
   - name: "{{ mev_relay_docker_network_name }}"
 
-mev_relay_container_image: ethpandaops/mev-boost-relay:electra
+
 mev_relay_beacon_endpoint: http://beacon:5052
 mev_relay_genesis_validators_root:  >-
   {{ (lookup('file', eth_testnet_config_local_dir_src + '../parsed/parsedConsensusGenesis.json') | from_json).genesis_validators_root }}
@@ -25,13 +25,14 @@ mev_relay_shared_env:
   ELECTRA_FORK_VERSION: "0x60{{ ethereum_genesis_fork_version_suffix }}"
   DB_TABLE_PREFIX: custom
   LOG_LEVEL: debug
+  ENABLE_IGNORE_ALL_VALIDATION_ERRORS: "1"
 
 # ------------------------------------------------------------------
 # mev-relay-housekeeper
 mev_relay_housekeeper_enabled: true
 mev_relay_housekeeper_datadir: "{{ mev_relay_datadir }}/mev-relay-housekeeper"
 mev_relay_housekeeper_container_name: mev-relay-housekeeper
-mev_relay_housekeeper_container_image: "{{ mev_relay_container_image }}"
+mev_relay_housekeeper_container_image: "{{ default_tooling_images.mev_boost_relay }}"
 mev_relay_housekeeper_container_env: "{{ mev_relay_shared_env }}"
 mev_relay_housekeeper_container_pull: true
 mev_relay_housekeeper_container_command_extra_args:
@@ -45,7 +46,7 @@ mev_relay_housekeeper_container_command_extra_args:
 mev_relay_api_enabled: true
 mev_relay_api_datadir: "{{ mev_relay_datadir }}/mev-relay-api"
 mev_relay_api_container_name: mev-relay-api
-mev_relay_api_container_image: "{{ mev_relay_container_image }}"
+mev_relay_api_container_image: "{{ default_tooling_images.mev_boost_relay }}"
 mev_relay_api_container_env_extra:
   DISABLE_PAYLOAD_DATABASE_STORAGE: "1"
   # Nginx configuration
@@ -66,14 +67,14 @@ mev_relay_api_container_command_extra_args:
   - --db=postgres://postgres:postgres@mev-relay-database:5432/boostrelay?sslmode=disable
   - --secret-key=0x{{ mev_relay_secret_key }}
   - --listen-addr=0.0.0.0:9062
-  - --blocksim=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.lighthouse-geth-1.pectra-devnet-6.ethpandaops.io
+  - --blocksim=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.lighthouse-reth-1.pectra-devnet-6.ethpandaops.io
 
 # ------------------------------------------------------------------
 # mev-relay-website
 mev_relay_website_enabled: true
 mev_relay_website_datadir: "{{ mev_relay_datadir }}/mev-relay-website"
 mev_relay_website_container_name: mev-relay-website
-mev_relay_website_container_image: "{{ mev_relay_container_image }}"
+mev_relay_website_container_image: "{{ default_tooling_images.mev_boost_relay }}"
 mev_relay_website_container_env_extra:
   LINK_DATA_API: https://mev-api.{{ network_subdomain }}
   RELAY_URL: https://{{ mev_relay_public_key }}@mev-api.{{ network_subdomain }}

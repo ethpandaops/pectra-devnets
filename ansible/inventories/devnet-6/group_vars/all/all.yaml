@@ -24,7 +24,7 @@ ethstats_secret: "{{ secret_ethstats }}"
 
 ### Checkpoint sync specific for Ansible & Kubernetes
 checkpoint_sync_node: lighthouse-geth-1
-ethereum_node_cl_checkpoint_sync_enabled: false
+ethereum_node_cl_checkpoint_sync_enabled: true
 checkpoint_sync_url: https://checkpoint-sync.{{ ethereum_network_name }}.{{ domain }}
 checkpoint_sync_url_kube: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.{{ checkpoint_sync_node }}.{{ ethereum_network_name }}.{{ domain }}
 #  ██████╗░░█████╗░██╗░░░░░███████╗  ██╗░░░██╗░█████╗░██████╗░░██████╗
@@ -108,6 +108,7 @@ bootstrap_default_user_authorized_keys_github_all:
   - pk910
   - marioevz
   - mattevans
+  - jtraglia
 bootstrap_default_user_authorized_keys_github: >
   {{
     (bootstrap_default_user_authorized_keys_github_all | default([])) +
