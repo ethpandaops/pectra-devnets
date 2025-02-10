@@ -23,7 +23,7 @@ reth_container_volumes:
 reth_container_command_extra_args:
   - --chain=/network-config/genesis.json
   - --bootnodes={{ ethereum_el_bootnodes | join(',') }}
-  - --http.api=trace,rpc,eth,net,debug,web3,admin
+  - --http.api=trace,rpc,eth,net,debug,web3,admin,flashbots
 prometheus_config: |
   global:
     scrape_interval: 30s

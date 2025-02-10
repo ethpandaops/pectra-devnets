@@ -66,7 +66,7 @@ mev_relay_api_container_command_extra_args:
   - --db=postgres://postgres:postgres@mev-relay-database:5432/boostrelay?sslmode=disable
   - --secret-key=0x{{ mev_relay_secret_key }}
   - --listen-addr=0.0.0.0:9062
-  - --blocksim=http://execution:8545
+  - --blocksim=https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.lighthouse-geth-1.pectra-devnet-6.ethpandaops.io
 
 # ------------------------------------------------------------------
 # mev-relay-website
