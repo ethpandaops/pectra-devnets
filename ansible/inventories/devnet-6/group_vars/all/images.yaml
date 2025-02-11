@@ -20,7 +20,7 @@ default_ethereum_client_images:
 
 default_tooling_images:
   mev_boost: docker.ethquokkaops.io/dh/ethpandaops/mev-boost:electra
-  mev_boost_relay: docker.ethquokkaops.io/dh/ethpandaops/mev-boost-relay:electra-8321f63
+  mev_boost_relay: docker.ethquokkaops.io/dh/ethpandaops/mev-boost-relay:electra-12fbbfc
   xatu_sentry: docker.ethquokkaops.io/dh/ethpandaops/xatu:1.0.25-debian
   ethereum_metrics_exporter: docker.ethquokkaops.io/dh/ethpandaops/ethereum-metrics-exporter:latest
   tx_fuzz: docker.ethquokkaops.io/dh/ethpandaops/tx-fuzz:pr-56
