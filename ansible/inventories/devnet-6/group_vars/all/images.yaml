@@ -6,7 +6,7 @@ default_ethereum_client_images:
   prysm: docker.ethquokkaops.io/dh/ethpandaops/prysm-beacon-chain:develop-81a2a17
   prysm_validator: docker.ethquokkaops.io/dh/ethpandaops/prysm-validator:develop-81a2a17
   teku: docker.ethquokkaops.io/dh/ethpandaops/teku:master-96c73da
-  grandine: docker.ethquokkaops.io/dh/ethpandaops/grandine:devnet5-c4bd9e5
+  grandine: docker.ethquokkaops.io/dh/ethpandaops/grandine:devnet5-e2f5e95
 ### Execution layer clients
   besu: docker.ethquokkaops.io/dh/ethpandaops/besu:main-72a4e4a
   geth: docker.ethquokkaops.io/dh/ethpandaops/geth:prague-devnet-6-c070db6
