@@ -217,6 +217,9 @@ docker_nginx_proxy_container_volumes:
   - "{{ docker_nginx_proxy_datadir }}/certs:/etc/nginx/certs:ro"
   - html:/usr/share/nginx/html
   - "{{ docker_nginx_proxy_datadir }}/htpasswd:/etc/nginx/htpasswd:ro"
+docker_nginx_proxy_container_custom_config_files:
+  global-custom.conf: |
+    client_max_body_size: 50M;
 
 # role: ethpandaops.general.prometheus
 prometheus_container_image: "{{ default_tooling_images.prometheus }}"
