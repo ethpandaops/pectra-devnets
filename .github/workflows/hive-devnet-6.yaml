@@ -35,7 +35,7 @@ on:
         description: GitHub repository and tag for nethermind (repo@tag)
       erigon_version:
         type: string
-        default: erigontech/erigon@pectra6
+        default: erigontech/erigon@main
         description: GitHub repository and tag for erigon (repo@tag)
       ethereumjs_version:
         type: string
@@ -116,7 +116,7 @@ jobs:
           BESU_DEFAULT="hyperledger/besu@main"
           RETH_DEFAULT="paradigmxyz/reth@main"
           NETHERMIND_DEFAULT="NethermindEth/nethermind@release/1.31.0"
-          ERIGON_DEFAULT="erigontech/erigon@pectra6"
+          ERIGON_DEFAULT="erigontech/erigon@main"
           ETHEREUMJS_DEFAULT="ethereumjs/ethereumjs-monorepo@eip7840"
           NIMBUSEL_DEFAULT="status-im/nimbus-eth1@master"
           # Parse geth
