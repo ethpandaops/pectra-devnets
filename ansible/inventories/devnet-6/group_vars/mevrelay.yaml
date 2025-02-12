@@ -137,7 +137,7 @@ lighthouse_container_command_extra_args:
   - --invalid-gossip-verified-blocks-path=/data/lighthouse/invalid
   # Flags required for mev-relay as per https://github.com/flashbots/mev-boost-relay?tab=readme-ov-file#beacon-node-setup
   - --always-prepare-payload
-  - --prepare-payload-lookahead=12000
+  - --prepare-payload-lookahead=8000
   - --disable-peer-scoring
   - --suggested-fee-recipient={{ ethereum_node_cl_validator_fee_recipient }}
 lighthouse_container_pull: true
