@@ -25,7 +25,7 @@ mev_relay_shared_env:
   ELECTRA_FORK_VERSION: "0x60{{ ethereum_genesis_fork_version_suffix }}"
   DB_TABLE_PREFIX: custom
   LOG_LEVEL: debug
-  ENABLE_IGNORE_ALL_VALIDATION_ERRORS: "1"
+  # ENABLE_IGNORE_ALL_VALIDATION_ERRORS: "1"
 
 # ------------------------------------------------------------------
 # mev-relay-housekeeper
