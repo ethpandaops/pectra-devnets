@@ -1,19 +1,19 @@
 default_ethereum_client_images:
 ### Consensus layer clients
-  lighthouse: docker.ethquokkaops.io/dh/ethpandaops/lighthouse:unstable-62a0f25
+  lighthouse: docker.ethquokkaops.io/dh/sigp/lighthouse:v7.0.0-beta.0
   lodestar: docker.ethquokkaops.io/dh/chainsafe/lodestar:v1.27.0
-  nimbus: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth2:unstable-0ec1cc9
-  prysm: docker.ethquokkaops.io/dh/ethpandaops/prysm-beacon-chain:develop-1502583
-  prysm_validator: docker.ethquokkaops.io/dh/ethpandaops/prysm-validator:develop-1502583
-  teku: docker.ethquokkaops.io/dh/ethpandaops/teku:master-96c73da
+  nimbus: docker.ethquokkaops.io/dh/statusim/nimbus-eth2:multiarch-v25.2.0
+  prysm: docker.ethquokkaops.io/dh/prysmaticlabs/prysm-beacon-chain:v5.3.0
+  prysm_validator: docker.ethquokkaops.io/dh/prysmaticlabs/prysm-validator:v5.3.0
+  teku: docker.ethquokkaops.io/dh/consensys/teku:25.2
   grandine: docker.ethquokkaops.io/dh/ethpandaops/grandine:devnet5-e2f5e95
 ### Execution layer clients
-  besu: docker.ethquokkaops.io/dh/ethpandaops/besu:main-72a4e4a
-  geth: docker.ethquokkaops.io/dh/ethpandaops/geth:prague-devnet-6-c070db6
+  besu: docker.ethquokkaops.io/dh/hyperledger/besu:25.2.0
+  geth: docker.ethquokkaops.io/dh/ethereum/client-go:v1.15.1
   erigon: docker.ethquokkaops.io/dh/ethpandaops/erigon:main-376db9a0
   ethereumjs: docker.ethquokkaops.io/dh/ethpandaops/ethereumjs:eip7840
-  nethermind: docker.ethquokkaops.io/dh/nethermindeth/nethermind:master-5506f83
-  reth: docker.ethquokkaops.io/dh/ethpandaops/reth:main-dc88fa5
+  nethermind: docker.ethquokkaops.io/dh/nethermind/nethermind:1.31.0
+  reth: docker.ethquokkaops.io/gh/ghcr.io/paradigmxyz/reth:v1.2.0
   reth_rbuilder: docker.ethquokkaops.io/dh/ethpandaops/reth-rbuilder:devnet6-fdeb4d6
   nimbusel: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth1:devnet-6-pectra-82eeb34
   erigonTwo: docker.ethquokkaops.io/dh/ethpandaops/erigon:release-2.61
