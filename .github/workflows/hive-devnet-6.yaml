@@ -119,6 +119,8 @@ jobs:
           ERIGON_DEFAULT="erigontech/erigon@main"
           ETHEREUMJS_DEFAULT="ethereumjs/ethereumjs-monorepo@eip7840"
           NIMBUSEL_DEFAULT="status-im/nimbus-eth1@master"
+          HIVE_DEFAULT="ethereum/hive@master"
+
           # Parse geth
           echo "geth_repo=$(echo ${GETH_VERSION:-$GETH_DEFAULT} | cut -d@ -f1)" >> $GITHUB_OUTPUT
           echo "geth_tag=$(echo ${GETH_VERSION:-$GETH_DEFAULT} | cut -d@ -f2)" >> $GITHUB_OUTPUT
@@ -165,6 +167,7 @@ jobs:
           ERIGON_VERSION: ${{ inputs.erigon_version }}
           ETHEREUMJS_VERSION: ${{ inputs.ethereumjs_version }}
           NIMBUSEL_VERSION: ${{ inputs.nimbusel_version }}
+          HIVE_VERSION: ${{ inputs.hive_version }}
       - id: client_config
         run: |
           cat << 'EOF' >> $GITHUB_OUTPUT
