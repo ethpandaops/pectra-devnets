@@ -1,0 +1,39 @@
+name: Hive - Deploy Website
+on:
+  workflow_dispatch:
+    inputs:
+      hive_repo:
+        type: string
+        default: skylenet/hive
+      hive_branch:
+        type: string
+        default: skylenet/hive-view-latest-runs
+        description: Branch for hive
+      s3_path:
+        type: string
+        default: pectra-devnet-6
+
+env:
+  # Proxy
+  GOPROXY: "${{ vars.GOPROXY }}"
+  # Hive action environment variables
+  S3_BUCKET: hive-results
+  INSTALL_RCLONE_VERSION: v1.68.2
+
+jobs:
+  deploy-website:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ethpandaops/hive-github-action@master
+        with:
+          hive_repository: ${{ inputs.hive_repo }}
+          hive_version: ${{ inputs.hive_branch }}
+          skip_tests: true
+          s3_upload: true
+          s3_bucket: ${{ env.S3_BUCKET }}
+          s3_path: ${{ inputs.s3_path }}
+          s3_public_url: ${{ env.S3_PUBLIC_URL }}
+          rclone_config: ${{ secrets.HIVE_RCLONE_CONFIG }}
+          rclone_version: ${{ env.INSTALL_RCLONE_VERSION }}
+          workflow_artifact_upload: true
+          website_upload: true
