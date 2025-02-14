@@ -178,7 +178,7 @@ jobs:
             build_args:
               github: ${{ steps.parse.outputs.geth_repo }}
               tag: ${{ steps.parse.outputs.geth_tag }}
-              GOPROXY: ${{ vars.GOPROXY }}
+              GOPROXY: ${{ env.GOPROXY }}
           - client: besu
             nametag: default
             dockerfile: git
@@ -203,7 +203,7 @@ jobs:
             build_args:
               github: ${{ steps.parse.outputs.erigon_repo }}
               tag: ${{ steps.parse.outputs.erigon_tag }}
-              GOPROXY: ${{ vars.GOPROXY }}
+              GOPROXY: ${{ env.GOPROXY }}
           - client: ethereumjs
             nametag: default
             dockerfile: git
