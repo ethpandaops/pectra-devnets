@@ -1,7 +1,7 @@
 import numpy as np
 import math
 
-total_validators = 70000
+total_validators = 30000
 validator_per_machine = 1000
 start = 0
 
@@ -18,11 +18,11 @@ cl_split = {
 el_split = {
     'geth': 0.40,
     'nethermind': 0.35,
-    'ethereumjs': 0.01,
+    'ethereumjs': 0.00,
     'reth': 0.08,
     'besu': 0.08,
-    'erigon': 0.07,
-    'nimbusel': 0.01,
+    'erigon': 0.09,
+    'nimbusel': 0.00,
 }
 
 pairwise_validators = {}

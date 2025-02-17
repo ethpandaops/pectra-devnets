@@ -1,0 +1,8 @@
+- hosts: all,!localhost
+  roles:
+    - role: ethpandaops.general.snapshot_fetcher
+      tags: [script, snapshot_fetcher]
+
+
+
+
