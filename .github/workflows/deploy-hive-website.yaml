@@ -4,10 +4,10 @@ on:
     inputs:
       hive_repo:
         type: string
-        default: skylenet/hive
+        default: ethereum/hive
       hive_branch:
         type: string
-        default: skylenet/hive-view-latest-runs
+        default: master
         description: Branch for hive
       s3_path:
         type: string
