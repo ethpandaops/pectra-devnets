@@ -31,6 +31,12 @@ ethereum_node_cl: prysm
 prysm_container_name: beacon
 prysm_validator_container_name: validator
 prysm_container_image: "{{ default_ethereum_client_images.prysm }}"
+prysm_container_ports:
+  - "127.0.0.1:{{ prysm_ports_http_beacon }}:{{ prysm_ports_http_beacon }}"
+  - "{{ prysm_ports_p2p_tcp }}:{{ prysm_ports_p2p_tcp }}"
+  - "{{ prysm_ports_p2p_udp }}:{{ prysm_ports_p2p_udp }}/udp"
+  - "127.0.0.1:{{ethereum_node_cl_ports_metrics }}:{{ ethereum_node_cl_ports_metrics }}"
+  - 0.0.0.0:6060:6060
 prysm_container_env:
   VIRTUAL_HOST: "{{ ethereum_node_beacon_hostname }}"
   VIRTUAL_PORT: "{{ ethereum_node_cl_ports_http_beacon | string }}"
