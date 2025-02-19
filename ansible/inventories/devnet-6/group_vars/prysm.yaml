@@ -36,7 +36,7 @@ prysm_container_ports:
   - "{{ prysm_ports_p2p_tcp }}:{{ prysm_ports_p2p_tcp }}"
   - "{{ prysm_ports_p2p_udp }}:{{ prysm_ports_p2p_udp }}/udp"
   - "127.0.0.1:{{ethereum_node_cl_ports_metrics }}:{{ ethereum_node_cl_ports_metrics }}"
-  - 0.0.0.0:6060:6060
+  - 0.0.0.0:6061:6061
 prysm_container_env:
   VIRTUAL_HOST: "{{ ethereum_node_beacon_hostname }}"
   VIRTUAL_PORT: "{{ ethereum_node_cl_ports_http_beacon | string }}"
@@ -57,6 +57,7 @@ prysm_container_command_extra_simple_args:
   - --min-sync-peers=1
   - --pprof
   - --pprofaddr=0.0.0.0
+  - --pprofport=6061
   - --enable-debug-rpc-endpoints
   - --verbosity=debug
   - --subscribe-all-subnets
