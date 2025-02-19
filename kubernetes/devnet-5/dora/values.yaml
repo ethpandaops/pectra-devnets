@@ -4,7 +4,7 @@ dora:
   fullnameOverride: dora
   image:
     repository: docker.ethquokkaops.io/dh/ethpandaops/dora
-    tag: master-latest
+    tag: devnet5-backport-latest
     pullPolicy: Always
   resources:
     requests:
