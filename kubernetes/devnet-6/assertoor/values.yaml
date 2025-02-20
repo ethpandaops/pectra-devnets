@@ -39,6 +39,7 @@ assertoor:
 
   persistence:
     enabled: true
+    existingClaim: storage-assertoor-0-recovered
 
   endpoints:
     - name:  bootnode-1
