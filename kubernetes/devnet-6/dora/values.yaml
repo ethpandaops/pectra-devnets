@@ -44,6 +44,9 @@ dora:
   postgresql:
     name: "dora-postgresql"
     fullnameOverride: "dora-postgresql"
+    persistence:
+      enabled: true
+      existingClaim: data-dora-postgresql-0-recovered
 
   mevRelays:
   - index: 0
