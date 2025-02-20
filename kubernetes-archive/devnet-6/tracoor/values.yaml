@@ -31,7 +31,8 @@ tracoor-single:
     primary:
       persistence:
         enabled: true
-        size: 20Gi
+        #size: 20Gi
+        existingClaim: data-tracoor-postgresql-0-recovered
       resources:
         requests:
           cpu: 1000m
