@@ -8,7 +8,7 @@ version: 0.1.0
 dependencies:
   - name: blockscout-stack
     repository: https://blockscout.github.io/helm-charts
-    version: 1.8.0
+    version: 2.0.0
   - condition: postgresql.enabled
     name: postgresql
     repository: https://charts.bitnami.com/bitnami
