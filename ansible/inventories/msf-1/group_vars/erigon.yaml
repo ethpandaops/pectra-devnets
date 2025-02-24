@@ -25,7 +25,9 @@ erigon_container_command_extra_args:
   - --http.api=eth,erigon,engine,web3,net,debug,trace,txpool,admin
   - --http.vhosts=*
   - --ws
-  - --db.size.limit=200GB
+  #- --db.size.limit=200GB
+  - --externalcl
+  - --prune.mode=full # full node
 
 erigon_init_custom_network: true
 erigon_init_custom_network_genesis_file: "{{ eth_testnet_config_dir }}/genesis.json"

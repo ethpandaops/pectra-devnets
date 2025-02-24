@@ -24,6 +24,7 @@ geth_container_command_extra_args:
   - --http.api=eth,net,web3,debug,admin
   - --http.vhosts=*
   - --state.scheme=path
+  - --cache.preimages
   - --networkid={{ ethereum_network_id }}
   - --syncmode=full
   - --bootnodes={{ ethereum_el_bootnodes | join(',') }}

@@ -29,6 +29,7 @@ reth_container_command_extra_args:
   - --http.api=trace,rpc,eth,net,debug,web3,admin,flashbots
   - --rpc.eth-proof-window=3
   - --rpc.max-request-size=50
+  - --full
 prometheus_config: |
   global:
     scrape_interval: 30s
