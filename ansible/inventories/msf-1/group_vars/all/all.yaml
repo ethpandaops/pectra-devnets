@@ -82,6 +82,7 @@ ethereum_genesis_generator_config_files:
     export MAX_PER_EPOCH_ACTIVATION_CHURN_LIMIT=8
     export CHURN_LIMIT_QUOTIENT=65536
     export EJECTION_BALANCE=16000000000
+    export SHADOW_FORK_RPC="https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.bootnode-1.pectra-msf-1.ethpandaops.io"
     export ETH1_FOLLOW_DISTANCE=2048
     export MIN_VALIDATOR_WITHDRAWABILITY_DELAY=2
     export SHARD_COMMITTEE_PERIOD=256
