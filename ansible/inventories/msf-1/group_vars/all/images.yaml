@@ -5,19 +5,18 @@ default_ethereum_client_images:
   nimbus: docker.ethquokkaops.io/dh/statusim/nimbus-eth2:multiarch-v25.2.0
   prysm: docker.ethquokkaops.io/dh/prysmaticlabs/prysm-beacon-chain:v5.3.0
   prysm_validator: docker.ethquokkaops.io/dh/prysmaticlabs/prysm-validator:v5.3.0
-  teku: docker.ethquokkaops.io/dh/consensys/teku:25.2
+  teku: docker.ethquokkaops.io/dh/consensys/teku:25.2.0
   grandine: docker.ethquokkaops.io/dh/sifrai/grandine:1.0.0
 ### Execution layer clients
   besu: docker.ethquokkaops.io/dh/hyperledger/besu:25.2.0
-  geth: docker.ethquokkaops.io/dh/ethereum/client-go:v1.15.1
+  geth: docker.ethquokkaops.io/dh/ethereum/client-go:v1.15.2
   erigon: docker.ethquokkaops.io/dh/ethpandaops/erigon:main-376db9a0
   ethereumjs: docker.ethquokkaops.io/dh/ethpandaops/ethereumjs:eip7840
   nethermind: docker.ethquokkaops.io/dh/nethermind/nethermind:1.31.0
-  reth: docker.ethquokkaops.io/gh/ghcr.io/paradigmxyz/reth:v1.2.0
+  reth: docker.ethquokkaops.io/gh/paradigmxyz/reth:v1.2.0
   reth_rbuilder: docker.ethquokkaops.io/dh/ethpandaops/rbuilder:reth-1.2.0
   nimbusel: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth1:devnet-6-pectra-82eeb34
   erigonTwo: docker.ethquokkaops.io/dh/ethpandaops/erigon:release-2.61
-
 default_tooling_images:
   mev_boost: docker.ethquokkaops.io/dh/ethpandaops/mev-boost:electra
   mev_boost_relay: docker.ethquokkaops.io/dh/ethpandaops/mev-boost-relay:electra-7fd62d4

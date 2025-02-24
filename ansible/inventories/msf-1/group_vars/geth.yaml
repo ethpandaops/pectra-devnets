@@ -1,3 +1,6 @@
+# role: ethpandaops.general.snapshot_fetcher
+snapshot_fetcher_out_dir: /data/geth/geth
+
 # role: ethpandaops.general.bootstrap
 bootstrap_default_user_authorized_keys_github_team_el:
    - mariusVanDerWijden
