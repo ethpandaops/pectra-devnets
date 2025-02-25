@@ -38,7 +38,7 @@ default_tooling_images:
   blobscan_indexer: docker.ethquokkaops.io/dh/blossomlabs/blobscan-indexer:latest
   dora: docker.ethquokkaops.io/dh/ethpandaops/dora:master-latest
   dugtrio: docker.ethquokkaops.io/dh/ethpandaops/dugtrio:latest
-  ethereum_genesis_generator: docker.ethquokkaops.io/dh/ethpandaops/ethereum-genesis-generator:electra-genesis
+  ethereum_genesis_generator: docker.ethquokkaops.io/dh/ethpandaops/ethereum-genesis-generator:electra-genesis-f53f6d9
   tracoor: docker.ethquokkaops.io/dh/ethpandaops/tracoor:0.0.26-debian
   ncli: docker.ethquokkaops.io/dh/status-im/nimbus-eth2:unstable
   lcli: docker.ethquokkaops.io/dh/ethpandaops/lighthouse:unstable-a94b12blo
