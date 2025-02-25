@@ -52,9 +52,13 @@ ethereum_genesis_timestamp_relative_cmd:
   Darwin: "date -v +45M +%s"
 ethereum_genesis_mnemonic: "{{ secret_genesis_mnemonic }}"
 ethereum_genesis_generator_config_files:
-  cl/config.yaml: "{{ lookup('ansible.builtin.url', 'https://raw.githubusercontent.com/ethpandaops/ethereum-genesis-generator/v{{ethereum_genesis_generator_version}}/config-example/cl/config.yaml', split_lines=false) }}" # noqa yaml[line-length]
-  cl/mnemonics.yaml: "{{ lookup('ansible.builtin.url', 'https://gist.githubusercontent.com/parithosh/cdebea40af6310fed209be1531cd8d00/raw/4062b71d2cf09c1c981ba8a1ed694539b9bf5346/genesis-template-mnemonic.yaml', split_lines=false) }}" # noqa yaml[line-length]
-  el/genesis-config.yaml: "{{ lookup('ansible.builtin.url', 'https://raw.githubusercontent.com/ethpandaops/ethereum-genesis-generator/v{{ethereum_genesis_generator_version}}/config-example/el/genesis-config.yaml', split_lines=false) }}" # noqa yaml[line-length]
+  cl/config.yaml: "{{ lookup('ansible.builtin.url', 'https://raw.githubusercontent.com/ethpandaops/ethereum-genesis-generator/f53f6d93eec9ddc21644ff8a18d9d07cb7279aac/config-example/cl/config.yaml', split_lines=false) }}" # noqa yaml[line-length]
+  cl/mnemonics.yaml: |-
+    - mnemonic: "${EL_AND_CL_MNEMONIC}"  # a 24 word BIP 39 mnemonic
+      count: $NUMBER_OF_VALIDATORS
+    - mnemonic: "${FOR_SHARING_EL_AND_CL_MNEMONIC}"  # a 24 word BIP 39 mnemonic
+      count: 500
+  el/genesis-config.yaml: "{{ lookup('ansible.builtin.url', 'https://raw.githubusercontent.com/ethpandaops/ethereum-genesis-generator/f53f6d93eec9ddc21644ff8a18d9d07cb7279aac/config-example/el/genesis-config.yaml', split_lines=false) }}" # noqa yaml[line-length]
   values.env: |-
     export PRESET_BASE="mainnet"
     export CHAIN_ID="{{ ethereum_genesis_chain_id }}"
@@ -63,7 +67,7 @@ ethereum_genesis_generator_config_files:
     export FOR_SHARING_EL_AND_CL_MNEMONIC="{{ for_sharing_el_cl_mnemonic }}"
     export CL_EXEC_BLOCK="0"
     export DEPOSIT_CONTRACT_BLOCK="0x0000000000000000000000000000000000000000000000000000000000000000"
-    export NUMBER_OF_VALIDATORS=71000
+    export NUMBER_OF_VALIDATORS=30500
     export GENESIS_FORK_VERSION="0x10{{ ethereum_genesis_fork_version_suffix }}"
     export ALTAIR_FORK_VERSION="0x20{{ ethereum_genesis_fork_version_suffix }}"
     export BELLATRIX_FORK_VERSION="0x30{{ ethereum_genesis_fork_version_suffix }}"
