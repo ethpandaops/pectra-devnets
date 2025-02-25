@@ -1,0 +1,94 @@
+localhost
+
+[all:vars]
+ethereum_network_name=${ethereum_network_name}
+
+%{ for gid, group in groups ~}
+[${replace(gid, "-", "_")}]
+%{ for key, host in hosts ~}
+%{ if host.group == gid ~}
+${host.hostname} ansible_host=${host.ip} ipv6=${host.ipv6} cloud=${host.cloud} cloud_region=${host.region} %{ if max(host.validator_start, host.validator_end) != 0 }validator_start=${host.validator_start} validator_end=${host.validator_end}%{ endif }
+%{ endif ~}
+%{ endfor ~}
+
+%{ endfor ~}
+
+# Consensus client groups
+
+%{ for cl in ["lighthouse", "lodestar", "nimbus", "teku", "prysm", "grandine"] ~}
+[${cl}:children]
+%{ for gid, group in groups ~}
+%{ if split("-", gid)[0] == "${cl}" ~}
+${replace(gid, "-", "_")}
+%{ endif ~}
+%{ endfor ~}
+%{ endfor ~}
+
+# Execution client groups
+
+%{ for el in ["besu", "ethereumjs", "geth", "nethermind", "erigon", "erigonTwo", "reth", "nimbusel"] ~}
+[${el}:children]
+%{ for gid, group in groups ~}
+%{ if split("-", gid)[0] != "bootnode" && split("-", gid)[0] != "xatu" && split("-", gid)[0] != "mevrelay" ~}
+%{ if split("-", gid)[1] == "${el}" ~}
+${replace(gid, "-", "_")}
+%{ endif ~}
+%{ endif ~}
+%{ endfor ~}
+%{ endfor ~}
+
+# Global groups
+
+[consensus_node:children]
+%{ for x,y in merge( { for gid, group in groups : split("-", gid)[0] => true... if split("-", gid)[0] != "bootnode" && split("-", gid)[0] != "xatu" && split("-", gid)[0] != "mevrelay" } )   ~}
+${x}
+%{ endfor ~}
+
+[execution_node:children]
+%{ for x,y in merge( { for gid, group in groups : split("-", gid)[1] => true... if split("-", gid)[0] != "bootnode" && split("-", gid)[0] != "xatu" && split("-", gid)[0] != "mevrelay" } )   ~}
+${x}
+%{ endfor ~}
+
+[ethereum_node:children]
+consensus_node
+execution_node
+mevrelay
+
+[tx_fuzz_blobs:children]
+bootnode
+
+[tx_fuzz_txs:children]
+bootnode
+
+[goomy:children]
+bootnode
+
+[mev_flood]
+prysm-geth-1
+
+[mev_boost:children]
+mev_boost_bloxroute
+
+[mev_boost_bloxroute]
+prysm-geth-1
+lighthouse-geth-1
+nimbus-besu-1
+lodestar-erigon-1
+teku-reth-1
+
+[mev_boost_ethpandaops]
+prysm-geth-2
+lighthouse-geth-2
+nimbus-geth-2
+lodestar-geth-2
+teku-geth-2
+prysm-nethermind-2
+lighthouse-nethermind-2
+nimbus-nethermind-2
+lodestar-nethermind-2
+teku-nethermind-2
+prysm-besu-2
+lighthouse-besu-2
+teku-besu-2
+grandine-geth-2
+grandine-nethermind-2
