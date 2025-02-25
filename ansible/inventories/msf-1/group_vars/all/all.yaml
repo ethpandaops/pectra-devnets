@@ -41,7 +41,7 @@ checkpoint_sync_url_kube: https://<path:/secrets/services/services.enc.yaml#ethe
 # role: ethpandaops.general.ethereum_genesis
 ethereum_genesis_generator_container_image: "{{ default_tooling_images.ethereum_genesis_generator }}"
 ethereum_genesis_generator_version: "{{ ethereum_genesis_generator_container_image.split(':')[-1] }}"
-ethereum_genesis_network_seed: "/Users/parithosh/dev/eth2/pectra-devnets/ansible/inventories/devnet-6/inventory.ini"
+ethereum_genesis_network_seed: "pectra-msf-1/inventory.ini"
 ethereum_genesis_chain_id: "70{{ 99999999 | random(start=10000000, seed=ethereum_genesis_network_seed) }}"
 ethereum_genesis_generator_output_dir: "../network-configs/{{ ethereum_network_name | replace('pectra-', '') }}"
 ethereum_genesis_timestamp: "1740496500" # Tue Feb 25 2025 15:15:00 GMT+0000
