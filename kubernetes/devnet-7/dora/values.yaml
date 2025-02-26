@@ -57,11 +57,9 @@ dora:
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.bootnode-2.pectra-devnet-7.ethpandaops.io
     name: bootnode-2
     priority: -1
-
 
 
 
@@ -71,11 +69,9 @@ dora:
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.grandine-besu-1.pectra-devnet-7.ethpandaops.io
     name: grandine-besu-1
     priority: -1
-
 
 
 
@@ -85,11 +81,9 @@ dora:
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.grandine-geth-1.pectra-devnet-7.ethpandaops.io
     name: grandine-geth-1
     priority: -1
-
 
 
 
@@ -99,11 +93,9 @@ dora:
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.grandine-geth-3.pectra-devnet-7.ethpandaops.io
     name: grandine-geth-3
     priority: -1
-
 
 
 
@@ -113,18 +105,15 @@ dora:
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.grandine-nethermind-2.pectra-devnet-7.ethpandaops.io
     name: grandine-nethermind-2
     priority: -1
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.grandine-reth-1.pectra-devnet-7.ethpandaops.io
     name: grandine-reth-1
     priority: -1
-
 
 
 
@@ -135,57 +124,35 @@ dora:
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
-
-
-
-    archive: true
-
-
-
-
-    archive: true
-
-
-
-
-    archive: true
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-besu-2.pectra-devnet-7.ethpandaops.io
     name: lighthouse-besu-2
     priority: -1
@@ -193,40 +160,26 @@ dora:
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
-
-
-    archive: true
-
-
-
-
-    archive: true
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-besu-3.pectra-devnet-7.ethpandaops.io
     name: lighthouse-besu-3
     priority: -1
 
 
 
-
-    archive: true
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-besu-4.pectra-devnet-7.ethpandaops.io
     name: lighthouse-besu-4
     priority: -1
@@ -234,15 +187,11 @@ dora:
 
 
 
-    archive: true
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-besu-5.pectra-devnet-7.ethpandaops.io
     name: lighthouse-besu-5
     priority: -1
 
 
-
-    archive: true
 
 
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-besu-6.pectra-devnet-7.ethpandaops.io
@@ -250,46 +199,32 @@ dora:
     priority: -1
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
-
-
-
-
-    archive: true
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-erigon-1.pectra-devnet-7.ethpandaops.io
     name: lighthouse-erigon-1
     priority: -1
 
 
 
-
-    archive: true
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-erigon-2.pectra-devnet-7.ethpandaops.io
     name: lighthouse-erigon-2
     priority: -1
 
 
 
-
-    archive: true
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-erigon-3.pectra-devnet-7.ethpandaops.io
     name: lighthouse-erigon-3
     priority: -1
 
 
 
-
-    archive: true
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-erigon-4.pectra-devnet-7.ethpandaops.io
     name: lighthouse-erigon-4
     priority: -1
@@ -297,15 +232,11 @@ dora:
 
 
 
-    archive: true
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-erigon-5.pectra-devnet-7.ethpandaops.io
     name: lighthouse-erigon-5
     priority: -1
 
 
-
-    archive: true
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-geth-1.pectra-devnet-7.ethpandaops.io
     name: lighthouse-geth-1
     priority: -1
@@ -313,57 +244,35 @@ dora:
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
-
-
-
-    archive: true
-
-
-
-
-    archive: true
-
-
-
-
-    archive: true
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-geth-2.pectra-devnet-7.ethpandaops.io
     name: lighthouse-geth-2
     priority: -1
@@ -371,57 +280,35 @@ dora:
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
-
-
-
-    archive: true
-
-
-
-
-    archive: true
-
-
-
-
-    archive: true
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-geth-3.pectra-devnet-7.ethpandaops.io
     name: lighthouse-geth-3
     priority: -1
@@ -429,57 +316,35 @@ dora:
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
-
-
-
-    archive: true
-
-
-
-
-    archive: true
-
-
-
-
-    archive: true
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-geth-4.pectra-devnet-7.ethpandaops.io
     name: lighthouse-geth-4
     priority: -1
@@ -487,57 +352,35 @@ dora:
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
-
-
-
-    archive: true
-
-
-
-
-    archive: true
-
-
-
-
-    archive: true
 
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-geth-5.pectra-devnet-7.ethpandaops.io
     name: lighthouse-geth-5
@@ -545,57 +388,35 @@ dora:
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
-
-
-
-    archive: true
-
-
-
-
-    archive: true
-
-
-
-
-    archive: true
 
 
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-geth-6.pectra-devnet-7.ethpandaops.io
@@ -603,52 +424,32 @@ dora:
     priority: -1
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
-
-
-    archive: true
-
-
-
-
-    archive: true
-
-
-
-
-    archive: true
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-nethermind-1.pectra-devnet-7.ethpandaops.io
     name: lighthouse-nethermind-1
     priority: -1
@@ -656,57 +457,35 @@ dora:
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
-
-
-
-    archive: true
-
-
-
-
-    archive: true
-
-
-
-
-    archive: true
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-nethermind-2.pectra-devnet-7.ethpandaops.io
     name: lighthouse-nethermind-2
     priority: -1
@@ -714,57 +493,35 @@ dora:
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
-
-
-
-    archive: true
-
-
-
-
-    archive: true
-
-
-
-
-    archive: true
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-nethermind-3.pectra-devnet-7.ethpandaops.io
     name: lighthouse-nethermind-3
     priority: -1
@@ -772,57 +529,35 @@ dora:
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
-
-
-
-    archive: true
-
-
-
-
-    archive: true
-
-
-
-
-    archive: true
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-nethermind-4.pectra-devnet-7.ethpandaops.io
     name: lighthouse-nethermind-4
     priority: -1
@@ -830,57 +565,35 @@ dora:
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
-
-
-
-    archive: true
-
-
-
-
-    archive: true
-
-
-
-
-    archive: true
 
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-nethermind-5.pectra-devnet-7.ethpandaops.io
     name: lighthouse-nethermind-5
@@ -888,32 +601,20 @@ dora:
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
-
-
-    archive: true
-
-
-
-
-    archive: true
 
 
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-nethermind-6.pectra-devnet-7.ethpandaops.io
@@ -921,50 +622,35 @@ dora:
     priority: -1
 
 
-    archive: true
 
 
 
 
-    archive: true
 
 
 
 
-    archive: true
-
-
-
-
-    archive: true
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-reth-1.pectra-devnet-7.ethpandaops.io
     name: lighthouse-reth-1
     priority: -1
 
 
 
-
-    archive: true
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-reth-2.pectra-devnet-7.ethpandaops.io
     name: lighthouse-reth-2
     priority: -1
 
 
 
-
-    archive: true
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-reth-3.pectra-devnet-7.ethpandaops.io
     name: lighthouse-reth-3
     priority: -1
 
 
 
-
-    archive: true
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lodestar-besu-1.pectra-devnet-7.ethpandaops.io
     name: lodestar-besu-1
     priority: -1
-
 
 
 
@@ -974,11 +660,9 @@ dora:
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lodestar-geth-1.pectra-devnet-7.ethpandaops.io
     name: lodestar-geth-1
     priority: -1
-
 
 
 
@@ -988,11 +672,9 @@ dora:
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lodestar-geth-3.pectra-devnet-7.ethpandaops.io
     name: lodestar-geth-3
     priority: -1
-
 
 
 
@@ -1002,11 +684,9 @@ dora:
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lodestar-nethermind-2.pectra-devnet-7.ethpandaops.io
     name: lodestar-nethermind-2
     priority: -1
-
 
 
 
@@ -1016,11 +696,9 @@ dora:
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.nimbus-besu-1.pectra-devnet-7.ethpandaops.io
     name: nimbus-besu-1
     priority: -1
-
 
 
 
@@ -1030,18 +708,15 @@ dora:
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.nimbus-besu-3.pectra-devnet-7.ethpandaops.io
     name: nimbus-besu-3
     priority: -1
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.nimbus-besu-4.pectra-devnet-7.ethpandaops.io
     name: nimbus-besu-4
     priority: -1
-
 
 
 
@@ -1053,12 +728,9 @@ dora:
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.nimbus-besu-6.pectra-devnet-7.ethpandaops.io
     name: nimbus-besu-6
     priority: -1
-
-
 
 
 
@@ -1069,11 +741,9 @@ dora:
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.nimbus-erigon-2.pectra-devnet-7.ethpandaops.io
     name: nimbus-erigon-2
     priority: -1
-
 
 
 
@@ -1110,20 +780,9 @@ dora:
 
 
 
-
-
-
-
-
-
-
-
-
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.nimbus-geth-2.pectra-devnet-7.ethpandaops.io
     name: nimbus-geth-2
     priority: -1
-
 
 
 
@@ -1133,11 +792,9 @@ dora:
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.nimbus-geth-4.pectra-devnet-7.ethpandaops.io
     name: nimbus-geth-4
     priority: -1
-
 
 
 
@@ -1149,14 +806,9 @@ dora:
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.nimbus-geth-6.pectra-devnet-7.ethpandaops.io
     name: nimbus-geth-6
     priority: -1
-
-
-
-
 
 
 
@@ -1191,24 +843,15 @@ dora:
 
 
 
-
-
-
-
-
-
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.nimbus-nethermind-2.pectra-devnet-7.ethpandaops.io
     name: nimbus-nethermind-2
     priority: -1
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.nimbus-nethermind-3.pectra-devnet-7.ethpandaops.io
     name: nimbus-nethermind-3
     priority: -1
-
 
 
 
@@ -1219,11 +862,9 @@ dora:
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.nimbus-nethermind-5.pectra-devnet-7.ethpandaops.io
     name: nimbus-nethermind-5
     priority: -1
-
 
 
 
@@ -1241,31 +882,15 @@ dora:
 
 
 
-
-
-
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.nimbus-reth-1.pectra-devnet-7.ethpandaops.io
     name: nimbus-reth-1
     priority: -1
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.prysm-besu-1.pectra-devnet-7.ethpandaops.io
     name: prysm-besu-1
     priority: -1
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1332,20 +957,9 @@ dora:
 
 
 
-
-
-
-
-
-
-
-
-
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.prysm-besu-3.pectra-devnet-7.ethpandaops.io
     name: prysm-besu-3
     priority: -1
-
 
 
 
@@ -1356,11 +970,9 @@ dora:
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.prysm-besu-5.pectra-devnet-7.ethpandaops.io
     name: prysm-besu-5
     priority: -1
-
 
 
 
@@ -1378,14 +990,9 @@ dora:
 
 
 
-
-
-
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.prysm-erigon-1.pectra-devnet-7.ethpandaops.io
     name: prysm-erigon-1
     priority: -1
-
 
 
 
@@ -1395,18 +1002,15 @@ dora:
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.prysm-erigon-3.pectra-devnet-7.ethpandaops.io
     name: prysm-erigon-3
     priority: -1
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.prysm-erigon-4.pectra-devnet-7.ethpandaops.io
     name: prysm-erigon-4
     priority: -1
-
 
 
 
@@ -1418,26 +1022,13 @@ dora:
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.prysm-erigon-6.pectra-devnet-7.ethpandaops.io
     name: prysm-erigon-6
     priority: -1
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.prysm-geth-1.pectra-devnet-7.ethpandaops.io
     name: prysm-geth-1
     priority: -1
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1507,31 +1098,9 @@ dora:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.prysm-geth-3.pectra-devnet-7.ethpandaops.io
     name: prysm-geth-3
     priority: -1
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1602,31 +1171,9 @@ dora:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.prysm-geth-5.pectra-devnet-7.ethpandaops.io
     name: prysm-geth-5
     priority: -1
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1725,41 +1272,9 @@ dora:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.prysm-nethermind-1.pectra-devnet-7.ethpandaops.io
     name: prysm-nethermind-1
     priority: -1
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1829,17 +1344,6 @@ dora:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.prysm-nethermind-3.pectra-devnet-7.ethpandaops.io
     name: prysm-nethermind-3
     priority: -1
@@ -1876,31 +1380,9 @@ dora:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.prysm-nethermind-4.pectra-devnet-7.ethpandaops.io
     name: prysm-nethermind-4
     priority: -1
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1972,28 +1454,9 @@ dora:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.prysm-nethermind-6.pectra-devnet-7.ethpandaops.io
     name: prysm-nethermind-6
     priority: -1
-
-
-
-
-
-
-
-
 
 
 
@@ -2022,11 +1485,9 @@ dora:
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.prysm-reth-2.pectra-devnet-7.ethpandaops.io
     name: prysm-reth-2
     priority: -1
-
 
 
 
@@ -2036,28 +1497,15 @@ dora:
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.prysm-reth-4.pectra-devnet-7.ethpandaops.io
     name: prysm-reth-4
     priority: -1
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.teku-besu-1.pectra-devnet-7.ethpandaops.io
     name: teku-besu-1
     priority: -1
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2100,12 +1548,9 @@ dora:
 
 
 
-
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.teku-besu-3.pectra-devnet-7.ethpandaops.io
     name: teku-besu-3
     priority: -1
-
 
 
 
@@ -2116,11 +1561,9 @@ dora:
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.teku-besu-5.pectra-devnet-7.ethpandaops.io
     name: teku-besu-5
     priority: -1
-
 
 
 
@@ -2138,14 +1581,9 @@ dora:
 
 
 
-
-
-
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.teku-erigon-1.pectra-devnet-7.ethpandaops.io
     name: teku-erigon-1
     priority: -1
-
 
 
 
@@ -2155,11 +1593,9 @@ dora:
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.teku-erigon-3.pectra-devnet-7.ethpandaops.io
     name: teku-erigon-3
     priority: -1
-
 
 
 
@@ -2169,21 +1605,9 @@ dora:
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.teku-geth-1.pectra-devnet-7.ethpandaops.io
     name: teku-geth-1
     priority: -1
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2253,31 +1677,9 @@ dora:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.teku-geth-3.pectra-devnet-7.ethpandaops.io
     name: teku-geth-3
     priority: -1
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2348,26 +1750,9 @@ dora:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.teku-geth-5.pectra-devnet-7.ethpandaops.io
     name: teku-geth-5
     priority: -1
-
-
-
-
-
-
 
 
 
@@ -2400,24 +1785,9 @@ dora:
 
 
 
-
-
-
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.teku-nethermind-1.pectra-devnet-7.ethpandaops.io
     name: teku-nethermind-1
     priority: -1
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2487,31 +1857,9 @@ dora:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.teku-nethermind-3.pectra-devnet-7.ethpandaops.io
     name: teku-nethermind-3
     priority: -1
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2570,17 +1918,9 @@ dora:
 
 
 
-
-
-
-
-
-
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.teku-nethermind-5.pectra-devnet-7.ethpandaops.io
     name: teku-nethermind-5
     priority: -1
-
 
 
 
@@ -2598,14 +1938,9 @@ dora:
 
 
 
-
-
-
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.teku-reth-1.pectra-devnet-7.ethpandaops.io
     name: teku-reth-1
     priority: -1
-
 
 
 
@@ -2615,11 +1950,9 @@ dora:
 
 
 
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.teku-reth-3.pectra-devnet-7.ethpandaops.io
     name: teku-reth-3
     priority: -1
-
 
 
 
