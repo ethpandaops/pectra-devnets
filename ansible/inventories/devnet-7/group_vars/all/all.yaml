@@ -41,7 +41,7 @@ ethereum_genesis_generator_version: "{{ ethereum_genesis_generator_container_ima
 ethereum_genesis_network_seed: "pectra/devnet-7"
 ethereum_genesis_chain_id: "70{{ 99999999 | random(start=10000000, seed=ethereum_genesis_network_seed) }}"
 ethereum_genesis_generator_output_dir: "../network-configs/{{ ethereum_network_name | replace('pectra-', '') }}"
-ethereum_genesis_timestamp: "1740412800" # TODO: NEEDS UPDATE
+ethereum_genesis_timestamp: "1740607200" # Wed Feb 26 2025 22:00:00 GMT+0000
 ethereum_genesis_timedelay: 60
 ethereum_genesis_fork_version_suffix: "{{ 999999 | random(start=100000, seed=ethereum_genesis_network_seed) }}"
 ethereum_genesis_timestamp_relative_cmd:
@@ -121,6 +121,8 @@ ethereum_genesis_generator_config_files:
     export SLOT_DURATION_IN_SECONDS=12
     export CHURN_LIMIT_QUOTIENT=65536
     export EJECTION_BALANCE=16000000000
+    export EL_PREMINE_ADDRS={}
+    export ADDITIONAL_PRELOADED_CONTRACTS={}
     export SHARING_MNEMONIC_1="{{ secret_sharing_mnemonic_1 }}"
     export SHARING_MNEMONIC_2="{{ secret_sharing_mnemonic_2 }}"
     export SHARING_MNEMONIC_3="{{ secret_sharing_mnemonic_3 }}"
@@ -142,7 +144,7 @@ ethereum_genesis_generator_config_files:
     export SHARING_MNEMONIC_19="{{ secret_sharing_mnemonic_19 }}"
     export SHARING_MNEMONIC_20="{{ secret_sharing_mnemonic_20 }}"
     export CL_ADDITIONAL_VALIDATORS="/config/validators.txt"
-  validators.txt: "{{ lookup('ansible.builtin.url', 'https://raw.githubusercontent.com/ethpandaops/pectra-devnets/refs/heads/master/ansible/inventories/devnet-7/validators.txt', split_lines=false) }}" # noqa yaml[line-length]
+  validators.txt: "{{ lookup('ansible.builtin.url', 'https://raw.githubusercontent.com/ethpandaops/pectra-devnets/refs/heads/pectra-devnet-7/ansible/inventories/devnet-7/validators.txt', split_lines=false) }}" # noqa yaml[line-length]
 
 
 ethereum_genesis_validator_keys_output_dir: "{{ ansible_inventory_sources[0] | dirname }}/files/validator_keys"
