@@ -29,8 +29,8 @@
       tags: [init-server, node_exporter]
     - role: ethpandaops.general.prometheus
       tags: [init-server, prometheus]
-    #- role: ethpandaops.general.vector
-    #  tags: [init-server, vector]
+    # - role: ethpandaops.general.vector
+    #   tags: [init-server, vector]
 
 - hosts: bootnode
   become: true
@@ -59,8 +59,8 @@
   serial: "{{ batch_count | default('100%') }}"
   become: true
   roles:
-    #- role: ethpandaops.general.ethereum_testnet_config
-    #  tags: [ethereum, eth_testnet_config, ethereum_testnet_config]
+    # - role: ethpandaops.general.ethereum_testnet_config
+    #   tags: [ethereum, eth_testnet_config, ethereum_testnet_config]
     - role: ethpandaops.general.validator_keys
       when: ethereum_node_cl_validator_enabled == true
       tags: [ethereum, validator_keys]
@@ -71,16 +71,16 @@
     - role: ethpandaops.general.generate_basic_auth_nginx
       tags: [docker_nginx_proxy]
   post_tasks:
-    #- name: Wait between runs
-    #  tags: [ethereum, ethereum_node]
-    #  ansible.builtin.pause:
-    #    seconds: >-
-    #      {{
-    #        batch_count is defined | ternary(
-    #            (batch_wait_seconds | default(30)),
-    #            0
-    #          )
-    #      }}
+    # - name: Wait between runs
+    #   tags: [ethereum, ethereum_node]
+    #   ansible.builtin.pause:
+    #     seconds: >-
+    #       {{
+    #         batch_count is defined | ternary(
+    #             (batch_wait_seconds | default(30)),
+    #             0
+    #           )
+    #       }}
     - name: Refresh inventory web
       ansible.builtin.import_role:
         name: ethpandaops.general.ethereum_inventory_web
