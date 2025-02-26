@@ -1,0 +1,13 @@
+# role: ethpandaops.general.ethereum_node
+ethereum_node_external_builder_enabled: true
+ethereum_node_external_builder_type: mev_boost
+ethereum_node_external_builder_container_name: external-block-builder
+ethereum_node_external_builder_server_port: 18550
+ethereum_node_external_builder_endpoint: "http://{{ ethereum_node_external_builder_container_name }}:{{ ethereum_node_external_builder_server_port }}"
+
+# role: ethpandaops.general.mev_boost
+mev_boost_container_image: "{{ default_tooling_images.mev_boost }}"
+mev_boost_container_command:
+  - --addr=0.0.0.0:{{ mev_boost_server_port }}
+  - --genesis-fork-version=0x10{{ ethereum_genesis_fork_version_suffix }}
+  - --relay={{ mev_boost_relay_url }}

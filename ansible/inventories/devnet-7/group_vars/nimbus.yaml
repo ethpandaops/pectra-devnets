@@ -1,0 +1,54 @@
+# role: ethpandaops.general.bootstrap
+bootstrap_default_user_authorized_keys_github_team_cl:
+  - zah
+  - tersec
+  - etan-status
+  - arnetheduck
+  - chirag-parmar
+
+# role: validator_keys
+validator_keys_sync_files:
+  - src: "{{ inventory_dir }}/files/validator_keys/{{ inventory_hostname }}/nimbus-keys/"
+    dest: "{{ nimbus_validator_datadir }}/keys/"
+  - src: "{{ inventory_dir }}/files/validator_keys/{{ inventory_hostname }}/secrets/"
+    dest: "{{ nimbus_validator_datadir }}/secrets/"
+
+validator_bls_sync_files:
+  - src: "{{ inventory_dir }}/files/validator_keys/{{ inventory_hostname }}/change_operations.json"
+    dest: "{{ nimbus_validator_datadir }}/change_operations.json"
+    owner: nimbus
+    group: nimbus
+
+# role: ethpandaops.general.ethereum_node
+ethereum_node_cl: nimbus
+nimbus_checkpoint_container_command_extra_args:
+  - --trusted-node-url={{ checkpoint_sync_url }}
+  - --network=/network-config
+  - --backfill=false
+# role: ethpandaops.general.nimbus
+nimbus_container_name: beacon
+nimbus_container_image: "{{ default_ethereum_client_images.nimbus }}"
+nimbus_container_env:
+  VIRTUAL_HOST: "{{ ethereum_node_beacon_hostname }}"
+  VIRTUAL_PORT: "{{ ethereum_node_cl_ports_http_beacon | string }}"
+  LETSENCRYPT_HOST: "{{ ethereum_node_beacon_hostname }}"
+nimbus_container_volumes:
+  - "{{ nimbus_datadir }}:/data"
+  - "{{ nimbus_auth_jwt_path }}:/execution-auth.jwt:ro"
+  - "{{ eth_testnet_config_dir }}:/network-config:ro"
+nimbus_container_command_extra_args: >-
+  {{ nimbus_container_command_extra_simple_args + nimbus_container_command_extra_bootnode_args }}
+nimbus_container_command_extra_simple_args:
+  - --network=/network-config
+  - --validator-monitor-auto=false
+  - --doppelganger-detection=off
+  - --log-level=DEBUG;INFO:gossip_eth2,attpool,libp2p,gossipsub,pubsubpeer,pubsub,switch,networking,sync,dialer,identify,syncman,connmanager,beacnde,lightcl,requman,gossip_lc,clearance,lpstream,mplexchannel,nodes-verification,tcptransport,chaindag,noise,eth,p2p,discv5,muxedupgrade,multistream,connection,secure,fee_recipient,mplex,syncpool,multiaddress,peer_proto;WARN:message_router
+  - --graffiti={{ ansible_hostname }}
+  - --dump
+nimbus_container_command_extra_bootnode_args: >-
+  {{ ethereum_cl_bootnodes | map('regex_replace', '^', '--bootstrap-node=') | list }}
+
+nimbus_validator_datadir: /data/nimbus-validator
+nimbus_container_validator_volumes:
+  - "{{ nimbus_validator_datadir }}:/validator-data"
+nimbus_container_pull: true
