@@ -8,10 +8,10 @@ tracoor-single:
   resources:
     requests:
       cpu: 1000m
-      memory: 2Gi
+      memory: 4Gi
     limits:
       cpu: 2000m
-      memory: 4Gi
+      memory: 8Gi
   ingress:
     http:
       enabled: true
