@@ -43,6 +43,8 @@ dora:
       value: "true"
     - name: API_ENABLED
       value: "true"
+    - name: API_CORS_ORIGINS
+      value: "https://*.launchpad.ethstaker.cc"
   postgresql:
     name: "dora-postgresql"
     fullnameOverride: "dora-postgresql"
