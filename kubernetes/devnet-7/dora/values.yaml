@@ -4,7 +4,7 @@ dora:
   fullnameOverride: dora
   image:
     repository: docker.ethquokkaops.io/dh/ethpandaops/dora
-    tag: master-latest
+    tag: pk910-basic-api-latest
     pullPolicy: Always
   resources:
     requests:
@@ -40,6 +40,8 @@ dora:
     - name: FRONTEND_SHOW_SUBMIT_DEPOSIT
       value: "true"
     - name: FRONTEND_SHOW_SUBMIT_EL_REQUESTS
+      value: "true"
+    - name: API_ENABLED
       value: "true"
   postgresql:
     name: "dora-postgresql"
