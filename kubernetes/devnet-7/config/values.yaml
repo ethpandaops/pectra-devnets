@@ -34,11 +34,11 @@ config:
       upstream: raw.githubusercontent.com
       target: /ethpandaops/pectra-devnets/master/network-configs/devnet-7/metadata/genesis.json
     - path: /metadata/genesis.ssz
-      upstream: raw.githubusercontent.com
-      target: /ethpandaops/pectra-devnets/master/network-configs/devnet-7/metadata/genesis.ssz
+      upstream: github.com
+      target: /ethpandaops/pectra-devnets/raw/refs/heads/master/network-configs/devnet-7/metadata/genesis.ssz
     - path: /parsed/parsedConsensusGenesis.json
-      upstream: raw.githubusercontent.com
-      target: /ethpandaops/pectra-devnets/master/network-configs/devnet-7/parsed/parsedConsensusGenesis.json
+      upstream: github.com
+      target: /ethpandaops/pectra-devnets/raw/refs/heads/master/network-configs/devnet-7/parsed/parsedConsensusGenesis.json
 
     # Execution Layer specific redirects
     - path: /el/enodes.txt
@@ -62,8 +62,8 @@ config:
       upstream: raw.githubusercontent.com
       target: /ethpandaops/pectra-devnets/master/network-configs/devnet-7/metadata/config.yaml
     - path: /cl/genesis.ssz
-      upstream: raw.githubusercontent.com
-      target: /ethpandaops/pectra-devnets/master/network-configs/devnet-7/metadata/genesis.ssz
+      upstream: github.com
+      target: /ethpandaops/pectra-devnets/raw/refs/heads/master/network-configs/devnet-7/metadata/genesis.ssz
     - path: /cl/deposit_contract.txt
       upstream: raw.githubusercontent.com
       target: /ethpandaops/pectra-devnets/master/network-configs/devnet-7/metadata/deposit_contract.txt
