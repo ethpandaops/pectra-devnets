@@ -230,11 +230,11 @@ teku-geth-001:
       ethereum_instance: teku-geth-001
     resources:
       requests:
-        cpu: 2000m
-        memory: 5Gi
-      limits:
-        cpu: 3000m
+        cpu: 4000m
         memory: 7Gi
+      limits:
+        cpu: 6000m
+        memory: 12Gi
     persistence:
       enabled: true
       size: 200Gi
