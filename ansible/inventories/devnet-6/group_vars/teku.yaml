@@ -45,6 +45,7 @@ teku_container_command_extra_args:
   - --Xlog-include-p2p-warnings-enabled
   - --metrics-block-timing-tracking-enabled
   - --ignore-weak-subjectivity-period-enabled
+  - --validators-builder-registration-default-gas-limit=60000000
 teku_validator_container_volumes:
   - "{{ teku_validator_datadir }}:/validator-data"
 teku_validator_datadir: /data/teku-validator

@@ -23,6 +23,7 @@ erigon_container_command_extra_args:
   - --http.vhosts=*
   - --ws
   - --db.size.limit=200GB
+  - --miner.gaslimit=60000000
 
 erigon_init_custom_network: true
 erigon_init_custom_network_genesis_file: "{{ eth_testnet_config_dir }}/genesis.json"

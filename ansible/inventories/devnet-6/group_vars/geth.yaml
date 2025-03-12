@@ -25,6 +25,7 @@ geth_container_command_extra_args:
   - --syncmode=full
   - --bootnodes={{ ethereum_el_bootnodes | join(',') }}
   - --ethstats={{ inventory_hostname }}:{{ ethstats_secret }}@{{ ethstats_url }}
+  - --miner.gaslimit=60000000
 geth_init_custom_network: true
 geth_init_custom_network_genesis_file: "{{ eth_testnet_config_dir }}/genesis.json"
 geth_init_custom_network_container_command:

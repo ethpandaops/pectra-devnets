@@ -9,6 +9,7 @@ bootstrap_default_user_authorized_keys_github_team_el:
   - pinges
   - jframe
   - daniellehrner
+  - ahamlat
 # role: ethpandaops.general.ethereum_node
 ethereum_node_el: besu
 # role: ethpandaops.general.besu
@@ -30,5 +31,6 @@ besu_container_command_extra_args:
   - --data-storage-format=BONSAI
   - --bonsai-limit-trie-logs-enabled=false
   - --ethstats={{ inventory_hostname }}:{{ ethstats_secret }}@{{ ethstats_url }}:443
+  - --target-gas-limit=60000000
 besu_container_pull: true
 besu_container_entrypoint: /opt/besu/bin/besu

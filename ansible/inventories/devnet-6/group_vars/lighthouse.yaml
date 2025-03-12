@@ -50,6 +50,8 @@ lighthouse_validator_container_command_extra_args:
   - --testnet-dir=/network-config
   - --graffiti={{ ansible_hostname }}
   - --prefer-builder-proposals
+  - --builder-proposals
+  - --gas-limit=60000000
 
 lighthouse_validator_datadir: /data/lighthouse-validator
 lighthouse_container_pull: true
