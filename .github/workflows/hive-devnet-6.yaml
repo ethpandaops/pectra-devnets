@@ -1,7 +1,5 @@
 name: Hive - Devnet 6
 on:
-  schedule:
-    - cron: '45 12 * * *'
   workflow_dispatch:
     # Note: We're limited to 10 inputs
     inputs:
