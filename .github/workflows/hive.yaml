@@ -257,4 +257,4 @@ jobs:
           rclone_config: ${{ secrets.HIVE_RCLONE_CONFIG }}
           rclone_version: ${{ env.INSTALL_RCLONE_VERSION }}
           workflow_artifact_upload: true
-          website_upload: false
+          website_upload: true
