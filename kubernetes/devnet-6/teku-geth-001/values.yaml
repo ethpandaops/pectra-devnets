@@ -223,8 +223,7 @@ teku-geth-001:
         memory: 10Gi
     persistence:
       enabled: true
-      #size: 200Gi
-      existingClaim: storage-teku-geth-001-0-recovered
+      size: 200Gi
     initContainers:
     - name: init-genesis
       image: alpine:latest
