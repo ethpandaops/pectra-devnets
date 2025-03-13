@@ -8,9 +8,9 @@ teku-geth-001:
       rpcEndpoint: http://geth-teku-001:8545
       beaconEndpoint: http://teku-geth-001:5052
     checkpointSync:
-      enabled: false
+      enabled: true
       addresses:
-        pectra-devnet-6: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-geth-1.pectra-devnet-6.ethpandaops.io
+        pectra-devnet-6: https://checkpoint-sync.pectra-devnet-6.ethpandaops.io
     clientArgs:
       networks:
         pectra-devnet-6:
@@ -218,10 +218,10 @@ teku-geth-001:
     resources:
       requests:
         cpu: 2000m
-        memory: 5Gi
+        memory: 8Gi
       limits:
         cpu: 3000m
-        memory: 7Gi
+        memory: 10Gi
     persistence:
       enabled: true
       #size: 200Gi
