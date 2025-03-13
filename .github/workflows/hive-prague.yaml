@@ -1,5 +1,7 @@
-name: Hive - Devnet 6
+name: Hive - Pectra
 on:
+  schedule:
+    - cron: '45 12 * * *'
   workflow_dispatch:
     # Note: We're limited to 10 inputs
     inputs:
@@ -17,7 +19,7 @@ on:
         description: GitHub repository and tag for hive (repo@tag)
       geth_version:
         type: string
-        default: s1na/go-ethereum@prague-devnet-6
+        default: ethereum/go-ethereum@master
         description: GitHub repository and tag for go-ethereum (repo@tag)
       besu_version:
         type: string
@@ -29,7 +31,7 @@ on:
         description: GitHub repository and tag for reth (repo@tag)
       nethermind_version:
         type: string
-        default: NethermindEth/nethermind@release/1.31.0
+        default: NethermindEth/nethermind@master
         description: GitHub repository and tag for nethermind (repo@tag)
       erigon_version:
         type: string
@@ -37,7 +39,7 @@ on:
         description: GitHub repository and tag for erigon (repo@tag)
       ethereumjs_version:
         type: string
-        default: ethereumjs/ethereumjs-monorepo@eip7840
+        default: ethereumjs/ethereumjs-monorepo@master
         description: GitHub repository and tag for ethereumjs (repo@tag)
       nimbusel_version:
         type: string
@@ -49,11 +51,11 @@ env:
   GOPROXY: "${{ vars.GOPROXY }}"
   # Hive action environment variables
   S3_BUCKET: hive-results
-  S3_PATH: pectra-devnet-6
-  S3_PUBLIC_URL: https://hive.ethpandaops.io/pectra-devnet-6
+  S3_PATH: pectra
+  S3_PUBLIC_URL: https://hive.ethpandaops.io/pectra
   INSTALL_RCLONE_VERSION: v1.68.2
-  EEST_BUILD_ARG_FIXTURES: https://github.com/ethereum/execution-spec-tests/releases/download/pectra-devnet-6%40v1.0.0/fixtures_pectra-devnet-6.tar.gz
-  EEST_BUILD_ARG_BRANCH: v4.0.0
+  EEST_BUILD_ARG_FIXTURES: https://github.com/ethereum/execution-spec-tests/releases/download/v4.1.0/fixtures_develop.tar.gz
+  EEST_BUILD_ARG_BRANCH: v4.1.0
   # Flags used for all simulators
   GLOBAL_EXTRA_FLAGS: >-
     --client.checktimelimit=180s
@@ -63,13 +65,11 @@ env:
   EEST_ENGINE_FLAGS: >-
     --sim.buildarg fixtures=${EEST_BUILD_ARG_FIXTURES}
     --sim.buildarg branch=${EEST_BUILD_ARG_BRANCH}
-    --sim.limit "fork_CancunToPrague or fork_Prague"
     --sim.loglevel=3
   # Flags used for the ethereum/eest/consume-rlp simulator
   EEST_RLP_FLAGS: >-
     --sim.buildarg fixtures=${EEST_BUILD_ARG_FIXTURES}
     --sim.buildarg branch=${EEST_BUILD_ARG_BRANCH}
-    --sim.limit "fork_CancunToPrague or fork_Prague"
     --sim.loglevel=3
   # Flags used for the ethereum/rpc-compat simulator
   RPC_COMPAT_FLAGS: >-
@@ -110,12 +110,12 @@ jobs:
       - id: parse
         run: |
           # Default client versions
-          GETH_DEFAULT="s1na/go-ethereum@prague-devnet-6"
+          GETH_DEFAULT="ethereum/go-ethereum@master"
           BESU_DEFAULT="hyperledger/besu@main"
           RETH_DEFAULT="paradigmxyz/reth@main"
-          NETHERMIND_DEFAULT="NethermindEth/nethermind@release/1.31.0"
+          NETHERMIND_DEFAULT="NethermindEth/nethermind@master"
           ERIGON_DEFAULT="erigontech/erigon@main"
-          ETHEREUMJS_DEFAULT="ethereumjs/ethereumjs-monorepo@eip7840"
+          ETHEREUMJS_DEFAULT="ethereumjs/ethereumjs-monorepo@master"
           NIMBUSEL_DEFAULT="status-im/nimbus-eth1@master"
           HIVE_DEFAULT="ethereum/hive@master"
 
