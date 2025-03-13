@@ -116,8 +116,8 @@ teku-geth-001:
     enabled: true
     fullnameOverride: geth-teku-001
     image:
-      repository: docker.ethquokkaops.io/dh/ethpandaops/geth
-      tag: prague-devnet-6-c070db6
+      repository: docker.ethquokkaops.io/dh/ethereum/client-go
+      tag: v1.15.5
       pullPolicy: Always
     p2pNodePort:
       enabled: true
@@ -175,7 +175,7 @@ teku-geth-001:
           - name: storage
             mountPath: "/data"
       - name: init-genesis
-        image: docker.ethquokkaops.io/dh/ethpandaops/geth:prague-devnet-6-c070db6
+        image: docker.ethquokkaops.io/dh/ethereum/client-go:v1.15.5
         imagePullPolicy: Always
         securityContext:
           runAsNonRoot: false
@@ -200,8 +200,8 @@ teku-geth-001:
     enabled: true
     fullnameOverride: teku-geth-001
     image:
-      repository: docker.ethquokkaops.io/dh/ethpandaops/teku
-      tag: master-96c73da
+      repository: docker.ethquokkaops.io/dh/consensys/teku
+      tag: develop
       pullPolicy: Always
     mode: "beacon"
     p2pNodePort:
