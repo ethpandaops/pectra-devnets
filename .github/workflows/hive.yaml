@@ -218,7 +218,7 @@ jobs:
           EOF
 
   test:
-    timeout-minutes: 540 # 9 hours
+    timeout-minutes: 720 # 12 hours
     needs: prepare
     runs-on: >-
       ${{
