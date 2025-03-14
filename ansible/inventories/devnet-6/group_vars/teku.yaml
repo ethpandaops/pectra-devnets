@@ -34,6 +34,8 @@ teku_container_volumes:
   - "{{ teku_datadir }}:/data"
   - "{{ teku_auth_jwt_path }}:/execution-auth.jwt:ro"
   - "{{ eth_testnet_config_dir }}:/network-config:ro"
+teku_container_env:
+  JAVA_OPTS: "-Xmx6000m"
 teku_container_command_extra_args:
   - --network=/network-config/config.yaml
   - --genesis-state=/network-config/genesis.ssz
