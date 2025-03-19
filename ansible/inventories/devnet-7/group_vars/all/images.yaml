@@ -53,4 +53,3 @@ default_tooling_images:
   nginx_proxy_gen: docker.ethquokkaops.io/dh/nginxproxy/docker-gen
   nginx_proxy_acme: docker.ethquokkaops.io/dh/nginxproxy/acme-companion
   vector: docker.ethquokkaops.io/dh/timberio/vector:0.30.0-alpine
-  panda_pulse: docker.ethquokkaops.io/dh/ethpandaops/panda-pulse:0.0.10
