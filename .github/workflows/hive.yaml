@@ -113,7 +113,7 @@ jobs:
           GETH_DEFAULT="ethereum/go-ethereum@master"
           BESU_DEFAULT="hyperledger/besu@main"
           RETH_DEFAULT="paradigmxyz/reth@main"
-          NETHERMIND_DEFAULT="NethermindEth/nethermind@release/1.31.5"
+          NETHERMIND_DEFAULT="NethermindEth/nethermind@release/1.31.6"
           ERIGON_DEFAULT="erigontech/erigon@main"
           ETHEREUMJS_DEFAULT="ethereumjs/ethereumjs-monorepo@master"
           NIMBUSEL_DEFAULT="status-im/nimbus-eth1@master"
