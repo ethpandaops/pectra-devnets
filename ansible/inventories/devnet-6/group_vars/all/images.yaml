@@ -12,10 +12,10 @@ default_ethereum_client_images:
   geth: docker.ethquokkaops.io/dh/ethereum/client-go:v1.15.5
   erigon: docker.ethquokkaops.io/dh/erigontech/erigon:v3.0.0-rc3
   ethereumjs: docker.ethquokkaops.io/dh/ethpandaops/ethereumjs:eip7840
-  nethermind: docker.ethquokkaops.io/dh/nethermind/nethermind:1.31.0
+  nethermind: docker.ethquokkaops.io/dh/nethermind/nethermind:1.31.6
   reth: docker.ethquokkaops.io/dh/ethpandaops/reth:main-42f8223
   reth_rbuilder: docker.ethquokkaops.io/dh/ethpandaops/rbuilder:reth-1.2.0
-  nimbusel: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth1:liberal-sync-6cebd91
+  nimbusel: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth1:Beacon-sync-handle-widely-varying-block-sizes-linux-amd64-d26acf3
   erigonTwo: docker.ethquokkaops.io/dh/ethpandaops/erigon:release-2.61
 
 default_tooling_images:
