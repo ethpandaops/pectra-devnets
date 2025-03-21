@@ -41,6 +41,7 @@ nethermind_container_command_extra_args:
   - --Seq.ApiKey={{ nethermind_seq_api_key }}
   - --Metrics.PushGatewayUrl={{ nethermind_push_gateway }}
   - --Blocks.TargetBlockGasLimit=60000000
+  - --TxPool.MaxTxSize=20000000
 
 nethermind_container_pull: true
 
