@@ -236,9 +236,9 @@ jobs:
         simulator: ${{ fromJSON(format('[{0}]', inputs.simulator || '"ethereum/eest/consume-engine","ethereum/eest/consume-rlp"')) }}
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-      - uses: ./.github/actions/hive-deps
+      - uses: ethpandaops/hive-github-action/helpers/self-hosted-runner-dependencies@34b5a7bd351cad8308f41a6f4d40fa5aa7a2f713 # v0.2.0
         if: runner.environment != 'github-hosted'
-      - uses: ethpandaops/hive-github-action@0e75fae7f04a7f57eb51034a17ab11a177e5eca0 # master-0e75fae
+      - uses: ethpandaops/hive-github-action@34b5a7bd351cad8308f41a6f4d40fa5aa7a2f713 # v0.2.0
         with:
           hive_repository: ${{ needs.prepare.outputs.hive_repo }}
           hive_version: ${{ needs.prepare.outputs.hive_tag }}
