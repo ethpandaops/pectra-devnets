@@ -24,7 +24,7 @@ jobs:
   deploy-website:
     runs-on: ubuntu-latest
     steps:
-      - uses: ethpandaops/hive-github-action@0e75fae7f04a7f57eb51034a17ab11a177e5eca0 # master-0e75fae
+      - uses: ethpandaops/hive-github-action@34b5a7bd351cad8308f41a6f4d40fa5aa7a2f713 # v0.2.0
         with:
           hive_repository: ${{ inputs.hive_repo }}
           hive_version: ${{ inputs.hive_branch }}
