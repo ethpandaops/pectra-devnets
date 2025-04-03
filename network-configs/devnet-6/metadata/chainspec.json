@@ -41,34 +41,30 @@
     "eip3198Transition": "0x0",
     "eip3529Transition": "0x0",
     "eip3541Transition": "0x0",
-    "depositContractAddress": "0x4242424242424242424242424242424242424242",
+    "mergeForkIdTransition": "0x0",
     "terminalTotalDifficulty": "0x0",
-    "eip4895TransitionTimestamp": 0,
-    "eip3651TransitionTimestamp": 0,
-    "eip3855TransitionTimestamp": 0,
-    "eip3860TransitionTimestamp": 0,
-    "eip4844TransitionTimestamp": 0,
-    "eip4788TransitionTimestamp": 0,
-    "eip1153TransitionTimestamp": 0,
-    "eip5656TransitionTimestamp": 0,
-    "eip6780TransitionTimestamp": 0,
+    "eip4895TransitionTimestamp": "0x0",
+    "eip3855TransitionTimestamp": "0x0",
+    "eip3651TransitionTimestamp": "0x0",
+    "eip3860TransitionTimestamp": "0x0",
+    "eip4844TransitionTimestamp": "0x0",
+    "eip4788TransitionTimestamp": "0x0",
+    "eip1153TransitionTimestamp": "0x0",
+    "eip5656TransitionTimestamp": "0x0",
+    "eip6780TransitionTimestamp": "0x0",
     "blobSchedule": {
       "cancun": {
-        "target": "0x3",
-        "max": "0x6",
-        "baseFeeUpdateFraction": "0x32f0ed"
+        "target": 3,
+        "max": 6,
+        "baseFeeUpdateFraction": 3338477
       },
       "prague": {
-        "target": "0x6",
-        "max": "0x9",
-        "baseFeeUpdateFraction": "0x4c6964"
-      },
-      "osaka": {
-        "target": "0x9",
-        "max": "0xc",
-        "baseFeeUpdateFraction": "0x4c6964"
+        "target": 6,
+        "max": 9,
+        "baseFeeUpdateFraction": 5007716
       }
     },
+    "depositContractAddress": "0x4242424242424242424242424242424242424242",
     "eip2537TransitionTimestamp": "0x67a10c54",
     "eip2935TransitionTimestamp": "0x67a10c54",
     "eip6110TransitionTimestamp": "0x67a10c54",
@@ -76,7 +72,8 @@
     "eip7251TransitionTimestamp": "0x67a10c54",
     "eip7702TransitionTimestamp": "0x67a10c54",
     "eip7623TransitionTimestamp": "0x67a10c54",
-    "eip7692TransitionTimestamp": "0x7e845bd4"
+    "eip7692TransitionTimestamp": "0x7e845bd4",
+    "eip7594TransitionTimestamp": "0x7e845bd4"
   },
   "genesis": {
     "seal": {
@@ -85,7 +82,7 @@
         "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000"
       }
     },
-    "difficulty": "0x0",
+    "difficulty": "0x01",
     "author": "0x0000000000000000000000000000000000000000",
     "timestamp": "0x67a0fd18",
     "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
@@ -995,5 +992,14 @@
       "balance": "10000000000000000000"
     }
   },
-  "nodes": []
+  "nodes": [],
+  "config": {
+    "blobSchedule": {
+      "osaka": {
+        "target": 9,
+        "max": 12,
+        "baseFeeUpdateFraction": 5007716
+      }
+    }
+  }
 }

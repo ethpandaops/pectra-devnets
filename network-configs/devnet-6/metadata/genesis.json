@@ -12,7 +12,6 @@
     "berlinBlock": 0,
     "londonBlock": 0,
     "mergeNetsplitBlock": 0,
-    "depositContractAddress": "0x4242424242424242424242424242424242424242",
     "terminalTotalDifficulty": 0,
     "terminalTotalDifficultyPassed": true,
     "shanghaiTime": 0,
@@ -34,6 +33,7 @@
         "baseFeeUpdateFraction": 5007716
       }
     },
+    "depositContractAddress": "0x4242424242424242424242424242424242424242",
     "pragueTime": 1738607700,
     "osakaTime": 2122603476
   },
@@ -941,7 +941,7 @@
     }
   },
   "coinbase": "0x0000000000000000000000000000000000000000",
-  "difficulty": "0x0",
+  "difficulty": "0x01",
   "extraData": "",
   "gasLimit": "0x17d7840",
   "nonce": "0x1234",
