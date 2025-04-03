@@ -11,7 +11,7 @@ on:
         description: Comma-separated list of clients to test .e.g go-ethereum, besu, reth, nethermind, erigon, ethereumjs, nimbus-el
       simulator:
         type: string
-        default: '"ethereum/eest/consume-engine","ethereum/eest/consume-rlp"'
+        default: '"ethereum/engine","ethereum/eest/consume-engine","ethereum/eest/consume-rlp","ethereum/eest/execute"'
         description: Comma-separated list of simulators to test .e.g ethereum/rpc-compat, ethereum/eest/consume-engine, ethereum/eest/consume-rlp
       hive_version:
         type: string
@@ -54,8 +54,10 @@ env:
   S3_PATH: pectra
   S3_PUBLIC_URL: https://hive.ethpandaops.io/pectra
   INSTALL_RCLONE_VERSION: v1.68.2
-  EEST_BUILD_ARG_FIXTURES: https://github.com/ethereum/execution-spec-tests/releases/download/v4.1.0/fixtures_develop.tar.gz
-  EEST_BUILD_ARG_BRANCH: v4.1.0
+  EEST_BUILD_ARG_FIXTURES: https://github.com/ethereum/execution-spec-tests/releases/download/v4.2.0/fixtures_develop.tar.gz
+  EEST_BUILD_ARG_BRANCH: v4.2.0
+  EEST_BUILD_ARG_EXECUTE_FORK: Prague
+  EEST_BUILD_ARG_EXECUTE_MARKER: transaction_test
   # Flags used for all simulators
   GLOBAL_EXTRA_FLAGS: >-
     --client.checktimelimit=180s
@@ -70,6 +72,16 @@ env:
   EEST_RLP_FLAGS: >-
     --sim.buildarg fixtures=${EEST_BUILD_ARG_FIXTURES}
     --sim.buildarg branch=${EEST_BUILD_ARG_BRANCH}
+    --sim.loglevel=3
+  # Flags used for the ethereum/eest/execute simulator
+  EEST_EXECUTE_FLAGS: >-
+    --sim.buildarg fork=${EEST_BUILD_ARG_EXECUTE_FORK}
+    --sim.buildarg marker_exp=${EEST_BUILD_ARG_EXECUTE_MARKER}
+    --sim.buildarg branch=${EEST_BUILD_ARG_BRANCH}
+    --sim.loglevel=3
+  # Flags used for the ethereum/engine simulator
+  ENGINE_FLAGS: >-
+    --sim.limit="engine-prague"
     --sim.loglevel=3
   # Flags used for the ethereum/rpc-compat simulator
   RPC_COMPAT_FLAGS: >-
@@ -233,7 +245,7 @@ jobs:
       fail-fast: false
       matrix:
         client: ${{ fromJSON(format('[{0}]', inputs.client || '"go-ethereum","reth","nethermind","ethereumjs","nimbusel","besu","erigon"')) }}
-        simulator: ${{ fromJSON(format('[{0}]', inputs.simulator || '"ethereum/eest/consume-engine","ethereum/eest/consume-rlp"')) }}
+        simulator: ${{ fromJSON(format('[{0}]', inputs.simulator || '"ethereum/engine","ethereum/eest/consume-engine","ethereum/eest/consume-rlp","ethereum/eest/execute"')) }}
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - uses: ethpandaops/hive-github-action/helpers/self-hosted-runner-dependencies@34b5a7bd351cad8308f41a6f4d40fa5aa7a2f713 # v0.2.0
@@ -248,8 +260,10 @@ jobs:
           extra_flags: >-
             ${{ env.GLOBAL_EXTRA_FLAGS }}
             ${{ matrix.simulator == 'ethereum/rpc-compat' && env.RPC_COMPAT_FLAGS || '' }}
+            ${{ matrix.simulator == 'ethereum/engine' && env.ENGINE_FLAGS || '' }}
             ${{ matrix.simulator == 'ethereum/eest/consume-engine' && env.EEST_ENGINE_FLAGS || '' }}
             ${{ matrix.simulator == 'ethereum/eest/consume-rlp' && env.EEST_RLP_FLAGS || '' }}
+            ${{ matrix.simulator == 'ethereum/eest/execute' && env.EEST_EXECUTE_FLAGS || '' }}
           s3_upload: true
           s3_bucket: ${{ env.S3_BUCKET }}
           s3_path: ${{ env.S3_PATH }}
