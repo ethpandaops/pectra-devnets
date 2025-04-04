@@ -33,7 +33,9 @@ nethermind_container_command_extra_args:
   - --JsonRpc.EnabledModules=Eth,Subscribe,Trace,TxPool,Web3,Personal,Proof,Net,Parity,Health,Rpc,Debug,Admin
   - --Discovery.Bootnodes={{ ethereum_el_bootnodes | join(',') }}
   - --Init.IsMining=false
-  - --Pruning.Mode=None
+  - --Sync.FastSync=true
+  - --Sync.SnapSync=true
+  - --Merge.FinalTotalDifficulty=0
   - --config=none
   - --log=INFO
   - --Seq.MinLevel=Info
