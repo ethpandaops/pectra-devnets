@@ -54,8 +54,8 @@ env:
   S3_PATH: pectra
   S3_PUBLIC_URL: https://hive.ethpandaops.io/pectra
   INSTALL_RCLONE_VERSION: v1.68.2
-  EEST_BUILD_ARG_FIXTURES: https://github.com/ethereum/execution-spec-tests/releases/download/v4.1.0/fixtures_develop.tar.gz
-  EEST_BUILD_ARG_BRANCH: v4.1.0
+  EEST_BUILD_ARG_FIXTURES: https://github.com/ethereum/execution-spec-tests/releases/download/v4.2.0/fixtures_develop.tar.gz
+  EEST_BUILD_ARG_BRANCH: v4.2.0
   # Flags used for all simulators
   GLOBAL_EXTRA_FLAGS: >-
     --client.checktimelimit=180s
