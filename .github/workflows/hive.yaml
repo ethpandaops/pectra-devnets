@@ -247,8 +247,8 @@ jobs:
           client_config: ${{ needs.prepare.outputs.client_config }}
           extra_flags: >-
             ${{ env.GLOBAL_EXTRA_FLAGS }}
-            ${{ matrix.client == 'erigon' && matrix.simulator == 'ethereum/eest/consume-rlp' && '--client.checktimelimit=21600s'}}
-            ${{ matrix.client == 'erigon' && matrix.simulator == 'ethereum/eest/consume-engine' && '--sim.parallelism=1'}}
+            ${{ (matrix.client == 'erigon' && matrix.simulator == 'ethereum/eest/consume-rlp') && '--client.checktimelimit=21600s' || '' }}
+            ${{ (matrix.client == 'erigon' && matrix.simulator == 'ethereum/eest/consume-engine') && '--sim.parallelism=1' || '' }}
             ${{ matrix.simulator == 'ethereum/rpc-compat' && env.RPC_COMPAT_FLAGS || '' }}
             ${{ matrix.simulator == 'ethereum/eest/consume-engine' && env.EEST_ENGINE_FLAGS || '' }}
             ${{ matrix.simulator == 'ethereum/eest/consume-rlp' && env.EEST_RLP_FLAGS || '' }}
