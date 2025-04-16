@@ -5,7 +5,7 @@ default_ethereum_client_images:
   nimbus: docker.ethquokkaops.io/dh/ethpandaops/nimbus-eth2:libp2p-topic-params-18ee3c3
   prysm: docker.ethquokkaops.io/dh/prysmaticlabs/prysm-beacon-chain:v5.3.0
   prysm_validator: docker.ethquokkaops.io/dh/prysmaticlabs/prysm-validator:v5.3.0
-  teku: docker.ethquokkaops.io/dh/consensys/teku:develop
+  teku: docker.ethquokkaops.io/dh/consensys/teku:25.4.0
   grandine: docker.ethquokkaops.io/dh/sifrai/grandine:1.0.0
 ### Execution layer clients
   besu: docker.ethquokkaops.io/dh/hyperledger/besu:25.2.2
