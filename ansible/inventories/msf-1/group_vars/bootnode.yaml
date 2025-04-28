@@ -53,15 +53,11 @@ geth_container_command_extra_args:
   - --gcmode=archive
   - --networkid={{ ethereum_network_id }}
   - --syncmode=full
+  - --override.prague={{ prague_fork_timestamp }}
 
-geth_init_custom_network: true
+geth_init_custom_network: false
 geth_init_custom_network_genesis_file: "{{ eth_testnet_config_dir }}/genesis.json"
 geth_container_pull: true
-geth_init_custom_network_container_command:
-  - --datadir=/data
-  - init
-  - --state.scheme=hash
-  - /genesis.json
 
 # role: ethpandaops.general.prometheus
 prometheus_remote_push_url: https://victoriametrics.ethdevops.io/insert/0/prometheus/api/v1/write

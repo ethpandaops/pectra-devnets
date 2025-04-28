@@ -23,19 +23,13 @@ geth_container_env:
 geth_container_command_extra_args:
   - --http.api=eth,net,web3,debug,admin
   - --http.vhosts=*
-  - --state.scheme=path
-  - --cache.preimages
   - --networkid={{ ethereum_network_id }}
   - --syncmode=full
   - --bootnodes={{ ethereum_el_bootnodes | join(',') }}
   - --ethstats={{ inventory_hostname }}:{{ ethstats_secret }}@{{ ethstats_url }}
-geth_init_custom_network: true
-geth_init_custom_network_genesis_file: "{{ eth_testnet_config_dir }}/genesis.json"
-geth_init_custom_network_container_command:
-  - --datadir=/data
-  - init
-  - --state.scheme=path
-  - /genesis.json
+  - --override.prague={{ prague_fork_timestamp }}
+geth_init_custom_network: false
+
 geth_container_pull: true
 
 prometheus_config: |

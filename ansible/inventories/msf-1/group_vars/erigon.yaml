@@ -28,7 +28,7 @@ erigon_container_command_extra_args:
   #- --db.size.limit=200GB
   - --externalcl
   - --prune.mode=full # full node
-
+  - --override.prague={{ prague_fork_timestamp }}
 erigon_init_custom_network: true
 erigon_init_custom_network_genesis_file: "{{ eth_testnet_config_dir }}/genesis.json"
 erigon_init_autoremove_enabled: false

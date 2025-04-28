@@ -42,9 +42,10 @@ checkpoint_sync_url_kube: https://<path:/secrets/services/services.enc.yaml#ethe
 ethereum_genesis_generator_container_image: "{{ default_tooling_images.ethereum_genesis_generator }}"
 ethereum_genesis_generator_version: "{{ ethereum_genesis_generator_container_image.split(':')[-1] }}"
 ethereum_genesis_network_seed: "pectra-msf-1/inventory.ini"
-ethereum_genesis_chain_id: "70{{ 99999999 | random(start=10000000, seed=ethereum_genesis_network_seed) }}"
+ethereum_genesis_chain_id: "1"
 ethereum_genesis_generator_output_dir: "../network-configs/{{ ethereum_network_name | replace('pectra-', '') }}"
-ethereum_genesis_timestamp: "1740496500" # Tue Feb 25 2025 15:15:00 GMT+0000
+ethereum_genesis_timestamp: "1745852400" # Tue Feb 25 2025 15:15:00 GMT+0000
+prague_fork_timestamp: "1745867880"
 ethereum_genesis_timedelay: 60
 ethereum_genesis_fork_version_suffix: "{{ 999999 | random(start=100000, seed=ethereum_genesis_network_seed) }}"
 ethereum_genesis_timestamp_relative_cmd:
@@ -56,25 +57,14 @@ ethereum_genesis_generator_config_files:
   cl/mnemonics.yaml: |-
     - mnemonic: "${EL_AND_CL_MNEMONIC}"  # a 24 word BIP 39 mnemonic
       count: $NUMBER_OF_VALIDATORS
-    - mnemonic: "${FOR_SHARING_EL_AND_CL_MNEMONIC}"  # a 24 word BIP 39 mnemonic
-      count: 500
   el/genesis-config.yaml: "{{ lookup('ansible.builtin.url', 'https://raw.githubusercontent.com/ethpandaops/ethereum-genesis-generator/f53f6d93eec9ddc21644ff8a18d9d07cb7279aac/config-example/el/genesis-config.yaml', split_lines=false) }}" # noqa yaml[line-length]
   values.env: |-
     export PRESET_BASE="mainnet"
-    export CHAIN_ID="{{ ethereum_genesis_chain_id }}"
-    export DEPOSIT_CONTRACT_ADDRESS="0x4242424242424242424242424242424242424242"
+    export CHAIN_ID="1"
     export EL_AND_CL_MNEMONIC="{{ ethereum_genesis_mnemonic }}"
     export FOR_SHARING_EL_AND_CL_MNEMONIC="{{ for_sharing_el_cl_mnemonic }}"
-    export CL_EXEC_BLOCK="0"
-    export DEPOSIT_CONTRACT_BLOCK="0x0000000000000000000000000000000000000000000000000000000000000000"
-    export NUMBER_OF_VALIDATORS=30500
-    export GENESIS_FORK_VERSION="0x10{{ ethereum_genesis_fork_version_suffix }}"
-    export ALTAIR_FORK_VERSION="0x20{{ ethereum_genesis_fork_version_suffix }}"
-    export BELLATRIX_FORK_VERSION="0x30{{ ethereum_genesis_fork_version_suffix }}"
-    export CAPELLA_FORK_VERSION="0x40{{ ethereum_genesis_fork_version_suffix }}"
-    export DENEB_FORK_VERSION="0x50{{ ethereum_genesis_fork_version_suffix }}"
-    export ELECTRA_FORK_VERSION="0x60{{ ethereum_genesis_fork_version_suffix }}"
-    export ELECTRA_FORK_EPOCH="10"
+    export NUMBER_OF_VALIDATORS=3000
+    export ELECTRA_FORK_EPOCH="20"
     export FULU_FORK_VERSION="0x70{{ ethereum_genesis_fork_version_suffix }}"
     export FULU_FORK_EPOCH="999999"
     export WITHDRAWAL_TYPE="0x00"
@@ -82,16 +72,8 @@ ethereum_genesis_generator_config_files:
     export BEACON_STATIC_ENR=""
     export GENESIS_TIMESTAMP={{ ethereum_genesis_timestamp }}
     export GENESIS_DELAY={{ ethereum_genesis_timedelay }}
-    export SLOT_DURATION_IN_SECONDS=12
-    export MAX_PER_EPOCH_ACTIVATION_CHURN_LIMIT=8
-    export CHURN_LIMIT_QUOTIENT=65536
-    export EJECTION_BALANCE=16000000000
     #export SHADOW_FORK_RPC="https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@rpc.bootnode-1.pectra-msf-1.ethpandaops.io"
     export SHADOW_FORK_FILE="https://snapshots.ethpandaops.io/mainnet/geth/latest/_snapshot_eth_getBlockByNumber.json"
-    export ETH1_FOLLOW_DISTANCE=2048
-    export MIN_VALIDATOR_WITHDRAWABILITY_DELAY=2
-    export SHARD_COMMITTEE_PERIOD=256
-    export CHURN_LIMIT_QUOTIENT=128
 ethereum_genesis_validator_keys_output_dir: "{{ ansible_inventory_sources[0] | dirname }}/files/validator_keys"
 ethereum_genesis_validator_bls_change_execution_address: "{{ ethereum_node_cl_validator_fee_recipient }}"
 ethereum_genesis_validator_keyranges: >-
