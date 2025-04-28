@@ -24,23 +24,23 @@ goomy_private_key: ENC[AES256_GCM,data:9a8u8Nz/BSRR1+RiOCfpbWzNql9mCsWx2rPmCRozn
 nethermind_seq_api_key: ENC[AES256_GCM,data:4H2DsFHuIgnebdveDR94DTIoOSE=,iv:8RFbkiSRAdtEPHM5JvmQskIHybMuZdbzP1CV1rGp1DM=,tag:bbxJ82+VhSSlzQcDLhvKKQ==,type:str]
 nethermind_seq_server: ENC[AES256_GCM,data:s/qucJnE0AMsnzhVWmNhQrok8FIGIzewxg==,iv:N0JY8nvNIqVQuBvUZF+TtBhgrnwtzCEu40axAxTMwWc=,tag:Cd3Dx91g1TUE53+7+xgsZA==,type:str]
 nethermind_push_gateway: ENC[AES256_GCM,data:T3E/qiIlA7llbKzOpapmOxRKrkW0k4Nw50x9yGgsNYcKBViet9Wbm5VMUBJNZh5e/DXGSEAWGaUQkEOi8SK68vPSZ60tn7RRY3kLWEKEKZcGJJJjtxsDzuKyDKNFjpGxGJTu7tloiHe23aIw4erJ+QxfoLUbJfwxHn36v0K/JyFbD0SuKI6dNW2py3II0UWnGg==,iv:TwKc357lNh4ICSQBR/0QbBJrVCZuTOI+1wWXEoVT2Ys=,tag:GDbJF6yAFGQqMSNWfs3aGA==,type:str]
-secret_xatu_coordinator_secret: ENC[AES256_GCM,data:qCokr7RT5LU+AN+nBiiNz0EOW9y8X5HGDSGLo46n6HyiGi9s,iv:en6pneZ6AdcZKzncC1m7Bisagjvfk63hZxlgSIDB4Jc=,tag:BexndCupmuHXdNqMnHIlZw==,type:str]
-secret_xatu_event_ingester_username: ENC[AES256_GCM,data:TU8FiF7DhIeuATQ=,iv:7hBzswEltg2rQxckiR0d08D82VfjoChw7KPFoPhw6as=,tag:s6BCUvrWEL6ZnAW3OFklaw==,type:str]
-secret_xatu_event_ingester_password: ENC[AES256_GCM,data:DAYavdaNc3JsxAhGYJcVd1Pt7VBY3yWpdDDGXNOmKA==,iv:CBT+QEtMdwwfeu5mnWD1XF5Gsfy0gRC16GUQyAcaUwM=,tag:hzssfuuDp3xYTdARQ6aq6g==,type:str]
-secret_xatu_event_ingester_secret: ENC[AES256_GCM,data:05g7gPIxCalpeRtOmbHFggnC9RXsDfR6bPA7imOLYGstf3UBDabwYFeD9SdP6i41UvDNSHVtcA6WCUTwptxcVZaz,iv:TO4LRal9Eo3F5zZdlWrdwiFLlnmN7ZQpPt1VEY62dwI=,tag:+Ryc8chB6tfzREdzlLROLw==,type:str]
-secret_xatu_clickhouse_password: ENC[AES256_GCM,data:uZG9zENZAeFfyru9zwPLtkt/q59GTT8tE140htk5d0C82Ql2,iv:e4D3b4oKiyumKWyVHj1+jlkyqDafYWX9MXextcKctGU=,tag:ziOOni7dGatCp/jGYUHKHg==,type:str]
-secret_xatu_clickhouse_readonly_password: ENC[AES256_GCM,data:4VYOHAO4ZT7IagdUMV4qjXZ5iMEgyWYZqI6ZakCB0cbwz28K,iv:M1rGk5HekNQyNnBc2fZJVTmrAf8QudNRGF7KaR+5SNM=,tag:GQiaPmcDg27ORrMbhyFU1A==,type:str]
 snapshot_fetcher_s3_endpoint: ENC[AES256_GCM,data:4X2gyPOGz2aOc+IRLsaPkdUHydhGqjv0IWtLiMnKFwcRz1+kueQ8w571w0Rrokq3oExPpqXRc8NspfTWIsGvoQA=,iv:nb1c9tnwrVv0RnaGOcgeghaeREG7Zf/sMz/b/A9cpOM=,tag:EDcMWu1UL9RX9a2Yu1VtOw==,type:str]
 snapshot_fetcher_s3_access_key_id: ENC[AES256_GCM,data:uBWomUTTxjKrvXLoy872AhDv7xPhSPXNzJXDnPq1CpY=,iv:WwI5aUtv7ExJnxWLB5uxrJkdK5SzP+x8whoNVykTwxw=,tag:tC755fqUDBjQKa/s1omexQ==,type:str]
 snapshot_fetcher_s3_secret_access_key: ENC[AES256_GCM,data:I9bMDjHa/yzD93/YIdEHxZYXLYQSGCe5CYP9IIqBkqi75F+dX7Qhv9JhXyi+8dUewN8s6URqu5s9HKhubG11AA==,iv:cf7sdbanPnvjOxHtZgGFeAS6RRTDFre7T3KxUeYt1hA=,tag:wYmARne6DTU/1kjR+YsEyw==,type:str]
+secret_xatu_sentry:
+    server_address: ENC[AES256_GCM,data:yTUO0War4dza7P9LnI+vKXZ9JQiqPS+Jh/DMfRFAU6DnHVXMy5/qDYPKIA==,iv:WpMI+5fXsJzSgAKAsgw/m4PAuq0lUQWtbedlwggzTYM=,tag:qtOhyDiT7eJJCMEu+5vcBQ==,type:str]
+    user: ENC[AES256_GCM,data:+1Nv0bNw7gVBuhI=,iv:XSMyvYpcTmIhjNjVESG/5+1aqc+jODhZxmHUvYRU3is=,tag:AgtjnZrkcz0mP1gFJhFqMA==,type:str]
+    password: ENC[AES256_GCM,data:QPni424jk45EkpeLE4e5eW6QmYiCFk3Go7feCfGOaQ==,iv:zxQxCg1C/YyiwgwlV4gnAXZZocVFfcGvYh5XPXJXtuc=,tag:IaIDqow6VFZARST6rEQNtg==,type:str]
+    event_ingester_auth: ENC[AES256_GCM,data:327gW/4ll6h+aTVDVdTTxU1hSQUjMKjhJ81DfnP/7R1t1VjrwgmTOoYukkNEH4Zm0/ewFyWnIOrugPzCh3sL4k4R,iv:WwSqMM9vtHPAjtLGSoANEiuN0zRBnKQAzqLIb9hSD70=,tag:nIryqlX/0/UC8+E7YKjHaQ==,type:str]
+    coordinator_secret: ENC[AES256_GCM,data:rmNNlzepUk0bHU5Oj9uZYpWgryGy4v7Rn37UaYbn0jNN3U0I,iv:dw62f+9ZjmiPkptQ8kutRTBa29ecaRi6ycu4fGV7G8k=,tag:ipjEHSk0WX5KEgWmnMSIfw==,type:str]
 sops:
     kms: []
     gcp_kms: []
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2025-02-18T15:34:27Z"
-    mac: ENC[AES256_GCM,data:0VyoW85+HRBKUKP+/4kS+bVuspPF5TtfEPTn03icFLd5xS3fJIq5EHc7kpz+WWg0qj7xTrYfpaSgTd+CmE+NLduL2yLQRjdeyTUM/vV21S6KDiQsa6sDzuAx1ZjQYse7ZJjOA4RVtEWOtGfzjsXkjDfU/C5+KSgiK6jVJtSUTJU=,iv:EPONqMXvKYQlTG5c0Yspl2I3ZzUBl3RZUH7HP8vtIHE=,tag:5C6Eo2wMV39OX+wlD1Z/tA==,type:str]
+    lastmodified: "2025-04-28T10:38:12Z"
+    mac: ENC[AES256_GCM,data:tiNJtIKu4vBrLemLSSiokq7cl8adNLj460rYzu/CU363JlK0JBmCv0gaL6o5v9xewwFoYQHdvlMzLwKmKldqyiwW5DHD0mPGEVSrbq7O/O9pgICcLIH6PhOl/N84cQb9ANQfZxjH7vDvXARQ5pufjCC5dnjb1mk4jSSZoGgPJAA=,iv:2DaoVgf1pYEWw58zzqQy+8RD2+kx9mfMDDcXhfCKteg=,tag:zjr7azPG7uXGwT3PeY+8eg==,type:str]
     pgp:
         - created_at: "2023-09-28T11:48:21Z"
           enc: |-
