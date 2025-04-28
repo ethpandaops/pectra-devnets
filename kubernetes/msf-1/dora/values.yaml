@@ -46,7 +46,6 @@ dora:
     fullnameOverride: "dora-postgresql"
 
   endpoints:
-
   - url: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.bootnode-1.pectra-msf-1.ethpandaops.io
     name: bootnode-1
     priority: -1
