@@ -17,7 +17,6 @@ forkmon:
   network: pectra-msf-1
   endpoints:
   # Rpc
-
   - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@rpc.bootnode-1.pectra-msf-1.ethpandaops.io
     name: bootnode-1
   - addr: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@rpc.grandine-besu-1.pectra-msf-1.ethpandaops.io
