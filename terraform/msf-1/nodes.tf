@@ -27,7 +27,7 @@ variable "xatu" {
     count           = 1
     validator_start = 0
     validator_end   = 0
-    size            = "s-8vcpu-16gb-amd"
+    size            = "s-8vcpu-16gb"
   }
 }
 variable "prysm_geth" {
