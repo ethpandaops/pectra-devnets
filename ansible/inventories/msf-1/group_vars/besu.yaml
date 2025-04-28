@@ -30,5 +30,6 @@ besu_container_command_extra_args:
   - --bootnodes={{ ethereum_el_bootnodes | join(',') }}
   - --rpc-http-api=ADMIN,DEBUG,ETH,MINER,NET,TRACE,TXPOOL,WEB3
   - --sync-mode=FULL
+  - --version-compatibility-protection=false
 besu_container_pull: true
 besu_container_entrypoint: /opt/besu/bin/besu

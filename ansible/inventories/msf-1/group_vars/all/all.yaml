@@ -44,8 +44,8 @@ ethereum_genesis_generator_version: "{{ ethereum_genesis_generator_container_ima
 ethereum_genesis_network_seed: "pectra-msf-1/inventory.ini"
 ethereum_genesis_chain_id: "1"
 ethereum_genesis_generator_output_dir: "../network-configs/{{ ethereum_network_name | replace('pectra-', '') }}"
-ethereum_genesis_timestamp: "1745847900" # Tue Feb 25 2025 15:15:00 GMT+0000
-prague_fork_timestamp: "1745855640"
+ethereum_genesis_timestamp: "1745857800" # Tue Feb 25 2025 15:15:00 GMT+0000
+prague_fork_timestamp: "1745863740"
 ethereum_genesis_timedelay: 60
 ethereum_genesis_fork_version_suffix: "{{ 999999 | random(start=100000, seed=ethereum_genesis_network_seed) }}"
 ethereum_genesis_timestamp_relative_cmd:
@@ -53,11 +53,11 @@ ethereum_genesis_timestamp_relative_cmd:
   Darwin: "date -v +45M +%s"
 ethereum_genesis_mnemonic: "{{ secret_genesis_mnemonic }}"
 ethereum_genesis_generator_config_files:
-  cl/config.yaml: "{{ lookup('ansible.builtin.url', 'https://raw.githubusercontent.com/ethpandaops/ethereum-genesis-generator/f53f6d93eec9ddc21644ff8a18d9d07cb7279aac/config-example/cl/config.yaml', split_lines=false) }}" # noqa yaml[line-length]
+  cl/config.yaml: "{{ lookup('ansible.builtin.url', 'https://raw.githubusercontent.com/ethpandaops/ethereum-genesis-generator/master/config-example/cl/config.yaml', split_lines=false) }}" # noqa yaml[line-length]
   cl/mnemonics.yaml: |-
     - mnemonic: "${EL_AND_CL_MNEMONIC}"  # a 24 word BIP 39 mnemonic
       count: $NUMBER_OF_VALIDATORS
-  el/genesis-config.yaml: "{{ lookup('ansible.builtin.url', 'https://raw.githubusercontent.com/ethpandaops/ethereum-genesis-generator/f53f6d93eec9ddc21644ff8a18d9d07cb7279aac/config-example/el/genesis-config.yaml', split_lines=false) }}" # noqa yaml[line-length]
+  el/genesis-config.yaml: "{{ lookup('ansible.builtin.url', 'https://raw.githubusercontent.com/ethpandaops/ethereum-genesis-generator/master/config-example/el/genesis-config.yaml', split_lines=false) }}" # noqa yaml[line-length]
   values.env: |-
     export PRESET_BASE="mainnet"
     export CHAIN_ID="1"
@@ -133,38 +133,10 @@ json_rpc_snooper_container_image: "{{ default_tooling_images.json_rpc_snooper }}
 # role: ethpandaops.general.xatu_sentry
 xatu_sentry_container_image: "{{ default_tooling_images.xatu_sentry }}"
 xatu_sentry_config_name: "{{ ethereum_network_name }}-{{ inventory_hostname }}"
-xatu_sentry_config_server_address: "server.xatu.{{ ethereum_network_name }}.ethpandaops.io:80"
+xatu_sentry_config_server_address: "{{ secret_xatu_sentry.server_address }}"
+xatu_sentry_config_server_auth_user: "{{ secret_xatu_sentry.user }}"
+xatu_sentry_config_server_auth_password: "{{ secret_xatu_sentry.password }}"
 xatu_sentry_config_network_name_override: "{{ ethereum_network_name }}"
-xatu_sentry_config: |
-  logging: "info"
-  metricsAddr: ":9090"
-  name: "{{ xatu_sentry_config_name }}"
-  ethereum:
-    beaconNodeAddress: {{ xatu_sentry_config_beacon_uri }}
-    overrideNetworkName: {{ xatu_sentry_config_network_name_override }}
-    beaconSubscriptions:
-    - attestation
-    - block
-    - head
-    - chain_reorg
-    - finalized_checkpoint
-    - voluntary_exit
-    - contribution_and_proof
-    - blob_sidecar
-
-  proposerDuty:
-    enabled: true
-  beaconCommittees:
-    enabled: true
-
-  outputs:
-  - name: grpc
-    type: xatu
-    config:
-      address: {{ xatu_sentry_config_server_address }}
-      headers:
-        Authorization: "{{ secret_xatu_event_ingester_secret }}"
-      tls: false
 
 
 # role: ethpandaops.general.ethereum_metrics_exporter

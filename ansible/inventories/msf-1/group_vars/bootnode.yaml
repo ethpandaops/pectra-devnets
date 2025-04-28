@@ -50,7 +50,6 @@ geth_container_env:
 geth_container_command_extra_args:
   - --http.api=eth,net,web3,debug,admin
   - --http.vhosts=*
-  - --gcmode=archive
   - --networkid={{ ethereum_network_id }}
   - --syncmode=full
   - --override.prague={{ prague_fork_timestamp }}
