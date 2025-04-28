@@ -1,7 +1,5 @@
 name: Hive - Devnet 6
 on:
-  schedule:
-    - cron: '45 12 * * *'
   workflow_dispatch:
     # Note: We're limited to 10 inputs
     inputs:
@@ -55,10 +53,10 @@ env:
   S3_PUBLIC_URL: https://hive.ethpandaops.io/pectra-devnet-6
   INSTALL_RCLONE_VERSION: v1.68.2
   EEST_BUILD_ARG_FIXTURES: https://github.com/ethereum/execution-spec-tests/releases/download/pectra-devnet-6%40v1.0.0/fixtures_pectra-devnet-6.tar.gz
-  EEST_BUILD_ARG_BRANCH: main
+  EEST_BUILD_ARG_BRANCH: v4.0.0
   # Flags used for all simulators
   GLOBAL_EXTRA_FLAGS: >-
-    --client.checktimelimit=60s
+    --client.checktimelimit=180s
     --sim.parallelism=4
     --docker.buildoutput
   # Flags used for the ethereum/eest/consume-engine simulator
@@ -237,10 +235,10 @@ jobs:
         client: ${{ fromJSON(format('[{0}]', inputs.client || '"go-ethereum","reth","nethermind","ethereumjs","nimbusel","besu","erigon"')) }}
         simulator: ${{ fromJSON(format('[{0}]', inputs.simulator || '"ethereum/eest/consume-engine","ethereum/eest/consume-rlp"')) }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/hive-deps
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: ethpandaops/hive-github-action/helpers/self-hosted-runner-dependencies@34b5a7bd351cad8308f41a6f4d40fa5aa7a2f713 # v0.2.0
         if: runner.environment != 'github-hosted'
-      - uses: ethpandaops/hive-github-action@master
+      - uses: ethpandaops/hive-github-action@34b5a7bd351cad8308f41a6f4d40fa5aa7a2f713 # v0.2.0
         with:
           hive_repository: ${{ needs.prepare.outputs.hive_repo }}
           hive_version: ${{ needs.prepare.outputs.hive_tag }}

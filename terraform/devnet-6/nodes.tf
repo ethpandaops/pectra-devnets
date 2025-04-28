@@ -36,6 +36,7 @@ variable "prysm_geth" {
     count           = 7
     validator_start = 0
     validator_end   = 7000
+    size            = "s-8vcpu-16gb-amd"
   }
 }
 
@@ -99,6 +100,7 @@ variable "lighthouse_geth" {
     count           = 7
     validator_start = 17500
     validator_end   = 24500
+    size            = "s-8vcpu-16gb-amd"
   }
 }
 
@@ -162,6 +164,7 @@ variable "teku_geth" {
     count           = 6
     validator_start = 35000
     validator_end   = 40600
+    size            = "s-8vcpu-16gb-amd"
   }
 }
 
@@ -171,6 +174,7 @@ variable "teku_nethermind" {
     count           = 5
     validator_start = 40600
     validator_end   = 45500
+    size            = "s-8vcpu-16gb-amd"
   }
 }
 
@@ -180,6 +184,7 @@ variable "teku_ethereumjs" {
     count           = 1
     validator_start = 45500
     validator_end   = 45640
+    size            = "s-8vcpu-16gb-amd"
   }
 }
 
@@ -189,6 +194,7 @@ variable "teku_reth" {
     count           = 2
     validator_start = 45640
     validator_end   = 46760
+    size            = "s-8vcpu-16gb-amd"
   }
 }
 
@@ -198,6 +204,7 @@ variable "teku_besu" {
     count           = 2
     validator_start = 46760
     validator_end   = 47880
+    size            = "s-8vcpu-16gb-amd"
   }
 }
 
@@ -207,6 +214,7 @@ variable "teku_erigon" {
     count           = 1
     validator_start = 47880
     validator_end   = 48860
+    size            = "s-8vcpu-16gb-amd"
   }
 }
 
@@ -216,6 +224,7 @@ variable "teku_nimbusel" {
     count           = 1
     validator_start = 48860
     validator_end   = 49000
+    size            = "s-8vcpu-16gb-amd"
   }
 }
 
@@ -225,6 +234,7 @@ variable "lodestar_geth" {
     count           = 3
     validator_start = 49000
     validator_end   = 51800
+    size            = "s-8vcpu-16gb-amd"
   }
 }
 
@@ -288,6 +298,7 @@ variable "nimbus_geth" {
     count           = 3
     validator_start = 56000
     validator_end   = 58800
+    size            = "s-8vcpu-16gb-amd"
   }
 }
 
@@ -351,6 +362,7 @@ variable "grandine_geth" {
     count           = 3
     validator_start = 63000
     validator_end   = 65800
+    size            = "s-8vcpu-16gb-amd"
   }
 }
 

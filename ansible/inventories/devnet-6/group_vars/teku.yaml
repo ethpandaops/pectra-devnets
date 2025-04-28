@@ -34,6 +34,8 @@ teku_container_volumes:
   - "{{ teku_datadir }}:/data"
   - "{{ teku_auth_jwt_path }}:/execution-auth.jwt:ro"
   - "{{ eth_testnet_config_dir }}:/network-config:ro"
+teku_container_env:
+  JAVA_OPTS: "-Xmx6000m"
 teku_container_command_extra_args:
   - --network=/network-config/config.yaml
   - --genesis-state=/network-config/genesis.ssz
@@ -45,6 +47,7 @@ teku_container_command_extra_args:
   - --Xlog-include-p2p-warnings-enabled
   - --metrics-block-timing-tracking-enabled
   - --ignore-weak-subjectivity-period-enabled
+  - --validators-builder-registration-default-gas-limit=60000000
 teku_validator_container_volumes:
   - "{{ teku_validator_datadir }}:/validator-data"
 teku_validator_datadir: /data/teku-validator

@@ -8,9 +8,9 @@ teku-geth-001:
       rpcEndpoint: http://geth-teku-001:8545
       beaconEndpoint: http://teku-geth-001:5052
     checkpointSync:
-      enabled: false
+      enabled: true
       addresses:
-        pectra-devnet-6: https://<path:/secrets/services/services.enc.yaml#ethereum | jsonPath {.testnets.pectra-devnets.node_ingress.combined}>@bn.lighthouse-geth-1.pectra-devnet-6.ethpandaops.io
+        pectra-devnet-6: https://checkpoint-sync.pectra-devnet-6.ethpandaops.io
     clientArgs:
       networks:
         pectra-devnet-6:
@@ -36,7 +36,7 @@ teku-geth-001:
               - --Seq.ApiKey=yuOqjKOHhZCw2D2U7pmL
               - --Metrics.PushGatewayUrl=http://94.237.52.161:9000/metrics/nethermind-iudiy4raagaizaih1phuaShekighoJ2ixaecahvii7ohte3oozeeh0eTh7Aich1Shee9ceetuy3iGhexoh5naithoot8rebi7fee
             geth:
-              - --http.api=eth,net,web3,debug,admin
+              - --http.api=eth,net,web3,debug,admin,txpool
               - --http.vhosts=*
               - --state.scheme=hash
               - --networkid=7072151312
@@ -80,7 +80,6 @@ teku-geth-001:
               - --logging=info
               - --Xlog-include-p2p-warnings-enabled
               - --metrics-block-timing-tracking-enabled
-              - --ignore-weak-subjectivity-period-enabled
             prysm:
               - --grpc-gateway-corsdomain=*
               - --chain-config-file=/data/network-config/config.yaml
@@ -116,15 +115,16 @@ teku-geth-001:
     enabled: true
     fullnameOverride: geth-teku-001
     image:
-      repository: docker.ethquokkaops.io/dh/ethpandaops/geth
-      tag: prague-devnet-6-c070db6
+      repository: docker.ethquokkaops.io/dh/ethereum/client-go
+      tag: v1.15.5
       pullPolicy: Always
     p2pNodePort:
       enabled: true
       port: 31918
     persistence:
       enabled: true
-      size: 100Gi
+      #size: 100Gi
+      existingClaim: storage-geth-teku-001-0-recovered
     podLabels:
       network: pectra-devnet-6
       testnet: pectra-devnet-6
@@ -174,7 +174,7 @@ teku-geth-001:
           - name: storage
             mountPath: "/data"
       - name: init-genesis
-        image: docker.ethquokkaops.io/dh/ethpandaops/geth:prague-devnet-6-c070db6
+        image: docker.ethquokkaops.io/dh/ethereum/client-go:v1.15.5
         imagePullPolicy: Always
         securityContext:
           runAsNonRoot: false
@@ -199,8 +199,8 @@ teku-geth-001:
     enabled: true
     fullnameOverride: teku-geth-001
     image:
-      repository: docker.ethquokkaops.io/dh/ethpandaops/teku
-      tag: master-96c73da
+      repository: docker.ethquokkaops.io/dh/consensys/teku
+      tag: develop
       pullPolicy: Always
     mode: "beacon"
     p2pNodePort:
@@ -217,10 +217,10 @@ teku-geth-001:
     resources:
       requests:
         cpu: 2000m
-        memory: 5Gi
+        memory: 8Gi
       limits:
         cpu: 3000m
-        memory: 7Gi
+        memory: 10Gi
     persistence:
       enabled: true
       size: 200Gi

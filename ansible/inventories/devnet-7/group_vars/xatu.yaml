@@ -1,0 +1,31 @@
+xatu_stack_cleanup: false
+
+xatu_stack_user: "xatu"
+
+xatu_stack_repo_url: "https://github.com/ethpandaops/xatu"
+xatu_stack_repo_version: "release/pectra-with-pullthrough-cache"
+xatu_stack_repo_path: "/data/xatu"
+
+xatu_stack_paths_config: /etc/xatu
+
+xatu_stack_env_vars:
+  NGINX_ADDRESS: 0.0.0.0
+  NGINX_PORT: 80
+  GRAFANA_ADDRESS: 127.0.0.1
+  PROMETHEUS_PORT: 9091
+  BASE_HOSTNAME: "xatu.{{ ethereum_network_name }}.ethpandaops.io"
+
+  COMPOSE_PROFILES: "*" # Run cannon
+
+  SERVER_EVENT_INGESTER_BASIC_AUTH_USERNAME: "{{ secret_xatu_event_ingester_username }}"
+  SERVER_EVENT_INGESTER_BASIC_AUTH_PASSWORD: "{{ secret_xatu_event_ingester_password }}"
+
+  SERVER_COORDINATOR_AUTH_SECRET: "{{ secret_xatu_coordinator_secret }}"
+
+  CLICKHOUSE_PASSWORD: "{{ secret_xatu_clickhouse_password }}"
+  CLICKHOUSE_USER_READONLY_PASSWORD: "{{ secret_xatu_clickhouse_readonly_password }}"
+  
+  CANNON_XATU_COORDINATOR_AUTHORIZATION: "{{ secret_xatu_coordinator_secret }}"
+  CANNON_XATU_OUTPUT_AUTHORIZATION: "Bearer {{ secret_xatu_event_ingester_secret }}"
+  CANNON_BEACON_NODE_URL: https://{{ secret_nginx_shared_basic_auth.name }}:{{ secret_nginx_shared_basic_auth.password }}@bn.lighthouse-geth-1.{{ network_subdomain }}
+  CANNON_NETWORK_NAME: "{{ ethereum_network_name }}"
