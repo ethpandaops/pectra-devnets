@@ -1,0 +1,50 @@
+# role: ethpandaops.general.bootstrap
+bootstrap_default_user_authorized_keys_github_team_cl:
+   - sauliusgrigaitis
+   - povi
+   - tumas
+
+# role: geerlingguy.docker
+docker_daemon_options:
+  "log-driver": "json-file"
+  "log-opts":
+      "max-size": "500m"
+      "max-file": "40"
+
+# role: validator_keys
+validator_keys_sync_files:
+  - src: "{{ inventory_dir }}/files/validator_keys/{{ inventory_hostname }}/teku-keys/"
+    dest: "{{ grandine_validator_datadir }}/keys/"
+  - src: "{{ inventory_dir }}/files/validator_keys/{{ inventory_hostname }}/teku-secrets/"
+    dest: "{{ grandine_validator_datadir }}/secrets/"
+
+validator_bls_sync_files:
+  - src: "{{ inventory_dir }}/files/validator_keys/{{ inventory_hostname }}/change_operations.json"
+    dest: "{{ grandine_validator_datadir }}/change_operations.json"
+    owner: grandine
+    group: grandine
+# role: ethpandaops.general.ethereum_node
+ethereum_node_cl: grandine
+# role: ethpandaops.general.grandine
+grandine_container_name: beacon
+grandine_container_image: "{{ default_ethereum_client_images.grandine }}"
+grandine_container_env:
+  VIRTUAL_HOST: "{{ ethereum_node_beacon_hostname }}"
+  VIRTUAL_PORT: "{{ ethereum_node_cl_ports_http_beacon | string }}"
+  LETSENCRYPT_HOST: "{{ ethereum_node_beacon_hostname }}"
+grandine_container_volumes:
+  - "{{ grandine_datadir }}:/data"
+  - "{{ grandine_auth_jwt_path }}:/execution-auth.jwt:ro"
+  - "{{ eth_testnet_config_dir }}:/network-config:ro"
+grandine_container_command_extra_args:
+  - --configuration-directory=/network-config/
+  - --network=custom
+  - --boot-nodes={{ ethereum_cl_bootnodes | join(',') }}
+  - --graffiti={{ ansible_hostname }}
+  - --features=WarnOnStateCacheSlotProcessing
+  - --features=LogHttpRequests
+  - --features=LogHttpBodies
+grandine_validator_container_volumes:
+  - "{{ grandine_validator_datadir }}:/validator-data"
+  - "{{ eth_testnet_config_dir }}:/network-config:ro"
+grandine_validator_datadir: /data/grandine-validator

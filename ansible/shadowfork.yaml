@@ -1,0 +1,4 @@
+- hosts: ethereum_node,!localhost
+  roles:
+    - role: ethpandaops.general.snapshot_fetcher
+      tags: [script, snapshot_fetcher]

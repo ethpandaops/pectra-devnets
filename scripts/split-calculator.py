@@ -1,28 +1,28 @@
 import numpy as np
 import math
 
-total_validators = 70000
-validator_per_machine = 1000
+total_validators = 3000
+validator_per_machine = 100
 start = 0
 
 cl_split = {
-    'prysm': 0.25,
-    'lighthouse': 0.25,
-    'teku': 0.20,
-    'lodestar': 0.10,
-    'nimbus': 0.10,
-    'grandine': 0.10
+    'prysm': 0.17,
+    'lighthouse': 0.18,
+    'teku': 0.17,
+    'lodestar': 0.16,
+    'nimbus': 0.16,
+    'grandine': 0.16
 }
 
 
 el_split = {
-    'geth': 0.40,
-    'nethermind': 0.35,
-    'ethereumjs': 0.01,
-    'reth': 0.08,
-    'besu': 0.08,
-    'erigon': 0.07,
-    'nimbusel': 0.01,
+    'geth': 0.20,
+    'nethermind': 0.20,
+    'ethereumjs': 0.00,
+    'reth': 0.20,
+    'besu': 0.20,
+    'erigon': 0.20,
+    'nimbusel': 0.00,
 }
 
 pairwise_validators = {}
