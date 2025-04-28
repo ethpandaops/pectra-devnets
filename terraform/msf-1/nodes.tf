@@ -33,7 +33,7 @@ variable "xatu" {
 variable "prysm_geth" {
   default = {
     name            = "prysm-geth"
-    count           = 3
+    count           = 1
     validator_start = 0
     validator_end   = 3000
   }
@@ -42,7 +42,7 @@ variable "prysm_geth" {
 variable "prysm_nethermind" {
   default = {
     name            = "prysm-nethermind"
-    count           = 3
+    count           = 1
     validator_start = 3000
     validator_end   = 5625
   }
@@ -96,7 +96,7 @@ variable "prysm_nimbusel" {
 variable "lighthouse_geth" {
   default = {
     name            = "lighthouse-geth"
-    count           = 3
+    count           = 1
     validator_start = 7500
     validator_end   = 10500
   }
@@ -105,7 +105,7 @@ variable "lighthouse_geth" {
 variable "lighthouse_nethermind" {
   default = {
     name            = "lighthouse-nethermind"
-    count           = 3
+    count           = 1
     validator_start = 10500
     validator_end   = 13125
   }
@@ -159,7 +159,7 @@ variable "lighthouse_nimbusel" {
 variable "teku_geth" {
   default = {
     name            = "teku-geth"
-    count           = 3
+    count           = 1
     validator_start = 15000
     validator_end   = 17400
   }
@@ -168,7 +168,7 @@ variable "teku_geth" {
 variable "teku_nethermind" {
   default = {
     name            = "teku-nethermind"
-    count           = 3
+    count           = 1
     validator_start = 17400
     validator_end   = 19500
   }
@@ -222,7 +222,7 @@ variable "teku_nimbusel" {
 variable "lodestar_geth" {
   default = {
     name            = "lodestar-geth"
-    count           = 2
+    count           = 1
     validator_start = 21000
     validator_end   = 22200
   }
@@ -231,7 +231,7 @@ variable "lodestar_geth" {
 variable "lodestar_nethermind" {
   default = {
     name            = "lodestar-nethermind"
-    count           = 2
+    count           = 1
     validator_start = 22200
     validator_end   = 23250
   }
@@ -285,7 +285,7 @@ variable "lodestar_nimbusel" {
 variable "nimbus_geth" {
   default = {
     name            = "nimbus-geth"
-    count           = 2
+    count           = 1
     validator_start = 24000
     validator_end   = 25200
   }
@@ -294,7 +294,7 @@ variable "nimbus_geth" {
 variable "nimbus_nethermind" {
   default = {
     name            = "nimbus-nethermind"
-    count           = 2
+    count           = 1
     validator_start = 25200
     validator_end   = 26250
   }
@@ -348,7 +348,7 @@ variable "nimbus_nimbusel" {
 variable "grandine_geth" {
   default = {
     name            = "grandine-geth"
-    count           = 2
+    count           = 1
     validator_start = 27000
     validator_end   = 28200
   }
@@ -357,7 +357,7 @@ variable "grandine_geth" {
 variable "grandine_nethermind" {
   default = {
     name            = "grandine-nethermind"
-    count           = 2
+    count           = 1
     validator_start = 28200
     validator_end   = 29250
   }
