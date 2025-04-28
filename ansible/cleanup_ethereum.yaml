@@ -55,6 +55,7 @@
             - "cl-bootnode"
             - "mev-boost"
             - "external-block-builder"
+            - "snapshot_fetcher"
         - name: Remove data dirs
           file:
             state: absent
