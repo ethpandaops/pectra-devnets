@@ -6,7 +6,7 @@ default_ethereum_client_images:
   prysm: docker.ethquokkaops.io/dh/prysmaticlabs/prysm-beacon-chain:v6.0.0
   prysm_validator: docker.ethquokkaops.io/dh/prysmaticlabs/prysm-validator:v6.0.0
   teku: docker.ethquokkaops.io/dh/consensys/teku:25.4.1
-  grandine: docker.ethquokkaops.io/dh/sifrai/grandine:1.1.0
+  grandine: docker.ethquokkaops.io/dh/ethpandaops/grandine:pectra-msf-1-19b78fa
 ### Execution layer clients
   besu: docker.ethquokkaops.io/dh/hyperledger/besu:25.4.1
   geth: docker.ethquokkaops.io/dh/ethpandaops/geth:apply-overrides-838d798
