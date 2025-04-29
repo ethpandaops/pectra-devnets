@@ -9,7 +9,7 @@ default_ethereum_client_images:
   grandine: docker.ethquokkaops.io/dh/sifrai/grandine:1.1.0
 ### Execution layer clients
   besu: docker.ethquokkaops.io/dh/hyperledger/besu:25.4.1
-  geth: docker.ethquokkaops.io/dh/ethereum/client-go:v1.15.10
+  geth: docker.ethquokkaops.io/dh/ethpandaops/geth:apply-overrides-838d798
   erigon: docker.ethquokkaops.io/dh/erigontech/erigon:v3.0.2
   nethermind: docker.ethquokkaops.io/dh/nethermind/nethermind:1.31.9
   reth: docker.ethquokkaops.io/gh/paradigmxyz/reth:v1.3.12
