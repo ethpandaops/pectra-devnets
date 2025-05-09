@@ -12,8 +12,8 @@
     "berlinBlock": 0,
     "londonBlock": 0,
     "preMergeForkBlock": 0,
-    "depositContractAddress": "0x4242424242424242424242424242424242424242",
     "terminalTotalDifficulty": 0,
+    "ethash": {},
     "shanghaiTime": 0,
     "cancunTime": 0,
     "blobSchedule": {
@@ -33,9 +33,9 @@
         "baseFeeUpdateFraction": 5007716
       }
     },
+    "depositContractAddress": "0x4242424242424242424242424242424242424242",
     "pragueTime": 1738607700,
-    "osakaTime": 2122603476,
-    "ethash": {}
+    "osakaTime": 2122603476
   },
   "alloc": {
     "0x0000000000000000000000000000000000000000": {
@@ -942,7 +942,7 @@
   },
   "coinbase": "0x0000000000000000000000000000000000000000",
   "baseFeePerGas": "0x3B9ACA00",
-  "difficulty": "0x0",
+  "difficulty": "0x01",
   "extraData": "",
   "gasLimit": "0x17d7840",
   "nonce": "0x1234",
